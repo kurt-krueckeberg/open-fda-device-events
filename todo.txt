@@ -1,0 +1,5 @@
+Add this infor to Open FDA API:
+
+- searchable fields. Fields that apply to all endpoints.
+
+- device adverse event-specific fields listed in api-device-fields.yaml.
