@@ -1,5 +1,6 @@
 <?php
 use GuzzleHttp\Client as Client;
+use GuzzleHttp\Psr7\Request as Request;
 use GuzzleHttp\Exception\RequestException as RequestException;
 
 include "vendor/autoload.php";
@@ -23,9 +24,10 @@ class DeviceEventFetcher {
       $this->client = new Client(array('base_uri' => self::$base_uri));
    }
 
-   public function get_test()// , $offset, $limit)
+   public function query(string $search)// , $offset, $limit)
    {
-        $search_parm = urlencode("date_received:[20130101+TO+20141231]");
+        // TODO: Figure out if I need to encode the parameters, or if Guzzle offers a way to do so.
+        $search_parm = urlencode($search); // urlencode("date_received:[20130101+TO+20141231]");
         
         try {     
             
@@ -37,7 +39,9 @@ class DeviceEventFetcher {
                               ]
                   ];
 
-         $response = $this->client->request('GET', self::$base_uri, $query);
+         $req = new Request('GET', self::$base_uri, $query);
+
+          $response = $this->client->send($req);    // Or simply: $response = $this->client->request('GET', self::$base_uri, $query);
       
          $result = $response->getBody()->getContents();
          
@@ -66,7 +70,7 @@ class DeviceEventFetcher {
 try {
  $fetch = new DeviceEventFetcher("c8qVPGvpax0xJqsbHW2g0LtrY8bRKQIXLAi77EAT");
 
- $r = $fetch->get_test();
+ $r = $fetch->query("date_received:[20130101+TO+20141231]");
  
 } catch (Excpetion $e) {
     
