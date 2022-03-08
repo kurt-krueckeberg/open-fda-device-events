@@ -1,5 +1,6 @@
 <?php
 use GuzzleHttp\Client as Client;
+use GuzzleHttp\Exception\RequestException as RequestException;
 
 include "vendor/autoload.php";
 
@@ -7,14 +8,15 @@ class DeviceEventFetcher {
 
    static $base_uri = "https://api.fda.gov/device/event.json";
 
-   private $uri; // Portion that will follow $base_uri, although it does not need to be catenated to it.
    private $api_key; 
 
    static $qs_api_key = 'api_key';
+   static $qs_search = "search";
    static $qs_limit = 'limit';
-   static $qs_offset = 'offset';
+   
+   static $qs_offset = 'offset'; //untested
 
-   public function __construct(int $api_key) // default offset and limit?
+   public function __construct(string $api_key) // default offset and limit?
    {
       $this->api_key = $api_key;
 
@@ -23,34 +25,52 @@ class DeviceEventFetcher {
 
    public function get_test()// , $offset, $limit)
    {
-     
-      $uri = $this->uri . '/' . urlencode($word);
-
-      try {
+        $search_parm = urlencode("date_received:[20130101+TO+20141231]");
+        
+        try {     
+            
          $query = ['query' => [
-                               'api_key' => $this->api_key,
-                               'search' => "date_received:[20130101+TO+20141231]", 
-                               'offset' => 0, 
-                               'limit' =>  10
+                               self::$qs_api_key => $this->api_key, //"c8qVPGvpax0xJqsbHW2g0LtrY8bRKQIXLAi77EAT",
+                               self::$qs_search => $search_parm, 
+                               //'offset' => 1, <------- TODO: Doesn't work.
+                               self::$qs_limit =>  10
                               ]
                   ];
 
-         $response = $this->client->request('GET', $uri, $query);
+         $response = $this->client->request('GET', self::$base_uri, $query);
       
          $result = $response->getBody()->getContents();
          
          return $result;
-      
-      } catch (RequestException $e) {
-      
-         $response = $this->StatusCodeHandling($e);
-         return $response;
-
-      }  catch (\Exception $e) { 
-
-         return; // TODO: Should this be different?
+                       
+      } catch (Exception $e) {
+          
+          throw new $e;
       }
+      catch (RequestException $e) {
+
+         // If a response code was set, get it.
+         if ($e->hasResponse())
+             
+            $str = "Response Code is " . $e->getResponse()->getStatusCode();
+         
+         else 
+             $str = "No response from server.";
+
+         throw new Exception("Guzzle RequestException. $str"); 
+      }
+       
    }
 }
 
-$fetch = new DeviceEventFetcher(
+try {
+ $fetch = new DeviceEventFetcher("c8qVPGvpax0xJqsbHW2g0LtrY8bRKQIXLAi77EAT");
+
+ $r = $fetch->get_test();
+ 
+} catch (Excpetion $e) {
+    
+    echo "Exception: code = " . $e->getCode() ."\n Message = " . $e->getMessage() . "\n"; 
+ }
+
+var_dump($r);
