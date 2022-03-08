@@ -10,6 +10,8 @@ Only these Apps seem to reall work:
 
 - [Open Vigil FDA](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php) 
 
+- [Avdverse Veterinary Events](https://adversevetevents.com/search/).
+
 ## Further Research 
 
 ### Which fields from devie-api-field.yaml are returned by:
