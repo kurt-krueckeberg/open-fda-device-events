@@ -1,28 +1,29 @@
-# OpenFDA Adverse Event Fetcher
+# OpenFDA Adverse Event Fetching Code
 
 Will use PHP and Guzzle REST Client
 
-## Example Apps
+## OpenFDA Example Apps
 
-OpenFDA [Apps](https://open.fda.gov/community/).
+See list of openFDA Apps [here](https://open.fda.gov/community/).
 
-These Apps seem to be functioning:
+Only these Apps seem to reall work:
 
 - [Open Vigil FDA](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php) 
 
-Q: Which fields from devie-api-field.yanl are returned?
+## Further Research 
+
+### Which fields from devie-api-field.yaml are returned by:
 
 - [Avdverse Veterinary Events](https://adversevetevents.com/search/).
 
-Q: Which fields from devie-api-field.yanl are returned?
 
 ## Understanding the OpenFDA RESTful API
 
-[API Basics](https://open.fda.gov/apis/)
+[API Basics](open-fda-api.md)
 
-[Device Adverse Events](https://open.fda.gov/apis/device/510k/how-to-use-the-endpoint/)
+[Device Adverse Events](device-adverse-events.md)
 
-## My Dependencies
+## My Software Dependencies
 
 ### Guzzle HTTP/REST Client Documentation
 
