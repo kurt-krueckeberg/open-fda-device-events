@@ -12,24 +12,32 @@ The device adverse event reports [search page](https://www.accessdata.fda.gov/sc
 
 ### How adverse events are collected
 
+### Identifying Adverse Events
+
 Adverse events are collected through a series of safety reports. Each is identified by a 8-digit string
 
   **6176304-1**.
 
-The first 7 digits (before the hyphen) identify the individual report, and the last digit (after the hyphen) is a checksum (the sequence number of a report related to a specified event?).
-Rather than updating individual records, subsequent updates are submitted in seperate reports.
+where the first 7 digits (before the hyphen) identify the individual report, and the last digit (after the hyphen) indicates the order of the report. For eample, if three reports are submitted (for the same event),
+they would be saved as
 
-The FDA website to report adverse event is the [MedWatch Online Voluntary Reporting Form](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm). Here heatlh professionals can submit
+- **6176304-1**
+- **6176304-2**
+- **6176304-3**
+
+### Using [Medwatch]((https://www.accessdata.fda.gov/scripts/medwatch/index.cfm) to Report Adverse Events
+
+On the [MedWatch Online Voluntary Reporting Form](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm) website patients and health professionals can submit "adverse device event" reports. Heatlh professionals can submit
 [FDA Form 3500](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm?action=professional.reporting1) online and consumers 
 [FDA Form 3500B](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm?action=consumer.reporting1)".
 
-### How records are organized
+### How Adverse Event Reports are Organized
 
 Device adverse event reports vary significantly, depending on who initially reported the event, what kind of event was reported, and whether there were follow-up reports. Some reports
 come directly from user facilities (like hospitals) or device importers (distributors), while others come directly from manufacturers. Some involve adverse reactions in patients, while
 others are reports of defects that did not result in such adverse reactions.
 
-OpenFDA device adverse event results loosely reflect field organization found in forms used by manufacturers and members of the public to report these events. Since reports may come
+OpenFDA device adverse event results loosely reflect fields found in forms used by manufacturers and members of the public to report these events. Since reports may come
 from manufacturers, user facilities, distributors, and voluntary sources (such as patients and physicians) who are subject to different reporting requirements, the collected data in
 the adverse event system may not always capture every field and should not be interpreted as incomplete.
 

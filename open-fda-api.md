@@ -4,7 +4,13 @@
 
 ## Introduction
 
-**openFDA** is an Elasticsearch-based API that serves public FDA data about nouns like drugs, devices, and foods. The API returns individual results as JSON by default. The JSON object has two sections:
+**openFDA** is an Elasticsearch-based API that serves public FDA data about nouns like drugs, devices, and foods. Two sample websites using **openFDA** are:
+
+- [Open Vigil FDA](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php) 
+
+- [Avdverse Veterinary Events](https://adversevetevents.com/search/).
+
+The API returns individual results as JSON by default. The JSON object has two sections:
 
 - `meta`:&nbsp; Metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.
 
