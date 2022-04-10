@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>   
+    <baseurl>https://api-free.deepl.com/v2</baseurl>
+    <authorization>
+       SEE ~/e/config.xml
+    </authorization >
+    <Content-Type>application/json; charset=UTF-8</Content-Type>
+    <route></route>
+    <method>GET</method>
+    <implementation></implementation>
+    <query> 
+    </query>
+</settings>
