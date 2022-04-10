@@ -39,7 +39,7 @@ openFDA's standard limits:
 
 - With no API key: 240 requests per minute, per IP address. 1,000 requests per day, per IP address.
 
-- With an API key: 240 requests per minute, per key. 120,000 requests per day, per key.
+- With API key: 240 requests per minute, per key. **120,000** requests per day, per key.
 
 ### My Key
 
