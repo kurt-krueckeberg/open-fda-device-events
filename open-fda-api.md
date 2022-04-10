@@ -41,10 +41,6 @@ openFDA's standard limits:
 
 - With API key: 240 requests per minute, per key. **120,000** requests per day, per key.
 
-### My Key
-
-API Key is: **c8qVPGvpax0xJqsbHW2g0LtrY8bRKQIXLAi77EAT**
-
 ### Using your API key
 
 Authentication with your personal API key can be done by either:
