@@ -1,11 +1,11 @@
-<div class="container">
+<section>
 
 # Adverse Event Reports API
 
 ## About the "Manufacturer and User Facility Device Experience" Database
 
-The Manufacturer and User Facility Device Experience (MAUDE) database contains medical device adverse event reports submitted by mandatory reporters—manufacturers,
-importers and device user facilities—and voluntary reporters such as health care professionals, patients, and consumers. Currently, this data covers publically releasable records submitted
+The Manufacturer and User Facility Device Experience (MAUDE) database contains medical device adverse event reports submitted by mandatory reporters&mdash;manufacturers,
+importers and device user facilities&mdash;and voluntary reporters such as health care professionals, patients, and consumers. Currently, this data covers publically releasable records submitted
 to the FDA from about 1992 to the present. The data is updated weekly.
 
 The device adverse event reports [search page](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) offers **standard search options** worth remembering.
@@ -37,7 +37,7 @@ Device adverse event reports vary significantly, depending on who initially repo
 come directly from user facilities (like hospitals) or device importers (distributors), while others come directly from manufacturers. Some involve adverse reactions in patients, while
 others are reports of defects that did not result in such adverse reactions.
 
-OpenFDA device adverse event results loosely reflect fields found in forms used by manufacturers and members of the public to report these events. Since reports may come
+OpenFDA device adverse event results **loosely reflect fields found in forms used by manufacturers and members of the public to report these events**. Since reports may come
 from manufacturers, user facilities, distributors, and voluntary sources (such as patients and physicians) who are subject to different reporting requirements, the collected data in
 the adverse event system may not always capture every field and should not be interpreted as incomplete.
 
@@ -51,7 +51,7 @@ the adverse event system may not always capture every field and should not be in
 
 #### One adverse event report
 
-TODO: Incorprate somewhere in this documentation the "device searchable fields" info contained in ~/o/searchable-fields-device-api.yaml, which I have annotated.
+TODO: Incorprate somewhere in this documentation the "device searchable fields" info contained in searchable-fields-device-api.yaml, which I have annotated.
 
 Search for adverse events within a date range. A date range is specified using brackets [ ].
 
@@ -63,7 +63,7 @@ Search for adverse events within a date range. A date range is specified using b
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
 ```
 
-See searchable fields for more about date_received. Brackets [ ] are used to specify a range for date, number, or string fields.
+See searchable fields for more about date\_received. Brackets [ ] are used to specify a range for date, number, or string fields.
 
 ```html
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
@@ -71,4 +71,4 @@ https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231
 
 Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
 
-</div>
+</section>

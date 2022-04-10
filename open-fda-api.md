@@ -1,4 +1,4 @@
-<div class="container">
+<section>
 
 # Open FDA API
 
@@ -81,18 +81,28 @@ The API supports five query parameters, of which `search` is the basic building 
 
 Searches are of the form `search=field:term` and support these patterns: 
 
-. `search=field:term` &nbsp;&nbsp; Search within a specific `field` for a `term` 
+. `search=field:term`  
 
-. `search=field:term+AND+field:term` &nbsp;&nbsp; Search for records that match **both** terms.
+  Search within a specific `field` for a `term` 
 
-. `search=field:term+field:term` &nbsp;&nbsp; Search for records that match **either** of two terms.
+. `search=field:term+AND+field:term`    
 
-. `sort=report_date:desc` &nbsp;&nbsp; Sort records by a specific `field` in descending order.
+  Search for records that match **both** terms.
 
-. `search=field:term&count=another_field` &nbsp;&nbsp; Search for matching records. Then within that set
-   of records, count the number of times that the unique values of a `field` appear. Instead of looking at
-   individual records, you can use the count parameter to count how often certain terms (like drug names or
-   patient reactions) appear in the matching set of records.
+. `search=field:term+field:term`    
+
+   Search for records that match **either** of two terms.
+
+. `sort=report_date:desc`    
+
+  Sort records by a specific `field` in descending order.
+
+. `search=field1:term&count=field2`
+
+  Search for matching records. Then within that set
+  of records, count the number of times that the unique values of a `field2` appear. Instead of looking at
+  individual records, you can use the count parameter to count how often certain terms (like drug names or
+  patient reactions) appear in the matching set of records.
 
 ### Examples of the Search Options 
 
@@ -154,3 +164,4 @@ allowed is 1000 for any single API call. If no limit is set, the API will return
 
 RESUME [HERE](https://open.fda.gov/apis/advanced-syntax/)
 
+</section>

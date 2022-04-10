@@ -5,7 +5,7 @@
     </credentials>
     <baseurl>https://api.fda.gov</baseurl>
     <Content-Type>application/json; charset=UTF-8</Content-Type>
-    <route>device/event</route>
+    <route>device/event.json</route>
     <method>GET</method>
     <implementation>Fda\OpenFda</implementation>
     <query>

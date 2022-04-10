@@ -34,26 +34,14 @@ class OpenFda implements OpenFdaInterface {
 
        $this->client = new Client(['base_uri' => (string) $s->baseurl]);
    } 
-   
-   public function query(array $a)
-   {
-       
-   }
 
    private function setConfigOptions(\SimpleXMLElement $settings)
    {
       $headers = array();
-      
-      if ((string)$settings->credentials["method"] == "custom") 
-      
-           $headers = $this->getCredentials($settings->credentials);
-      
-      else {
-            
-          foreach($settings->credentials->header as $header) 
+           
+      foreach($settings->credentials->header as $header) 
           
                $headers[(string) $header['name']] = (string) $header;
-      }
 
       $this->options['headers'] = $headers;
 
@@ -73,9 +61,16 @@ class OpenFda implements OpenFdaInterface {
 
       $this->options['query'] = $query_array;
    }
-  
+
    protected function setQueryParm(string $key, string $value)
    {
        $this->options['query'][$key] = $value;
+   }
+
+   protected function setQueryParms(array $parms) // array of key => value query parameters.
+   {
+       foreach($parms as $jey => $value)
+
+       $this->options['query'][$mkey] = $value;
    }
 }
