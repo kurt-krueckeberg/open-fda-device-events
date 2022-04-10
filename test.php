@@ -1,7 +1,7 @@
 <?php
 use Fda\OpenFda;
 
-require_once "OpenFda.php";
+include "vendor/autoload.php";
 
 $x = OpenFda::createFromXML("config.xml");
 

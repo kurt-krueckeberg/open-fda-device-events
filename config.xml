@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>   
     <credentials method="header">
-        <header name="Authorization">basic c8qVPGvpax0xJqsbHW2g0LtrY8bRKQIXLAi77EA<header>
+        <header name="Authorization">basic c8qVPGvpax0xJqsbHW2g0LtrY8bRKQIXLAi77EA</header>
     </credentials>
+    <baseurl>https://api.fda.gov</baseurl>
     <Content-Type>application/json; charset=UTF-8</Content-Type>
-    <route></route>
+    <route>device/event</route>
     <method>GET</method>
-    <implementation></implementation>
-    <query> 
-      <parm></parm>
-      <parm></parm>
+    <implementation>Fda\OpenFda</implementation>
+    <query>
+        <parm>search</parm>
+        <parm>sort</parm>
+        <parm>count</parm>
+        <parm>limit</parm>
+        <parm>skip</parm>
     </query>
 </settings>

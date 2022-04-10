@@ -44,27 +44,27 @@ class OpenFda implements OpenFdaInterface {
        
    }
 
-   private function setConfigOptions(\SimpleXMLElement $provider)
+   private function setConfigOptions(\SimpleXMLElement $settings)
    {
       $headers = array();
       
-      if ((string)$provider->settings->credentials["method"] == "custom") 
+      if ((string)$settings->credentials["method"] == "custom") 
       
-           $headers = $this->getCredentials($provider->settings->credentials);
+           $headers = $this->getCredentials($settings->credentials);
       
       else {
             
-          foreach($provider->settings->credentials->header as $header) 
+          foreach($settings->credentials->header as $header) 
           
                $headers[(string) $header['name']] = (string) $header;
       }
 
       $this->options['headers'] = $headers;
 
-      $this->route  = (string) $provider->services->translation->route;  
-      $this->method = (string) $provider->services->translation->method;
+      $this->route  = (string) $settings->route;  
+      $this->method = (string) $settings->method;
 
-      $this->setQueryOptions($provider->services->translation->query);
+      $this->setQueryOptions($settings->query);
    }  
 
    // Assign xml <query> section settings in $this->options['query']
