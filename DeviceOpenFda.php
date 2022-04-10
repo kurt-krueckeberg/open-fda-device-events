@@ -6,6 +6,8 @@ use GuzzleHttp\Psr7\Response;
 
 class OpenFdaDevice extends OpenFda {
 
+
+
    public function __construct(\SimpleXMLElement $provider)
    {
         parent::__construct($provider);     

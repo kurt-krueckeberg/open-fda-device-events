@@ -1,11 +1,13 @@
 <?php
 declare(strict_types=1);
-namespace Fda;
+namespace Fda;  // todo: autoloading not configured yet.
+
+require_once "OpenFdaInterface.php";
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 
-abstract class OpenFDA implements OpenFDAInterface {
+class OpenFDA implements OpenFdaInterface {
 
    private string $route;      
    private string $method;     // GET, POST, etc 
@@ -20,33 +22,20 @@ abstract class OpenFDA implements OpenFDAInterface {
    
    private Client $client;  
 
-   static string $xpath =  "/providers/provider[@abbrev='%s']";  // Maybe sth. different
-
-   /*
-    * Returns SimpleXMLElement pointing to correct <provider> element.
-    */
-   static private function get_provider(string $xml_name, string $abbrev)
-   {
-      $simp = simplexml_load_file($xml_name);
-     
-      $query = sprintf(self::$xpath, $abbrev); 
-     
-      $response = $simp->xpath($query);
-     
-      return $response[0];
-   }
-
    /*
     * Instantiates the derived class specified in <implementation>...</implementation>
     */ 
-   static public function createFromXML(string $fxml, string $abbrev) : Translator
+   static public function createFromXML(string $fxml)
    {
-      $provider = self::get_provider($fxml, $abbrev); 
+      $simp = simplexml_load_file($fxml);
       
-      $refl = new \ReflectionClass((string) $provider->services->translation->implementation); 
-      
-      return $refl->newInstance($provider);
+      var_dump($simp);
+
+      $x = $simp->credentials;
+
+      var_dump($x);
    }
+
   
    // PHP 8.0 feature required: automatic member variable assignemnt syntax.
    public function __construct(protected \SimpleXMLElement $provider) 
@@ -57,6 +46,11 @@ abstract class OpenFDA implements OpenFDAInterface {
 
        $this->client = new Client(['base_uri' => (string) $this->provider->settings->baseurl]);
    } 
+   
+   public function query(array $a)
+   {
+       
+   }
 
    private function setConfigOptions(\SimpleXMLElement $provider)
    {
@@ -84,21 +78,6 @@ abstract class OpenFDA implements OpenFDAInterface {
    // Assign xml <query> section settings in $this->options['query']
    private function setQueryOptions(\SimpleXMLElement $query)
    {
-      $this->from_key = (string) $query->from['name'];
-      $query_array = array();
-
-       // set default source language, if present     
-      if ($query->from !== '')
-
-          $query_array[$this->from_key] = (string) $query->from;
-      
-      $this->to_key = (string) $query->to['name'];
-
-      // set default destination language, if present
-      if ($query->to !== '') 
-
-            $query_array[$this->to_key] = (string) $query->to;
-
       // Set other default query string settings
       foreach($query->parm as $parm)  
 
@@ -106,27 +85,7 @@ abstract class OpenFDA implements OpenFDAInterface {
 
       $this->options['query'] = $query_array;
    }
-
-   /* 'Template pattern' method that calls abstract protected methods overriden by derived classes (to prepare the input amd
-       to extract the translated text (as a string) from he reponse. */
-   final public function translate(string $text, string $dest_lang, $source_lang="")
-   {
-       $this->setLanguages($dest_lang, $source_lang);
-
-       $this->add_input($text); // Implemented by derived classes.
-
-       $response = $this->client->request($this->method, $this->route, $this->options); 
-
-       return $this->process_response($response);
-   }
-
-   // Overriden by derived classes to add input text to the HTTP Message that Guzzle\Client will send.
-   // IT will be added either as a query strng parameter or JSON set in the body of the message by Guzzle\Client.
-   abstract protected function add_input(string $text);
-    
-   // Overriden by derived classes to return translated text as a string.
-   abstract protected function process_response(Response $response) : string; 
-   
+  
    protected function setQueryParm(string $key, string $value)
    {
        $this->options['query'][$key] = $value;
