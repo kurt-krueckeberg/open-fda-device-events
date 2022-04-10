@@ -14,10 +14,6 @@ class OpenFda implements OpenFdaInterface {
 
    private array $options;    // [['headers' => [...], 'query' => [...], 'json' => [...]]
 
-   /*  This is also a class member variable defined and set on the constructor's argument list (PHP >=8.0 required).
-   private $provider;
-    */
-   
    private Client $client;  
 
    /*
