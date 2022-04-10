@@ -78,10 +78,4 @@ class OpenFda implements OpenFdaInterface {
    {
        $this->options['query'][$key] = $value;
    }
-
-   // Helper method for use by derived classes, to set json input, if needed
-   protected function setJson(array $json)
-   {
-       $this->options['json'] = $json;
-   }
 }
