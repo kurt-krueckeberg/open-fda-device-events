@@ -36,32 +36,23 @@ The API returns e JSON object with two sections:
 
 ## Authorization Key
 
-###  Request Limits
+Request limits:
 
 - With no API key: 240 requests per minute, per IP address. 1,000 requests per day, per IP address.
 
 - With API key: 240 requests per minute, per key. **120,000** requests per day, per key.
 
-### Using your API key
+Using your API key:
 
 Authentication with your personal API key can be done by either:
 
-- passing your API key as the value of the `api_key` parameter.
+- passing your API key as the value of the `api_key`parameter. `https://api.fda.gov/drug/event.json?api_key=yourAPIKeyHere&search=...`
 
-- passing it in the HTTP header using the **basic auth** authentication scheme.
+- passing it in the HTTP header using the **basic auth** authentication scheme.``Authorization: Basic eW91ckFQSUtleUhlcmU6`
 
-Example of using `api_key` parameter:
-
-```html
-https://api.fda.gov/drug/event.json?api_key=yourAPIKeyHere&search=...
-
-```
 
 Example of passing the authentication key in the HTTPS header:
 
-```bash
-Authorization: Basic eW91ckFQSUtleUhlcmU6
-```
 
 ## The Five API Query  Parameters
 

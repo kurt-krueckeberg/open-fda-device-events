@@ -132,21 +132,20 @@
 <li><code>results</code> in an array (for non-count queries) of matching records.</li>
 </ol>
 <h2 id="authorization-key">Authorization Key</h2>
-<h3 id="request-limits">Request Limits</h3>
+<p>Request limits:</p>
 <ul>
 <li><p>With no API key: 240 requests per minute, per IP address. 1,000 requests per day, per IP address.</p></li>
 <li><p>With API key: 240 requests per minute, per key. <strong>120,000</strong> requests per day, per key.</p></li>
 </ul>
-<h3 id="using-your-api-key">Using your API key</h3>
+<p>Using your API key:</p>
 <p>Authentication with your personal API key can be done by either:</p>
 <ul>
 <li><p>passing your API key as the value of the <code>api_key</code> parameter.</p></li>
-<li><p>passing it in the HTTP header using the <strong>basic auth</strong> authentication scheme.</p></li>
+<li><p>passing it in the HTTP header using the <strong>basic auth</strong> authentication scheme.`<code>Authorization: Basic eW91ckFQSUtleUhlcmU6</code></p></li>
 </ul>
 <p>Example of using <code>api_key</code> parameter:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?api_key=yourAPIKeyHere<span class="er">&amp;</span>search=...</span></code></pre></div>
 <p>Example of passing the authentication key in the HTTPS header:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">Authorization</span>: Basic eW91ckFQSUtleUhlcmU6</span></code></pre></div>
 <h2 id="the-five-api-query-parameters">The Five API Query Parameters</h2>
 <p>The API supports five query parameters, of which <code>search</code> is the basic building block:</p>
 <ul>
@@ -171,27 +170,27 @@
 <h3 id="examples-of-the-search-options">Examples of the Search Options</h3>
 <h4 id="matching-a-single-search-term">Matching a single search term</h4>
 <p>To query <code>drug/event</code> endpoint for records where one of the reported patient reactions was <strong>fatigue</strong>, search <code>patient.reaction.reactionmeddrapt</code> (patient reaction) for <strong>fatigue</strong>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;<span class="er">&amp;</span>limit=1</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;<span class="er">&amp;</span>limit=1</span></code></pre></div>
 <h4 id="matching-all-search-terms-and-search-terms">Matching all search terms (AND search terms)</h4>
 <p>Search the <code>drug/event</code> endpoint for <strong>fatigue</strong> as a reported patient reaction <span class="underline">and</span> <strong>Canada</strong> as the country in which the reported event occurred. <strong>+AND+</strong> is used to join two search terms. The country code for Canada is <strong>ca</strong>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+AND+occurcountry:&quot;ca&quot;<span class="er">&amp;</span>limit=1</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+AND+occurcountry:&quot;ca&quot;<span class="er">&amp;</span>limit=1</span></code></pre></div>
 <h4 id="matching-any-search-terms-or-search-terms">Matching any search terms (OR search terms)</h4>
 <p>Search the <code>drug/event</code> endpoint where <span class="underline">either</span> fatigue was a reported patient reaction <span class="underline">or</span> the country in which the event happened was Canada.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+occurcountry:&quot;ca&quot;<span class="er">&amp;</span>limit=1</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+occurcountry:&quot;ca&quot;<span class="er">&amp;</span>limit=1</span></code></pre></div>
 <h4 id="sort-results">Sort Results</h4>
 <p>Search the <code>drug/event</code> endpoint for:</p>
 <ul>
 <li><p>ten records</p></li>
 <li><p>sorted in descending order by <code>receivedate</code></p></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?sort=receivedate:desc<span class="er">&amp;</span>limit=10</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?sort=receivedate:desc<span class="er">&amp;</span>limit=10</span></code></pre></div>
 <h4 id="counting-records-where-certain-terms-occur">Counting records where certain terms occur</h4>
 <p>Search the <code>drug/event</code> endpoint for all records and count the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
 <ul>
 <li><p>search all records</p></li>
 <li><p>Count the number of records matching the terms in <code>patient.reaction.reactionmeddrapt.exact</code>. The <strong><code>.exact</code></strong> suffix here tells the API to count whole phrases (“<strong>injection site reaction</strong>”) instead of individual words (<strong>injection</strong>, <strong>site</strong>, and <strong>reaction</strong> separately)</p></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></pre></div>
 <h2 id="api-syntax-rules">API Syntax Rules</h2>
 <p>Unless otherwise specified, the API will return only one matching record for a search. You can specify the number of records to be returned by using the <code>limit</code> parameter. The maximum limit allowed is 1000 for any single API call. If no limit is set, the API will return one matching record.</p>
 <p>RESUME <a href="https://open.fda.gov/apis/advanced-syntax/">HERE</a></p>
