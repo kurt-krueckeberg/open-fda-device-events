@@ -10,7 +10,7 @@
 
 - [Avdverse Veterinary Events](https://adversevetevents.com/search/).
 
-The API returns results as e JSON object that has two sections:
+The API returns e JSON object with two sections:
 
 1. `meta`:&nbsp; Metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.
 
