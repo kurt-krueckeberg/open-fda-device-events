@@ -69,28 +69,28 @@ The API supports five query parameters, of which `search` is the basic building 
 
 Searches are of the form `search=field:term` and support these patterns: 
 
+  Search within a specific `field` for a `term`: 
+
 . `search=field:term`  
-
-  Search within a specific `field` for a `term` 
-
-. `search=field:term+AND+field:term`    
 
   Search for records that match **both** terms.
 
-. `search=field:term+field:term`    
+. `search=field:term+AND+field:term`    
 
    Search for records that match **either** of two terms.
 
-. `sort=report_date:desc`    
+. `search=field:term+field:term`    
 
   Sort records by a specific `field` in descending order.
 
-. `search=field1:term&count=field2`
+. `sort=report_date:desc`    
 
   Search for matching records. Then within that set
   of records, count the number of times that the unique values of a `field2` appear. Instead of looking at
   individual records, you can use the count parameter to count how often certain terms (like drug names or
   patient reactions) appear in the matching set of records.
+
+. `search=field1:term&count=field2`
 
 ### Examples of the Search Options 
 
