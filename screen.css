@@ -1,35 +1,35 @@
 body {
-
+  color: black;
+  background-color: white; 
 }
 
-.container {
+section {
 
   font-family: 'Lato Medium', Arial, sans-serif;
   margin: auto;
   width: 60%;
 
-  color: black;        
-  background-color: white;   
+  /*
+  Alernate colors:
 
-  /* Alernate colors: */
-  /* 
+  background-color: #f5f5f5;
+  color: #2c2cd2c;
+
+  color: #FFFFFF;            VS Code Blue dar theme 
+  background-color: #002451; 
+
   color: #FFFFFF;  
   background-color: #102450;
-   */
 
-  /* 
   color: #FFFFFF;                     VS Code Blue dar theme
   background-color: #002451; 
-   */
-
-  /* 
   color: #D0CFCC;              
   background-color: #171421;  
   */
 }
 
 
-p { 
+section p { 
   padding-top: 3px;
   padding-bottom: 3px;
   padding-right: 6px;
@@ -49,10 +49,6 @@ p {
 h1, h2, h3, h4, h5 {
 
   font-family: 'Karla Semibold', 'Open Sans', Arial, sans-serif;
-}
-
-code {
-font-family: "Roboto Mono";
 }
 
 /*

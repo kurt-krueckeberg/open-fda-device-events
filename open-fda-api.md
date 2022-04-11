@@ -4,38 +4,38 @@
 
 ## Introduction
 
-**openFDA** is an Elasticsearch-based API that serves public FDA data about nouns like drugs, devices, and foods. Two sample websites using **openFDA** are:
+**openFDA** is an Elasticsearch-based API that serves public FDA data about drugs, devices, and foods. Two sample websites using the **openFDA** API are:
 
 - [Open Vigil FDA](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php) 
 
 - [Avdverse Veterinary Events](https://adversevetevents.com/search/).
 
-The API returns individual results as JSON by default. The JSON object has two sections:
+The API returns results as e JSON object that has two sections:
 
-- `meta`:&nbsp; Metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.
+1. `meta`:&nbsp; Metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.
 
- ---------------------------------------------------------------------------------------------------------------------------------------------
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------
  Meta Field          Details
- ------------------- -------------------------------------------------------------------------------------------------------------------------
- `meta.disclaimer`     Important details notes about openFDA data and limitations of the dataset.
+ ------------------- --------------------------------------------------------------------------------------------------------------------------------------
+ `meta.disclaimer`    Important details notes about openFDA data and limitations of the dataset.
                      
- `meta.license`        Link to a web page with license terms that govern data within openFDA.
+ `meta.license`       Link to a web page with license terms that govern data within openFDA.
                      
- `meta.last_updated`   The last date when this openFDA endpoint was updated. Note that this does not correspond to the most recent record for
-                     the endpoint or dataset. Rather, it is the last time the openFDA API was itself updated.
+ `meta.last_updated`  The last date when this openFDA endpoint was updated. Note that this does not correspond to the most recent record for
+                      the endpoint or dataset. Rather, it is the last time the openFDA API was itself updated.
                      
- `meta.results.skip`   Offset (page) of results, defined by the skip query parameter.
+ `meta.results.skip`  **Offset (page) of results,** defined by the *skip* query parameter.
                      
- `meta.results.limit`  Number of records in this return, defined by the limit query parameter. If there is no limit parameter, the API returns one result.
+ `meta.results.limit` **Number of records** in this return, defined by the *limit* query parameter. If there is no limit parameter, the API returns one result.
                      
- `meta.results.total`  Total number of records matching the search criteria.
- ------------------- -------------------------------------------------------------------------------------------------------------------------
+ `meta.results.total` **Total number of records** matching the search criteria.
+ ------------------- --------------------------------------------------------------------------------------------------------------------------------------
 
-- `results`:&nbsp; For non-count queries, the results is an **array** of matching records.
+2.- `results`&mdash; For non-count queries, the results is an **array** of matching records.
 
 ## Authorization Key
 
-openFDA's standard limits:
+Limits per Authorization method:
 
 - With no API key: 240 requests per minute, per IP address. 1,000 requests per day, per IP address.
 
@@ -62,7 +62,7 @@ Example of passing the authentication key in the HTTPS header:
 Authorization: Basic eW91ckFQSUtleUhlcmU6
 ```
 
-## The Five API Query Types
+## The Five API Query  Parameters
 
 The API supports five query parameters, of which `search` is the basic building block:
 
