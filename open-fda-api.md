@@ -50,23 +50,19 @@ Authentication with your personal API key can be done by either:
 
 - passing it in the HTTP header using the **basic auth** authentication scheme.``Authorization: Basic eW91ckFQSUtleUhlcmU6`
 
-
-Example of passing the authentication key in the HTTPS header:
-
-
 ## The Five API Query  Parameters
 
 The API supports five query parameters, of which `search` is the basic building block:
 
-- `search`: Used to specify Which fields to search for what. 
+- `search`: used to specify Which fields to search for what. 
 
-- `sort`: Sort the results of the search by the specified field in ascending or descending order using the `:asc` or `:desc`.
+- `sort`: sort the results of the search by the specified field in ascending or descending order using the `:asc` or `:desc`.
 
-- `count`: Counts unique values of a certain field, for all the records that matched the search parameter. By default, the 1000 most frequent values are returned.
+- `count`: counts unique values of a certain field, for all the records that matched the search parameter. By default, the 1000 most frequent values are returned.
 
-- `limit`: Return up to this number of records that match the search parameter. The largest allowed value for the limit parameter is 1000.
+- `limit`: return up to this number of records that match the search parameter. The largest allowed value for the limit parameter is 1000.
 
-- `skip`:  Used it in combination with `limit` to paginate results. It skip this number of records that match the search parameter. The largest allowed value for
+- `skip`:  used it in combination with `limit` to paginate results. It skip this number of records that match the search parameter. The largest allowed value for
    the skip parameter is 25000.
 
 ### Search Options
