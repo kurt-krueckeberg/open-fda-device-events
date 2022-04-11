@@ -19,6 +19,8 @@ class OpenFda implements OpenFdaInterface {
    /*
     * Instantiates the derived class specified in <implementation>...</implementation>
     */ 
+
+   /*
    static public function createFromXML(string $fxml) : OpenFda
    {
       $simp = simplexml_load_file($fxml);
@@ -27,12 +29,15 @@ class OpenFda implements OpenFdaInterface {
       
       return $refl->newInstance($simp);
     }
+   */
 
    public function __construct(\SimpleXMLElement $s) 
    {  
-       $this->setConfigOptions($s);
+       $settings = simplexml_load_file($fxml);
+   
+       $this->setConfigOptions($settings);
 
-       $this->client = new Client(['base_uri' => (string) $s->baseurl]);
+       $this->client = new Client(['base_uri' => (string) $settings->baseurl]);
    } 
 
    private function setConfigOptions(\SimpleXMLElement $settings)
@@ -51,7 +56,7 @@ class OpenFda implements OpenFdaInterface {
       $this->setQueryOptions($settings->query);
    }  
 
-   // Assign xml <query> section settings in $this->options['query']
+   // Assign xml <query> section default settings
    private function setQueryOptions(\SimpleXMLElement $query)
    {
       // Set other default query string settings
