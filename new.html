@@ -103,28 +103,28 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>meta.disclaimer</code></td>
-<td style="text-align: left;">Important details notes about openFDA data and limitations of the dataset.</td>
+<td style="text-align: left;"><p><code>meta.disclaimer</code></p></td>
+<td style="text-align: left;"><p>Important details notes about openFDA data and limitations of the dataset.</p></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>meta.license</code></td>
-<td style="text-align: left;">Link to a web page with license terms that govern data within openFDA.</td>
+<td style="text-align: left;"><p><code>meta.license</code></p></td>
+<td style="text-align: left;"><p>Link to a web page with license terms that govern data within openFDA.</p></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>meta.last_updated</code></td>
-<td style="text-align: left;">The last date when this openFDA endpoint was updated. Note that this does not correspond to the most recent record for the endpoint or dataset. Rather, it is the last time the openFDA API was itself updated.</td>
+<td style="text-align: left;"><p><code>meta.last_updated</code></p></td>
+<td style="text-align: left;"><p>The last date when this openFDA endpoint was updated. Note that this does not correspond to the most recent record for the endpoint or dataset. Rather, it is the last time the openFDA API was itself updated.</p></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>meta.results.skip</code></td>
-<td style="text-align: left;"><strong>Offset (page) of results,</strong> defined by the <em>skip</em> query parameter.</td>
+<td style="text-align: left;"><p><code>meta.results.skip</code></p></td>
+<td style="text-align: left;"><p><strong>Offset (page) of results,</strong> defined by the <em>skip</em> query parameter.</p></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>meta.results.limit</code></td>
-<td style="text-align: left;"><strong>Number of records</strong> in this return, defined by the <em>limit</em> query parameter. If there is no limit parameter, the API returns one result.</td>
+<td style="text-align: left;"><p><code>meta.results.limit</code></p></td>
+<td style="text-align: left;"><p><strong>Number of records</strong> in this return, defined by the <em>limit</em> query parameter. If there is no limit parameter, the API returns one result.</p></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>meta.results.total</code></td>
-<td style="text-align: left;"><strong>Total number of records</strong> matching the search criteria.</td>
+<td style="text-align: left;"><p><code>meta.results.total</code></p></td>
+<td style="text-align: left;"><p><strong>Total number of records</strong> matching the search criteria.</p></td>
 </tr>
 </tbody>
 </table>
@@ -154,16 +154,40 @@
 </ul>
 <h3 id="search-options">Search Options</h3>
 <p>Searches are of the form <code>search=field:term</code> and support these patterns:</p>
-<p>. <code>search=field:term</code></p>
-<p>Search within a specific <code>field</code> for a <code>term</code></p>
-<p>. <code>search=field:term+AND+field:term</code></p>
-<p>Search for records that match <strong>both</strong> terms.</p>
-<p>. <code>search=field:term+field:term</code></p>
-<p>Search for records that match <strong>either</strong> of two terms.</p>
-<p>. <code>sort=report_date:desc</code></p>
-<p>Sort records by a specific <code>field</code> in descending order.</p>
-<p>. <code>search=field1:term&amp;count=field2</code></p>
-<p>Search for matching records. Then within that set of records, count the number of times that the unique values of a <code>field2</code> appear. Instead of looking at individual records, you can use the count parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.</p>
+<table style="width:99%;">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Search term</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><p><code>search=field:term</code></p></td>
+<td style="text-align: left;"><p>Search within a specific <code>field</code> for a <code>term</code></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><code>search=field:term+AND+field:term</code></p></td>
+<td style="text-align: left;"><p>Search for records that match <strong>both</strong> terms.</p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><code>search=field:term+field:term</code></p></td>
+<td style="text-align: left;"><p>Search for records that match <strong>either</strong> of two terms.</p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><code>sort=report_date:desc</code></p></td>
+<td style="text-align: left;"><p>Sort records by a specific <code>field</code> in descending order.</p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><code>search=field1:term&amp;count=field2</code></p></td>
+<td style="text-align: left;"><p>Search for matching records. Then within that set of records, count the number of times that the unique values of a <code>field2</code> appear. Instead of looking at individual records, you can use the count parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.</p></td>
+</tr>
+</tbody>
+</table>
 <h3 id="examples-of-the-search-options">Examples of the Search Options</h3>
 <h4 id="matching-a-single-search-term">Matching a single search term</h4>
 <p>To query <code>drug/event</code> endpoint for records where one of the reported patient reactions was <strong>fatigue</strong>, search <code>patient.reaction.reactionmeddrapt</code> (patient reaction) for <strong>fatigue</strong>:</p>
