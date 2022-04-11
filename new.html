@@ -81,14 +81,14 @@
 <section>
 <h1 id="open-fda-api">Open FDA API</h1>
 <h2 id="introduction">Introduction</h2>
-<p><strong>openFDA</strong> is an Elasticsearch-based API that serves public FDA data about drugs, devices, and foods. Two sample websites using <strong>openFDA</strong> are:</p>
+<p><strong>openFDA</strong> is an Elasticsearch-based API that serves public FDA data about drugs, devices, and foods. Two sample websites using the <strong>openFDA</strong> API are:</p>
 <ul>
 <li><p><a href="https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php">Open Vigil FDA</a></p></li>
 <li><p><a href="https://adversevetevents.com/search/">Avdverse Veterinary Events</a>.</p></li>
 </ul>
-<p>The API returns results as e JSON object that has two sections:</p>
+<p>The API returns e JSON object with two sections:</p>
 <ol type="1">
-<li><code>meta</code>:  Metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.</li>
+<li><code>meta</code> — metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.</li>
 </ol>
 <table style="width:99%;">
 <colgroup>
@@ -128,9 +128,11 @@
 </tr>
 </tbody>
 </table>
-<p>2.- <code>results</code>— For non-count queries, the results is an <strong>array</strong> of matching records.</p>
+<ol start="2" type="1">
+<li><code>results</code> in an array (for non-count queries) of matching records.</li>
+</ol>
 <h2 id="authorization-key">Authorization Key</h2>
-<p>Limits per Authorization method:</p>
+<h3 id="request-limits">Request Limits</h3>
 <ul>
 <li><p>With no API key: 240 requests per minute, per IP address. 1,000 requests per day, per IP address.</p></li>
 <li><p>With API key: 240 requests per minute, per key. <strong>120,000</strong> requests per day, per key.</p></li>

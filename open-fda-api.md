@@ -12,7 +12,8 @@
 
 The API returns e JSON object with two sections:
 
-1. `meta`:&nbsp; Metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.
+1. `meta` &mdash; metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.
+
 
  ----------------------------------------------------------------------------------------------------------------------------------------------------------
  Meta Field          Details
@@ -31,11 +32,11 @@ The API returns e JSON object with two sections:
  `meta.results.total` **Total number of records** matching the search criteria.
  ------------------- --------------------------------------------------------------------------------------------------------------------------------------
 
-2.- `results`&mdash; For non-count queries, the results is an **array** of matching records.
+2. `results` in an array (for non-count queries) of matching records.
 
 ## Authorization Key
 
-Limits per Authorization method:
+###  Request Limits
 
 - With no API key: 240 requests per minute, per IP address. 1,000 requests per day, per IP address.
 
