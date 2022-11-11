@@ -98,7 +98,7 @@ https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fa
 
 #### Example Query to match several terms using AND
 
-Search the  `drug/event` endpoint for **fatigue** as a reported patient reaction [and]{.underline} **Canada** as the country in which the reported event occurred. **+AND+** is used
+Search the  `drug/event` endpoint for **fatigue** as a reported patient reaction and **Canada** as the country in which the reported event occurred. **+AND+** is used
 to join two search terms. The country code for Canada is **ca**.
 
 ```html
@@ -107,7 +107,7 @@ https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fa
 
 #### Matching any search terms (OR search terms)
 
-Search the `drug/event` endpoint where [either]{.underline} fatigue was a reported patient reaction [or]{.underline} the country in which the event happened was Canada.
+Search the `drug/event` endpoint where either **fatigue** was a reported patient reaction *or* the country in which the event happened was **Canada**.
 
 ```html
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1
