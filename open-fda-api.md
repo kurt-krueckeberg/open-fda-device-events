@@ -32,7 +32,7 @@ The API returns e JSON object with two sections:
  `meta.results.total` **Total number of records** matching the search criteria.
  ------------------- --------------------------------------------------------------------------------------------------------------------------------------
 
-2. `results` in an array (for non-count queries) of matching records.
+2. `results` in an array (for non-count-returning queries) of matching records.
 
 ## Authorization Key
 
@@ -50,9 +50,9 @@ Authentication with your personal API key can be done by either:
 
 - passing it in the HTTP header using the **basic auth** authentication scheme.``Authorization: Basic eW91ckFQSUtleUhlcmU6`
 
-## The Five API Query  Parameters
+## The Five API Query Parameters
 
-The API supports five query parameters, of which `search` is the basic building block:
+The API supports the five query parameters lsited below. The `search` paramter is the the most importnat and useful one: 
 
 - `search`: used to specify Which fields to search for what. 
 
@@ -88,16 +88,15 @@ Searches are of the form `search=field:term` and support these patterns:
 
 ### Examples of the Search Options 
 
-#### Matching a single search term
-
-To  query `drug/event` endpoint for records where one of the reported patient reactions was **fatigue**, search `patient.reaction.reactionmeddrapt` (patient reaction)
-for  **fatigue**:
+#### Example Query to match a single search term
+ 
+This example API call queries the `drug/event` endpoint for records where one of the reported patient reactions was **fatigue**. patient.reaction.reactionmeddrapt` (patient reaction) is searched for **fatigue**:
 
 ```html
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
 ```
 
-#### Matching all search terms (AND search terms)
+#### Example Query to match several terms using AND
 
 Search the  `drug/event` endpoint for **fatigue** as a reported patient reaction [and]{.underline} **Canada** as the country in which the reported event occurred. **+AND+** is used
 to join two search terms. The country code for Canada is **ca**.
