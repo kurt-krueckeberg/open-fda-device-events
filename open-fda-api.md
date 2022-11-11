@@ -90,7 +90,7 @@ Searches are of the form `search=field:term` and support these patterns:
 
 #### Example Query to match a single search term
  
-This example API call queries the `drug/event` endpoint for records where one of the reported patient reactions was **fatigue**. patient.reaction.reactionmeddrapt` (patient reaction) is searched for **fatigue**:
+This example API call queries the `drug/event` endpoint for records where one of the reported patient reactions was **fatigue**. `patient.reaction.reactionmeddrapt` (patient reaction) is searched for **fatigue**:
 
 ```html
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
