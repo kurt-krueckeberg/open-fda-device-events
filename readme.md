@@ -9,7 +9,7 @@ Only these Apps seem to reall work:
 
 ### Which fields from devie-api-field.yaml are returned by:
 
-- [Avdverse Veterinary Events](https://adversevetevents.com/search/).
+- [Adverse Veterinary Events](https://adversevetevents.com/search/).
 
 
 ## Understanding the OpenFDA RESTful API
