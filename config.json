@@ -1,0 +1,6 @@
+{
+    "base_uri": "https://api.fda.gov",
+    "queries": { 
+        "route": "device/event.json"
+    }
+ }
