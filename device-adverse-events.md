@@ -8,6 +8,9 @@ Consumers who have a so-called *adverse device event* can, then, submit a report
  are stored in the [MAUDE - Manufacturer and User Facility Device Experience](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) database. The database tables are regularly exported in large zip files that can be [downloaded](https://www.fda.gov/medical-devices/mandatory-reporting-requirements-manufacturers-importers-and-device-user-facilities/about-manufacturer-and-user-facility-device-experience-maude).
  
 The device adverse event reports [search page](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) offers **standard search options** worth remembering.
+ 
+## openFDA Offers a Better Alternative
+ 
 
 ### How adverse events are collected
 
