@@ -7,10 +7,11 @@
 Consumers who have a so-called *adverse device event* can, then, submit a report, called a [Medwatch Voluntary Report](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm?action=consumer.reporting1), to the FDA. Along with those by manufacturers and medical profesionals, these reports
  are stored in the [MAUDE - Manufacturer and User Facility Device Experience](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) database. The database tables are regularly exported in large zip files that can be [downloaded](https://www.fda.gov/medical-devices/mandatory-reporting-requirements-manufacturers-importers-and-device-user-facilities/about-manufacturer-and-user-facility-device-experience-maude).
  
-The device adverse event reports [search page](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) offers **standard search options** worth remembering.
+The device adverse event reports [search page](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) offers **standard search options** worth remembering. iBut the FDA's openFDA API offers a better, more convenient alternative.
  
-## openFDA Offers a Better Alternative
- 
+## openFDA
+
+For an overview of **openFDA** see [Open FDA API](https://github.com/kurt-krueckeberg/fda-device-events/edit/main/open-fda-api.md).        
 
 ### How adverse events are collected
 
@@ -39,9 +40,9 @@ Device adverse event reports vary significantly, depending on who initially repo
 come directly from user facilities (like hospitals) or device importers (distributors), while others come directly from manufacturers. Some involve adverse reactions in patients, while
 others are reports of defects that did not result in such adverse reactions.
 
-OpenFDA device adverse event results **loosely reflect fields found in forms used by manufacturers and members of the public to report these events**. Since reports may come
-from manufacturers, user facilities, distributors, and voluntary sources (such as patients and physicians) who are subject to different reporting requirements, the collected data in
-the adverse event system may not always capture every field and should not be interpreted as incomplete.
+OpenFDA device adverse event results **loosely reflect fields found in forms used by manufacturers and members of the public to report these events**. Since reports
+may come from manufacturers, user facilities, distributors, and voluntary sources (such as patients and physicians) who are subject to different reporting
+requirements, the collected data in the adverse event system may not always capture every field and should not be interpreted as incomplete.
 
 ## Device Adverse Event API
 
