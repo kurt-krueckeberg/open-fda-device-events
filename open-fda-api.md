@@ -1,19 +1,16 @@
-<section>
-
 # Open FDA API
 
 ## Introduction
 
-**openFDA** is an Elasticsearch-based API that serves public FDA data about drugs, devices, and foods. Two sample websites using the **openFDA** API are:
-
-- [Open Vigil FDA](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php) 
-
-- [Avdverse Veterinary Events](https://adversevetevents.com/search/).
-
+The **FDA** has created [openFDA](https://open.fda.gov/apis), an open source API, that serves public FDA data about drugs, devices, and foods. To permit flexible searches, openFDA uses the open source search platform [Elasticsearch](https://www.elastic.co/enterprise-search). 
+ 
+[AdverseVerterinaryEvents.com](https://adversevetevents.com/) is an example of a site that uses the **openFDA** API.
+ 
+## openFDA API  Overview
+ 
 The API returns e JSON object with two sections:
 
 1. `meta` &mdash; metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.
-
 
  ----------------------------------------------------------------------------------------------------------------------------------------------------------
  Meta Field          Details
@@ -144,5 +141,3 @@ Unless otherwise specified, the API will return only one matching record for a s
 allowed is 1000 for any single API call. If no limit is set, the API will return one matching record.
 
 RESUME [HERE](https://open.fda.gov/apis/advanced-syntax/)
-
-</section>
