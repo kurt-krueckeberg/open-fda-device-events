@@ -40,9 +40,7 @@ Anyone can get an authorization key for the API. It allows more search queries p
 
 - With no API key: 240 requests are allowed per minute, per IP address; and 1,000 requests are allowed per day, per IP address.
 
-- With API key: 240 requests are allowed per minute per key, and **120,000** requests are allowed per day, per key.
-
-Using your API key:
+- With API key: 240 rUsing your API key:
 
 ### Authentication
 
