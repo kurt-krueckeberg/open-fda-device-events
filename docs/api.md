@@ -152,7 +152,7 @@ See searchable fields for more about date_received. Brackets [ ] are used to spe
 
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
 
-Resume here
+Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
 
 ## Creating a Website that is a Vue.js Application
 
