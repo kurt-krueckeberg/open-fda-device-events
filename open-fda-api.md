@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The **FDA** has created [openFDA](https://open.fda.gov/apis), an open source API, that serves public FDA data about drugs, devices, and foods. To permit flexible searches, openFDA uses the open source search platform [Elasticsearch](https://www.elastic.co/enterprise-search). 
+The **FDA** created [openFDA](https://open.fda.gov/apis), an open source API, to enable flexible search of public FDA data about drugs, devices, and foods. To permit flexible searches, it uses the open source search platform [Elasticsearch](https://www.elastic.co/enterprise-search). 
  
 [AdverseVerterinaryEvents.com](https://adversevetevents.com/) is an example of a site that uses the **openFDA** API.
  
