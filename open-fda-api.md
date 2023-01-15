@@ -10,8 +10,6 @@ To make public FDA information about drugs, devices and foods, the **FDA** creat
 The [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/) drop-down box lists the numerous fields that can be searched.
  
 ## API Overview
-
-Presently you can search 
  
 The API returns e JSON object with two sections:
 
