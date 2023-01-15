@@ -40,7 +40,7 @@ others are reports of defects that did not result in such adverse reactions.
 
 OpenFDA device adverse event results **loosely reflect fields found in forms used by manufacturers and members of the public to report these events**. Since reports
 may come from manufacturers, user facilities, distributors, and voluntary sources (such as patients and physicians) who are subject to different reporting
-requirements, the collected data in the adverse event system may not always capture every field and should not be interpreted as incomplete.
+requirements, the collected data in the adverse event system may not always capture every field and should not be interpreted as complete.
 
 ## Device Adverse Event API
 
