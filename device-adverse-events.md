@@ -28,7 +28,7 @@ they would be saved as
 - **6176304-2**
 - **6176304-3**
 
-### Using [Medwatch]((https://www.accessdata.fda.gov/scripts/medwatch/index.cfm) to Report Adverse Events
+### Using [Medwatch](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm) to Report Adverse Events
 
 On the [MedWatch Online Voluntary Reporting Form](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm) website patients and health professionals can submit "adverse device event" reports. Heatlh professionals can submit
 [FDA Form 3500](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm?action=professional.reporting1) online and consumers 
