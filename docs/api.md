@@ -134,6 +134,26 @@ allowed is 1000 for any single API call. If no limit is set, the API will return
 
 RESUME [HERE](https://open.fda.gov/apis/advanced-syntax/)
 
+### Adverse Device Event Example Queries
+
+One adverse event report
+
+TODO: Incorprate somewhere in this documentation the "device searchable fields" info contained in searchable-fields-device-api.yaml, which I have annotated.
+
+Search for adverse events within a date range. A date range is specified using brackets [ ].
+
+    Search for all records with date_received between Jan 01, 2013 and Dec 31, 2014.
+
+    limit to 1 record.
+
+https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
+
+See searchable fields for more about date_received. Brackets [ ] are used to specify a range for date, number, or string fields.
+
+https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
+
+Resume here
+
 ## Creating a Website that is a Vue.js Application
 
 See:
