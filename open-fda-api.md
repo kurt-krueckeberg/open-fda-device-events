@@ -145,7 +145,7 @@ allowed is 1000 for any single API call. If no limit is set, the API will return
 
 RESUME [HERE](https://open.fda.gov/apis/advanced-syntax/)
 
-## Creating a Vue.js Application
+## Creating a Website that is a Vue.js Application
 
 See:
 
