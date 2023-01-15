@@ -5,7 +5,7 @@
 ## Medical Device Reporting 
 
 Consumers who have a so-called *adverse device event* can, then, submit a report, called a [Medwatch Voluntary Report](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm?action=consumer.reporting1), to the FDA. Along with those by manufacturers and medical profesionals, these reports
- are stored in the FDA's [MAUDE - Manufacturer and User Facility Device Experience](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) database. The database tables are regularly exported in large zip files that can be [downloaded](https://www.fda.gov/medical-devices/mandatory-reporting-requirements-manufacturers-importers-and-device-user-facilities/about-manufacturer-and-user-facility-device-experience-maude).
+ are stored in the [MAUDE - Manufacturer and User Facility Device Experience](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) database. The database tables are regularly exported in large zip files that can be [downloaded](https://www.fda.gov/medical-devices/mandatory-reporting-requirements-manufacturers-importers-and-device-user-facilities/about-manufacturer-and-user-facility-device-experience-maude).
  
 The device adverse event reports [search page](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) offers **standard search options** worth remembering.
 
