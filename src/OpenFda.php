@@ -5,7 +5,7 @@ namespace Fda;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 
-class OpenFda implements OpenFdaInterface {
+class OpenFda {
 
    private string $route;      
    private string $method;     // GET, POST, etc 
