@@ -19,7 +19,7 @@ OpenFDA device adverse event results **loosely reflect fields found in forms use
 may come from manufacturers, user facilities, distributors, and voluntary sources (such as patients and physicians) who are subject to different reporting
 requirements, the collected data in the adverse event system may not always capture every field and should not be interpreted as complete.
  
-## API Overview
+## openFDA API Overview
  
 Like all RESTful APIs, results are returned as a JSON object, and this search-results object has two sections:
 
