@@ -11,7 +11,7 @@ The [Device adverse event reports over time](https://open.fda.gov/apis/device/ev
  
 ## API Overview
  
-As in all RESTful APIs, the results are returned in a JSON object. This search-results object has these two sections:
+Like all RESTful APIs, results are returned as a JSON object. This search-results object has two sections:
 
 1. `results`, an arrray of results matchiing the search criteria. This is for non-count-returning queries.
 
