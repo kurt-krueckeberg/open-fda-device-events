@@ -38,11 +38,9 @@ Like all RESTful APIs, results are returned as a JSON object, and this search-re
 
 Anyone can get an authorization key for the API. It allows more search queries per minute:
 
-Request limits:
+- With no API key: 240 requests are allowed per minute, per IP address; and 1,000 requests are allowed per day, per IP address.
 
-- With no API key: 240 requests per minute, per IP address. 1,000 requests per day, per IP address.
-
-- With API key: 240 requests per minute per key. **120,000** requests per day, per key.
+- With API key: 240 requests are allowed per minute per key, and **120,000** requests are allowed per day, per key.
 
 Using your API key:
 
