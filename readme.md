@@ -1,21 +1,41 @@
-# OpenFDA Adverse Event Fetching Code
+# Open FDA API
 
-## OpenFDA Example Apps
+## Introduction
 
-See list of openFDA Apps [here](https://open.fda.gov/community/).
+To make public FDA information about drugs, devices and foods, the **FDA** created [openFDA](https://open.fda.gov/apis), a [RESTful API](https://aws.amazon.com/what-is/restful-api/) that uses the open source search platform [Elasticsearch](https://www.elastic.co/enterprise-search) to allow flexible text searches. Two examples of how you can use the openFDA API are:
+ 
+- [AdverseVerterinaryEvents.com](https://adversevetevents.com/) is an example of a site that uses the **openFDA** API.
+- [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/)
 
-Only these Apps seem to reall work:
-## Further Research 
+The [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/) drop-down box lists the numerous fields that can be searched.
 
-### Which fields from devie-api-field.yaml are returned by:
+## How Adverse Event Reports are Organized
 
-- [Adverse Veterinary Events](https://adversevetevents.com/search/).
+Device adverse event reports vary significantly, depending on who initially reported the event, what kind of event was reported, and whether there were follow-up reports. Some reports
+come directly from user facilities (like hospitals) or device importers (distributors), while others come directly from manufacturers. Some involve adverse reactions in patients, while
+others are reports of defects that did not result in such adverse reactions.
 
+OpenFDA device adverse event results **loosely reflect fields found in forms used by manufacturers and members of the public to report these events**. Since reports
+may come from manufacturers, user facilities, distributors, and voluntary sources (such as patients and physicians) who are subject to different reporting
+requirements, the collected data in the adverse event system may not always capture every field and should not be interpreted as complete.
 
-## Understanding the OpenFDA RESTful API
+## How Adverse Event Reports are Soted and Identified
 
-[API Basics](open-fda-api.md)
+Adverse events are collected through a series of safety reports. Each is identified by a 8-digit string
 
-[Device Adverse Events](device-adverse-events.md)
+  **6176304-1**.
 
+where the first 7 digits (before the hyphen) identify the individual report, and the last digit (after the hyphen) indicates the order of the report. For eample, if three reports are submitted (for the same event),
+they would be saved as
 
+- **6176304-1**
+- **6176304-2**
+- **6176304-3**
+ 
+## openFDA API Overview
+
+See the [open FDA API Introduction](docs/api.md).
+
+## Creating a Vue.js Application
+
+See [Vue applicaton](docs/vue.md).
