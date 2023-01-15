@@ -73,8 +73,27 @@ Searches are of the form `search=field:term` and support these patterns:
                                        of records, count the number of times that the unique values of a `field2` appear. Instead of looking at
                                        individual records, you can use the count parameter to count how often certain terms (like drug names or
                                        patient reactions) appear in the matching set of records.
- ------------------------------------- ------------------------------------------------------------------------------------------------------------ 
+ ------------------------------------- ------------------------------------------------------------------------------------------------------------
+ 
+### Adverse Device Event Example Queries
 
+One adverse event report
+
+TODO: Incorprate somewhere in this documentation the "device searchable fields" info contained in searchable-fields-device-api.yaml, which I have annotated.
+
+Search for adverse events within a date range. A date range is specified using brackets `[ ]`.
+
+    Search for all records with date_received between Jan 01, 2013 and Dec 31, 2014.
+
+    limit to 1 record.
+
+https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
+
+See searchable fields for more about date_received. Brackets [ ] are used to specify a range for date, number, or string fields.
+
+https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
+
+Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
 ### Examples of the Search Options 
 
 #### Example Query to match a single search term
@@ -133,26 +152,6 @@ Unless otherwise specified, the API will return only one matching record for a s
 allowed is 1000 for any single API call. If no limit is set, the API will return one matching record.
 
 RESUME [HERE](https://open.fda.gov/apis/advanced-syntax/)
-
-### Adverse Device Event Example Queries
-
-One adverse event report
-
-TODO: Incorprate somewhere in this documentation the "device searchable fields" info contained in searchable-fields-device-api.yaml, which I have annotated.
-
-Search for adverse events within a date range. A date range is specified using brackets [ ].
-
-    Search for all records with date_received between Jan 01, 2013 and Dec 31, 2014.
-
-    limit to 1 record.
-
-https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
-
-See searchable fields for more about date_received. Brackets [ ] are used to specify a range for date, number, or string fields.
-
-https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
-
-Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
 
 ## Creating a Website that is a Vue.js Application
 
