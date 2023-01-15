@@ -6,6 +6,8 @@ To make public FDA information about drugs, devices and foods, the **FDA** creat
  
 - [AdverseVerterinaryEvents.com](https://adversevetevents.com/) is an example of a site that uses the **openFDA** API.
 - [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/)
+
+The [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/) drop-down box shows the many fields that can be searched.
  
 ## openFDA API Overview
 
