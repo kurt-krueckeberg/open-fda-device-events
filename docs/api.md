@@ -81,11 +81,8 @@ One adverse event report
 
 TODO: Incorprate somewhere in this documentation the "device searchable fields" info contained in searchable-fields-device-api.yaml, which I have annotated.
 
-Search for adverse events within a date range. A date range is specified using brackets `[ ]`.
-
-    Search for all records with date_received between Jan 01, 2013 and Dec 31, 2014.
-
-    limit to 1 record.
+Search for adverse events within a date range. A date range is specified using brackets `[ ]`; for example, to search for all records with date_received between
+Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:
 
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
 
