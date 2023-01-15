@@ -2,12 +2,11 @@
 
 # Adverse Event Reports API
 
-## About the "Manufacturer and User Facility Device Experience" Database
+## Medical Device Reporting 
 
-The Manufacturer and User Facility Device Experience (MAUDE) database contains medical device adverse event reports submitted by mandatory reporters&mdash;manufacturers,
-importers and device user facilities&mdash;and voluntary reporters such as health care professionals, patients, and consumers. Currently, this data covers publically releasable records submitted
-to the FDA from about 1992 to the present. The data is updated weekly.
-
+Consumers who have a so-called *adverse device event* can submit a [Medwatch Voluntary Report](https://www.accessdata.fda.gov/scripts/medwatch/index.cfm?action=consumer.reporting1). Along with those by manufacturers and medical profesionals, these reports
+ are stored in the FDA's [MAUDE - Manufacturer and User Facility Device Experience](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) database. The database tables are regularly exported in large zip files that can be [downloaded](https://www.fda.gov/medical-devices/mandatory-reporting-requirements-manufacturers-importers-and-device-user-facilities/about-manufacturer-and-user-facility-device-experience-maude).
+ 
 The device adverse event reports [search page](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/search.cfm) offers **standard search options** worth remembering.
 
 ### How adverse events are collected
