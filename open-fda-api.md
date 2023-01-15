@@ -11,7 +11,7 @@ The [Device adverse event reports over time](https://open.fda.gov/apis/device/ev
  
 ## API Overview
  
-The API returns e JSON object with two sections:
+Like all RESTful APIs, an JSON object is returned. It has these two sections:
 
 1. `meta` &mdash; metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.
 
