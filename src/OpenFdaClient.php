@@ -5,7 +5,7 @@ namespace Prowl;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response; 
 
-class Prowl {
+class OpenFdaClient {
     
     private Client $client;
     private string $token; 
