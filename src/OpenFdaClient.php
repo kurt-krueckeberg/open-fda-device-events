@@ -40,19 +40,6 @@ class OpenFdaClient {
        return $response->getBody()->getContents();
    }
 
-/*   
-   private function studies(string $prefixid = '') : string
-   { 
-       $req = $this->query_url . "/" . $this->config['studies']['route'];
-      
-       $this->options['query'] = array('prefixid' => $prefixid);
-     
-       $response = $this->client->request('GET', $req, $this->options);
-
-       return $response->getBody()->getContents();
-   }
-*/
-
    public function studies()
    { 
       static $study = 'study';
