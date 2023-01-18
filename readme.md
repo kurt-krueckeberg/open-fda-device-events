@@ -2,9 +2,9 @@
 
 ## Introduction
 
-To make public FDA information about drugs, devices and foods, the **FDA** created [openFDA](https://open.fda.gov/apis), a [RESTful API](https://aws.amazon.com/what-is/restful-api/) that uses the open source search platform [Elasticsearch](https://www.elastic.co/enterprise-search) to allow flexible text searches. Two examples of how you can use the openFDA API are:
- 
-- [AdverseVerterinaryEvents.com](https://adversevetevents.com/) is an example of a site that uses the **openFDA** API.
+The [openFDA](https://open.fda.gov/apis) [RESTful API](https://aws.amazon.com/what-is/restful-api/) enables flexible queries of public FDA information about drugs, devices and foods, by supporting the [Elasticsearch](https://www.elastic.co/enterprise-search).
+search engine. An example of the openFDA API in action is:
+
 - [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/)
 
 The [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/) drop-down box lists the numerous fields that can be searched.
