@@ -1,6 +1,6 @@
 ## openFDA API Overview
  
-Like all RESTful APIs, results are returned as a JSON object, and this search-results object has two sections:
+Results are returned as a JSON object, and the search-results object has two sections:
 
 1. `results` &mdash; an arrray of results matchiing the search criteria. This is for non-count-returning queries.
 
