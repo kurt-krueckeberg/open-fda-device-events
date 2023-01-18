@@ -16,7 +16,9 @@ Anyone can get an authorization key for the API. It allows more search queries p
 
 - passing it in the HTTP header using the **basic auth** authentication scheme.``Authorization: Basic eW91ckFQSUtleUhlcmU6`
 
-## JSON Results
+## Queries
+
+### Results
  
 Results are returned as a JSON object, and the search-results object has two sections:
 
@@ -41,7 +43,7 @@ Results are returned as a JSON object, and the search-results object has two sec
  `meta.results.total` **Total number of records** matching the search criteria.
  ------------------- --------------------------------------------------------------------------------------------------------------------------------------
 
-## The Five API Query Parameters
+### The Five API Query Parameters
 
 The API supports the five query parameters lsited below. The `search` paramter is the the most importnat and useful one: 
 
@@ -77,7 +79,7 @@ Searches are of the form `search=field:term` and support these patterns:
                                        patient reactions) appear in the matching set of records.
  ------------------------------------- ------------------------------------------------------------------------------------------------------------
 
-Althoughh most are not usual relevant, mhere are a total of 114 device event fields that can be searched.
+Althoughh most are not usually relevant, mhere are a total of 114 device event fields that can be searched.
 
 
 |field_name|datatype|definition|
@@ -198,6 +200,8 @@ Althoughh most are not usual relevant, mhere are a total of 114 device event fie
 |source_type|array of strings|the manufacturer-reported source of the adverse event report.|
 |type_of_report|array of strings|the type of report.|
  
+### Examples
+
 ### Adverse Device Event Example Queries
 
 One adverse event report
@@ -214,9 +218,10 @@ See searchable fields for more about date_received. Brackets [ ] are used to spe
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
 
 Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
-### Examples of the Search Options 
 
-#### Example Query to match a single search term
+### Search Option Examples
+
+#### Match a single search term
  
 This example API call queries the `drug/event` endpoint for records where one of the reported patient reactions was **fatigue**. `patient.reaction.reactionmeddrapt` (patient reaction) is searched for **fatigue**:
 
@@ -224,7 +229,7 @@ This example API call queries the `drug/event` endpoint for records where one of
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
 ```
 
-#### Example Query to match several terms using AND
+#### Match several terms using AND
 
 Search the  `drug/event` endpoint for **fatigue** as a reported patient reaction and **Canada** as the country in which the reported event occurred. **AND** is used
 to join two search terms. The country code for Canada is **ca**.
