@@ -1,4 +1,4 @@
-## openFDA API Overview
+# openFDA API Overview
 
 ## Authorization
 
