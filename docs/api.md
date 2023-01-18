@@ -1,4 +1,22 @@
 ## openFDA API Overview
+
+## Authorization
+
+Anyone can get an authorization key for the API. It allows more search queries per minute:
+
+- With no API key: 240 requests are allowed per minute, per IP address; and 1,000 requests are allowed per day, per IP address.
+
+- With API key: 240 rUsing your API key:
+
+### Authentication
+
+ Authentication with your personal API key can be done by either:
+
+- passing your API key as the value of the `api_key`parameter. `https://api.fda.gov/drug/event.json?api_key=yourAPIKeyHere&search=...`
+
+- passing it in the HTTP header using the **basic auth** authentication scheme.``Authorization: Basic eW91ckFQSUtleUhlcmU6`
+
+## JSON Results
  
 Results are returned as a JSON object, and the search-results object has two sections:
 
@@ -22,22 +40,6 @@ Results are returned as a JSON object, and the search-results object has two sec
                      
  `meta.results.total` **Total number of records** matching the search criteria.
  ------------------- --------------------------------------------------------------------------------------------------------------------------------------
-
-## Authorization Key
-
-Anyone can get an authorization key for the API. It allows more search queries per minute:
-
-- With no API key: 240 requests are allowed per minute, per IP address; and 1,000 requests are allowed per day, per IP address.
-
-- With API key: 240 rUsing your API key:
-
-### Authentication
-
- Authentication with your personal API key can be done by either:
-
-- passing your API key as the value of the `api_key`parameter. `https://api.fda.gov/drug/event.json?api_key=yourAPIKeyHere&search=...`
-
-- passing it in the HTTP header using the **basic auth** authentication scheme.``Authorization: Basic eW91ckFQSUtleUhlcmU6`
 
 ## The Five API Query Parameters
 
