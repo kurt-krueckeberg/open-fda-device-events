@@ -202,7 +202,7 @@ Althoughh most are not usually relevant, mhere are a total of 114 device event f
  
 ### Examples
 
-### Adverse Device Event Example Queries
+### Adverse Device Event
 
 One adverse event report
 
@@ -219,7 +219,7 @@ https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231
 
 Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
 
-### Search Option Examples
+### Search Match Options
 
 #### Match a single search term
  
@@ -229,7 +229,7 @@ This example API call queries the `drug/event` endpoint for records where one of
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
 ```
 
-#### Match several terms using AND
+#### Match several terms (AND)
 
 Search the  `drug/event` endpoint for **fatigue** as a reported patient reaction and **Canada** as the country in which the reported event occurred. **AND** is used
 to join two search terms. The country code for Canada is **ca**.
@@ -238,7 +238,7 @@ to join two search terms. The country code for Canada is **ca**.
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1
 ```
 
-#### Matching any search terms (OR search terms)
+#### Matching any search terms (OR)
 
 Search the `drug/event` endpoint where either **fatigue** was a reported patient reaction *or* the country in which the event happened was **Canada**.
 
