@@ -40,16 +40,13 @@ There are two sections:
 
 There are five query parameters:
 
-- `search`: fields match criteria.
-
-- `sort`: either `:asc` or `:desc`.
-
-- `count`: count of unique values. The default is the 1000.
-
-- `limit`: the number of records to return. 1000 is largest allowed.
-
-- `skip`:  skip this number of matinching records. `skip` is used along with `limit` to paginate results. The largest allowed value is 25000.
-
+| Parameter| Meaning                                                                                                                          |        
+|:---------|:---------------------------------------------------------------------------------------------------------------------------------|
+|`search`|these fields with this criteria.|
+|`sort`| either `:asc` or `:desc`.|
+|`count`| of unique values. The default is the 1000.|
+|`limit`| the number of records to return. 1000 is largest allowed.|
+|`skip`|  skip this number of matinching records. `skip` is used along with `limit` to paginate results. The largest allowed value is 25000.|
 ### Search Options
 
 Searches are of the form `search=field:term` and support these patterns: 
