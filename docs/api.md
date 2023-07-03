@@ -18,9 +18,9 @@ Authentication using API key is done two ways:
 
 ## Queries
 
-### Results
+### JOSN object Results
  
-Results are returned as a JSON object, and the search-results object has two sections:
+The search-results object has two sections:
 
 1. `results` &mdash; an arrray of results matchiing the search criteria. This is for non-count-returning queries.
 
