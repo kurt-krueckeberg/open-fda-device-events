@@ -42,11 +42,11 @@ The five query parameters:
 
 | Parameter| Meaning                                                                                                                          |        
 |:---------|:---------------------------------------------------------------------------------------------------------------------------------|
-|`search`| search fields with match criteria specified.|
-|`sort`| `:asc` or `:desc`.|
-|`count`| of unique values. The default is the 1000.|
-|`limit`| the number of records to return. 1000 is largest allowed.|
-|`skip`|  skip this number of matinching records. `skip` is used along with `limit` to paginate results. The largest allowed value is 25000.|
+|`search`:| What to search for, in which fields. If you don’t specify a field to search, the API will search in every field.|
+|`sort`:| Sort the results of the search by the specified field in ascending or descending order by using the :asc or :desc modifier.|
+|`count`:| Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the 1000 most frequent values.|
+|`limit`:| Return up to this number of records that match the search parameter. Currently, the largest allowed value for the limit parameter is 1000.|
+|`skip`:| Skip this number of records that match the search parameter, then return the matching records that follow. Use in combination with limit to paginate results. Currently, the largest allowed value for the skip parameter is 25000. See Paging if you require paging through larger result sets.|
 
 ### Search Options
 
