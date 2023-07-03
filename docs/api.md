@@ -10,11 +10,11 @@ Authorization limits:
 
 ### Authentication
 
- Authentication using API key is done two ways:
+Authentication using API key is done two ways:
 
-- passing your API key as the value of the `api_key`parameter. `https://api.fda.gov/drug/event.json?api_key=yourAPIKeyHere&search=...`
+- passing it in the HTTP header using **basic auth** scheme: `Authorization: Basic eW91ckFQSUtleUhlcmU6`
 
-- passing it in the HTTP header using the **basic auth** authentication scheme.``Authorization: Basic eW91ckFQSUtleUhlcmU6`
+- passing your API key with each request using the `api_key` query string parameter: `https://api.fda.gov/drug/event.json?api_key=yourAPIKeyHere&search=...`
 
 ## Queries
 
