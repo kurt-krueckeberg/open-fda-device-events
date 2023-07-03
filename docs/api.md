@@ -40,7 +40,7 @@ There are two sections:
 
 The API suoorts five query parameters:
 
-| Parameter| How to Use it                                                                                                                      |        
+| Parameter type | How it is used                                                                                                                      |        
 |:---------|:---------------------------------------------------------------------------------------------------------------------------------|
 |`search`| What to search for, in which fields. If you don’t specify a field to search, the API will search in every field.|
 |`sort`| Sort the results of the search by the specified field in ascending or descending order by using the `:asc` or `:desc` modifier.|
@@ -77,16 +77,17 @@ This query looks in the **drug/event** endpoint for a record where **either** fa
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1
 ```
 
- -------------------------------------------------------------------------------------------------------------------------------------------------- 
- Search term                           Meaning
- ------------------------------------- ------------------------------------------------------------------------------------------------------------ 
- `search=field:term`                   Search within a specific `field` for a `term` 
+#### Sort in descending order ten results
 
- `search=field:term+AND+field:term`    Search for records that match **both** terms.
+This query looks in the **drug/event** endpoint for ten records and sorts them in descending order by received date.
 
- `search=field:term+field:term`        Search for records that match **either** of two terms. 
+```html
+https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
+```
 
- `sort=report_date:desc`               Sort records by a specific `field` in descending order.
+#### Count number of unique records???
+
+TODO:** Better explain and illustrate `count`.
 
  `search=field1:term&count=field2`     Search for matching records. Then within that set                                                        
                                        of records, count the number of times that the unique values of a `field2` appear. Instead of looking at
