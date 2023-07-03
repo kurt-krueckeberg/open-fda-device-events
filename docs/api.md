@@ -8,9 +8,9 @@ Authorization limits:
 
 - With API authorization key: 240 requests per minute; 120,000 requests per day.
 
-## Authentication
+## Authentication Method
 
-Authentication using API key is done two ways:
+Authentication using the API key is done two ways:
 
 - passing it in the HTTP header using **basic auth** scheme: `Authorization: Basic eW91ckFQSUtleUhlcmU6`
 
