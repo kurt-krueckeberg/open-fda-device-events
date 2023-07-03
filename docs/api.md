@@ -36,9 +36,9 @@ There are two sections:
    | `meta.results.limit` | **Number of records** in this return, defined by the *limit* query parameter. If there is no limit parameter, the API returns one result.                                                                       |
    | `meta.results.total` | **Total number of records** matching the search criteria. |
                                                                                                                                            
-### The Five API Query Parameters
+### Query Parameters
 
-The API supports the five query parameters lsited below. The `search` paramter is the the most importnat and useful one: 
+There are five query parameters. The `search` paramter is the most important:
 
 - `search`: used to specify Which fields to search for what. 
 
