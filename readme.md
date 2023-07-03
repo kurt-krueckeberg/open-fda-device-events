@@ -2,9 +2,7 @@
 
 ## Introduction
 
-The [openFDA](https://open.fda.gov/apis) [RESTful API](https://aws.amazon.com/what-is/restful-api/) supports [Elasticsearch](https://www.elastic.co/enterprise-search) queries of public FDA information about drugs, devices and foods. [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/) is an example.
-
-The [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/) drop-down box lists the numerous fields that can be searched.
+The [openFDA](https://open.fda.gov/apis) [RESTful API](https://aws.amazon.com/what-is/restful-api/) supports [Elasticsearch](https://www.elastic.co/enterprise-search) queries of public FDA information about drugs, devices and foods. [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/) is an example. It illustrates the numerous fields that can be searched (use the drop-down listbox to see all the possible search fields).
 
 ## How Adverse Event Reports are Organized
 
