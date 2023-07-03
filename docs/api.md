@@ -48,6 +48,15 @@ The API suoorts five query parameters:
 |`limit`| Return up to this number of records that match the search parameter. Currently, the largest allowed value for the limit parameter is 1000.|
 |`skip`| Skip this number of records that match the search parameter, then return the matching records that follow. Use in combination with limit to paginate results. Currently, the largest allowed value for the skip parameter is 25000. See Paging if you require paging through larger result sets.|
 
+### Search Syntax
+
+Searches have a special syntax: `search=field:term`. For example this query looks in the **drug/event** endpoint for a record where one of the reported patient reactions was fatigue. Search for records where the
+field `patient.reaction.reactionmeddrapt` (patient reaction) contains **fatigue**:
+
+```html
+https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
+```
+
 ### Search Options
 
 Searches are of the form `search=field:term` and support these patterns: 
