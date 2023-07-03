@@ -219,8 +219,10 @@ Although most are not usually relevant, mhere are a total of 114 device event fi
 |source_type|array of strings|the manufacturer-reported source of the adverse event report.|
 |type_of_report|array of strings|the type of report.|
 
-## Prospective List of relavant fields
-                               
+## Prospective List of relevant fields
+
+**TODO:** Make this a table.
+`
 ### Device-type related
 
 device.generic_name The generic or common name of the suspect medical device or a generally descriptive name (e.g.  urological catheter, heart pacemaker, patient restraint, etc.
