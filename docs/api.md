@@ -8,7 +8,7 @@ Authorization limits:
 
 - With API authorization key: 240 requests per minute; 120,000 requests per day.
 
-### Authentication
+## Authentication
 
 Authentication using API key is done two ways:
 
@@ -95,8 +95,9 @@ TODO:** Better explain and illustrate `count`.
                                        patient reactions) appear in the matching set of records.
  ------------------------------------- ------------------------------------------------------------------------------------------------------------
 
-Althoughh most are not usually relevant, mhere are a total of 114 device event fields that can be searched.
+### All Device-Event search fileds
 
+Althoughh most are not usually relevant, mhere are a total of 114 device event fields that can be searched.
 
 |field_name|datatype|definition|
 |----------|--------|----------|
