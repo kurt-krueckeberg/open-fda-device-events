@@ -42,7 +42,7 @@ There are five query parameters:
 
 - `search`: fields match criteria.
 
-- `sort`: `:asc` or `:desc`.
+- `sort`: either `:asc` or `:desc`.
 
 - `count`: count of unique values. The default is the 1000.
 
