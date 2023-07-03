@@ -2,9 +2,9 @@
 
 ## Authorization
 
-An authorization key for the API allows one to make more API calls per minute:
+Authorization limits:
 
-- With no API key: 240 requests allowed per minute, per IP address; 1,000 requests per day, per IP address.
+- WithoutAPI key: 240 requests allowed per minute, per IP address; 1,000 requests per day, per IP address.
 
 - With API key: 240 requests per minute; 120,000 requests per day.
 
