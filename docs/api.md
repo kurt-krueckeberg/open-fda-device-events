@@ -65,7 +65,7 @@ Search terms can be combined with **AND** to match both search terms or with **+
 
 This query looks in the  **drug/event** endpoint for a record where **both** fatigue was a reported patient reaction **and** the country in which the event happened was Canada:
 
-``html
+```html
  https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1
 ```
 
