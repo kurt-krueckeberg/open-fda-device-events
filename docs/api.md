@@ -50,7 +50,7 @@ The API suoorts five query parameters:
 
 ### Search Syntax
 
-Searches have a special syntax: `search=field:term`. For example this query looks in the **drug/event** endpoint for a record where one of the reported patient reactions was fatigue. Search for records where the
+Searches have a special syntax: `search=field:term`. This query, for example, looks in the **drug/event** endpoint for a record where one of the reported patient reactions was fatigue. Search for records where the
 field `patient.reaction.reactionmeddrapt` (patient reaction) contains **fatigue**:
 
 ```html
