@@ -42,14 +42,13 @@ There are five query parameters:
 
 - `search`: fields match criteria.
 
-- `sort`: sort the results of the search by the specified field in ascending or descending order using the `:asc` or `:desc`.
+- `sort`: `:asc` or `:desc`.
 
-- `count`: counts unique values of a certain field, for all the records that matched the search parameter. By default, the 1000 most frequent values are returned.
+- `count`: count of unique values. The default is the 1000.
 
-- `limit`: return up to this number of records that match the search parameter. The largest allowed value for the limit parameter is 1000.
+- `limit`: the number of records to return. 1000 is largest allowed.
 
-- `skip`:  used it in combination with `limit` to paginate results. It skip this number of records that match the search parameter. The largest allowed value for
-   the skip parameter is 25000.
+- `skip`:  skip this number of matinching records. `skip` is used along with `limit` to paginate results. The largest allowed value is 25000.
 
 ### Search Options
 
