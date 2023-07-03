@@ -38,7 +38,7 @@ There are two sections:
                                                                                                                                            
 ### Query Parameters
 
-The five query parameters:
+The API suoorts five query parameters:
 
 | Parameter| Meaning                                                                                                                          |        
 |:---------|:---------------------------------------------------------------------------------------------------------------------------------|
