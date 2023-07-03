@@ -1,4 +1,4 @@
-# openFDA API Overview
+openFDA API Overview
 
 ## Authorization
 
@@ -20,7 +20,7 @@ Authentication using API key is done two ways:
 
 ### JSON Results
  
-The results object has two sections:
+There are two sections:
 
 1. `results` &mdash; for non-count-returning queries, the arrray of matches.
 
