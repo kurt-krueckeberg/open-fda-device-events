@@ -40,7 +40,7 @@ There are two sections:
 
 There are five query parameters:
 
-- `search`: the fields and match criteria.
+- `search`: search fields and matching criteria.
 
 - `sort`: sort the results of the search by the specified field in ascending or descending order using the `:asc` or `:desc`.
 
