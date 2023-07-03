@@ -38,9 +38,9 @@ There are two sections:
                                                                                                                                            
 ### Query Parameters
 
-There are five query parameters. The `search` paramter is the most important:
+There are five query parameters:
 
-- `search`: used to specify Which fields to search for what. 
+- `search`: the fields and match criteria.
 
 - `sort`: sort the results of the search by the specified field in ascending or descending order using the `:asc` or `:desc`.
 
