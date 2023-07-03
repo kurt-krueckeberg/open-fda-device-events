@@ -18,7 +18,7 @@ Authentication using API key is done two ways:
 
 ## Queries
 
-### JOSN object Results
+### JSON Results
  
 The search-results object has two sections:
 
