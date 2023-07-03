@@ -77,7 +77,7 @@ This query looks in the **drug/event** endpoint for a record where **either** fa
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1
 ```
 
-#### Sort in descending order ten results
+#### Sort ten results in descending order 
 
 This query looks in the **drug/event** endpoint for ten records and sorts them in descending order by received date.
 
