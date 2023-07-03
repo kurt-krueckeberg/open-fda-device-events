@@ -4,9 +4,9 @@
 
 Authorization limits:
 
-- WithoutAPI key: 240 requests allowed per minute, per IP address; 1,000 requests per day, per IP address.
+- Without API authorization key: 240 requests allowed per minute, per IP address; 1,000 requests per day, per IP address.
 
-- With API key: 240 requests per minute; 120,000 requests per day.
+- With API authorization key: 240 requests per minute; 120,000 requests per day.
 
 ### Authentication
 
