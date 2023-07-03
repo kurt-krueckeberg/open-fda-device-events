@@ -28,7 +28,7 @@ The search-results object has two sections:
    - disclaimer
    - data license link
    - last-updated date
-   - total matching records, if applicable.
+   - total matches, if applicable.
 
  ----------------------------------------------------------------------------------------------------------------------------------------------------------
  Meta Field          Details
