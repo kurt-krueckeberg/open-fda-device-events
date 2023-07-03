@@ -42,7 +42,7 @@ The five query parameters:
 
 | Parameter| Meaning                                                                                                                          |        
 |:---------|:---------------------------------------------------------------------------------------------------------------------------------|
-|`search`|these fields with this criteria.|
+|`search`| search fields with match criteria.|
 |`sort`| `:asc` or `:desc`.|
 |`count`| of unique values. The default is the 1000.|
 |`limit`| the number of records to return. 1000 is largest allowed.|
