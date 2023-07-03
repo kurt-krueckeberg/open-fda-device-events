@@ -24,7 +24,8 @@ The search-results object has two sections:
 
 1. `results` &mdash; for non-count-returning queries, the arrray of matches.
 
-2. `meta` &mdash; metadata including:
+2. `meta` &mdash; metadata:
+
 
    | Meta Field           | Details                                                                                                                                                                                                         |
    |:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
