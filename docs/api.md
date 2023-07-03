@@ -27,8 +27,8 @@ The search-results object has two sections:
 2. `meta` &mdash; metadata including:
 
    ----------------------------------------------------------------------------------------------------------------------------------------------------------
-   Meta Field          Details
-   ------------------- --------------------------------------------------------------------------------------------------------------------------------------
+   Meta Field           Details
+   -------------------- --------------------------------------------------------------------------------------------------------------------------------------
    `meta.disclaimer`    details about openFDA data and limitations of the dataset.
                        
    `meta.license`       link to license terms that govern data within openFDA.
@@ -40,7 +40,7 @@ The search-results object has two sections:
    `meta.results.limit` **number of records** returned. Corresponds to the *limit* query parameter. If there is no limit parameter, the API returns one result.
                        
    `meta.results.total` **Total number of records** that match the search criteria.
-   ------------------- --------------------------------------------------------------------------------------------------------------------------------------
+   -------------------- --------------------------------------------------------------------------------------------------------------------------------------
 
 ### The Five API Query Parameters
 
