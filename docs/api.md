@@ -221,7 +221,7 @@ Although most are not usually relevant, mhere are a total of 114 device event fi
 
 ## Prospective List of relevant fields
 
-**TODO:** Make this a table.
+**TODO:** Make this a table by copying the table abve but only retaining the rows with the fields below.
 `
 ### Device-type related
 
