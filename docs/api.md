@@ -101,12 +101,6 @@ Although most are not usually relevant, mhere are a total of 114 device event fi
 
 **TODO:** Double chekc this prospective list of essential fields:
 
-- `generic device` type of device
-- `device type` (code?) `
-- `date` of event (for date ranges)
-- `patient report` text
-- ?
-
 |field_name|datatype|definition|
 |----------|--------|----------|
 |adverse_event_flag|string|whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient.|
@@ -224,6 +218,46 @@ Although most are not usually relevant, mhere are a total of 114 device event fi
 |single_use_flag|string|whether the device was labeled for single use or not.|
 |source_type|array of strings|the manufacturer-reported source of the adverse event report.|
 |type_of_report|array of strings|the type of report.|
+
+## Prospective List of relavant fields
+                               
+### Device-type related
+
+device.generic_name The generic or common name of the suspect medical device or a generally descriptive name (e.g.  urological catheter, heart pacemaker, patient restraint, etc.
+
+device.device_report_product_code Three-letter fda product classification code. medical devices are classified under 21 cfr parts  862-892.
+    
+### Event-type related
+
+event_type  That is associated with an adverse event
+
+adverse_event_flag  Whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient.
+
+### Report content related
+
+type_of_report 	array of strings 	the type of report
+
+mdr_text.text 	narrative text or problem description.
+
+mdr_text.text_type_code  String that describes the type of narrative contained within the text field.
+
+mdr_text.date_report  	date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.
+
+mdr_report_key 	string 	a unique identifier for a report.
+
+### Date related
+
+patient.date_received 	string 	date the report about this patient was received.
+
+### Outcome related
+
+patient.sequence_number_outcome 	array of strings 	outcome associated with the adverse event for this patient. expect wide variability in this field; each string in the list of strings may contain multiple outcomes, separated by commas, and with numbers, which may or may not be related to the patient_sequence_number.
+
+### Date related
+
+report_date 	string 	date of the report, or the date that the report was forwarded to the manufacturer and/or the fda.
+
+report_source_code 	string 	source of the adverse event report
  
 ### Examples
 
