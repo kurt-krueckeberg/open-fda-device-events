@@ -26,7 +26,7 @@ The search-results object has two sections:
 
 2. `meta` &mdash; metadata including:
    - disclaimer
-   - link to data license
+   - data license link
    - last-updated date
    - total matching records, if applicable.
 
