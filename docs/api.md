@@ -221,10 +221,10 @@ Although most are not usually relevant, there are a total of 114 device event fi
 
 |field\_name|datatype|definition|
 |----------|--------|----------|
-|adverse\_event\_flag|string|whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient.|
+|adverse\_event\_flag|string|whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient. TODO: Isn't this always true or yes in the case of an adverse device event?|
 |device.device\_report\_product\_code|string|three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>.|
-|device.generic\_name|string|the generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).|
-|event\_type|string|outcomes associated with the adverse event.|
+|device.generic\_name|string|the generic or common name of the suspect medical device or a generally descriptive name. TODO: Is LASIK a generic device or part of a generic device?).|
+|event\_type|string|outcomes associated with the adverse event. TODO: Is theres a pre-defined set of event types?|
 |mdr\_text.date\_report|string|date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.|
 |mdr\_text.text|string|narrative text or problem description.|
 |mdr\_text.text\_type\_code|string|string that describes the type of narrative contained within the text field.|
