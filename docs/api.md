@@ -234,6 +234,8 @@ Although most are not usually relevant, there are a total of 114 device event fi
 |report\_source\_code|string|source of the adverse event report|
 |type\_of\_report|array of strings|the type of report.|
 
+See these [Device Codes from Classification Database](device-codes.md).
+
 ### Examples
 
 ### Adverse Device Event
