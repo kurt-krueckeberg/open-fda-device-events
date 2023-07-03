@@ -14,7 +14,7 @@ OpenFDA device adverse event results **loosely reflect fields found in forms use
 may come from manufacturers, user facilities, distributors, and voluntary sources (such as patients and physicians) who are subject to different reporting
 requirements, the collected data in the adverse event system may not always capture every field and should not be interpreted as complete.
 
-## How Adverse Event Reports are Soted and Identified
+## How Adverse Event Reports are Identified
 
 Adverse events are collected through a series of safety reports. Each is identified by a 8-digit string
 
