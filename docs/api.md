@@ -10,7 +10,7 @@ Authorization limits:
 
 ### Authentication
 
- Authentication with your personal API key can be done by either:
+ Authentication using API key is done two ways:
 
 - passing your API key as the value of the `api_key`parameter. `https://api.fda.gov/drug/event.json?api_key=yourAPIKeyHere&search=...`
 
