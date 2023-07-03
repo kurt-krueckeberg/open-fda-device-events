@@ -22,9 +22,13 @@ Authentication using API key is done two ways:
  
 The search-results object has two sections:
 
-1. `results` &mdash; an arrray of results matchiing the search criteria. This is for non-count-returning queries.
+1. `results` &mdash; for non-count-returning queries, the arrray of matches.
 
-2. `meta` &mdash; metadata about the query, including a disclaimer, link to data license, last-updated date, and total matching records, if applicable.
+2. `meta` &mdash; metadata including:
+   - disclaimer
+   - link to data license
+   - last-updated date
+   - total matching records, if applicable.
 
  ----------------------------------------------------------------------------------------------------------------------------------------------------------
  Meta Field          Details
