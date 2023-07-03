@@ -95,7 +95,7 @@ TODO:** Better explain and illustrate `count`.
                                        patient reactions) appear in the matching set of records.
  ------------------------------------- ------------------------------------------------------------------------------------------------------------
 
-### All Device-Event search fileds
+### All Device-Event search fields
 
 Althoughh most are not usually relevant, mhere are a total of 114 device event fields that can be searched.
 
