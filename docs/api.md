@@ -26,21 +26,14 @@ The search-results object has two sections:
 
 2. `meta` &mdash; metadata including:
 
-   ----------------------------------------------------------------------------------------------------------------------------------------------------------
-   Meta Field           Details
-   -------------------- --------------------------------------------------------------------------------------------------------------------------------------
-   `meta.disclaimer`    details about openFDA data and limitations of the dataset.
-                       
-   `meta.license`       link to license terms that govern data within openFDA.
-                       
-   `meta.last_updated`  last time the openFDA API was itself updated.
-                       
-   `meta.results.skip`  **offset (page number) of results,**. Corresponds to the *skip* query parameter.
-                       
-   `meta.results.limit` **number of records** returned. Corresponds to the *limit* query parameter. If there is no limit parameter, the API returns one result.
-                       
-   `meta.results.total` **Total number of records** that match the search criteria.
-   -------------------- --------------------------------------------------------------------------------------------------------------------------------------
+| Meta Field           | Details                                                                                                                                                                                                         |
+|:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `meta.disclaimer`    | Important details notes about openFDA data and limitations of the dataset.                                                                                                                                      |
+| `meta.license`       | Link to a web page with license terms that govern data within openFDA.                                                                                                                                          |
+| `meta.last_updated`  | The last date when this openFDA endpoint was updated. Note that this does not correspond to the most recent record for the endpoint or dataset. Rather, it is the last time the openFDA API was itself updated. |
+| `meta.results.skip`  | **Offset (page) of results,** defined by the *skip* query parameter.                                                                                                                                            |
+| `meta.results.limit` | **Number of records** in this return, defined by the *limit* query parameter. If there is no limit parameter, the API returns one result.                                                                       |
+| `meta.results.total` | **Total number of records** matching the search criteria.                                                                                                                                                       |
 
 ### The Five API Query Parameters
 
