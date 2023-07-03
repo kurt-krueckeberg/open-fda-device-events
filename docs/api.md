@@ -22,7 +22,7 @@ Authentication using API key is done two ways:
  
 There are two sections:
 
-1. `results` &mdash; for non-count-returning queries, the arrray of matches.
+1. `results` &mdash; An arrray of matches (for non-counting querires).
 
 2. `meta` &mdash; metadata:
 
