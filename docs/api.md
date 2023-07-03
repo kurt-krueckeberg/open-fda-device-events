@@ -20,7 +20,7 @@ Authentication using API key is done two ways:
 
 ### JSON Results
  
-The search-results object has two sections:
+The results object has two sections:
 
 1. `results` &mdash; for non-count-returning queries, the arrray of matches.
 
