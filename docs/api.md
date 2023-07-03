@@ -97,7 +97,15 @@ https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 
 ### All Device-Event search fields
 
-Althoughh most are not usually relevant, mhere are a total of 114 device event fields that can be searched.
+Although most are not usually relevant, mhere are a total of 114 device event fields that can be searched.
+
+**TODO:** Double chekc this prospective list of essential fields:
+
+- `generic device` type of device
+- `device type` (code?) `
+- `date` of event (for date ranges)
+- `patient report` text
+- ?
 
 |field_name|datatype|definition|
 |----------|--------|----------|
