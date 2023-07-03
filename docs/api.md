@@ -40,7 +40,7 @@ There are two sections:
 
 The API suoorts five query parameters:
 
-| Parameter| Meaning                                                                                                                          |        
+| Parameter| Parameter's Use                                                                                                                       |        
 |:---------|:---------------------------------------------------------------------------------------------------------------------------------|
 |`search`| What to search for, in which fields. If you don’t specify a field to search, the API will search in every field.|
 |`sort`| Sort the results of the search by the specified field in ascending or descending order by using the :asc or :desc modifier.|
