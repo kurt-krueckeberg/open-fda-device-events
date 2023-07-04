@@ -29,7 +29,7 @@ they would be saved as
  
 ## openFDA API Overview
 
-See the [open FDA API Introduction](docs/api.md).
+Go to [open FDA API Introduction](docs/api.md).
 
 ## Creating a Vue.js Application
 
