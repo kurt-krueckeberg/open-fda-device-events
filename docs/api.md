@@ -234,6 +234,11 @@ Although most are not usually relevant, there are a total of 114 device event fi
 |report\_source\_code|string|source of the adverse event report|
 |type\_of\_report|array of strings|the type of report.|
 
+### FDA MEdical Device Product Codes
+
+The FDA uses a three-letter, upper-case product code to uniquely identify medical devices. They are listed in the downloadable file [foiclass.zip]() file
+
+
 See these [LAISK-related Device Codes from Classification Database](lasik-device-codes.md).
 
 ### Examples
