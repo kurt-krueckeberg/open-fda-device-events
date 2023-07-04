@@ -2,7 +2,7 @@
 
 ## JSON Results
  
-There are two sections:
+Query results are in two sections:
 
 1. `results` &mdash; An arrray of matches (for non-counting querires).
 
