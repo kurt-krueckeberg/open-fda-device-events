@@ -237,7 +237,25 @@ Although most are not usually relevant, there are a total of 114 device event fi
 |report\_source\_code|string|source of the adverse event report|
 |type\_of\_report|array of strings|the type of report.|
 
-See these [LAISK-related Device Codes from Classification Database](lasik-device-codes.md).
+These are the relevant LASIK-related device codes:
+
+|Code|Device name                                                                                    |
+|:---|:----------------------------------------------------------------------------------------------|
+|OCL|Surgical Device, For Cutting, Coagulation, And/Or Ablation Of Tissue, Including Cardiac Tissue|
+|HQF|Laser, Ophthalmic|
+|LZS|Excimer Laser System|
+|OTL|Femtosecond Laser System For Refractive Correction|
+
+**Note:** The femtosecond laser creates the flap instead of a keratome.
+
+The keratome devices have codes of:
+
+|Code|Device name             |
+|:---|:-----------------------|
+|HMY|Keratome, Battery-Powered|
+|HNO|Keratome, Ac-Powered|
+|MYD|Keratome, Water Jet|
+|NKY|Blade, Keratome, Reprocessed|
 
 ### Examples
 
