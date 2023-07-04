@@ -220,7 +220,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 ## My Prospective Subset of relevant fields
 
 |field\_name|datatype|definition|
-|----------|--------|----------|
+|:---------|:-------|:---------|
 |adverse\_event\_flag|string|whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient. TODO: Isn't this always true or yes in the case of an adverse device event?|
 |device.device\_report\_product\_code|string|three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>.|
 |device.generic\_name|string|the generic or common name of the suspect medical device or a generally descriptive name. TODO: Is LASIK a generic device or part of a generic device?).|
