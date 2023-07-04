@@ -16,9 +16,9 @@ requirements, the collected data in the adverse event system may not always capt
 
 ## How Adverse Event Reports are Identified
 
-Adverse events are collected through a series of safety reports, each identified by a 8-digit string
+Adverse events are collected through a series of safety reports, each identified by a 8-digit string, for exampe:
 
-  **6176304-1**.
+  **6176304-1**
 
 where the first 7 digits (before the hyphen) identify the individual report, and the last digit (after the hyphen) indicates the order of the report. For eample, if three reports are submitted (for the same event),
 they would be saved as
