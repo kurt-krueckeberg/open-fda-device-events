@@ -8,5 +8,5 @@
 
 - [API Examples](api-examples.md)
 
-- [API Syntax](api-syntax-rules)
+- [API Syntax](api-syntax-rules.md)
 
