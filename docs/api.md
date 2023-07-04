@@ -236,7 +236,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 
 ### FDA Medical Device Product Codes
 
-The FDA uses three-letter, upper-case codes to identify each medical devices. The complete list of device codes can be [downloaded](foiclass.zip). Its fields are define on the [here](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
+The FDA uses three-letter, upper-case codes to identify every medical device. The device codes can be [downloaded](foiclass.zip). The files's other fields are explained [here](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
 
 See these [LAISK-related Device Codes from Classification Database](lasik-device-codes.md).
 
