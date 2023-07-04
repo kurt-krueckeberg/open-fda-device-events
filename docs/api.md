@@ -26,7 +26,6 @@ There are two sections:
 
 2. `meta` &mdash; metadata:
 
-
    | Meta Field           | Details                                                                                                                                                                                                         |
    |:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | `meta.disclaimer`    | Important details notes about openFDA data and limitations of the dataset.                                                                                                                                      |
@@ -119,7 +118,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 |device.device\_evaluated\_by\_manufacturer|string|whether the suspect device was evaluated by the manufacturer.|
 |device.device\_event\_key|string|documentation forthcoming.|
 |device.device\_operator|string|the person using the medical device at the time of the adverse event. this may be a health professional, a lay person, or may not be applicable.|
-|device.device\_report\_product\_code|string|three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>.|
+|device.device\_report\_product\_code[^1]|string|three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>.|
 |device.device\_sequence\_number|string|number identifying this particular device. for example, the first device object will have the value 1. this is an enumeration corresponding to the number of patients involved in an adverse event.|
 |device.expiration\_date\_of\_device|string|if available; this date is often be found on the device itself or printed on the accompanying packaging.|
 |device.generic\_name|string|the generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).|
@@ -217,6 +216,10 @@ Although most are not usually relevant, there are a total of 114 device event fi
 |source\_type|array of strings|the manufacturer-reported source of the adverse event report.|
 |type\_of\_report|array of strings|the type of report.|
 
+[^1]:The `device.product_code` is a three-letter, upper-case code that uniquely identifies every medical device. The list of all the FDA device codes can be [downloaded](foiclass.zip). See the file's description [here](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
+
+> **Note:**
+> The `device.product_code` is a three-letter, upper-case code that uniquely identifies every medical device. The list of all the FDA device codes can be [downloaded](foiclass.zip). See the file's description [here](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
 ## My Prospective Subset of relevant fields
 
 |field\_name|datatype|definition|
@@ -233,10 +236,6 @@ Although most are not usually relevant, there are a total of 114 device event fi
 |report\_date|string|date of the report, or the date that the report was forwarded to the manufacturer and/or the fda.|
 |report\_source\_code|string|source of the adverse event report|
 |type\_of\_report|array of strings|the type of report.|
-
-### FDA Medical Device Product Codes
-
-The FDA uses three-letter, upper-case codes to identify every medical device. The device codes can be [downloaded](foiclass.zip). The files's other fields are explained [here](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
 
 See these [LAISK-related Device Codes from Classification Database](lasik-device-codes.md).
 
