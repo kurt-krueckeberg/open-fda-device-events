@@ -122,10 +122,12 @@ Although most are not usually relevant, there are a total of 114 device event fi
 
 [^1]:The complete list of three-letter product classification codes can be [downloaded](foiclass.zip). See the file's
 [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
-> **Note:**
-> The complete list of three-letter product classification codes can be [downloaded](foiclass.zip). See the file's [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
-# List of the Relevant Fields
 
+```{note}
+The complete list of three-letter product classification codes can be [downloaded](https://www.accessdata.fda.gov/premarket/ftparea/foiclass.zip). See the file's [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
+```
+
+## List of the Relevant Fields
 |field\_name|datatype|definition|
 |:---------|:-------|:---------|
 |adverse\_event\_flag|string|whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient. TODO: Isn't this always true or yes in the case of an adverse device event?|

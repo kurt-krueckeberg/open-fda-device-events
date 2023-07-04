@@ -70,6 +70,7 @@ https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 
 **TODO:** Better explain and illustrate `count`.
 
+ --------------------------------------------------------------------------------------------------------------------------------------------------
  `search=field1:term&count=field2`     Search for matching records. Then within that set                                                        
                                        of records, count the number of times that the unique values of a `field2` appear. Instead of looking at
                                        individual records, you can use the count parameter to count how often certain terms (like drug names or
