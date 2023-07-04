@@ -245,17 +245,13 @@ These are the relevant LASIK-related device codes:
 |HQF|Laser, Ophthalmic|
 |LZS|Excimer Laser System|
 |OTL|Femtosecond Laser System For Refractive Correction|
-
-**Note:** The femtosecond laser creates the flap instead of a keratome.
-
-The keratome devices have codes of:
-
-|Code|Device name             |
-|:---|:-----------------------|
 |HMY|Keratome, Battery-Powered|
 |HNO|Keratome, Ac-Powered|
 |MYD|Keratome, Water Jet|
 |NKY|Blade, Keratome, Reprocessed|
+
+> **Note:**
+> The femtosecond laser is a laser used to create the LASIK falp (instead of a keratome).
 
 ### Examples
 
