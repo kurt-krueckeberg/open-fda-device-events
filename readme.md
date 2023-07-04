@@ -16,7 +16,7 @@ requirements, the collected data in the adverse event system may not always capt
 
 ## How Adverse Event Reports are Identified
 
-Adverse events are collected through a series of safety reports. Each is identified by a 8-digit string
+Adverse events are collected through a series of safety reports, each identified by a 8-digit string
 
   **6176304-1**.
 
