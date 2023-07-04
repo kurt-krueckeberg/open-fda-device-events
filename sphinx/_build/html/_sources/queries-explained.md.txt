@@ -34,9 +34,7 @@ The API supports five query parameters:
 Searches have a special syntax: `search=field:term`. This query, for example, looks in the **drug/event** endpoint for a record where one of the reported patient reactions was fatigue. Search for records where the
 field `patient.reaction.reactionmeddrapt` (patient reaction) contains **fatigue**:
 
-```html
-https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
-```
+`https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1`
 
 Search terms can be combined with **AND** to match both search terms or with **+** to match either of two terms.
 
@@ -46,33 +44,27 @@ Search terms can be combined with **AND** to match both search terms or with **+
 
 This query looks in the  **drug/event** endpoint for a record where **both** fatigue was a reported patient reaction **and** the country in which the event happened was Canada:
 
-```html
- https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1
-```
+`https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1`
 
 #### Matching any search terms
 
 This query looks in the **drug/event** endpoint for a record where **either** fatigue was a reported patient reaction **or** the country in which the event happened was Canada:
 
-```html
-https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1
-```
+`https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1`
 
 ### Sort ten results in descending order 
 
 This query looks in the **drug/event** endpoint for ten records and sorts them in descending order by received date.
 
-```html
-https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
-```
+`https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10`
 
 ### Count number of unique records???
 
 **TODO:** Better explain and illustrate `count`.
 
- --------------------------------------------------------------------------------------------------------------------------------------------------
- `search=field1:term&count=field2`     Search for matching records. Then within that set                                                        
-                                       of records, count the number of times that the unique values of a `field2` appear. Instead of looking at
-                                       individual records, you can use the count parameter to count how often certain terms (like drug names or
-                                       patient reactions) appear in the matching set of records.
- ------------------------------------- ------------------------------------------------------------------------------------------------------------
+| `count` syntax                      | Explanation                                                                                                                      |
+|:------------------------------------|:----------------------------------------------------------------------------------------------------------------|
+| `search=field1:term&count=field2`   | Search for matching records. Then within that set of records, count the number of times that the unique values \ |
+|                                     | of a `field2` appear. Instead of looking at individual records, you can use the count parameter to count how \ |
+|                                     | often certain terms (like drug names or patient reactions) appear in the matching set of records.  |
+

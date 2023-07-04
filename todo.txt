@@ -1,7 +1,0 @@
-Add this infor to Open FDA API:
-
-- Enable Composer and its autoladiing
-
-- searchable fields. Fields that apply to all endpoints.
-
-- device adverse event-specific fields listed in api-device-fields.yaml.

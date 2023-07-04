@@ -9,7 +9,8 @@ Welcome to Open FDA's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   
+   introduction.md
    authorization.md
    queries-explained.md
    device-event-fields.md
