@@ -1,6 +1,6 @@
-## Queries
+# Queries
 
-### JSON Results
+## JSON Results
  
 There are two sections:
 
@@ -17,7 +17,7 @@ There are two sections:
    | `meta.results.limit` | **Number of records** in this return, defined by the *limit* query parameter. If there is no limit parameter, the API returns one result.                                                                       |
    | `meta.results.total` | **Total number of records** matching the search criteria. |
                                                                                                                                            
-### Query Parameters
+## Query Parameters
 
 The API supports five query parameters:
 
@@ -29,7 +29,7 @@ The API supports five query parameters:
 |`limit`| Return up to this number of records that match the search parameter. Currently, the largest allowed value for the limit parameter is 1000.|
 |`skip`| Skip this number of records that match the search parameter, then return the matching records that follow. Use in combination with limit to paginate results. Currently, the largest allowed value for the skip parameter is 25000. See Paging if you require paging through larger result sets.|
 
-### Search Syntax
+## Search Syntax
 
 Searches have a special syntax: `search=field:term`. This query, for example, looks in the **drug/event** endpoint for a record where one of the reported patient reactions was fatigue. Search for records where the
 field `patient.reaction.reactionmeddrapt` (patient reaction) contains **fatigue**:
@@ -40,9 +40,9 @@ https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fa
 
 Search terms can be combined with **AND** to match both search terms or with **+** to match either of two terms.
 
-#### Examples
+### Examples
 
-##### Matching all search terms
+#### Matching all search terms
 
 This query looks in the  **drug/event** endpoint for a record where **both** fatigue was a reported patient reaction **and** the country in which the event happened was Canada:
 
@@ -50,7 +50,7 @@ This query looks in the  **drug/event** endpoint for a record where **both** fat
  https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1
 ```
 
-##### Matching any search terms
+#### Matching any search terms
 
 This query looks in the **drug/event** endpoint for a record where **either** fatigue was a reported patient reaction **or** the country in which the event happened was Canada:
 
@@ -58,7 +58,7 @@ This query looks in the **drug/event** endpoint for a record where **either** fa
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1
 ```
 
-#### Sort ten results in descending order 
+### Sort ten results in descending order 
 
 This query looks in the **drug/event** endpoint for ten records and sorts them in descending order by received date.
 
@@ -66,7 +66,7 @@ This query looks in the **drug/event** endpoint for ten records and sorts them i
 https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 ```
 
-#### Count number of unique records???
+### Count number of unique records???
 
 **TODO:** Better explain and illustrate `count`.
 

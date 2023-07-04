@@ -1,4 +1,4 @@
-## All Device-Event search fields
+# All Device-Event search fields
 
 Although most are not usually relevant, there are a total of 114 device event fields that can be searched.
 
@@ -124,7 +124,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
 > **Note:**
 > The complete list of three-letter product classification codes can be [downloaded](foiclass.zip). See the file's [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
-## List of the Relevant Fields
+# List of the Relevant Fields
 
 |field\_name|datatype|definition|
 |:---------|:-------|:---------|

@@ -1,6 +1,6 @@
-## Examples
+# Examples
 
-### Adverse Device Event
+## Adverse Device Event
 
 One adverse event report
 
@@ -21,9 +21,9 @@ https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231
 
 Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
 
-### Search Match Options
+## Search Match Options
 
-#### Match a single search term
+### Match a single search term
  
 This example API call queries the `drug/event` endpoint for records where one of the reported patient reactions was **fatigue**. `patient.reaction.reactionmeddrapt` (patient reaction) is searched for **fatigue**:
 
@@ -31,7 +31,7 @@ This example API call queries the `drug/event` endpoint for records where one of
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
 ```
 
-#### Match several terms (AND)
+### Match several terms (AND)
 
 Search the  `drug/event` endpoint for **fatigue** as a reported patient reaction and **Canada** as the country in which the reported event occurred. **AND** is used
 to join two search terms. The country code for Canada is **ca**.
@@ -40,7 +40,7 @@ to join two search terms. The country code for Canada is **ca**.
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1
 ```
 
-#### Matching any search terms (OR)
+### Matching any search terms (OR)
 
 Search the `drug/event` endpoint where either **fatigue** was a reported patient reaction *or* the country in which the event happened was **Canada**.
 
@@ -48,7 +48,7 @@ Search the `drug/event` endpoint where either **fatigue** was a reported patient
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1
 ```
 
-#### Sort Results
+### Sort Results
 
 Search the `drug/event` endpoint for: 
 
@@ -60,7 +60,7 @@ Search the `drug/event` endpoint for:
 https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 ```
 
-#### Counting records where certain terms occur
+### Counting records where certain terms occur
 
 Search the `drug/event` endpoint for all records and count the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.
 
