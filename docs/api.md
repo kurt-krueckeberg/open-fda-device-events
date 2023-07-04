@@ -100,7 +100,7 @@ https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 Although most are not usually relevant, there are a total of 114 device event fields that can be searched.
 
 |field\_name|datatype|definition|
-|----------|--------|----------|
+|:---------|:-------|:---------|
 |adverse\_event\_flag|string|whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient.|
 |date\_facility\_aware|string|date the user facility’s medical personnel or the importer (distributor) became aware that the device has or may have caused or contributed to the reported event.|
 |date\_manufacturer\_received|string|date when the applicant, manufacturer, corporate affiliate, etc. receives information that an adverse event or medical device malfunction has occurred. this would apply to a report received anywhere in the world. for follow-up reports, the date that the follow-up information was received.|
