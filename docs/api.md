@@ -220,7 +220,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
 > **Note:**
 > The complete list of three-letter product classification codes can be [downloaded](foiclass.zip). See the file's [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
-## My Prospective Subset of relevant fields
+## List of the Relevant Fields
 
 |field\_name|datatype|definition|
 |:---------|:-------|:---------|
