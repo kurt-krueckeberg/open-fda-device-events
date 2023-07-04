@@ -251,7 +251,7 @@ These are the relevant LASIK-related device codes:
 |NKY|Blade, Keratome, Reprocessed|
 
 > **Note:**
-> The femtosecond laser is a laser used to create the LASIK falp (instead of a keratome).
+> The femtosecond laser is a laser used to create the flap instead of a keratome.
 
 ### Examples
 
