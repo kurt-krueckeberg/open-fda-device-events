@@ -9,7 +9,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'German Emigration Records'
+project = 'Open FDA API'
 copyright = "MIT License"
 author = 'Kurt Krueckeberg'
 release = '0.7'
