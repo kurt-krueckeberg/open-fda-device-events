@@ -216,10 +216,10 @@ Although most are not usually relevant, there are a total of 114 device event fi
 |source\_type|array of strings|the manufacturer-reported source of the adverse event report.|
 |type\_of\_report|array of strings|the type of report.|
 
-[^1]:The `device.product_code` is a three-letter, upper-case code that uniquely identifies every medical device. The list of all the FDA device codes can be [downloaded](foiclass.zip). See the file's description [here](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
-
+[^1]:A complete list of the three-letter product classification codes can be downloaded [here](foiclass.zip). See the content
+[description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
 > **Note:**
-> The `device.product_code` is a three-letter, upper-case code that uniquely identifies every medical device. The list of all the FDA device codes can be [downloaded](foiclass.zip). See the file's description [here](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
+> A complete list of the three-letter product classification codes can be downloaded [here](foiclass.zip). See the content [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
 ## My Prospective Subset of relevant fields
 
 |field\_name|datatype|definition|
