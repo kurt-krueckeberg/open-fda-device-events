@@ -234,7 +234,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 |report\_source\_code|string|source of the adverse event report|
 |type\_of\_report|array of strings|the type of report.|
 
-See these [Device Codes from Classification Database](device-codes.md).
+See these [LAISK-related Device Codes from Classification Database](lasik-device-codes.md).
 
 ### Examples
 
@@ -247,11 +247,15 @@ TODO: Incorprate somewhere in this documentation the "device searchable fields" 
 Search for adverse events within a date range. A date range is specified using brackets `[ ]`; for example, to search for all records with date_received between
 Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:
 
+```html
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
+```
 
 See searchable fields for more about date_received. Brackets [ ] are used to specify a range for date, number, or string fields.
 
+```html
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
+```
 
 Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
 
