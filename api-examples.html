@@ -146,7 +146,7 @@
 <p>TODO: Incorprate somewhere in this documentation the “device searchable fields” info contained in searchable-fields-device-api.yaml, which I have annotated.</p>
 <p>Search for adverse events within a date range. A date range is specified using brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>; for example, to search for all records with date_received between
 Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span> </code></p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
 <p>See searchable fields for more about date_received. Brackets [ ] are used to specify a range for date, number, or string fields.</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
 <p>Resume <a class="reference external" href="https://open.fda.gov/apis/device/event/example-api-queries/">here</a></p>
@@ -156,7 +156,7 @@ Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p
 <section id="match-a-single-search-term">
 <h3>Match a single search term<a class="headerlink" href="#match-a-single-search-term" title="Permalink to this heading">¶</a></h3>
 <p>This example API call queries the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for records where one of the reported patient reactions was <strong>fatigue</strong>. <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> (patient reaction) is searched for <strong>fatigue</strong>:</p>
-<p>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:”fatigue”&amp;limit=1</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1</span></code></p>
 </section>
 <section id="match-several-terms-and">
 <h3>Match several terms (AND)<a class="headerlink" href="#match-several-terms-and" title="Permalink to this heading">¶</a></h3>

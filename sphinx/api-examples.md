@@ -9,7 +9,7 @@ TODO: Incorprate somewhere in this documentation the "device searchable fields" 
 Search for adverse events within a date range. A date range is specified using brackets `[ ]`; for example, to search for all records with date\_received between
 Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:
 
-`https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1 `
+`https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1`
 
 See searchable fields for more about date\_received. Brackets [ ] are used to specify a range for date, number, or string fields.
 
@@ -23,9 +23,7 @@ Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
  
 This example API call queries the `drug/event` endpoint for records where one of the reported patient reactions was **fatigue**. `patient.reaction.reactionmeddrapt` (patient reaction) is searched for **fatigue**:
 
-
-https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
-
+`https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1`
 
 ### Match several terms (AND)
 
