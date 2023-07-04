@@ -234,7 +234,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 |report\_source\_code|string|source of the adverse event report|
 |type\_of\_report|array of strings|the type of report.|
 
-### FDA MEdical Device Product Codes
+### FDA Medical Device Product Codes
 
 The FDA uses a three-letter, upper-case code to uniquely identify medical devices. A complete list of all the FDA device codes is in [foiclass.zip]() file and described [here](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
 
