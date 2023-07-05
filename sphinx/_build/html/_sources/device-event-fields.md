@@ -141,32 +141,33 @@ See also the [yml file](searchable-fields-device-api.yaml) I downloaded (althoug
 
 | field\_name | datatype | definition |
 | ----------- | -------- | ---------- |
-| adverse\_event\_flag | string | whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient. TODO: Isn't this always true or yes in the case of an adverse device event? |
-| device.device\_report\_product\_code | string | three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>. |
-| device.generic\_name | string | the generic or common name of the suspect medical device or a generally descriptive name. TODO: Is LASIK a generic device or part of a generic device?). |
-| event\_type | string | outcomes associated with the adverse event. TODO: Is theres a pre-defined set of event types? |
-| mdr\_text.date\_report | string | date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event. |
-| mdr\_text.text | string | narrative text or problem description. |
-| mdr\_text.text\_type\_code | string | string that describes the type of narrative contained within the text field. |
-| patient.date\_received | string | date the report about this patient was received. |
-| patient.sequence\_number\_outcome | array of strings | outcome associated with the adverse event for this patient. expect wide variability in this field; each string in the list of strings may contain multiple outcomes, separated by commas, and with numbers, which may or may not be related to the `patient\_sequence\_number`. |
-| report\_date | string | date of the report, or the date that the report was forwarded to the manufacturer and/or the fda. |
-| report\_source\_code | string | source of the adverse event report |
-| type\_of\_report | array of strings | the type of report. |
+| `adverse_event_flag` | string | whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient. TODO: Isn't this always true or yes in the case of an adverse device event? |
+| `device.device_report_product_code` | string | three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>. |
+| `device.generic_name` | string | the generic or common name of the suspect medical device or a generally descriptive name. TODO: Is LASIK a generic device or part of a generic device?). |
+| `event_type` | string | outcomes associated with the adverse event. TODO: Is theres a pre-defined set of event types? |
+| `mdr_text.date_report` | string | date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event. |
+| `mdr_text.text` | string | narrative text or problem description. |
+| `mdr_text.text_type_code` | string | string that describes the type of narrative contained within the text field. |
+| `patient.date_received` | string | date the report about this patient was received. |
+| `patient.sequence_number_outcome` | array of strings | outcome associated with the adverse event for this patient. expect wide variability in this field; each string in the list of strings may contain multiple outcomes, separated by commas, and with numbers, which may or may not be related to the `patient_sequence_number`. |
+| `report_date` | string | date of the report, or the date that the report was forwarded to the manufacturer and/or the fda. |
+| `report_source_code` | string | source of the adverse event report |
+| `type_of_report` | array of strings | the type of report. |
 :::
 
 These are the relevant refractive surgery-related device codes:
 
 |Code|Device name                                                                                    |
 |:---|:----------------------------------------------------------------------------------------------|
-|OCL|Surgical Device, For Cutting, Coagulation, And/Or Ablation Of Tissue, Including Cardiac Tissue|
-|HQF|Laser, Ophthalmic|
-|LZS|Excimer Laser System|
-|OTL|Femtosecond Laser System For Refractive Correction|
-|HMY|Keratome, Battery-Powered|
-|HNO|Keratome, Ac-Powered|
-|MYD|Keratome, Water Jet|
-|NKY|Blade, Keratome, Reprocessed|
+|**OCL**|Surgical Device, For Cutting, Coagulation, And/Or Ablation Of Tissue, Including Cardiac Tissue|
+|**HQF**|Laser, Ophthalmic|
+|**LZS**|Excimer Laser System|
+|**OTL**|Femtosecond Laser System For Refractive Correction|
+|**HMY**|Keratome, Battery-Powered|
+|**HNO**|Keratome, Ac-Powered|
+|**MYD**|Keratome, Water Jet|
+|**NKY**|Blade, Keratome, Reprocessed|
 
-> **Note:**
-> The femtosecond laser is a laser used to create the flap instead of a keratome.
+:::{note}
+The femtosecond laser is a laser used to create the flap instead of a keratome.
+:::
