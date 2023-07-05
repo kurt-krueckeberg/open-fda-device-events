@@ -1,4 +1,6 @@
-# All Device-Event search fields
+# Search Fields
+
+## Table of All Search Fields
 
 Although most are not usually relevant, there are a total of 114 device event fields that can be searched.
 
