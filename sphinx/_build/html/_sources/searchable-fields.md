@@ -132,7 +132,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 
 :::{note}
 The complete list of three-letter product classification codes can be [downloaded](https://www.accessdata.fda.gov/premarket/ftparea/foiclass.zip). See the file's [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
-See also the [yml file](annotated-device-fields.yml) I downloaded (although I can' t remember from where) that describes the fields in a bit more detail.
+See also the annotated [yml file](annotated-device-fields.yml) I downloaded and editad (although I can' t remember from where) that describes the fields in a bit more detail.
 :::
 
 ## List of the Relevant Refractive Surgery Fields
@@ -155,6 +155,10 @@ See also the [yml file](annotated-device-fields.yml) I downloaded (although I ca
 | `report_date` | string | date of the report, or the date that the report was forwarded to the manufacturer and/or the fda. |
 | `report_source_code` | string | source of the adverse event report |
 | `type_of_report` | array of strings | the type of report. |
+:::
+
+:::{important}
+Add the harmonzed fields relevant to adverse device endpoint
 :::
 
 These are the relevant refractive surgery-related device codes:
