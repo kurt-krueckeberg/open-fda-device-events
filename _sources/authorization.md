@@ -1,6 +1,6 @@
 # Authorization
 
-You do not need a key to use the Open FDA API, but a key authorizes more requests per day. These are the current API request limits:
+You do not need a key to use the Open FDA API, but a key authorizes more requests per day. These are the current request limits:
 
 - Without API authorization key:
   - 240 requests allowed per minute, per IP address
