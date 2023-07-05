@@ -12,8 +12,10 @@ Welcome to Open FDA's documentation!
    
    introduction.md
    authorization.md
-   queries-explained.md
+   queries-overview.md
+   harmonizaiton.md
    query-examples.md
+   advanced-syntax.md
    searchable-fields.md
    api-examples.md
    api-syntax-rules.md
