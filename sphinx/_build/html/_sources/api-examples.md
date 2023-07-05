@@ -17,7 +17,7 @@ See searchable fields for more about date\_received. Brackets [ ] are used to sp
 
 Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
 
-## Search Match Options
+## Match Options Example
 
 ### Match a single search term
  
