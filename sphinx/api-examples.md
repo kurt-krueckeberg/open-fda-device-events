@@ -38,17 +38,7 @@ Search the `drug/event` endpoint where either **fatigue** was a reported patient
 
 `https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1`
 
-### Sort Results
-
-Search the `drug/event` endpoint for: 
-
-- ten records
-
-- sorted in descending order by `receivedate`
-
-`https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10`
-
-### Counting records where certain terms occur
+### Counting Unique records where certain terms occur
 
 Search the `drug/event` endpoint for all records and count the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.
 
@@ -58,3 +48,12 @@ Search the `drug/event` endpoint for all records and count the top patient react
   count whole phrases ("**injection site reaction**") instead of individual words (**injection**, **site**, and **reaction** separately)
 
 `https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
+## Sort Results
+
+Search the `drug/event` endpoint for: 
+
+- ten records
+
+- sorted in descending order by `receivedate`
+
+`https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10`

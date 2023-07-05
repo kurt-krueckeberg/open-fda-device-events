@@ -280,10 +280,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match-a-single-search-term">Match a single search term</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match-several-terms-and">Match several terms (AND)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-any-search-terms-or">Matching any search terms (OR)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-results">Sort Results</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-records-where-certain-terms-occur">Counting records where certain terms occur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-unique-records-where-certain-terms-occur">Counting Unique records where certain terms occur</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-results">Sort Results</a></li>
 </ul>
             </nav>
         </div>
@@ -326,17 +326,8 @@ to join two search terms. The country code for Canada is <strong>ca</strong>.</p
 <p>Search the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint where either <strong>fatigue</strong> was a reported patient reaction <em>or</em> the country in which the event happened was <strong>Canada</strong>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+occurcountry:&quot;ca&quot;&amp;limit=1</span></code></p>
 </section>
-<section id="sort-results">
-<h3>Sort Results<a class="headerlink" href="#sort-results" title="Permalink to this heading">#</a></h3>
-<p>Search the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for:</p>
-<ul class="simple">
-<li><p>ten records</p></li>
-<li><p>sorted in descending order by <code class="docutils literal notranslate"><span class="pre">receivedate</span></code></p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</span></code></p>
-</section>
-<section id="counting-records-where-certain-terms-occur">
-<h3>Counting records where certain terms occur<a class="headerlink" href="#counting-records-where-certain-terms-occur" title="Permalink to this heading">#</a></h3>
+<section id="counting-unique-records-where-certain-terms-occur">
+<h3>Counting Unique records where certain terms occur<a class="headerlink" href="#counting-unique-records-where-certain-terms-occur" title="Permalink to this heading">#</a></h3>
 <p>Search the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for all records and count the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
 <ul class="simple">
 <li><p>search all records</p></li>
@@ -345,6 +336,15 @@ count whole phrases (”<strong>injection site reaction</strong>”) instead of 
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
 </section>
+</section>
+<section id="sort-results">
+<h2>Sort Results<a class="headerlink" href="#sort-results" title="Permalink to this heading">#</a></h2>
+<p>Search the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for:</p>
+<ul class="simple">
+<li><p>ten records</p></li>
+<li><p>sorted in descending order by <code class="docutils literal notranslate"><span class="pre">receivedate</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</span></code></p>
 </section>
 </section>
 
@@ -401,10 +401,10 @@ count whole phrases (”<strong>injection site reaction</strong>”) instead of 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match-a-single-search-term">Match a single search term</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match-several-terms-and">Match several terms (AND)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-any-search-terms-or">Matching any search terms (OR)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-results">Sort Results</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-records-where-certain-terms-occur">Counting records where certain terms occur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-unique-records-where-certain-terms-occur">Counting Unique records where certain terms occur</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-results">Sort Results</a></li>
 </ul>
   </nav></div>
 
