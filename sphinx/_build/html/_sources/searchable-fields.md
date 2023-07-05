@@ -28,7 +28,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 | `device.device_evaluated_by_manufacturer` | string | whether the suspect device was evaluated by the manufacturer. |
 | `device.device_event_key` | string | documentation forthcoming. |
 | `device.device_operator` | string | the person using the medical device at the time of the adverse event. this may be a health professional, a lay person, or may not be applicable. |
-| `device.device_report_product_code[^1]` | string | three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>. |
+| `device.device_report_product_code`[^1] | string | three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>. |
 | `device.device_sequence_number` | string | number identifying this particular device. for example, the first device object will have the value 1. this is an enumeration corresponding to the number of patients involved in an adverse event. |
 | `device.expiration_date_of_device` | string | if available; this date is often be found on the device itself or printed on the accompanying packaging. |
 | `device.generic_name` | string | the generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.). |
