@@ -13,7 +13,7 @@ The JSON results object has two sections:
    | `meta.disclaimer`    | Important details notes about openFDA data and limitations of the dataset.                                                                                                                                      |
    | `meta.license`       | Link to a web page with license terms that govern data within openFDA.                                                                                                                                          |
    | `meta.last_updated`  | The last date when this openFDA endpoint was updated. Note that this does not correspond to the most recent record for the endpoint or dataset. Rather, it is the last time the openFDA API was itself updated. |
-   | `meta.results.skip`  | The skip is the **page offset** of the results.
+   | `meta.results.skip`  | The skip is the **offset** of the results.
    | `meta.results.limit` | **Number of records** returned, as defined by the *limit* query parameter. If there is no limit parameter, the API returns one result. |
    | `meta.results.total` | **Total number of records** matching the search criteria. |
                                                                                                                                            
