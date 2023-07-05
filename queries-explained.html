@@ -275,7 +275,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-results">JSON Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-results-object">JSON Results Object</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-parameters">Query Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-syntax">Search Syntax</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
@@ -284,7 +284,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-ten-results-in-descending-order">Sort ten results in descending order</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-number-of-unique-records">Count number of unique records???</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-number-of-unique-matching-records">Count number of unique matching records</a></li>
 </ul>
 </li>
 </ul>
@@ -300,8 +300,8 @@ document.write(`
                   
   <section id="queries">
 <h1>Queries<a class="headerlink" href="#queries" title="Permalink to this heading">#</a></h1>
-<section id="json-results">
-<h2>JSON Results<a class="headerlink" href="#json-results" title="Permalink to this heading">#</a></h2>
+<section id="json-results-object">
+<h2>JSON Results Object<a class="headerlink" href="#json-results-object" title="Permalink to this heading">#</a></h2>
 <p>The JSON results object has two sections:</p>
 <ol class="arabic">
 <li><p><code class="docutils literal notranslate"><span class="pre">results</span></code> — An arrray of matches (for non-counting querires).</p></li>
@@ -323,10 +323,10 @@ document.write(`
 <td class="text-left"><p>The last date when this openFDA endpoint was updated. Note that this does not correspond to the most recent record for the endpoint or dataset. Rather, it is the last time the openFDA API was itself updated.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">meta.results.skip</span></code></p></td>
-<td class="text-left"><p><strong>Offset (page) of results,</strong> defined by the <em>skip</em> query parameter.</p></td>
+<td class="text-left"><p>The skip is the <strong>page offset</strong> of the results.</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">meta.results.limit</span></code></p></td>
-<td class="text-left"><p><strong>Number of records</strong> in this return, defined by the <em>limit</em> query parameter. If there is no limit parameter, the API returns one result.</p></td>
+<td class="text-left"><p><strong>Number of records</strong> returned, as defined by the <em>limit</em> query parameter. If there is no limit parameter, the API returns one result.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">meta.results.total</span></code></p></td>
 <td class="text-left"><p><strong>Total number of records</strong> matching the search criteria.</p></td>
@@ -353,28 +353,32 @@ document.write(`
 <td class="text-left"><p>Sort the results of the search by the specified field in ascending or descending order by using the <code class="docutils literal notranslate"><span class="pre">:asc</span></code> or <code class="docutils literal notranslate"><span class="pre">:desc</span></code> modifier.</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">count</span></code></p></td>
-<td class="text-left"><p>Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the 1000 most frequent values.</p></td>
+<td class="text-left"><p>Count the <strong>number of unique values</strong> of a certain field, for all the records that matched the search parameter. By default, the 1000 most frequent values are returned.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">limit</span></code></p></td>
-<td class="text-left"><p>Return up to this number of records that match the search parameter. Currently, the largest allowed value for the limit parameter is 1000.</p></td>
+<td class="text-left"><p>Return up to this number of records that match the search parameter. Currently, the largest allowed limit is 1000.</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">skip</span></code></p></td>
-<td class="text-left"><p>Skip this number of records that match the search parameter, then return the matching records that follow. Use in combination with limit to paginate results. Currently, the largest allowed value for the skip parameter is 25000. See Paging if you require paging through larger result sets.</p></td>
+<td class="text-left"><p>Skip this number of records that match the search parameter, then return the matching records that follow. Use <code class="docutils literal notranslate"><span class="pre">skip</span></code> in combination with <code class="docutils literal notranslate"><span class="pre">limit</span></code> to paginate results. Currently, the largest allowed value for the skip parameter is 25000.</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="search-syntax">
 <h2>Search Syntax<a class="headerlink" href="#search-syntax" title="Permalink to this heading">#</a></h2>
-<p>Searches have a special syntax: <code class="docutils literal notranslate"><span class="pre">search=field:term</span></code>. This query, for example, looks in the <strong>drug/event</strong> endpoint for a record where one of the reported patient reactions was fatigue. Search for records where the
-field <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> (patient reaction) contains <strong>fatigue</strong>:</p>
+<p>Searches have a special syntax</p>
+<p><code class="docutils literal notranslate"><span class="pre">search=field:term</span></code></p>
+<p>where the search term immediately follows the field being search, separated by a colon. For example, this query looks in the <strong>drug/event</strong> endpoint for a
+record where one of the reported patient reactions was fatigue:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1</span></code></p>
-<p>Search terms can be combined with <strong>AND</strong> to match both search terms or with <strong>+</strong> to match either of two terms.</p>
+<p>Here <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> is the patient reaction to a prescribed medication. It is searched for <strong>fatigue</strong>.</p>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
 <section id="matching-all-search-terms">
 <h4>Matching all search terms<a class="headerlink" href="#matching-all-search-terms" title="Permalink to this heading">#</a></h4>
-<p>This query looks in the  <strong>drug/event</strong> endpoint for a record where <strong>both</strong> fatigue was a reported patient reaction <strong>and</strong> the country in which the event happened was Canada:</p>
+<p>Search terms can be combined with <strong>AND</strong> to match both search terms or with <strong>+</strong> to match either of two terms. The query below looks in the
+<strong>drug/event</strong> endpoint for a record where <strong>both</strong> fatigue was a reported patient reaction <strong>and</strong> the country in which the event happened
+was Canada:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+AND+occurcountry:&quot;ca&quot;&amp;limit=1</span></code></p>
 </section>
 <section id="matching-any-search-terms">
@@ -385,12 +389,11 @@ field <code class="docutils literal notranslate"><span class="pre">patient.react
 </section>
 <section id="sort-ten-results-in-descending-order">
 <h3>Sort ten results in descending order<a class="headerlink" href="#sort-ten-results-in-descending-order" title="Permalink to this heading">#</a></h3>
-<p>This query looks in the <strong>drug/event</strong> endpoint for ten records and sorts them in descending order by received date.</p>
+<p>This query looks in the <strong>drug/event</strong> endpoint for ten records and sorts them in descending order by received date:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</span></code></p>
 </section>
-<section id="count-number-of-unique-records">
-<h3>Count number of unique records???<a class="headerlink" href="#count-number-of-unique-records" title="Permalink to this heading">#</a></h3>
-<p><strong>TODO:</strong> Better explain and illustrate <code class="docutils literal notranslate"><span class="pre">count</span></code>.</p>
+<section id="count-number-of-unique-matching-records">
+<h3>Count number of unique matching records<a class="headerlink" href="#count-number-of-unique-matching-records" title="Permalink to this heading">#</a></h3>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p><code class="docutils literal notranslate"><span class="pre">count</span></code> syntax</p></th>
@@ -399,16 +402,14 @@ field <code class="docutils literal notranslate"><span class="pre">patient.react
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">search=field1:term&amp;count=field2</span></code></p></td>
-<td class="text-left"><p>Search for matching records. Then within that set of records, count the number of times that the unique values \</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
-<td class="text-left"><p>of a <code class="docutils literal notranslate"><span class="pre">field2</span></code> appear. Instead of looking at individual records, you can use the count parameter to count how \</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
-<td class="text-left"><p>often certain terms (like drug names or patient reactions) appear in the matching set of records.</p></td>
+<td class="text-left"><p>Search for matching records and, then, within that set of records, count the number of times that the unique values of a <code class="docutils literal notranslate"><span class="pre">field2</span></code> appear.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instead of looking at individual records, you can use the count parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.</p>
+</div>
 </section>
 </section>
 </section>
@@ -461,7 +462,7 @@ field <code class="docutils literal notranslate"><span class="pre">patient.react
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-results">JSON Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-results-object">JSON Results Object</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-parameters">Query Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-syntax">Search Syntax</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
@@ -470,7 +471,7 @@ field <code class="docutils literal notranslate"><span class="pre">patient.react
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-ten-results-in-descending-order">Sort ten results in descending order</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-number-of-unique-records">Count number of unique records???</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-number-of-unique-matching-records">Count number of unique matching records</a></li>
 </ul>
 </li>
 </ul>
