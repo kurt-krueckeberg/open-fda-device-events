@@ -158,7 +158,7 @@ See also the annotated [yml file](annotated-device-fields.yml) I downloaded and 
 :::
 
 :::{important}
-Add the harmonzed fields relevant to adverse device endpoint
+Add the harmonized fields relevant to adverse device endpoint
 :::
 
 These are the relevant refractive surgery-related device codes:
