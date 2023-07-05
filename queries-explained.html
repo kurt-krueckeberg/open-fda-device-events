@@ -410,6 +410,12 @@ was Canada:</p>
 <p class="admonition-title">Note</p>
 <p>Instead of looking at individual records, you can use the count parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.</p>
 </div>
+<p>This query looks in the <strong>drug/event</strong> endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records
+that matched is summed, providing a useful summary.</p>
+<p>Search for all records</p>
+<p>We <code class="docutils literal notranslate"><span class="pre">count</span></code> the number of records matching the terms in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code>. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix here tells the API to count whole
+phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately):</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
 </section>
 </section>
 </section>
