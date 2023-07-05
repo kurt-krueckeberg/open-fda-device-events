@@ -1,4 +1,4 @@
-# Search Fields
+# Searchable Fields
 
 ## Table of All Search Fields
 
@@ -132,7 +132,7 @@ Although most are not usually relevant, there are a total of 114 device event fi
 
 :::{note}
 The complete list of three-letter product classification codes can be [downloaded](https://www.accessdata.fda.gov/premarket/ftparea/foiclass.zip). See the file's [description](https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description).
-See also the [yml file](searchable-fields-device-api.yaml) I downloaded (although I can' t remember from where) that describes the fields in a bit more detail.
+See also the [yml file](annotated-device-fields.yml) I downloaded (although I can' t remember from where) that describes the fields in a bit more detail.
 :::
 
 ## List of the Relevant Refractive Surgery Fields

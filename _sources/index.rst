@@ -14,7 +14,7 @@ Welcome to Open FDA's documentation!
    authorization.md
    queries-explained.md
    query-examples.md
-   device-event-fields.md
+   searchable-fields.md
    api-examples.md
    api-syntax-rules.md
 

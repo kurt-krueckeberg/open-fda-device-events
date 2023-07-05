@@ -1,0 +1,979 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Searchable Fields &#8212; Open FDA API 0.7 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'searchable-fields';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples Summary" href="api-examples.html" />
+    <link rel="prev" title="Query Examples" href="query-examples.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Open FDA API 0.7 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="queries-explained.html">Queries Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Searchable Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-examples.html">Examples Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-syntax-rules.html">API Syntax Rules</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/searchable-fields.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Searchable Fields</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-all-search-fields">Table of All Search Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-the-relevant-refractive-surgery-fields">List of the Relevant Refractive Surgery Fields</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="searchable-fields">
+<h1>Searchable Fields<a class="headerlink" href="#searchable-fields" title="Permalink to this heading">#</a></h1>
+<section id="table-of-all-search-fields">
+<h2>Table of All Search Fields<a class="headerlink" href="#table-of-all-search-fields" title="Permalink to this heading">#</a></h2>
+<p>Although most are not usually relevant, there are a total of 114 device event fields that can be searched.</p>
+<table class="table table-left" id="id1">
+<caption><span class="caption-text">All Fields that Can be Searched</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>field_name</p></th>
+<th class="head"><p>datatype</p></th>
+<th class="head"><p>definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">adverse_event_flag</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date_facility_aware</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the user facility’s medical personnel or the importer (distributor) became aware that the device has or may have caused or contributed to the reported event.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date_manufacturer_received</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date when the applicant, manufacturer, corporate affiliate, etc. receives information that an adverse event or medical device malfunction has occurred. this would apply to a report received anywhere in the world. for follow-up reports, the date that the follow-up information was received.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date_of_event</span></code></p></td>
+<td><p>string</p></td>
+<td><p>actual or best estimate of the date of first onset of the adverse event. this field was added in 2006.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date_received</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the report was received by the fda.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date_report_to_fda</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the user facility/importer (distributor) sent the report to the fda, if applicable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date_report_to_manufacturer</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the user facility/importer (distributor) sent the report to the manufacturer, if applicable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>the trade or proprietary name of the suspect medical device as used in product labeling or in the catalog (e.g. flo-easy catheter, reliable heart pacemaker, etc.). if the suspect device is a reprocessed single-use device, this field will contain <code class="docutils literal notranslate"><span class="pre">na</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.catalog_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>the exact number as it appears in the manufacturer’s catalog, device labeling, or accompanying packaging.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.date_received</span></code></p></td>
+<td><p>string</p></td>
+<td><p>documentation forthcoming. tk</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.date_removed_flag</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether an implanted device was removed from the patient, and if so, what kind of date was provided.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.date_returned_to_manufacturer</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the device was returned to the manufacturer, if applicable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_age_text</span></code></p></td>
+<td><p>string</p></td>
+<td><p>age of the device or a best estimate, often including the unit of time used. contents vary widely, but common patterns include: ## mo or ## yr (meaning number of months or years, respectively.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_availability</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the device is available for evaluation by the manufacturer, or whether the device was returned to the manufacturer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_evaluated_by_manufacturer</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the suspect device was evaluated by the manufacturer.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_event_key</span></code></p></td>
+<td><p>string</p></td>
+<td><p>documentation forthcoming.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_operator</span></code></p></td>
+<td><p>string</p></td>
+<td><p>the person using the medical device at the time of the adverse event. this may be a health professional, a lay person, or may not be applicable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code[^1]</span></code></p></td>
+<td><p>string</p></td>
+<td><p>three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_sequence_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>number identifying this particular device. for example, the first device object will have the value 1. this is an enumeration corresponding to the number of patients involved in an adverse event.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.expiration_date_of_device</span></code></p></td>
+<td><p>string</p></td>
+<td><p>if available; this date is often be found on the device itself or printed on the accompanying packaging.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>the generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.implant_flag</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether a device was implanted or not. may be either marked n or left empty if this was not applicable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.lot_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>if available, the lot number found on the label or packaging material.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.manufacturer_d_address_1</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer address line 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.manufacturer_d_address_2</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer address line 2.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.manufacturer_d_city</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer city.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.manufacturer_d_country</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer country.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.manufacturer_d_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.manufacturer_d_postal_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer postal code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.manufacturer_d_state</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer state code.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.manufacturer_d_zip_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer zip code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.manufacturer_d_zip_code_ext</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer zip code extension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.model_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>the exact model number found on the device label or accompanying packaging.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda</span></code></p></td>
+<td><p>object</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.other_id_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>any other identifier that might be used to identify the device. expect wide variability in the use of this field. it is commonly empty, or marked <code class="docutils literal notranslate"><span class="pre">na</span></code>, <code class="docutils literal notranslate"><span class="pre">n/a</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, or <code class="docutils literal notranslate"><span class="pre">unk</span></code>, if unknown or not applicable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device_date_of_manufacturer</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date of manufacture of the suspect medical device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">distributor_address_1</span></code></p></td>
+<td><p>string</p></td>
+<td><p>user facility or importer (distributor) address line 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">distributor_address_2</span></code></p></td>
+<td><p>string</p></td>
+<td><p>user facility or importer (distributor) address line 2.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">distributor_city</span></code></p></td>
+<td><p>string</p></td>
+<td><p>user facility or importer (distributor) city.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">distributor_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>user facility or importer (distributor) name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">distributor_state</span></code></p></td>
+<td><p>string</p></td>
+<td><p>user facility or importer (distributor) two-digit state code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">distributor_zip_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>user facility or importer (distributor) 5-digit zip code.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">distributor_zip_code_ext</span></code></p></td>
+<td><p>string</p></td>
+<td><p>user facility or importer (distributor) 4-digit zip code extension (zip+4 code).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">event_key</span></code></p></td>
+<td><p>string</p></td>
+<td><p>documentation forthcoming.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
+<td><p>string</p></td>
+<td><p>where the event occurred.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">event_type</span></code></p></td>
+<td><p>string</p></td>
+<td><p>outcomes associated with the adverse event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">expiration_date_of_device</span></code></p></td>
+<td><p>string</p></td>
+<td><p>if available; this date is often be found on the device itself or printed on the accompanying packaging.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">health_professional</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the initial reporter was a health professional (e.g. physician, pharmacist, nurse, etc.) or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">initial_report_to_fda</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the initial reporter also notified or submitted a copy of this report to fda.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_address_1</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer address line 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_address_2</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer address line 2.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_city</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer city.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_address_1</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer contact address line 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_address_2</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer contact address line 2.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_area_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person phone number area code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_city</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person city.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_country</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person two-letter country code. note: for medical device adverse event reports, comparing country codes with city names in the same record demonstrates widespread use of conflicting codes. caution should be exercised when interpreting country code data in device records.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_exchange</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person phone number exchange.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_extension</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person phone number extension.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_f_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person first name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_l_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person last name.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_pcity</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person phone number city code.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_pcountry</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person phone number country code. note: for medical device adverse event reports, comparing country codes with city names in the same record demonstrates widespread use of conflicting codes. caution should be exercised when interpreting country code data in device records.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_phone_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person phone number.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_plocal</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person local phone number.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_postal_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person postal code.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_state</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person two-letter state code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_t_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person title (mr., mrs., ms., dr., etc.)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_zip_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person 5-digit zip code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_contact_zip_ext</span></code></p></td>
+<td><p>string</p></td>
+<td><p>manufacturer contact person 4-digit zip code extension (zip+4 code).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_country</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer two-letter country code. note: for medical device adverse event reports, comparing country codes with city names in the same record demonstrates widespread use of conflicting codes. caution should be exercised when interpreting country code data in device records.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_g1_address_1</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer address line 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_g1_address_2</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer address line 2.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_g1_city</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer address city.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_g1_country</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer two-letter country code. note: for medical device adverse event reports, comparing country codes with city names in the same record demonstrates widespread use of conflicting codes. caution should be exercised when interpreting country code data in device records.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_g1_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_g1_postal_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer address postal code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_g1_state</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer address state.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_g1_zip_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer address zip code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_g1_zip_code_ext</span></code></p></td>
+<td><p>string</p></td>
+<td><p>device manufacturer address zip code extension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_link_flag</span></code></p></td>
+<td><p>string</p></td>
+<td><p>indicates whether a user facility/importer-submitted (distributor-submitted) report has had subsequent manufacturer-submitted reports. if so, the distributor information (address, etc.) will also be present and this field will contain <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_postal_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer postal code. may contain the zip code for addresses in the united states.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_state</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer two-letter state code.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_zip_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer 5-digit zip code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer_zip_code_ext</span></code></p></td>
+<td><p>string</p></td>
+<td><p>suspect medical device manufacturer 4-digit zip code extension (zip+4 code).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
+<td><p>string</p></td>
+<td><p>a unique identifier for a report.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.date_report</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.mdr_text_key</span></code></p></td>
+<td><p>string</p></td>
+<td><p>documentation forthcoming.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.patient_sequence_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>number identifying this particular patient. for example, the first patient object will have the value 1. this is an enumeration corresponding to the number of patients involved in an adverse event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
+<td><p>string</p></td>
+<td><p>narrative text or problem description.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text_type_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>string that describes the type of narrative contained within the text field.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">number_devices_in_event</span></code></p></td>
+<td><p>string</p></td>
+<td><p>number of devices noted in the adverse event report. almost always <code class="docutils literal notranslate"><span class="pre">1</span></code>. may be empty if <code class="docutils literal notranslate"><span class="pre">report_source_code</span></code> contains <code class="docutils literal notranslate"><span class="pre">voluntary</span> <span class="pre">report</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">number_patients_in_event</span></code></p></td>
+<td><p>string</p></td>
+<td><p>number of patients noted in the adverse event report. almost always <code class="docutils literal notranslate"><span class="pre">1</span></code>. may be empty if <code class="docutils literal notranslate"><span class="pre">report_source_code</span></code> contains <code class="docutils literal notranslate"><span class="pre">voluntary</span> <span class="pre">report</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">patient.date_received</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the report about this patient was received.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">patient.patient_problems</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>describes actual adverse effects on the patient that may be related to the device problem observed during the reported event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">patient.patient_sequence_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>documentation forthcoming.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">patient.sequence_number_outcome</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>outcome associated with the adverse event for this patient. expect wide variability in this field; each string in the list of strings may contain multiple outcomes, separated by commas, and with numbers, which may or may not be related to the <code class="docutils literal notranslate"><span class="pre">patient_sequence_number</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">patient.sequence_number_treatment</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>treatment the patient received.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">previous_use_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the use of the suspect medical device was the initial use, reuse, or unknown.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">product_problem_flag</span></code></p></td>
+<td><p>string</p></td>
+<td><p>indicates whether or not a report was about the quality, performance or safety of a device.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">product_problems</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>the product problems that were reported to the fda if there was a concern about the quality, authenticity, performance, or safety of any medication or device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">remedial_action</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>follow-up actions taken by the device manufacturer at the time of the report submission, if applicable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">removal_correction_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>if a corrective action was reported to fda under <a href='http://www.law.cornell.edu/uscode/text/21/360i'>21 usc 360i(f)</a>, the correction or removal reporting number (according to the format directed by <a href='http://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?cfrpart=807'>21 cfr 807</a>). if a firm has not submitted a correction or removal report to the fda, but the fda has assigned a recall number to the corrective action, the recall number may be used.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">report_date</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date of the report, or the date that the report was forwarded to the manufacturer and/or the fda.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">report_number</span></code></p></td>
+<td><p>string</p></td>
+<td><p>identifying number for the adverse event report. the format varies, according to the source of the report. the field is empty when a user facility submits a report. <em>for manufacturer reports</em>. manufacturer report number. the report number consists of three components: the manufacturer’s fda registration number for the manufacturing site of the reported device, the 4-digit calendar year, and a consecutive 5-digit number for each report filed during the year by the manufacturer (e.g. 1234567-2013-00001, 1234567-2013-00002). <em>for user facility/importer (distributor) reports</em>. distributor report number. documentation forthcoming. <em>for consumer reports</em>. this field is empty.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">report_source_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>source of the adverse event report</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">report_to_fda</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the report was sent to the fda by a user facility or importer (distributor). user facilities are required to send reports of device-related deaths. importers are required to send reports of device-related deaths and serious injuries.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">report_to_manufacturer</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the report was sent to the manufacturer by a user facility or importer (distributor). user facilities are required to send reports of device-related deaths and serious injuries to manufacturers. importers are required to send reports to manufacturers of device-related deaths, device-related serious injuries, and device-related malfunctions that could cause or contribute to a death or serious injury.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reporter_occupation_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>initial reporter occupation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">reprocessed_and_reused_flag</span></code></p></td>
+<td><p>string</p></td>
+<td><p>indicates whether the suspect device was a single-use device that was reprocessed and reused on a patient.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">single_use_flag</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the device was labeled for single use or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>the manufacturer-reported source of the adverse event report.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>the type of report.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The complete list of three-letter product classification codes can be <a class="reference external" href="https://www.accessdata.fda.gov/premarket/ftparea/foiclass.zip">downloaded</a>. See the file’s <a class="reference external" href="https://www.fda.gov/medical-devices/classify-your-medical-device/download-product-code-classification-files#description">description</a>.
+See also the <a class="reference download internal" download="" href="_downloads/c3db8d6d674fb737df70746bc82eebd2/annotated-device-fields.yml"><span class="xref download myst">yml file</span></a> I downloaded (although I can’ t remember from where) that describes the fields in a bit more detail.</p>
+</div>
+</section>
+<section id="list-of-the-relevant-refractive-surgery-fields">
+<h2>List of the Relevant Refractive Surgery Fields<a class="headerlink" href="#list-of-the-relevant-refractive-surgery-fields" title="Permalink to this heading">#</a></h2>
+<table class="table table-left" id="id2">
+<caption><span class="caption-text">Fields Relevant to Adverse Event Reports for Refractive Surgery</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>field_name</p></th>
+<th class="head"><p>datatype</p></th>
+<th class="head"><p>definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">adverse_event_flag</span></code></p></td>
+<td><p>string</p></td>
+<td><p>whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient. TODO: Isn’t this always true or yes in the case of an adverse device event?</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>three-letter fda product classification code. medical devices are classified under <a href='http://www.fda.gov/medicaldevices/deviceregulationandguidance/overview/classifyyourdevice/default.htm'>21 cfr parts 862-892</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>the generic or common name of the suspect medical device or a generally descriptive name. TODO: Is LASIK a generic device or part of a generic device?).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">event_type</span></code></p></td>
+<td><p>string</p></td>
+<td><p>outcomes associated with the adverse event. TODO: Is theres a pre-defined set of event types?</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.date_report</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
+<td><p>string</p></td>
+<td><p>narrative text or problem description.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text_type_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>string that describes the type of narrative contained within the text field.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">patient.date_received</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date the report about this patient was received.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">patient.sequence_number_outcome</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>outcome associated with the adverse event for this patient. expect wide variability in this field; each string in the list of strings may contain multiple outcomes, separated by commas, and with numbers, which may or may not be related to the <code class="docutils literal notranslate"><span class="pre">patient_sequence_number</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">report_date</span></code></p></td>
+<td><p>string</p></td>
+<td><p>date of the report, or the date that the report was forwarded to the manufacturer and/or the fda.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">report_source_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>source of the adverse event report</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>the type of report.</p></td>
+</tr>
+</tbody>
+</table>
+<p>These are the relevant refractive surgery-related device codes:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Code</p></th>
+<th class="head text-left"><p>Device name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>OCL</strong></p></td>
+<td class="text-left"><p>Surgical Device, For Cutting, Coagulation, And/Or Ablation Of Tissue, Including Cardiac Tissue</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>HQF</strong></p></td>
+<td class="text-left"><p>Laser, Ophthalmic</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>LZS</strong></p></td>
+<td class="text-left"><p>Excimer Laser System</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>OTL</strong></p></td>
+<td class="text-left"><p>Femtosecond Laser System For Refractive Correction</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>HMY</strong></p></td>
+<td class="text-left"><p>Keratome, Battery-Powered</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>HNO</strong></p></td>
+<td class="text-left"><p>Keratome, Ac-Powered</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>MYD</strong></p></td>
+<td class="text-left"><p>Keratome, Water Jet</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>NKY</strong></p></td>
+<td class="text-left"><p>Blade, Keratome, Reprocessed</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The femtosecond laser is a laser used to create the flap instead of a keratome.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="query-examples.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Query Examples</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="api-examples.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples Summary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-all-search-fields">Table of All Search Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-the-relevant-refractive-surgery-fields">List of the Relevant Refractive Surgery Fields</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kurt Krueckeberg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright MIT License.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
