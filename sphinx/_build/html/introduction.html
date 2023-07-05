@@ -290,7 +290,9 @@ document.write(`
                   
   <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
-<p>The <a class="reference external" href="https://open.fda.gov/apis">openFDA</a> <a class="reference external" href="https://aws.amazon.com/what-is/restful-api/">RESTful API</a> supports <a class="reference external" href="https://www.elastic.co/enterprise-search">Elasticsearch</a> queries of public FDA information about drugs, devices and foods. <a class="reference external" href="https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a> is an example. It illustrates the numerous fields that can be searched with a drop-down listbox.</p>
+<p>The <a class="reference external" href="https://open.fda.gov/apis">openFDA</a> <a class="reference external" href="https://aws.amazon.com/what-is/restful-api/">RESTful API</a> supports <a class="reference external" href="https://www.elastic.co/enterprise-search">Elasticsearch</a> queries
+of public FDA information about drugs, devices and foods. <a class="reference external" href="https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a>
+is an example that illustrates the numerous fields that can be searched.</p>
 <section id="how-adverse-event-reports-are-organized">
 <h2>How Adverse Event Reports are Organized<a class="headerlink" href="#how-adverse-event-reports-are-organized" title="Permalink to this heading">#</a></h2>
 <p>Device adverse event reports vary significantly, depending on who initially reported the event, what kind of event was reported, and whether there were follow-up reports. Some reports
@@ -302,7 +304,7 @@ requirements, the collected data in the adverse event system may not always capt
 </section>
 <section id="how-adverse-event-reports-are-identified">
 <h2>How Adverse Event Reports are Identified<a class="headerlink" href="#how-adverse-event-reports-are-identified" title="Permalink to this heading">#</a></h2>
-<p>Adverse events are collected through a series of safety reports, each identified by a 8-digit string, for example:</p>
+<p>Adverse events are collected through a series of safety reports, each identified by a 8-digit string</p>
 <p><strong>6176304-1</strong></p>
 <p>where the first 7 digits (before the hyphen) identify the individual report, and the last digit (after the hyphen) indicates the order of the report. For eample, if three reports are submitted (for the same event),
 they would be saved as</p>
