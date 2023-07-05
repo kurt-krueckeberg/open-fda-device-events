@@ -367,7 +367,7 @@ document.write(`
 <section id="search-syntax">
 <h2>Search Syntax<a class="headerlink" href="#search-syntax" title="Permalink to this heading">#</a></h2>
 <p>Searches have a special syntax</p>
-<p><code class="docutils literal notranslate"><span class="pre">search=field:term</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">search=field:&quot;term&quot;</span></code></p>
 <p>where the search term immediately follows the field being search, separated by a colon. For example, this query looks in the <strong>drug/event</strong> endpoint for a
 record where one of the reported patient reactions was fatigue:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1</span></code></p>

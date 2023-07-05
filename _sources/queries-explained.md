@@ -33,7 +33,7 @@ The API supports five query parameters:
 
 Searches have a special syntax
 
-`search=field:term`
+`search=field:"term"`
 
 where the search term immediately follows the field being search, separated by a colon. For example, this query looks in the **drug/event** endpoint for a
 record where one of the reported patient reactions was fatigue:
