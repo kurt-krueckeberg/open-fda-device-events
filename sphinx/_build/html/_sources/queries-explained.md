@@ -64,15 +64,15 @@ This query looks in the **drug/event** endpoint for ten records and sorts them i
 
 `https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10`
 
+:::{hint}
+Instead of looking at individual records, you can use the count parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.
+:::
+
 ### Count number of unique matching records
 
 | `count` syntax                      | Explanation                                                                                                                      |
 |:------------------------------------|:----------------------------------------------------------------------------------------------------------------|
 | `search=field1:term&count=field2`   | Search for matching records and, then, within that set of records, count the number of times that the unique values of a `field2` appear.|
-
-:::{note}
-Instead of looking at individual records, you can use the count parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.
-:::
 
 This query looks in the **drug/event** endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records
 that matched is summed, providing a useful summary.

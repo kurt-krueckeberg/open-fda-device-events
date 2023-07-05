@@ -391,6 +391,10 @@ was Canada:</p>
 <h3>Sort ten results in descending order<a class="headerlink" href="#sort-ten-results-in-descending-order" title="Permalink to this heading">#</a></h3>
 <p>This query looks in the <strong>drug/event</strong> endpoint for ten records and sorts them in descending order by received date:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</span></code></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Instead of looking at individual records, you can use the count parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.</p>
+</div>
 </section>
 <section id="count-number-of-unique-matching-records">
 <h3>Count number of unique matching records<a class="headerlink" href="#count-number-of-unique-matching-records" title="Permalink to this heading">#</a></h3>
@@ -406,10 +410,6 @@ was Canada:</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Instead of looking at individual records, you can use the count parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.</p>
-</div>
 <p>This query looks in the <strong>drug/event</strong> endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records
 that matched is summed, providing a useful summary.</p>
 <p>Search for all records</p>
