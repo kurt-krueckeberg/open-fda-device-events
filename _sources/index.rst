@@ -13,7 +13,7 @@ Welcome to Open FDA's documentation!
    introduction.md
    authorization.md
    queries-overview.md
-   harmonizaiton.md
+   harmonization.md
    query-examples.md
    advanced-syntax.md
    searchable-fields.md
