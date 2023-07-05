@@ -133,7 +133,7 @@ The complete list of three-letter product classification codes can be [downloade
 See also the [yml file](searchable-fields-device-api.yaml) I downloaded (although I can' t remember from where) that describes the fields in a bit more detail.
 :::
 
-## List of the Relevant Field
+## List of the Relevant Refractive Surgery Fields
 
 :::{table} Fields Relevant to Adverse Event Reports for Refractive Surgery
 :widths: auto
