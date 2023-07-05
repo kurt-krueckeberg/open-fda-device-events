@@ -1,6 +1,6 @@
 # Further Examples
 
-## Adverse Device Event
+## Adverse Device Events
 
 One adverse event report
 
