@@ -7,7 +7,7 @@ is an example that illustrates the numerous fields that can be searched.
 ## How Adverse Event Reports are Organized
 
 :::{note}
-The paragraphs below are from **About Maude** section of the Device API Endpoints [Adverse Events Overview](https://open.fda.gov/apis/device/event/).
+The paragraphs below are from the **About Maude** section of the Device API Endpoints [Adverse Events Overview](https://open.fda.gov/apis/device/event/).
 :::
 
 Device adverse event reports vary significantly, depending on who initially reported the event, what kind of event was reported, and whether there were follow-up reports. Some reports
