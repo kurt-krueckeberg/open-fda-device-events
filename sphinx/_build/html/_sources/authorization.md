@@ -12,7 +12,7 @@ While you do not need a key to use the Open FDA API, a key authorizes more reque
 
 ## Authentication Method
 
-The API key can be used in two ways to authenticate a user:
+Authentication using the API key can be done in two ways:
 
 - passing it in the HTTP header using **basic auth** scheme: `Authorization: Basic eW91ckFQSUtleUhlcmU6`
 
