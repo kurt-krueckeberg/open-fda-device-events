@@ -1,4 +1,4 @@
-# Authorization
+# Open FDA Authorization
 
 You do not need a key to use the Open FDA API, but a key authorizes more requests per day. These are the current request limits:
 
