@@ -2,7 +2,7 @@
 
 ## JSON Results Object
  
-The JSON results object has two sections:
+The query result is returned in a JSON object which has two sections:
 
 1. `results` &mdash; An arrray of matches (for non-counting querires).
 
