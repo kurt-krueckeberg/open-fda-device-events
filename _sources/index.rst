@@ -13,9 +13,8 @@ Welcome to Open FDA's documentation!
    introduction.md
    authorization.md
    queries-overview.md
-   harmonization.md
-   query-examples.md
    advanced-syntax.md
+   query-examples.md
    endpoint-device.md
    api-examples.md
    api-syntax-rules.md
