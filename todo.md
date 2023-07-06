@@ -5,3 +5,5 @@ I should also list each of the endpoints--Drug, Veterinary, etc--within the Open
 endpoint and how each endpoint is made up of subcategories that correspond to the subcategories of their respective data dictionary.
 
 There may be another .md file not included in the index.rst, too.
+
+I should include also the very nice graphic that accompanies each endpoint.
