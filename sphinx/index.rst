@@ -16,9 +16,10 @@ Welcome to Open FDA's documentation!
    harmonization.md
    query-examples.md
    advanced-syntax.md
-   searchable-fields.md
+   endpoint-device.md
    api-examples.md
    api-syntax-rules.md
+#  device-searchable-fields.md
 
 Indices and tables
 ==================
