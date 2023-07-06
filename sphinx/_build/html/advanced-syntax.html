@@ -278,8 +278,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-or-not-missing-values">Missing (or not missing) values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries">Timeseries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paging">Paging</a></li>
 </ul>
             </nav>
         </div>
@@ -293,14 +296,7 @@ document.write(`
                   
   <section id="advanced-syntax">
 <h1>Advanced Syntax<a class="headerlink" href="#advanced-syntax" title="Permalink to this heading">#</a></h1>
-<section id="dates-and-ranges">
-<h2>Dates and ranges<a class="headerlink" href="#dates-and-ranges" title="Permalink to this heading">#</a></h2>
-<p>The openFDA API supports searching by range in date, numeric, or string fields.</p>
-<ul class="simple">
-<li><p>Specify an inclusive range by using square brackets <code class="docutils literal notranslate"><span class="pre">[min+TO+max]</span></code>. These include the values in the range. For example, <code class="docutils literal notranslate"><span class="pre">[1+TO+5]</span></code> will match 1 through 5.</p></li>
-<li><p>Dates are simple to search by via range. For instance, <code class="docutils literal notranslate"><span class="pre">[2004-01-01+TO+2005-01-01]</span></code> will search for records between <strong>Jan 1, 2004</strong> and <strong>Jan 1, 2005</strong>.</p></li>
-</ul>
-</section>
+<p><strong>TODO:</strong> Include API examples of eachs item mentioned below.</p>
 <section id="grouping">
 <h2>Grouping<a class="headerlink" href="#grouping" title="Permalink to this heading">#</a></h2>
 <p>To group several terms together, use parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>. For example,</p>
@@ -312,6 +308,30 @@ document.write(`
 <p class="admonition-title">Error</p>
 <p>Are two groups of parentheses needed in the example above? What is <code class="docutils literal notranslate"><span class="pre">serious</span></code>? Is it a top-level term?</p>
 </div>
+</section>
+<section id="dates-and-ranges">
+<h2>Dates and ranges<a class="headerlink" href="#dates-and-ranges" title="Permalink to this heading">#</a></h2>
+<p>The openFDA API supports searching by range in date, numeric, or string fields.</p>
+<ul class="simple">
+<li><p>Specify an inclusive range by using square brackets <code class="docutils literal notranslate"><span class="pre">[min+TO+max]</span></code>. These include the values in the range. For example, <code class="docutils literal notranslate"><span class="pre">[1+TO+5]</span></code> will match 1 through 5.</p></li>
+<li><p>Dates are simple to search by via range. For instance, <code class="docutils literal notranslate"><span class="pre">[2004-01-01+TO+2005-01-01]</span></code> will search for records between <strong>Jan 1, 2004</strong> and <strong>Jan 1, 2005</strong>.</p></li>
+</ul>
+</section>
+<section id="missing-or-not-missing-values">
+<h2>Missing (or not missing) values<a class="headerlink" href="#missing-or-not-missing-values" title="Permalink to this heading">#</a></h2>
+<p>You can search for empty fields or for fields that are not empty:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_missing_</span></code>: search modifier that matches when a field has no value (is empty).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_exists_</span></code>: search modifier that matches when a field has a value (is not empty).</p></li>
+</ul>
+</section>
+<section id="timeseries">
+<h2>Timeseries<a class="headerlink" href="#timeseries" title="Permalink to this heading">#</a></h2>
+<p><strong>TODO:</strong></p>
+</section>
+<section id="paging">
+<h2>Paging<a class="headerlink" href="#paging" title="Permalink to this heading">#</a></h2>
+<p><strong>TODO:</strong></p>
 </section>
 </section>
 
@@ -363,8 +383,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-or-not-missing-values">Missing (or not missing) values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries">Timeseries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paging">Paging</a></li>
 </ul>
   </nav></div>
 
