@@ -10,7 +10,7 @@ List of Device Adverse searchable fields. See [Searchable Fields](https://open.f
 
 Event|`adverse_event_flag`|string|"Whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -19,7 +19,7 @@ Value is one of the following:
 Event|`product_problems`|array of strings|The product problems that were reported to the FDA if there was a concern about the quality, authenticity, performance, or safety of any medication or device.
 Event|`product_problem_flag`|string|"Indicates whether or not a report was about the quality, performance or safety of a device.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -31,7 +31,7 @@ Event|`date_received`|string|Date the report was received by the FDA.
 Event|`device_date_of_manufacturer`|string|Date of manufacture of the suspect medical device.
 Event|`event_type`|string|"Outcomes associated with the adverse event.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -44,13 +44,13 @@ Value is one of the following:
 - No answer provided = No information was provided."
 Event|`number_devices_in_event`|string|"Number of devices noted in the adverse event report. Almost always 1. May be empty if report_source_code contains Voluntary report.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Event|`number_patients_in_event`|string|"Number of patients noted in the adverse event report. Almost always 1. May be empty if report_source_code contains Voluntary report.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Event|`previous_use_code`|string|"Whether the use of the suspect medical device was the initial use, reuse, or unknown.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -60,7 +60,7 @@ Value is one of the following:
 * = Invalid data or this information was not provided."
 Event|`remedial_action`|array of strings|"Follow-up actions taken by the device manufacturer at the time of the report submission, if applicable.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -76,14 +76,14 @@ Value is one of the following:
 - Invalid Data = Invalid Data"
 Event|`removal_correction_number`|string|"If a corrective action was reported to FDA under 21 USC 360i(f), the correction or removal reporting number (according to the format directed by 21 CFR 807). If a firm has not submitted a correction or removal report to the FDA, but the FDA has assigned a recall number to the corrective action, the recall number may be used.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 "
 Event|`report_number`|string|"Identifying number for the adverse event report. The format varies, according to the source of the report. The field is empty when a user facility submits a report. For manufacturer reports. Manufacturer Report Number. The report number consists of three components: The manufacturer’s FDA registration number for the manufacturing site of the reported device, the 4-digit calendar year, and a consecutive 5-digit number for each report filed during the year by the manufacturer (e.g. 1234567-2013-00001, 1234567-2013-00002). For user facility/importer (distributor) reports. Distributor Report Number. Documentation forthcoming. For consumer reports. This field is empty.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Event|`single_use_flag`|string|"Whether the device was labeled for single use or not.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -91,7 +91,7 @@ Value is one of the following:
 - No = The device was not labeled for single use, or this is irrelevant to the device being reported (e.g. an X-ray machine)."
 Source|`report_source_code`|string|"Source of the adverse event report
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -101,7 +101,7 @@ Value is one of the following:
 - Distributor report = Distributor report"
 Source|`health_professional`|string|"Whether the initial reporter was a health professional (e.g. physician, pharmacist, nurse, etc.) or not.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -109,7 +109,7 @@ Value is one of the following:
 - N = The initial reporter is not a health professional."
 Source|`reporter_occupation_code`|string|"Initial reporter occupation.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -158,7 +158,7 @@ Value is one of the following:
 - Invalid data = Invalid data"
 Source|`initial_report_to_fda`|string|"Whether the initial reporter also notified or submitted a copy of this report to FDA.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -168,7 +168,7 @@ Value is one of the following:
 - No answer provided or empty = This information was not provided."
 Source|`reprocessed_and_reused_flag`|string|"Indicates whether the suspect device was a single-use device that was reprocessed and reused on a patient.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -177,39 +177,39 @@ Value is one of the following:
 - UNK = The original equipment manufacturer was unable to determine if their single-use device was reprocessed and reused."
 Device|device.device_sequence_number|string|"Number identifying this particular device. For example, the first device object will have the value 1. This is an enumeration corresponding to the number of patients involved in an adverse event.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Device|device.device_event_key|string|Documentation forthcoming.
 Device|device.date_received|string|Documentation forthcoming
 Identification|device.brand_name|string|"The trade or proprietary name of the suspect medical device as used in product labeling or in the catalog (e.g. Flo-Easy Catheter, Reliable Heart Pacemaker, etc.). If the suspect device is a reprocessed single-use device, this field will contain NA.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Identification|device.generic_name|string|"The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Identification|device.udi_di|string|A unique numeric or alphanumeric code specific to a device version or model.
 Identification|device.udi_public|string|Includes both the UDI-DI and the parts of the Production identifier (PI) that would not identify an individual patient. The Production Identifier is  a conditional, variable portion of a UDI that identifies one or more of the following when included on the label of a device and may include: 1) lot or batch number within which a device was manufactured, 2) serial number of a specific device, 3) expiration date of a specific device, 4) date a specific device was manufactured, and 5) distinct identification code required by §1271.290(c) for a human cell, tissue, or cellular and tissue-based product (HCT/P) regulated as a device.
 Identification|device.device_report_product_code|string|"Three-letter FDA Product Classification Code. Medical devices are classified under 21 CFR Parts 862-892.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Fore more information, see Product Classification Database (http://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPCD/classification.cfm)"
 Identification|device.model_number|string|"The exact model number found on the device label or accompanying packaging.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Identification|`device_catalog_number`|string|"The exact number as it appears in the manufacturer’s catalog, device labeling, or accompanying packaging.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Identification|device.lot_number|string|"If available, the lot number found on the label or packaging material.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Identification|device.other_id_number|string|"Any other identifier that might be used to identify the device. Expect wide variability in the use of this field. It is commonly empty, or marked NA, N/A, *, or UNK, if unknown or not applicable.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Identification|device.expiration_date_of_device|string|If available; this date is often be found on the device itself or printed on the accompanying packaging.
 Identification|device.device_age_text|string|Age of the device or a best estimate, often including the unit of time used. Contents vary widely, but common patterns include: ## Mo or ## Yr (meaning number of months or years, respectively.
 Identification|device.device_availability|string|"Whether the device is available for evaluation by the manufacturer, or whether the device was returned to the manufacturer.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -221,7 +221,7 @@ Value is one of the following:
 Identification|device.date_returned_to_manufacturer|string|Date the device was returned to the manufacturer, if applicable.
 Identification|device.device_evaluated_by_manufacturer|string|"Whether the suspect device was evaluated by the manufacturer.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -231,7 +231,7 @@ Value is one of the following:
 - No answer provided or empty = No answer was provided or this information was unavailable."
 Use of Device|device.device_operator|string|"The person using the medical device at the time of the adverse event. This may be a health professional, a lay person, or may not be applicable.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -280,10 +280,10 @@ Value is one of the following:
 - Invalid data = Invalid data"
 Use of Device|device.implant_flag|string|"Whether a device was implanted or not. May be either marked N or left empty if this was not applicable.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Use of Device|device.date_removed_flag|string|"Whether an implanted device was removed from the patient, and if so, what kind of date was provided.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -297,41 +297,41 @@ Value is one of the following:
 - V = Documentation forthcoming."
 Manufacturer|device.manufacturer_d_name|string|"Device manufacturer name.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Manufacturer|device.manufacturer_d_address_1|string|"Device manufacturer address line 1.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Manufacturer|device.manufacturer_d_address_2|string|"Device manufacturer address line 2.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Manufacturer|device.manufacturer_d_city|string|"Device manufacturer city.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Manufacturer|device.manufacturer_d_state|string|"Device manufacturer state code
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Manufacturer|device.manufacturer_d_zip_code|string|"Device manufacturer zip code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Manufacturer|device.manufacturer_d_zip_code_ext|string|"Device manufacturer zip code extension.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Manufacturer|device.manufacturer_d_postal_code|string|"Device manufacturer postal code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Manufacturer|device.manufacturer_d_country|string|"Device manufacturer country.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Patient|patient.date_received|string|Date the report about this patient was received.
 Patient|patient.patient_sequence_number|string|"Documentation forthcoming.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Patient|patient.patient_problems|array of strings|"Describes actual adverse effects on the patient that may be related to the device problem observed during the reported event.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Patient|patient.sequence_number_outcome|array of strings|"Outcome associated with the adverse event for this patient. Expect wide variability in this field; each string in the list of strings may contain multiple outcomes, separated by commas, and with numbers, which may or may not be related to the patient_sequence_number.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -348,20 +348,20 @@ Value is one of the following:
 - Death = Death"
 Patient|patient.sequence_number_treatment|array of strings|"Treatment the patient received.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Report text|mdr_text.date_report|string|Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.
 Report text|mdr_text.mdr_text_key|string|"Documentation forthcoming.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Report text|mdr_text.patient_sequence_number|string|"Number identifying this particular patient. For example, the first patient object will have the value 1. This is an enumeration corresponding to the number of patients involved in an adverse event.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Report text|mdr_text.text|string|"Narrative text or problem description.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Report text|mdr_text.text_type_code|string|"String that describes the type of narrative contained within the text field.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -370,7 +370,7 @@ Value is one of the following:
 - Additional Manufacturer Narrative = Documentation forthcoming."
 By user facility/importer|`type_of_report`|string|"The type of report.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -382,7 +382,7 @@ By user facility/importer|`date_facility_aware`|string|Date the user facility’
 By user facility/importer|`report_date`|string|Date of the report, or the date that the report was forwarded to the manufacturer and/or the FDA.
 By user facility/importer|`report_to_fda`|string|"Whether the report was sent to the FDA by a user facility or importer (distributor). User facilities are required to send reports of device-related deaths. Importers are required to send reports of device-related deaths and serious injuries.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -391,7 +391,7 @@ Value is one of the following:
 By user facility/importer|`date_report_to_fda`|string|Date the user facility/importer (distributor) sent the report to the FDA, if applicable.
 By user facility/importer|`report_to_manufacturer`|string|"Whether the report was sent to the manufacturer by a user facility or importer (distributor). User facilities are required to send reports of device-related deaths and serious injuries to manufacturers. Importers are required to send reports to manufacturers of device-related deaths, device-related serious injuries, and device-related malfunctions that could cause or contribute to a death or serious injury.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -400,7 +400,7 @@ Value is one of the following:
 By user facility/importer|`date_report_to_manufacturer`|string|Date the user facility/importer (distributor) sent the report to the manufacturer, if applicable.
 By user facility/importer|`event_location`|string|"Where the event occurred.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -459,134 +459,134 @@ Value is one of the following:
 - Invalid data = Invalid data"
 Name and address|`distributor_name`|string|"User facility or importer (distributor) name.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Name and address|`distributor_address_1`|string|"User facility or importer (distributor) address line 1.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Name and address|`distributor_address_2`|string|"User facility or importer (distributor) address line 2.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Name and address|`distributor_city`|string|"User facility or importer (distributor) city.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Name and address|`distributor_state`|string|"User facility or importer (distributor) two-digit state code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Name and address|`distributor_zip_code`|string|"User facility or importer (distributor) 5-digit zip code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Name and address|`distributor_zip_code_ext`|string|"User facility or importer (distributor) 4-digit zip code extension (zip+4 code).
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_name`|string|"Suspect medical device manufacturer name.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_address_1`|string|"Suspect medical device manufacturer address line 1.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_address_2`|string|"Suspect medical device manufacturer address line 2.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_city`|string|"Suspect medical device manufacturer city.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_postal_code`|string|"Suspect medical device manufacturer postal code. May contain the zip code for addresses in the United States.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_state`|string|"Suspect medical device manufacturer two-letter state code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_zip_code`|string|"Suspect medical device manufacturer 5-digit zip code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_zip_code_ext`|string|"Suspect medical device manufacturer 4-digit zip code extension (zip+4 code).
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_country`|string|"Suspect medical device manufacturer two-letter country code. Note: For medical device adverse event reports, comparing country codes with city names in the same record demonstrates widespread use of conflicting codes. Caution should be exercised when interpreting country code data in device records.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_address_1`|string|"Suspect medical device manufacturer contact address line 1.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_address_2`|string|"Suspect medical device manufacturer contact address line 2.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_area_code`|string|"Manufacturer contact person phone number area code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_city`|string|"Manufacturer contact person city.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_country`|string|"Manufacturer contact person two-letter country code. Note: For medical device adverse event reports, comparing country codes with city names in the same record demonstrates widespread use of conflicting codes. Caution should be exercised when interpreting country code data in device records.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_exchange`|string|"Manufacturer contact person phone number exchange.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_extension`|string|"Manufacturer contact person phone number extension.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_t_name`|string|"Manufacturer contact person title (Mr., Mrs., Ms., Dr., etc.)
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_f_name`|string|"Manufacturer contact person first name.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_l_name`|string|"Manufacturer contact person last name.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_pcity`|string|"Manufacturer contact person phone number city code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_pcountry`|string|"Manufacturer contact person phone number country code. Note: For medical device adverse event reports, comparing country codes with city names in the same record demonstrates widespread use of conflicting codes. Caution should be exercised when interpreting country code data in device records.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_phone_number`|string|"Manufacturer contact person phone number.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_plocal`|string|"Manufacturer contact person local phone number.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_postal_code`|string|"Manufacturer contact person postal code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_state`|string|"Manufacturer contact person two-letter state code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_zip_code`|string|"Manufacturer contact person 5-digit zip code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_contact_zip_ext`|string|"Manufacturer contact person 4-digit zip code extension (zip+4 code).
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_gl_name`|string|"Device manufacturer name.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_gl_city`|string|"Device manufacturer address city.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 "
 Suspect device manufacturer|`manufacturer_gl_country`|string|"Device manufacturer two-letter country code. Note: For medical device adverse event reports, comparing country codes with city names in the same record demonstrates widespread use of conflicting codes. Caution should be exercised when interpreting country code data in device records.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_gl_postal_code`|string|"Device manufacturer address postal code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_gl_state`|string|"Device manufacturer address state.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_gl_address_1`|string|Device manufacturer address line 1.
 Suspect device manufacturer|`manufacturer_gl_address_2`|string|Device manufacturer address line 2.
 Suspect device manufacturer|`manufacturer_gl_zip_code`|string|"Device manufacturer address zip code.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Suspect device manufacturer|`manufacturer_gl_zip_code_ext`|string|"Device manufacturer address zip code extension.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 By any manufacturer|`date_manufacturer_received`|string|Date when the applicant, manufacturer, corporate affiliate, etc. receives information that an adverse event or medical device malfunction has occurred. This would apply to a report received anywhere in the world. For follow-up reports, the date that the follow-up information was received.
 By any manufacturer|`source_type`|string|"The manufacturer-reported source of the adverse event report.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -603,13 +603,13 @@ Value is one of the following:
 - Invalid data = Invalid data"
 Keys and flags|`event_key`|string|"Documentation forthcoming.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Keys and flags|`mdr_report_key`|string|"A unique identifier for a report. This key is part of the download files and is used to join the four files together.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Keys and flags|`manufacturer_link_flag`|string|"Indicates whether a user facility/importer-submitted (distributor-submitted) report has had subsequent manufacturer-submitted reports. If so, the distributor information (address, etc.) will also be present and this field will contain Y.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized.
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Value is one of the following:
 
@@ -627,11 +627,11 @@ Value is one of the following:
 - F = HDE"
 OpenFDA fields|device name|string|"This is the proprietary name, or trade name, of the cleared device.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 OpenFDA fields|`fei_number`|array of strings|Facility identifier assigned to facility by the FDA Office of Regulatory Affairs.
 OpenFDA fields|`medical_specialty_description`|string|"Regulation Medical Specialty is assigned based on the regulation (e.g. 21 CFR Part 888 is Orthopedic Devices) which is why Class 3 devices lack the “Regulation Medical Specialty” field.
 
-This is an .exact field. It has been indexed both as its exact string content, and also tokenized."
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 OpenFDA fields|`registration_number`|array of strings|
 OpenFDA fields|`regulation_number`|array of strings|The classification regulation in the Code of Federal Regulations (CFR) under which the device is identified, described, and formally classified (Code of Federal regulations Title 21, 862.00 through 892.00). The classification regulation covers various aspects of design, clinical evaluation, manufacturing, packaging, labeling, and postmarket surveillance of the specific medical device.
 ```
