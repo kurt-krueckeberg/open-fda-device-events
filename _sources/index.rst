@@ -19,6 +19,7 @@ Welcome to Open FDA's documentation!
    endpoint-device.md
    api-examples.md
    api-syntax-rules.md
+   device-adverse-event-searchable-fields.md
 
 Indices and tables
 ==================
