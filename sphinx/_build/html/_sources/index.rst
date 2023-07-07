@@ -13,6 +13,7 @@ Welcome to Open FDA's documentation!
    introduction.md
    authorization.md
    queries-overview.md
+   search-syntax.md
    advanced-syntax.md
    query-examples.md
    endpoint-device.md

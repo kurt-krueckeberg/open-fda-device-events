@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Open FDA Authorization &#8212; Open FDA API 0.7 documentation</title>
+    <title>Search Syntax &#8212; Open FDA API 0.7 documentation</title>
   
   
   
@@ -41,11 +41,11 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'authorization';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'search-syntax';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Queries Overview" href="queries-overview.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" />
+    <link rel="next" title="Advanced Syntax" href="advanced-syntax.html" />
+    <link rel="prev" title="Queries Overview" href="queries-overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,9 +125,9 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Open FDA Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="queries-overview.html">Queries Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search-syntax.html">Search Syntax</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Search Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="endpoint-device.html">Device API Endpoint</a></li>
@@ -187,7 +187,7 @@
       
       
       
-      <li><a href="_sources/authorization.md" target="_blank"
+      <li><a href="_sources/search-syntax.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +269,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Open FDA Authorization</h1>
+    <h1>Search Syntax</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -279,7 +279,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication-method">Authentication Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-terms">Search Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces">Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phrase-matches">Phrase matches</a></li>
 </ul>
             </nav>
         </div>
@@ -291,30 +293,41 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="open-fda-authorization">
-<h1>Open FDA Authorization<a class="headerlink" href="#open-fda-authorization" title="Permalink to this heading">#</a></h1>
-<p>While you do not need a key to use the Open FDA API, a key authorizes more requests per day as shown below:</p>
+  <section id="search-syntax">
+<h1>Search Syntax<a class="headerlink" href="#search-syntax" title="Permalink to this heading">#</a></h1>
+<section id="search-terms">
+<h2>Search Terms<a class="headerlink" href="#search-terms" title="Permalink to this heading">#</a></h2>
+<p>Searches have a special syntax</p>
+<p><code class="docutils literal notranslate"><span class="pre">search=field:&quot;term&quot;</span></code></p>
+<p>where the search term immediately follows the field being search, separated by a colon. For example, this query looks in the <strong>drug/event</strong> endpoint for a
+record where one of the reported patient reactions was fatigue:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1</span></code></p>
+<p>Here <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> is the patient reaction to a prescribed medication. It is searched for <strong>fatigue</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Add example’s result or make it iteractive.</p>
+</div>
+</section>
+<section id="spaces">
+<h2>Spaces<a class="headerlink" href="#spaces" title="Permalink to this heading">#</a></h2>
+<p>Queries use the plus sign <code class="docutils literal notranslate"><span class="pre">+</span></code> in place of the space character. Wherever you would use a space character, use a plus sign instead.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Add an example and its result or make it iteractive.</p>
+</div>
+</section>
+<section id="phrase-matches">
+<h2>Phrase matches<a class="headerlink" href="#phrase-matches" title="Permalink to this heading">#</a></h2>
+<p>For phrase matches, use double quotation marks “ “ around the words. For example,</p>
 <ul class="simple">
-<li><p>Without API authorization key:</p>
-<ul>
-<li><p>240 requests allowed per minute, per IP address</p></li>
-<li><p>1,000 requests per day, per IP address.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;multiple+myeloma&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;dry+eye+syndrome&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;periperhal+neuropathy&quot;</span></code></p></li>
 </ul>
-</li>
-<li><p>With API authorization key:</p>
-<ul>
-<li><p>240 requests per minute</p></li>
-<li><p>120,000 requests per day.</p></li>
-</ul>
-</li>
-</ul>
-<section id="authentication-method">
-<h2>Authentication Method<a class="headerlink" href="#authentication-method" title="Permalink to this heading">#</a></h2>
-<p>Authentication using the API key can be done in two ways:</p>
-<ul class="simple">
-<li><p>passing it in the HTTP header using <strong>basic auth</strong> scheme: <code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">Basic</span> <span class="pre">eW91ckFQSUtleUhlcmU6</span></code></p></li>
-<li><p>passing your API key with each request using the <code class="docutils literal notranslate"><span class="pre">api_key</span></code> query string parameter: <code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?api_key=yourAPIKeyHere&amp;search=...</span></code></p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Add an example and its result or make it iteractive.</p>
+</div>
 </section>
 </section>
 
@@ -331,20 +344,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduction.html"
+       href="queries-overview.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title">Queries Overview</p>
       </div>
     </a>
     <a class="right-next"
-       href="queries-overview.html"
+       href="advanced-syntax.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Queries Overview</p>
+        <p class="prev-next-title">Advanced Syntax</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -366,7 +379,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication-method">Authentication Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-terms">Search Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces">Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phrase-matches">Phrase matches</a></li>
 </ul>
   </nav></div>
 

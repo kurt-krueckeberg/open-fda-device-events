@@ -44,7 +44,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'queries-overview';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Advanced Syntax" href="advanced-syntax.html" />
+    <link rel="next" title="Search Syntax" href="search-syntax.html" />
     <link rel="prev" title="Open FDA Authorization" href="authorization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -127,6 +127,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Queries Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search-syntax.html">Search Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="endpoint-device.html">Device API Endpoint</a></li>
@@ -301,9 +302,8 @@ document.write(`
 <h1>Queries Overview<a class="headerlink" href="#queries-overview" title="Permalink to this heading">#</a></h1>
 <section id="json-results-object">
 <h2>JSON Results Object<a class="headerlink" href="#json-results-object" title="Permalink to this heading">#</a></h2>
-<p>The query result is returned in a JSON object which has two sections:</p>
+<p>Query results are returned in a JSON object which has two properties:</p>
 <ol class="arabic">
-<li><p><code class="docutils literal notranslate"><span class="pre">results</span></code> — An arrray of matches (for non-counting querires).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">meta</span></code> — metadata:</p>
 <table class="table">
 <thead>
@@ -333,7 +333,76 @@ document.write(`
 </tbody>
 </table>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">results</span></code> — an arrray of matches (for non-counting querires).</p></li>
 </ol>
+<p>As an example, this query searches in the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for a single record:</p>
+<p><code class="docutils literal notranslate"><span class="pre">shttps://api.fda.gov/drug/event.json?limit=1</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">results</span></code> properties in the single record returned contains all kinds of information about the adverse event report,
+including the drugs that the patient was taking, the reactions that the patient experienced, and a good deal of other context:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;disclaimer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;terms&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/terms/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/license/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;last_updated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-04-27&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;skip&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16364554</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;safetyreportid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5801206-7&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;transmissiondateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;transmissiondate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20090109&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;serious&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;seriousnessdeath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;receivedateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;receivedate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20080707&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;receiptdateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;receiptdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20080625&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;fulfillexpeditecriteria&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;companynumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JACAN16471&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;primarysource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;reportercountry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANADA&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;qualification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;senderorganization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FDA-Public Use&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;receiver&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;patientonsetage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;26&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;patientonsetageunit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;801&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;patientsex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;patientdeath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;patientdeathdateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;patientdeathdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;reaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DRUG ADMINISTRATION ERROR&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OVERDOSE&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;drug&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;drugcharacterization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;medicinalproduct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DURAGESIC-100&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;drugauthorizationnumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;019813&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;drugadministrationroute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;041&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;drugindication&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DRUG ABUSE&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 <section id="query-parameters">
 <h2>Query Parameters<a class="headerlink" href="#query-parameters" title="Permalink to this heading">#</a></h2>
@@ -416,11 +485,11 @@ record where one of the reported patient reactions was fatigue:</p>
       </div>
     </a>
     <a class="right-next"
-       href="advanced-syntax.html"
+       href="search-syntax.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Advanced Syntax</p>
+        <p class="prev-next-title">Search Syntax</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

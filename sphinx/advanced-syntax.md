@@ -14,8 +14,10 @@ To join terms as in a boolean AND, use the term +AND+: For example,
 
 requires that any of the drug names match and that the field `serious` also match.
 
-:::{error}
-Are two groups of parentheses needed in the example above? What is `serious`? Is it a top-level term?
+:::{note}
+**TODO:**
+- Are two groups of parentheses needed in the example above? What is `serious`? Is it a top-level term?
+- Add example
 :::
 
 ## Dates and ranges
@@ -26,6 +28,10 @@ The openFDA API supports searching by range in date, numeric, or string fields.
 
 - Dates are simple to search by via range. For instance, `[2004-01-01+TO+2005-01-01]` will search for records between **Jan 1, 2004** and **Jan 1, 2005**.
 
+:::{note}
+- Add example
+:::
+
 ## Missing (or not missing) values
 
 You can search for empty fields or for fields that are not empty:
@@ -34,11 +40,22 @@ You can search for empty fields or for fields that are not empty:
 
 * `_exists_`: search modifier that matches when a field has a value (is not empty).
 
+:::{note}
+**TODO:**
+- Add example
+:::
+
 ## Timeseries
 
+:::{note}
 **TODO:**
+- Add example
+:::
 
 ## Paging
 
+:::{note}
 **TODO:**
+- Add example
+:::
 

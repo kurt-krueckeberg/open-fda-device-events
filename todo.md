@@ -1,5 +1,8 @@
-
-- I should include also the very nice graphic that accompanies each endpoint.
+- Alter the pages as follows:
+  - Add examples to syntax.md
+  - Add new page advanced-syntax.md to index.rst
+    - Add examples to advanced-syntax, too.
+  - For each endpoint, add the very nice graphic that illustrates each endpoint with--I believe--all searchable fields.
 
 - The device event searchable fields are listed [here](https://open.fda.gov/apis/device/event/searchable-fields/). Compare with the
   Device Data Dictionary's Event subcategory...which is in another .md file--but which one?
