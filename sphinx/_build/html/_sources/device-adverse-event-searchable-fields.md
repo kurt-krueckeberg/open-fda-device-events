@@ -2,7 +2,7 @@
 
 List of Device Adverse searchable fields. See [Searchable Fields](https://open.fda.gov/apis/device/event/searchable-fields/)
 
-```{csv-table} Frozen Delights!
+```{csv-table} Device Adverse Event Searchable Fields
 :header: >
 :    "Section", "Field Name", "Type", "Description"
 :widths: 15, 15, 15, 55
