@@ -175,45 +175,45 @@ Value is one of the following:
 - Y = Was a single-use device that was reprocessed and reused.
 - N = Was not a single-use device that was reprocessed and reused.
 - UNK = The original equipment manufacturer was unable to determine if their single-use device was reprocessed and reused."
-Device|device.device_sequence_number|string|"Number identifying this particular device. For example, the first device object will have the value 1. This is an enumeration corresponding to the number of patients involved in an adverse event.
+Device|`device.device_sequence_number`|string|"Number identifying this particular device. For example, the first device object will have the value 1. This is an enumeration corresponding to the number of patients involved in an adverse event.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Device|device.device_event_key|string|Documentation forthcoming.
-Device|device.date_received|string|Documentation forthcoming
-Identification|device.brand_name|string|"The trade or proprietary name of the suspect medical device as used in product labeling or in the catalog (e.g. Flo-Easy Catheter, Reliable Heart Pacemaker, etc.). If the suspect device is a reprocessed single-use device, this field will contain NA.
+Device|`device.device_event_key`|string|Documentation forthcoming.
+Device|`device.date_received`|string|Documentation forthcoming
+Identification|`device.brand_name`|string|"The trade or proprietary name of the suspect medical device as used in product labeling or in the catalog (e.g. Flo-Easy Catheter, Reliable Heart Pacemaker, etc.). If the suspect device is a reprocessed single-use device, this field will contain NA.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Identification|device.generic_name|string|"The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).
+Identification|`device.generic_name`|string|"The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Identification|device.udi_di|string|A unique numeric or alphanumeric code specific to a device version or model.
-Identification|device.udi_public|string|"Includes both the UDI-DI and the parts of the Production identifier (PI) that would not identify an individual patient. The Production Identifier is  a conditional, variable portion of a UDI that identifies one or more of the following when included on the label of a device and may include:
+Identification|`device.udi_di`|string|A unique numeric or alphanumeric code specific to a device version or model.
+Identification|`device.udi_public`|string|"Includes both the UDI-DI and the parts of the Production identifier (PI) that would not identify an individual patient. The Production Identifier is  a conditional, variable portion of a UDI that identifies one or more of the following when included on the label of a device and may include:
 
 1. lot or batch number within which a device was manufactured,
 2. serial number of a specific device, 
 3. expiration date of a specific device, 
 4. date a specific device was manufactured, and 
 5. distinct identification code required by §1271.290(c) for a human cell, tissue, or cellular and tissue-based product (HCT/P) regulated as a device."
-Identification|device.device_report_product_code|string|"Three-letter FDA Product Classification Code. Medical devices are classified under 21 CFR Parts 862-892.
+Identification|`device.device_report_product_code`|string|"Three-letter FDA Product Classification Code. Medical devices are classified under 21 CFR Parts 862-892.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
 Fore more information, see Product Classification Database (http://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPCD/classification.cfm)"
-Identification|device.model_number|string|"The exact model number found on the device label or accompanying packaging.
+Identification|`device.model_number`|string|"The exact model number found on the device label or accompanying packaging.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Identification|`device_catalog_number`|string|"The exact number as it appears in the manufacturer’s catalog, device labeling, or accompanying packaging.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Identification|device.lot_number|string|"If available, the lot number found on the label or packaging material.
+Identification|`device.lot_number`|string|"If available, the lot number found on the label or packaging material.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Identification|device.other_id_number|string|"Any other identifier that might be used to identify the device. Expect wide variability in the use of this field. It is commonly empty, or marked NA, N/A, *, or UNK, if unknown or not applicable.
+Identification|`device.other_id_number`|string|"Any other identifier that might be used to identify the device. Expect wide variability in the use of this field. It is commonly empty, or marked NA, N/A, *, or UNK, if unknown or not applicable.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Identification|device.expiration_date_of_device|string|If available; this date is often be found on the device itself or printed on the accompanying packaging.
-Identification|device.device_age_text|string|Age of the device or a best estimate, often including the unit of time used. Contents vary widely, but common patterns include: ## Mo or ## Yr (meaning number of months or years, respectively.
-Identification|device.device_availability|string|"Whether the device is available for evaluation by the manufacturer, or whether the device was returned to the manufacturer.
+Identification|`device.expiration_date_of_device`|string|If available; this date is often be found on the device itself or printed on the accompanying packaging.
+Identification|`device.device_age_text`|string|Age of the device or a best estimate, often including the unit of time used. Contents vary widely, but common patterns include: ## Mo or ## Yr (meaning number of months or years, respectively.
+Identification|`device.device_availability`|string|"Whether the device is available for evaluation by the manufacturer, or whether the device was returned to the manufacturer.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
@@ -224,8 +224,8 @@ Value is one of the following:
 - Device was returned to manufacturer = Device was returned to manufacturer
 - No answer provided = No answer provided
 - I = Documentation forthcoming."
-Identification|device.date_returned_to_manufacturer|string|Date the device was returned to the manufacturer, if applicable.
-Identification|device.device_evaluated_by_manufacturer|string|"Whether the suspect device was evaluated by the manufacturer.
+Identification|`device.date_returned_to_manufacturer`|string|Date the device was returned to the manufacturer, if applicable.
+Identification|`device.device_evaluated_by_manufacturer`|string|"Whether the suspect device was evaluated by the manufacturer.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
@@ -235,7 +235,7 @@ Value is one of the following:
 - No = An evaluation of a returned suspect or related medical device was not conducted.
 - Device not returned to manufacturer = An evaluation could not be made because the device was not returned to, or made available to, the manufacturer.
 - No answer provided or empty = No answer was provided or this information was unavailable."
-Use of Device|device.device_operator|string|"The person using the medical device at the time of the adverse event. This may be a health professional, a lay person, or may not be applicable.
+Use of Device|`device.device_operator`|string|"The person using the medical device at the time of the adverse event. This may be a health professional, a lay person, or may not be applicable.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
@@ -284,10 +284,10 @@ Value is one of the following:
 - Not applicable = Not applicable
 - No information = No information
 - Invalid data = Invalid data"
-Use of Device|device.implant_flag|string|"Whether a device was implanted or not. May be either marked N or left empty if this was not applicable.
+Use of Device|`device.implant_flag`|string|"Whether a device was implanted or not. May be either marked N or left empty if this was not applicable.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Use of Device|device.date_removed_flag|string|"Whether an implanted device was removed from the patient, and if so, what kind of date was provided.
+Use of Device|`device.date_removed_flag`|string|"Whether an implanted device was removed from the patient, and if so, what kind of date was provided.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
@@ -301,31 +301,31 @@ Value is one of the following:
 - * = Documentation forthcoming.
 - B = Documentation forthcoming.
 - V = Documentation forthcoming."
-Manufacturer|device.manufacturer_d_name|string|"Device manufacturer name.
+Manufacturer|`device.manufacturer_d_name`|string|"Device manufacturer name.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Manufacturer|device.manufacturer_d_address_1|string|"Device manufacturer address line 1.
+Manufacturer|`device.manufacturer_d_address_1`|string|"Device manufacturer address line 1.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Manufacturer|device.manufacturer_d_address_2|string|"Device manufacturer address line 2.
+Manufacturer|`device.manufacturer_d_address_2`|string|"Device manufacturer address line 2.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Manufacturer|device.manufacturer_d_city|string|"Device manufacturer city.
+Manufacturer|`device.manufacturer_d_city`|string|"Device manufacturer city.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Manufacturer|device.manufacturer_d_state|string|"Device manufacturer state code
+Manufacturer|`device.manufacturer_d_state`|string|"Device manufacturer state code
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Manufacturer|device.manufacturer_d_zip_code|string|"Device manufacturer zip code.
+Manufacturer|`device.manufacturer_d_zip_code`|string|"Device manufacturer zip code.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Manufacturer|device.manufacturer_d_zip_code_ext|string|"Device manufacturer zip code extension.
+Manufacturer|`device.manufacturer_d_zip_code_ext`|string|"Device manufacturer zip code extension.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Manufacturer|device.manufacturer_d_postal_code|string|"Device manufacturer postal code.
+Manufacturer|`device.manufacturer_d_postal_code`|string|"Device manufacturer postal code.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Manufacturer|device.manufacturer_d_country|string|"Device manufacturer country.
+Manufacturer|`device.manufacturer_d_country`|string|"Device manufacturer country.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 Patient|patient.date_received|string|Date the report about this patient was received.

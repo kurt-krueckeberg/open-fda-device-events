@@ -1,227 +1,312 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="lang:clipboard.copy" content="Copy to clipboard">
-  <meta name="lang:clipboard.copied" content="Copied to clipboard">
-  <meta name="lang:search.language" content="en">
-  <meta name="lang:search.pipeline.stopwords" content="True">
-  <meta name="lang:search.pipeline.trimmer" content="True">
-  <meta name="lang:search.result.none" content="No matching documents">
-  <meta name="lang:search.result.one" content="1 matching document">
-  <meta name="lang:search.result.other" content="# matching documents">
-  <meta name="lang:search.tokenizer" content="[\s\-]+">
-
-  
-    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
-
-    <style>
-      body,
-      input {
-        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
-      }
-
-      code,
-      kbd,
-      pre {
-        font-family: "Roboto Mono", "Courier New", Courier, monospace
-      }
-    </style>
-  
-
-  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
-  
-  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
-  
-  <meta name="theme-color" content="#3f51b5">
-  <script src="_static/javascripts/modernizr.js"></script>
-  
-  
-  
     <title>Queries Overview &#8212; Open FDA API 0.7 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/material.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'queries-overview';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Search Syntax" href="search-syntax.html" />
     <link rel="prev" title="Open FDA Authorization" href="authorization.html" />
-  
-   
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
   
-  <svg class="md-svg">
-    <defs data-children-count="0">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-      
-    </defs>
-  </svg>
   
-  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
-  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
-  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#queries-overview" tabindex="1" class="md-skip"> Skip to content </a>
-  <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex navheader">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="index.html" title="Open FDA API 0.7 documentation"
-           class="md-header-nav__button md-logo">
-          
-            &nbsp;
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">Open FDA API 0.7 documentation</span>
-          <span class="md-header-nav__topic"> Queries Overview </span>
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-        
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="search.html" method="get" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
-             autocapitalize="off" autocomplete="off" spellcheck="false"
-             data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
   </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Open FDA API 0.7 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Queries Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search-syntax.html">Search Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="endpoint-device.html">Device API Endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-examples.html">Examples Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-syntax-rules.html">API Syntax Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device-adverse-event-searchable-fields.html">Device Adverse Events Searchable Fields</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/queries-overview.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-      </div>
-      
-      
-  
-  <script src="_static/javascripts/version_dropdown.js"></script>
-  <script>
-    var json_loc = ""versions.json"",
-        target_loc = "../",
-        text = "Versions";
-    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
-  </script>
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
   
 
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
-  </nav>
-</header>
-
   
-  <div class="md-container">
-    
-    
-    
-  <nav class="md-tabs" data-md-component="tabs">
-    <div class="md-tabs__inner md-grid">
-      <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Open FDA API 0.7 documentation</a></li>
-      </ul>
-    </div>
-  </nav>
-    <main class="md-main">
-      <div class="md-main__inner md-grid" data-md-component="container">
-        
-          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="index.html" title="Open FDA API 0.7 documentation" class="md-nav__button md-logo">
-      
-        <img src="_static/" alt=" logo" width="48" height="48">
-      
-    </a>
-    <a href="index.html"
-       title="Open FDA API 0.7 documentation">Open FDA API 0.7 documentation</a>
-  </label>
-  
+</div>
+</div>
+              
+              
 
-</nav>
-              </div>
-            </div>
-          </div>
-          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#queries-overview--page-root" class="md-nav__link">Queries Overview</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#json-results-object" class="md-nav__link">JSON Results Object</a>
-        </li>
-        <li class="md-nav__item"><a href="#query-parameters" class="md-nav__link">Query Parameters</a>
-        </li>
-        <li class="md-nav__item"><a href="#search-syntax" class="md-nav__link">Search Syntax</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#search-terms" class="md-nav__link">Search Terms</a>
-        </li>
-        <li class="md-nav__item"><a href="#spaces" class="md-nav__link">Spaces</a>
-        </li>
-        <li class="md-nav__item"><a href="#phrase-matches" class="md-nav__link">Phrase matches</a>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/queries-overview.md.txt">Show Source</a> </li>
-
-<li id="searchbox" class="md-nav__item"></li>
-
-  </ul>
-</nav>
-              </div>
-            </div>
-          </div>
-        
-        <div class="md-content">
-          <article class="md-content__inner md-typeset" role="main">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Queries Overview</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-results-object">JSON Results Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-parameters">Query Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-syntax">Search Syntax</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-terms">Search Terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces">Spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phrase-matches">Phrase matches</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="queries-overview">
-<h1 id="queries-overview--page-root">Queries Overview<a class="headerlink" href="#queries-overview--page-root" title="Permalink to this heading">¶</a></h1>
+<h1>Queries Overview<a class="headerlink" href="#queries-overview" title="Permalink to this heading">#</a></h1>
 <section id="json-results-object">
-<h2 id="json-results-object">JSON Results Object<a class="headerlink" href="#json-results-object" title="Permalink to this heading">¶</a></h2>
+<h2>JSON Results Object<a class="headerlink" href="#json-results-object" title="Permalink to this heading">#</a></h2>
 <p>Query results are returned in a JSON object which has two properties:</p>
 <ol class="arabic">
 <li><p><code class="docutils literal notranslate"><span class="pre">meta</span></code> — metadata:</p>
-<table>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Meta Field</p></th>
 <th class="head text-left"><p>Details</p></th>
@@ -256,61 +341,61 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">results</span></code> properties in the single record returned contains all kinds of information about the adverse event report,
 including the drugs that the patient was taking, the reactions that the patient experienced, and a good deal of other context:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"disclaimer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service."</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://open.fda.gov/terms/"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://open.fda.gov/license/"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-27"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"skip"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">16364554</span>
+<span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;disclaimer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;terms&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/terms/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/license/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;last_updated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-04-27&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;skip&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16364554</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"safetyreportid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5801206-7"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"transmissiondateformat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"102"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"transmissiondate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20090109"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"serious"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"seriousnessdeath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"receivedateformat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"102"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"receivedate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20080707"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"receiptdateformat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"102"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"receiptdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20080625"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"fulfillexpeditecriteria"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"companynumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JACAN16471"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"primarysource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">"reportercountry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANADA"</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span>
+<span class="w">      </span><span class="nt">&quot;safetyreportid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5801206-7&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;transmissiondateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;transmissiondate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20090109&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;serious&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;seriousnessdeath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;receivedateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;receivedate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20080707&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;receiptdateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;receiptdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20080625&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;fulfillexpeditecriteria&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;companynumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JACAN16471&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;primarysource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;reportercountry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANADA&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;qualification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">"senderorganization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FDA-Public Use"</span>
+<span class="w">      </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;senderorganization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FDA-Public Use&quot;</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"patient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">"patientonsetage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"patientonsetageunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"801"</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"patientsex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"patientdeath"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">"patientdeathdateformat"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">"patientdeathdate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">      </span><span class="nt">&quot;receiver&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;patientonsetage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;26&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;patientonsetageunit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;801&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;patientsex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;patientdeath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;patientdeathdateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;patientdeathdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">"reaction"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="nt">&quot;reaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">          </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"reactionmeddrapt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DRUG ADMINISTRATION ERROR"</span>
+<span class="w">            </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DRUG ADMINISTRATION ERROR&quot;</span>
 <span class="w">          </span><span class="p">},</span>
 <span class="w">          </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"reactionmeddrapt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OVERDOSE"</span>
+<span class="w">            </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OVERDOSE&quot;</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="nt">"drug"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="nt">&quot;drug&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">          </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"drugcharacterization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">"medicinalproduct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DURAGESIC-100"</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">"drugauthorizationnumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"019813"</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">"drugadministrationroute"</span><span class="p">:</span><span class="w"> </span><span class="s2">"041"</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">"drugindication"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DRUG ABUSE"</span>
+<span class="w">            </span><span class="nt">&quot;drugcharacterization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;medicinalproduct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DURAGESIC-100&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;drugauthorizationnumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;019813&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;drugadministrationroute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;041&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;drugindication&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DRUG ABUSE&quot;</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">}</span>
@@ -321,9 +406,9 @@ including the drugs that the patient was taking, the reactions that the patient 
 </div>
 </section>
 <section id="query-parameters">
-<h2 id="query-parameters">Query Parameters<a class="headerlink" href="#query-parameters" title="Permalink to this heading">¶</a></h2>
+<h2>Query Parameters<a class="headerlink" href="#query-parameters" title="Permalink to this heading">#</a></h2>
 <p>The API supports five query parameters:</p>
-<table>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Parameter type</p></th>
 <th class="head text-left"><p>How it is used</p></th>
@@ -353,88 +438,139 @@ including the drugs that the patient was taking, the reactions that the patient 
 </div>
 </section>
 <section id="search-syntax">
-<h2 id="search-syntax">Search Syntax<a class="headerlink" href="#search-syntax" title="Permalink to this heading">¶</a></h2>
+<h2>Search Syntax<a class="headerlink" href="#search-syntax" title="Permalink to this heading">#</a></h2>
 <section id="search-terms">
-<h3 id="search-terms">Search Terms<a class="headerlink" href="#search-terms" title="Permalink to this heading">¶</a></h3>
+<h3>Search Terms<a class="headerlink" href="#search-terms" title="Permalink to this heading">#</a></h3>
 <p>Searches have a special syntax</p>
-<p><code class="docutils literal notranslate"><span class="pre">search=field:"term"</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">search=field:&quot;term&quot;</span></code></p>
 <p>where the search term immediately follows the field being search, separated by a colon. For example, this query looks in the <strong>drug/event</strong> endpoint for a
 record where one of the reported patient reactions was fatigue:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&amp;limit=1</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1</span></code></p>
 <p>Here <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> is the patient reaction to a prescribed medication. It is searched for <strong>fatigue</strong>.</p>
 </section>
 <section id="spaces">
-<h3 id="spaces">Spaces<a class="headerlink" href="#spaces" title="Permalink to this heading">¶</a></h3>
+<h3>Spaces<a class="headerlink" href="#spaces" title="Permalink to this heading">#</a></h3>
 <p>Queries use the plus sign <code class="docutils literal notranslate"><span class="pre">+</span></code> in place of the space character. Wherever you would use a space character, use a plus sign instead.</p>
 </section>
 <section id="phrase-matches">
-<h3 id="phrase-matches">Phrase matches<a class="headerlink" href="#phrase-matches" title="Permalink to this heading">¶</a></h3>
+<h3>Phrase matches<a class="headerlink" href="#phrase-matches" title="Permalink to this heading">#</a></h3>
 <p>For phrase matches, use double quotation marks “ “ around the words. For example,</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">"multiple+myeloma"</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">"dry+eye+syndrome"</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">"periperhal+neuropathy"</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;multiple+myeloma&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;dry+eye+syndrome&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;periperhal+neuropathy&quot;</span></code></p></li>
 </ul>
 </section>
 </section>
 </section>
 
 
-          </article>
-        </div>
-      </div>
-    </main>
-  </div>
-  <footer class="md-footer">
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-          
-            <a href="authorization.html" title="Open FDA Authorization"
-               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
-               rel="prev">
-              <div class="md-flex__cell md-flex__cell--shrink">
-                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-              </div>
-              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                <span class="md-flex__ellipsis">
-                  <span
-                      class="md-footer-nav__direction"> Previous </span> Open FDA Authorization </span>
-              </div>
-            </a>
-          
-          
-            <a href="search-syntax.html" title="Search Syntax"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Search Syntax </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          
-        </a>
-        
-      </nav>
-    </div>
-    <div class="md-footer-meta md-typeset">
-      <div class="md-footer-meta__inner md-grid">
-        <div class="md-footer-copyright">
-          <div class="md-footer-copyright__highlight">
-              &#169; Copyright MIT License.
+                </article>
               
-          </div>
-            Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-             and
-            <a href="https://github.com/bashtage/sphinx-material/">Material for
-              Sphinx</a>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="authorization.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Open FDA Authorization</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="search-syntax.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Search Syntax</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-results-object">JSON Results Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-parameters">Query Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-syntax">Search Syntax</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-terms">Search Terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces">Spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phrase-matches">Phrase matches</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kurt Krueckeberg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright MIT License.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
   </footer>
-  <script src="_static/javascripts/application.js"></script>
-  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
   </body>
 </html>
