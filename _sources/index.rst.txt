@@ -12,10 +12,14 @@ Welcome to Open FDA's documentation!
    
    introduction.md
    authorization.md
-   queries-explained.md
-   device-event-fields.md
+   queries-overview.md
+   search-syntax.md
+   advanced-syntax.md
+   query-examples.md
+   endpoint-device.md
    api-examples.md
    api-syntax-rules.md
+   device-adverse-event-searchable-fields.md
 
 Indices and tables
 ==================
