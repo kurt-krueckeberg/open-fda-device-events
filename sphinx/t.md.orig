@@ -1,0 +1,24 @@
+# Most Important Device Adverse Event Fields
+
+This list is uner development.
+
+```{csv-table} Significant Device Adverse Event Fields!
+:header: >
+: "Field", "Description", "Significant Value(s)" 
+:align: left
+:delim: "|"
+:widths: 20 60 20
+
+`source_type`|"The manufacturer-reported source of the adverse event report. This is an `.exact` field. It has been indexed both as its exact string content and also tokenized. Value is one of:
+
+- Other = Other
+- Foreign = Foreign
+- Study = Study
+- Literature = Literature
+- Consumer = Consumer
+- Health Professional = Health Professional
+- User facility = User facility
+- Company representation = Company representation
+- Distributor = Distributor
+- Unknown = Unknown"|`source_type:consumer`
+```

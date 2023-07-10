@@ -41,7 +41,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'significant_device_adverse_evnet_fields';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'significant_device_adverse_event_fields';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Device Adverse Events Searchable Fields" href="device-adverse-event-searchable-fields.html" />
@@ -188,7 +188,7 @@
       
       
       
-      <li><a href="_sources/significant_device_adverse_evnet_fields.md" target="_blank"
+      <li><a href="_sources/significant_device_adverse_event_fields.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,29 +285,26 @@ document.write(`
   <section id="most-important-device-adverse-event-fields">
 <h1>Most Important Device Adverse Event Fields<a class="headerlink" href="#most-important-device-adverse-event-fields" title="Permalink to this heading">#</a></h1>
 <p>This list is uner development.</p>
-<table class="table table-left" id="id1">
+<table class="table" id="id1">
 <caption><span class="caption-text">Significant Device Adverse Event Fields!</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+<col style="width: 20.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
 <th class="head"><p>Description</p></th>
-<th class="head"><p>Significant Value(s)</p></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
+<th class="head"><p>Significant Value</p></th>
 </tr>
 <tr class="row-even"><th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
 <th class="head"></th>
 <th class="head"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code></p></td>
-<td><p>The manufacturer-reported source of the adverse event report. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content</p></td>
-<td><p>and also tokenized.</p></td>
-<td><p>Value is one of:</p>
+<td><p>The manufacturer-reported source of the adverse event report. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content and also tokenized. Value is one of:</p>
 <ul class="simple">
 <li><p>Other = Other</p></li>
 <li><p>Foreign = Foreign</p></li>
@@ -322,47 +319,28 @@ document.write(`
 </ul>
 </td>
 <td><p><code class="docutils literal notranslate"><span class="pre">source_type:consumer</span></code></p></td>
-<td></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
 <td><p>a string that acts like a primary and foreign key for joining four file together</p></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
-<td><p>Date the initial reporter (whoever initially provided information to the user facility</p></td>
-<td><p>manufacturer</p></td>
-<td><p>or importer) provided the information about the event.</p></td>
-<td><p>date value</p></td>
-<td><p>date value</p></td>
+<td><p>Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
-<td><p>The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter</p></td>
-<td><p>heart pacemaker</p></td>
-<td><p>patient restraint</p></td>
-<td><p>etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.</p></td>
+<td><p>The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name:LASIK</span></code>? `device.generaic_name:”refractive surgery”?</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
 <td><p>Narrative text or problem description. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span> <span class="pre">field</span></code>.</p></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
 <td><p>A string that describes the type of report. This is an .exact field. Value is one of the following:</p></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -372,17 +350,11 @@ document.write(`
 </td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-odd"><td><ul class="simple">
 <li><p>Followup = Additional or corrected information.</p></li>
 </ul>
 </td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -392,9 +364,6 @@ document.write(`
 </td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-odd"><td><ul class="simple">
 <li><p>Other information submitted = Documentation forthcoming.”</p></li>
@@ -402,30 +371,18 @@ document.write(`
 </td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
 <td><p>to be added later</p></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>to be added later</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><div class="docutils">
 </div>
 </td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 <td></td>
 </tr>
