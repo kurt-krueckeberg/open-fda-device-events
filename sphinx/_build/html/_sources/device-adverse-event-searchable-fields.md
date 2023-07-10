@@ -26,7 +26,7 @@ Fields that are `.exact` can also be searched for exact phrases. Below are examp
 Fields that are `.exact` fields have been indexed two ways: both as its **exact** string content and as 
 the normal tokenized string content. Th
 
-List of Device Adverse searchable fields. See [Searchable Fields](https://open.fda.gov/apis/device/event/searchable-fields/)
+List of Device Adverse searchable fields. See the openFDA [Device Adverse Event Searchable fields](https://open.fda.gov/apis/device/event/searchable-fields/)
 
 ```{csv-table} Device Adverse Event Searchable Fields
 :header: >
