@@ -17,7 +17,7 @@ Fields that are `.exact` can also be searched for exact phrases. Below are examp
 :::{tip}
 
 - To exactly match the text of a field, append `.exact` to the field name: \
-  `search=device.openfda.deivce_name:"refractive surgery`
+  `search=device.openfda.deivce_name.exact:"refractive surgery`
 
 - To count the exact values of a field: \
   `count=device.openfda.device_name.exact`
