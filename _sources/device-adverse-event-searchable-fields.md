@@ -21,7 +21,7 @@ These type of searches are possible for `.exact` fields:
 
 :::{tip}
 
-- To exactly match the text of a field, append `.exact` to the field name: \
+- To exactly match a search phrase, append `.exact` to the field name: \
   `search=device.openfda.deivce_name.exact:"refractive surgery`
 
 - To count the exact values of a field: \
