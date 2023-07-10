@@ -5,7 +5,7 @@ Fields denoted as `.exact` can be searched two ways:
 1. Using `AND` or `+` (meaning **OR**).
 2. Appending `.exact` to the field name forces exact phrase matches to be done.
 
-These type of searches are possible using `.exact`:
+These type of searches are possible for `.exact` fields:
 
 - `search=device.openfda.device_name:"refractive+surgery` \
   returns hits for "refractive" **OR** "device".
