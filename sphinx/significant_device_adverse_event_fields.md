@@ -22,7 +22,7 @@ As explained on the previous page, fields denoted `.exact` can be searched for a
 - Unknown = Unknown"|`source_type:consumer`
 `mdr_report_key`| a string that acts like a primary and foreign key for joining four file together|
 `date_report`| Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.|
-`device.generic_name`| The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an `.exact` field.|`device.generic_name:LASIK`? `device.generaic_name:"refractive surgery`?
+`device.generic_name`| The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an `.exact` field.|`device.generic_name:LASIK` or `device.generaic_name:"refractive surgery`
 `mdr_text.text`|Narrative text or problem description. This is an `.exact field`.| 
 `type_of_report`|"A string that describes the type of report. This is an .exact field. Value is one of the following:
 
