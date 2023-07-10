@@ -827,26 +827,26 @@ document.write(`
 </td>
 </tr>
 <tr class="row-even"><td><p>Patient</p></td>
-<td><p>patient.date_received</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">patient.date_received</span></code></p></td>
 <td><p>string</p></td>
 <td><p>Date the report about this patient was received.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Patient</p></td>
-<td><p>patient.patient_sequence_number</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">patient.patient_sequence_number</span></code></p></td>
 <td><p>string</p></td>
 <td><p>Documentation forthcoming.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>Patient</p></td>
-<td><p>patient.patient_problems</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">patient.patient_problems</span></code></p></td>
 <td><p>array of strings</p></td>
 <td><p>Describes actual adverse effects on the patient that may be related to the device problem observed during the reported event.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Patient</p></td>
-<td><p>patient.sequence_number_outcome</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">patient.sequence_number_outcome</span></code></p></td>
 <td><p>array of strings</p></td>
 <td><p>Outcome associated with the adverse event for this patient. Expect wide variability in this field; each string in the list of strings may contain multiple outcomes, separated by commas, and with numbers, which may or may not be related to the patient_sequence_number.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
@@ -867,40 +867,40 @@ document.write(`
 </td>
 </tr>
 <tr class="row-even"><td><p>Patient</p></td>
-<td><p>patient.sequence_number_treatment</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">patient.sequence_number_treatment</span></code></p></td>
 <td><p>array of strings</p></td>
 <td><p>Treatment the patient received.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Report text</p></td>
-<td><p>mdr_text.date_report</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.date_report</span></code></p></td>
 <td><p>string</p></td>
 <td><p>Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
 </tr>
 <tr class="row-even"><td><p>Report text</p></td>
-<td><p>mdr_text.mdr_text_key</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.mdr_text_key</span></code></p></td>
 <td><p>string</p></td>
 <td><p>Documentation forthcoming.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Report text</p></td>
-<td><p>mdr_text.patient_sequence_number</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.patient_sequence_number</span></code></p></td>
 <td><p>string</p></td>
 <td><p>Number identifying this particular patient. For example, the first patient object will have the value 1. This is an enumeration corresponding to the number of patients involved in an adverse event.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>Report text</p></td>
-<td><p>mdr_text.text</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
 <td><p>string</p></td>
 <td><p>Narrative text or problem description.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Report text</p></td>
-<td><p>mdr_text.text_type_code</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text_type_code</span></code></p></td>
 <td><p>string</p></td>
 <td><p>String that describes the type of narrative contained within the text field.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>

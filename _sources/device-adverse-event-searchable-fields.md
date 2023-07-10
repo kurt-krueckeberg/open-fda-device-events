@@ -328,14 +328,14 @@ This is an `.exact` field. It has been indexed both as its exact string content,
 Manufacturer|`device.manufacturer_d_country`|string|"Device manufacturer country.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Patient|patient.date_received|string|Date the report about this patient was received.
-Patient|patient.patient_sequence_number|string|"Documentation forthcoming.
+Patient|`patient.date_received`|string|Date the report about this patient was received.
+Patient|`patient.patient_sequence_number`|string|"Documentation forthcoming.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Patient|patient.patient_problems|array of strings|"Describes actual adverse effects on the patient that may be related to the device problem observed during the reported event.
+Patient|`patient.patient_problems`|array of strings|"Describes actual adverse effects on the patient that may be related to the device problem observed during the reported event.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Patient|patient.sequence_number_outcome|array of strings|"Outcome associated with the adverse event for this patient. Expect wide variability in this field; each string in the list of strings may contain multiple outcomes, separated by commas, and with numbers, which may or may not be related to the patient_sequence_number.
+Patient|`patient.sequence_number_outcome`|array of strings|"Outcome associated with the adverse event for this patient. Expect wide variability in this field; each string in the list of strings may contain multiple outcomes, separated by commas, and with numbers, which may or may not be related to the patient_sequence_number.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
@@ -352,20 +352,20 @@ Value is one of the following:
 - No Information = No Information
 - Not Applicable = Not Applicable
 - Death = Death"
-Patient|patient.sequence_number_treatment|array of strings|"Treatment the patient received.
+Patient|`patient.sequence_number_treatment`|array of strings|"Treatment the patient received.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Report text|mdr_text.date_report|string|Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.
-Report text|mdr_text.mdr_text_key|string|"Documentation forthcoming.
+Report text|`mdr_text.date_report`|string|Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.
+Report text|`mdr_text.mdr_text_key`|string|"Documentation forthcoming.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Report text|mdr_text.patient_sequence_number|string|"Number identifying this particular patient. For example, the first patient object will have the value 1. This is an enumeration corresponding to the number of patients involved in an adverse event.
+Report text|`mdr_text.patient_sequence_number`|string|"Number identifying this particular patient. For example, the first patient object will have the value 1. This is an enumeration corresponding to the number of patients involved in an adverse event.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Report text|mdr_text.text|string|"Narrative text or problem description.
+Report text|`mdr_text.text`|string|"Narrative text or problem description.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-Report text|mdr_text.text_type_code|string|"String that describes the type of narrative contained within the text field.
+Report text|`mdr_text.text_type_code`|string|"String that describes the type of narrative contained within the text field.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized.
 
