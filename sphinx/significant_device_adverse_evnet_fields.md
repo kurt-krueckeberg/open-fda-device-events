@@ -1,8 +1,14 @@
-Most Important Device Adverse Event Fields
+# Most Important Device Adverse Event Fields
 
-| Field | Description | Significant Values | 
-|-------|--------|------------------- |
- `source_type`, The manufacturer-reported source of the adverse event report. This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized., "Value is one of:
+This list is uner development.
+
+```{csv-table} Significant Device Adverse Event Fields!
+:header: >
+: "Field", "Description", "Significant Value(s)" 
+:align: left
+:widths: auto
+
+`source_type`, The manufacturer-reported source of the adverse event report. This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized., "Value is one of:
 
 - Other = Other
 - Foreign = Foreign
@@ -25,4 +31,5 @@ Most Important Device Adverse Event Fields
 - Extra copy received = Documentation forthcoming.
 - Other information submitted = Documentation forthcoming.",
 `event_location`, to be added later,,
-`mdr_text.txt` | |
+`mdr_text.txt`,,
+:::

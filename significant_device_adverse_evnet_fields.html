@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>&lt;no title&gt; &#8212; Open FDA API 0.7 documentation</title>
+    <title>Most Important Device Adverse Event Fields &#8212; Open FDA API 0.7 documentation</title>
   
   
   
@@ -44,6 +44,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'significant_device_adverse_evnet_fields';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Device Adverse Events Searchable Fields" href="device-adverse-event-searchable-fields.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -121,7 +122,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="queries-overview.html">Queries Overview</a></li>
@@ -132,6 +133,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api-examples.html">Examples Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-syntax-rules.html">API Syntax Rules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="device-adverse-event-searchable-fields.html">Device Adverse Events Searchable Fields</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Most Important Device Adverse Event Fields</a></li>
 </ul>
 
     </div>
@@ -255,9 +257,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -268,19 +268,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Most Important Device Adverse Event Fields</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -290,21 +282,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>Most Important Device Adverse Event Fields</p>
-<table class="table">
+  <section id="most-important-device-adverse-event-fields">
+<h1>Most Important Device Adverse Event Fields<a class="headerlink" href="#most-important-device-adverse-event-fields" title="Permalink to this heading">#</a></h1>
+<p>This list is uner development.</p>
+<table class="table table-left" id="id1">
+<caption><span class="caption-text">Significant Device Adverse Event Fields!</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
 <th class="head"><p>Description</p></th>
-<th class="head"><p>Significant Values</p></th>
+<th class="head"><p>Significant Value(s)</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+<tr class="row-even"><th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code>, The manufacturer-reported source of the adverse event report. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized., “Value is one of:</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code></p></td>
+<td><p>The manufacturer-reported source of the adverse event report. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content</p></td>
+<td><p>and also tokenized.</p></td>
+<td><p>Value is one of:</p>
 <ul class="simple">
 <li><p>Other = Other</p></li>
 <li><p>Foreign = Foreign</p></li>
@@ -315,17 +318,120 @@ document.write(`
 <li><p>User facility = User facility</p></li>
 <li><p>Company representation = Company representation</p></li>
 <li><p>Distributor = Distributor</p></li>
-<li><p>Unknown = Unknown”, <code class="docutils literal notranslate"><span class="pre">source_type:consumer</span></code>
-<code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code>, a string that acts like a primary and foreign key for joining four file together,
-<code class="docutils literal notranslate"><span class="pre">date_report</span></code>, Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event., date value, date value
-<code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code>, The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.,<code class="docutils literal notranslate"><span class="pre">device.generic_name:LASIK</span></code>? <code class="docutils literal notranslate"><span class="pre">device.generaic_name:&quot;refractive</span> <span class="pre">surgery&quot;?</span> </code>mdr_text.text<code class="docutils literal notranslate"><span class="pre">,Narrative</span> <span class="pre">text</span> <span class="pre">or</span> <span class="pre">problem</span> <span class="pre">description.</span> <span class="pre">This</span> <span class="pre">is</span> <span class="pre">an</span> </code>.exact field<code class="docutils literal notranslate"><span class="pre">.,</span>&#160; </code>type_of_report`, A string that describes the type of report. This is an .exact field. Value is one of the following:</p></li>
-<li><p>Initial submission = Initial report of an event.</p></li>
-<li><p>Followup = Additional or corrected information.</p></li>
-<li><p>Extra copy received = Documentation forthcoming.</p></li>
-<li><p>Other information submitted = Documentation forthcoming.”,
-<code class="docutils literal notranslate"><span class="pre">event_location</span></code>, to be added later,,
-<code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code> | |</p></li>
+<li><p>Unknown = Unknown</p></li>
 </ul>
+</td>
+<td><p><code class="docutils literal notranslate"><span class="pre">source_type:consumer</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
+<td><p>a string that acts like a primary and foreign key for joining four file together</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
+<td><p>Date the initial reporter (whoever initially provided information to the user facility</p></td>
+<td><p>manufacturer</p></td>
+<td><p>or importer) provided the information about the event.</p></td>
+<td><p>date value</p></td>
+<td><p>date value</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter</p></td>
+<td><p>heart pacemaker</p></td>
+<td><p>patient restraint</p></td>
+<td><p>etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name:LASIK</span></code>? `device.generaic_name:”refractive surgery”?</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
+<td><p>Narrative text or problem description. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span> <span class="pre">field</span></code>.</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
+<td><p>A string that describes the type of report. This is an .exact field. Value is one of the following:</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li><p>Initial submission = Initial report of an event.</p></li>
+</ul>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>Followup = Additional or corrected information.</p></li>
+</ul>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li><p>Extra copy received = Documentation forthcoming.</p></li>
+</ul>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>Other information submitted = Documentation forthcoming.”</p></li>
+</ul>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
+<td><p>to be added later</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><div class="docutils">
+</div>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
 
 
                 </article>
@@ -339,6 +445,15 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="device-adverse-event-searchable-fields.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Device Adverse Events Searchable Fields</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -348,20 +463,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
