@@ -2,8 +2,8 @@
 
 Fields that are `.exact` can be searched two ways:
 
-1. Using `AND` or `+`--which means **OR**.
-2. Appending `.exact` to the field name to search for exact phrase matches.
+1. Using `AND` or `+` (meaning **OR**).
+2. Appending `.exact` to the field name forces exact phrase matches to be done.
 
 These type of searches are possible using `.exact`:
 
