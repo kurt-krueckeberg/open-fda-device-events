@@ -1,6 +1,6 @@
 # Device Adverse Events Searchable Fields
 
-Fields that are `.exact` can be searched two ways:
+Fields denoted as `.exact` can be searched two ways:
 
 1. Using `AND` or `+` (meaning **OR**).
 2. Appending `.exact` to the field name forces exact phrase matches to be done.
