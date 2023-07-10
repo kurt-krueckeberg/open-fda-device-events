@@ -649,7 +649,7 @@ Value is one of the following:
 
 - Y = There are subsequent manufacturer-submitted reports.
 - N = There are no subsequent manufacturer-submitted reports."
-OpenFDA fields|`device_class`|string|"A risk based classification system for all medical devices ((Federal Food, Drug, and Cosmetic Act, section 513)
+OpenFDA fields|`device.openfda.device_class`|string|"A risk based classification system for all medical devices ((Federal Food, Drug, and Cosmetic Act, section 513)
 
 Value is one of the following:
 
@@ -662,10 +662,10 @@ Value is one of the following:
 OpenFDA fields|device name|string|"This is the proprietary name, or trade name, of the cleared device.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-OpenFDA fields|`fei_number`|array of strings|Facility identifier assigned to facility by the FDA Office of Regulatory Affairs.
-OpenFDA fields|`medical_specialty_description`|string|"Regulation Medical Specialty is assigned based on the regulation (e.g. 21 CFR Part 888 is Orthopedic Devices) which is why Class 3 devices lack the “Regulation Medical Specialty” field.
+OpenFDA fields|`device.openfda.fei_number`|array of strings|Facility identifier assigned to facility by the FDA Office of Regulatory Affairs.
+OpenFDA fields|`device.openfda.medical_specialty_description`|string|"Regulation Medical Specialty is assigned based on the regulation (e.g. 21 CFR Part 888 is Orthopedic Devices) which is why Class 3 devices lack the “Regulation Medical Specialty” field.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
-OpenFDA fields|`registration_number`|array of strings|
-OpenFDA fields|`regulation_number`|array of strings|The classification regulation in the Code of Federal Regulations (CFR) under which the device is identified, described, and formally classified (Code of Federal regulations Title 21, 862.00 through 892.00). The classification regulation covers various aspects of design, clinical evaluation, manufacturing, packaging, labeling, and postmarket surveillance of the specific medical device.
+OpenFDA fields|`device.openfda.registration_number`|array of strings|
+OpenFDA fields|`device.openfda.regulation_number`|array of strings|The classification regulation in the Code of Federal Regulations (CFR) under which the device is identified, described, and formally classified (Code of Federal regulations Title 21, 862.00 through 892.00). The classification regulation covers various aspects of design, clinical evaluation, manufacturing, packaging, labeling, and postmarket surveillance of the specific medical device.
 ```
