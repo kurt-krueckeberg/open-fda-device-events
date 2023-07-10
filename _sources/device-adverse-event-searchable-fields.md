@@ -1,6 +1,11 @@
 # Device Adverse Events Searchable Fields
 
-Fields that are `.exact` can also be searched for exact phrases. Below are examples to make this clear.
+Fields that are `.exact` can be searched two ways:
+
+1. Using `AND` or `+`--which means **OR**.
+2. Appending `.exact` to the field name to search for exact phrase matches.
+
+These type of searches are possible using `.exact`:
 
 - `search=device.openfda.device_name:"refractive+surgery` \
   returns hits for "refractive" **OR** "device".
@@ -22,9 +27,6 @@ Fields that are `.exact` can also be searched for exact phrases. Below are examp
 - To count the exact values of a field: \
   `count=device.openfda.device_name.exact`
 :::
-
-Fields that are `.exact` fields have been indexed two ways: both as its **exact** string content and as 
-the normal tokenized string content. Th
 
 List of Device Adverse searchable fields. See the openFDA [Device Adverse Event Searchable fields](https://open.fda.gov/apis/device/event/searchable-fields/)
 

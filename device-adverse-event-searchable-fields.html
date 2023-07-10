@@ -283,7 +283,12 @@ document.write(`
                   
   <section id="device-adverse-events-searchable-fields">
 <h1>Device Adverse Events Searchable Fields<a class="headerlink" href="#device-adverse-events-searchable-fields" title="Permalink to this heading">#</a></h1>
-<p>Fields that are <code class="docutils literal notranslate"><span class="pre">.exact</span></code> can also be searched for exact phrases. Below are examples to make this clear.</p>
+<p>Fields that are <code class="docutils literal notranslate"><span class="pre">.exact</span></code> can be searched two ways:</p>
+<ol class="arabic simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">AND</span></code> or <code class="docutils literal notranslate"><span class="pre">+</span></code>–which means <strong>OR</strong>.</p></li>
+<li><p>Appending <code class="docutils literal notranslate"><span class="pre">.exact</span></code> to the field name to search for exact phrase matches.</p></li>
+</ol>
+<p>These type of searches are possible using <code class="docutils literal notranslate"><span class="pre">.exact</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">search=device.openfda.device_name:&quot;refractive+surgery</span></code> <br />
 returns hits for “refractive” <strong>OR</strong> “device”.</p></li>
@@ -303,8 +308,6 @@ counts the total unique strings comprising exact values of this field  (whatever
 <code class="docutils literal notranslate"><span class="pre">count=device.openfda.device_name.exact</span></code></p></li>
 </ul>
 </div>
-<p>Fields that are <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields have been indexed two ways: both as its <strong>exact</strong> string content and as
-the normal tokenized string content. Th</p>
 <p>List of Device Adverse searchable fields. See the openFDA <a class="reference external" href="https://open.fda.gov/apis/device/event/searchable-fields/">Device Adverse Event Searchable fields</a></p>
 <table class="table" id="id1">
 <caption><span class="caption-text">Device Adverse Event Searchable Fields</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
