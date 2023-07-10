@@ -303,7 +303,7 @@ counts the total unique strings comprising exact values of this field  (whatever
 <p class="admonition-title">Tip</p>
 <ul class="simple">
 <li><p>To exactly match a search phrase, append <code class="docutils literal notranslate"><span class="pre">.exact</span></code> to the field name: <br />
-<code class="docutils literal notranslate"><span class="pre">search=device.openfda.deivce_name.exact:&quot;refractive</span> <span class="pre">surgery</span></code></p></li>
+<code class="docutils literal notranslate"><span class="pre">search=device.openfda.device_name.exact:&quot;refractive</span> <span class="pre">surgery</span></code></p></li>
 <li><p>To count the exact values of a field: <br />
 <code class="docutils literal notranslate"><span class="pre">count=device.openfda.device_name.exact</span></code></p></li>
 </ul>
@@ -1423,7 +1423,7 @@ counts the total unique strings comprising exact values of this field  (whatever
 </td>
 </tr>
 <tr class="row-odd"><td><p>OpenFDA fields</p></td>
-<td><p>device name</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
 <td><p>string</p></td>
 <td><p>This is the proprietary name, or trade name, of the cleared device.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>

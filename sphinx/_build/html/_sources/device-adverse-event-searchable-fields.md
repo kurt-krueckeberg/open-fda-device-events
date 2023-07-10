@@ -22,7 +22,7 @@ These type of searches are possible for `.exact` fields:
 :::{tip}
 
 - To exactly match a search phrase, append `.exact` to the field name: \
-  `search=device.openfda.deivce_name.exact:"refractive surgery`
+  `search=device.openfda.device_name.exact:"refractive surgery`
 
 - To count the exact values of a field: \
   `count=device.openfda.device_name.exact`
@@ -659,7 +659,7 @@ Value is one of the following:
 - U = Unclassified
 - N = Not classified
 - F = HDE"
-OpenFDA fields|device name|string|"This is the proprietary name, or trade name, of the cleared device.
+OpenFDA fields|`device.openfda.device_name`|string|"This is the proprietary name, or trade name, of the cleared device.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 OpenFDA fields|`device.openfda.fei_number`|array of strings|Facility identifier assigned to facility by the FDA Office of Regulatory Affairs.
