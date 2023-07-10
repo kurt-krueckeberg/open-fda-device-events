@@ -1,6 +1,6 @@
 # Most Important Device Adverse Event Fields
 
-This list is uner development.
+As explained on the previous page, fields denoted `.exact` can be searched for an exact phrase.
 
 ```{csv-table} Significant Device Adverse Event Fields!
 :header: >
