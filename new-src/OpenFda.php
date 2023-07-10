@@ -19,6 +19,7 @@ meta.result.total gives the total hits, total number of records matching the sea
 
 class Results {
 
+See https://open.fda.gov/apis/paging/
     __ctor
 
 }
