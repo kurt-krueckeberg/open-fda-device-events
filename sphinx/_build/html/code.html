@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Examples Summary &#8212; Open FDA API 0.7 documentation</title>
+    <title>Prospective Code &#8212; Open FDA API 0.7 documentation</title>
   
   
   
@@ -41,11 +41,10 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api-examples';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API Syntax Rules" href="api-syntax-rules.html" />
-    <link rel="prev" title="Device API Endpoint" href="endpoint-device.html" />
+    <link rel="prev" title="Most Important Device Adverse Event Fields" href="sig-dev-adv-fields.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -131,11 +130,11 @@
 <li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="endpoint-device.html">Device API Endpoint</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Examples Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-examples.html">Examples Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-syntax-rules.html">API Syntax Rules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-adv-ev-fields.html">Device Adverse Events Searchable Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sig-dev-adv-fields.html">Most Important Device Adverse Event Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">Prospective Code</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Prospective Code</a></li>
 </ul>
 
     </div>
@@ -190,7 +189,7 @@
       
       
       
-      <li><a href="_sources/api-examples.md" target="_blank"
+      <li><a href="_sources/code.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -272,7 +271,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Examples Summary</h1>
+    <h1>Prospective Code</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -282,15 +281,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adverse-device-events">Adverse Device Events</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-match-options">Examples of Match Options</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match-a-single-search-term">Match a single search term</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match-several-terms-and">Match several terms (AND)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-any-search-terms-or">Matching any search terms (OR)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-unique-records-where-certain-terms-occur">Count unique records where certain terms occur</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-results">Sort Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
             </nav>
         </div>
@@ -302,56 +293,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="examples-summary">
-<h1>Examples Summary<a class="headerlink" href="#examples-summary" title="Permalink to this heading">#</a></h1>
-<section id="adverse-device-events">
-<h2>Adverse Device Events<a class="headerlink" href="#adverse-device-events" title="Permalink to this heading">#</a></h2>
-<p>One adverse event report</p>
-<p>TODO: Incorprate somewhere in this documentation the “device searchable fields” info contained in searchable-fields-device-api.yaml, which I have annotated.</p>
-<p>Search for adverse events within a date range. A date range is specified using brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>; for example, to search for all records with date_received between
-Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p>
+  <section id="prospective-code">
+<h1>Prospective Code<a class="headerlink" href="#prospective-code" title="Permalink to this heading">#</a></h1>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<p>Search for device adverse events for Excimer Lasik code <code class="docutils literal notranslate"><span class="pre">LZS</span></code> or AC-powered keratome code <code class="docutils literal notranslate"><span class="pre">HNO</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HNO%22+device.device_report_product_Code=%22LZS%22</span></code></p>
+<p>Date range:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
-<p>See searchable fields for more about date_received. Brackets [ ] are used to specify a range for date, number, or string fields.</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
-<p>Resume <a class="reference external" href="https://open.fda.gov/apis/device/event/example-api-queries/">here</a></p>
-</section>
-<section id="examples-of-match-options">
-<h2>Examples of Match Options<a class="headerlink" href="#examples-of-match-options" title="Permalink to this heading">#</a></h2>
-<section id="match-a-single-search-term">
-<h3>Match a single search term<a class="headerlink" href="#match-a-single-search-term" title="Permalink to this heading">#</a></h3>
-<p>This example API call queries the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for records where one of the reported patient reactions was <strong>fatigue</strong>. <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> (patient reaction) is searched for <strong>fatigue</strong>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1</span></code></p>
-</section>
-<section id="match-several-terms-and">
-<h3>Match several terms (AND)<a class="headerlink" href="#match-several-terms-and" title="Permalink to this heading">#</a></h3>
-<p>Search the  <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for <strong>fatigue</strong> as a reported patient reaction and <strong>Canada</strong> as the country in which the reported event occurred. <strong>AND</strong> is used
-to join two search terms. The country code for Canada is <strong>ca</strong>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+AND+occurcountry:&quot;ca&quot;&amp;limit=1</span></code></p>
-</section>
-<section id="matching-any-search-terms-or">
-<h3>Matching any search terms (OR)<a class="headerlink" href="#matching-any-search-terms-or" title="Permalink to this heading">#</a></h3>
-<p>Search the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint where either <strong>fatigue</strong> was a reported patient reaction <em>or</em> the country in which the event happened was <strong>Canada</strong>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+occurcountry:&quot;ca&quot;&amp;limit=1</span></code></p>
-</section>
-<section id="count-unique-records-where-certain-terms-occur">
-<h3>Count unique records where certain terms occur<a class="headerlink" href="#count-unique-records-where-certain-terms-occur" title="Permalink to this heading">#</a></h3>
-<p>Search the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for all records and count the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
 <ul class="simple">
-<li><p>search all records</p></li>
-<li><p>Count the number of records matching the terms in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code>. The <strong><code class="docutils literal notranslate"><span class="pre">.exact</span></code></strong> suffix here tells the API to
-count whole phrases (”<strong>injection site reaction</strong>”) instead of individual words (<strong>injection</strong>, <strong>site</strong>, and <strong>reaction</strong> separately)</p></li>
+<li><p>Add a date range</p></li>
+<li><p>Add soure of report</p></li>
+<li><p>Add text of report</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">generic_device</span></code> search</p></li>
+<li><p>etc</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
-</section>
-</section>
-<section id="sort-results">
-<h2>Sort Results<a class="headerlink" href="#sort-results" title="Permalink to this heading">#</a></h2>
-<p>Search the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for:</p>
-<ul class="simple">
-<li><p>ten records</p></li>
-<li><p>sorted in descending order by <code class="docutils literal notranslate"><span class="pre">receivedate</span></code></p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</span></code></p>
 </section>
 </section>
 
@@ -368,22 +324,13 @@ count whole phrases (”<strong>injection site reaction</strong>”) instead of 
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="endpoint-device.html"
+       href="sig-dev-adv-fields.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Device API Endpoint</p>
+        <p class="prev-next-title">Most Important Device Adverse Event Fields</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="api-syntax-rules.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">API Syntax Rules</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -403,15 +350,7 @@ count whole phrases (”<strong>injection site reaction</strong>”) instead of 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adverse-device-events">Adverse Device Events</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-match-options">Examples of Match Options</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match-a-single-search-term">Match a single search term</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#match-several-terms-and">Match several terms (AND)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-any-search-terms-or">Matching any search terms (OR)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-unique-records-where-certain-terms-occur">Count unique records where certain terms occur</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-results">Sort Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
   </nav></div>
 
