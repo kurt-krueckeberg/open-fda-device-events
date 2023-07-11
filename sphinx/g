@@ -1,4 +1,0 @@
-`device.generic_name: LASIK` does not return the number of values one would expect. If I remember, the hits peak unexpectedly at 2003 or 2006?
-`device.generic_name: refractive+surgery` also does not return the number of records one would expect.
-
-Solution: One would have to search the product code field ...

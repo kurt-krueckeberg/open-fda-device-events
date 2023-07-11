@@ -309,7 +309,7 @@ document.write(`
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Three-letter FDA Product Classification</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">LZO</span></code> ??</p></td>
+<td><p>See list of codes in table below.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code></p></td>
 <td><p>Y</p></td>
@@ -329,16 +329,6 @@ document.write(`
 </td>
 <td><p><code class="docutils literal notranslate"><span class="pre">source_type:consumer</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
-<td><p>Y</p></td>
-<td><p>a string that acts like a primary and foreign key for joining four file together</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
-<td><p>N</p></td>
-<td><p>Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
-<td></td>
-</tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.</p></td>
@@ -349,7 +339,22 @@ document.write(`
 <td><p>Narrative text or problem description. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span> <span class="pre">field</span></code>.</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Narrative text or problem description</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
+<td><p>N</p></td>
+<td><p>Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">report_source_code</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Source of the adverse event report–Manufact., Voluntary, User Fac., Distributor</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Voluntary</span> <span class="pre">report</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>A string that describes the type of report. This is an .exact field. Value is one of the following:</p>
 <ul class="simple">
@@ -361,7 +366,7 @@ document.write(`
 </td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Where the event occurred.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
@@ -424,17 +429,44 @@ document.write(`
 </td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
 <td><p>Y</p></td>
-<td><p>Narrative text or problem description</p></td>
-<td></td>
+<td><p>a string that acts like a primary and foreign key for joining four file together</p></td>
+<td><p>nothing</p></td>
 </tr>
-<tr class="row-even"><td><div class="docutils">
-</div>
-</td>
-<td></td>
-<td></td>
-<td></td>
+</tbody>
+</table>
+<table class="table" id="id2">
+<caption><span class="caption-text">Significant 3-letter codes found in <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Device Product Codes</p></th>
+<th class="head text-left"><p>Device name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>OCL</strong></p></td>
+<td class="text-left"><p>Surgical Device, For Cutting, Coagulation, And/Or Ablation Of Tissue, Including Cardiac Tissue</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>HQF</strong></p></td>
+<td class="text-left"><p>Laser, Ophthalmic</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>LZS</strong></p></td>
+<td class="text-left"><p>Excimer Laser System</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>OTL</strong></p></td>
+<td class="text-left"><p>Femtosecond Laser System For Refractive Correction</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>HMY</strong></p></td>
+<td class="text-left"><p>Keratome, Battery-Powered</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>HNO</strong></p></td>
+<td class="text-left"><p>Keratome, Ac-Powered</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>MYD</strong></p></td>
+<td class="text-left"><p>Keratome, Water Jet</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>NKY</strong></p></td>
+<td class="text-left"><p>Blade, Keratome, Reprocessed</p></td>
 </tr>
 </tbody>
 </table>

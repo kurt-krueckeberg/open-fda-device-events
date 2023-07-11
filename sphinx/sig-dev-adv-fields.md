@@ -8,7 +8,7 @@ As explained on the previous page, fields denoted `.exact` can be searched for a
 :widths: 19 3 60 18
 :delim: "|"
 
-`device.device_report_product_code`|Y|Three-letter FDA Product Classification|`LZO` ??
+`device.device_report_product_code`|Y|Three-letter FDA Product Classification|See list of codes in table below.
 `source_type`|Y|"The manufacturer-reported source of the adverse event report. This is an `.exact` field. It has been indexed both as its exact string content and also tokenized. Value is one of:
 
 - Other = Other
@@ -21,10 +21,11 @@ As explained on the previous page, fields denoted `.exact` can be searched for a
 - Company representation = Company representation
 - Distributor = Distributor
 - Unknown = Unknown"|`source_type:consumer`
-`mdr_report_key`|Y|a string that acts like a primary and foreign key for joining four file together|
-`date_report`|N|Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.|
 `device.generic_name`|Y|The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an `.exact` field.|`device.generic_name:LASIK` or `device.generaic_name:"refractive surgery`
 `mdr_text.text`|Y|Narrative text or problem description. This is an `.exact field`.| 
+`mdr_text.txt`|Y|Narrative text or problem description|
+`date_report`|N|Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.|
+`report_source_code`|Y|Source of the adverse event report--Manufact., Voluntary, User Fac., Distributor|`Voluntary report`
 `type_of_report`|Y|"A string that describes the type of report. This is an .exact field. Value is one of the following:
 
 - Initial submission = Initial report of an event.
@@ -90,5 +91,20 @@ Value is one of the following:
 - Not applicable = Not applicable
 - No information = No information
 - Invalid data = Invalid data"|
-`mdr_text.txt`|Y|Narrative text or problem description|
+`mdr_report_key`|Y|a string that acts like a primary and foreign key for joining four file together|nothing
+```
+
+:::{table} Significant 3-letter codes found in `device.device_report_product_code`
+
+| Device Product Codes | Device name |
+:--- | :-----------------
+**OCL** | Surgical Device, For Cutting, Coagulation, And/Or Ablation Of Tissue, Including Cardiac Tissue 
+**HQF** | Laser, Ophthalmic 
+**LZS** | Excimer Laser System 
+**OTL** | Femtosecond Laser System For Refractive Correction 
+**HMY** | Keratome, Battery-Powered 
+**HNO** | Keratome, Ac-Powered 
+**MYD** | Keratome, Water Jet 
+**NKY** | Blade, Keratome, Reprocessed 
 :::
+
