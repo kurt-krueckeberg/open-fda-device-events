@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>&lt;no title&gt; &#8212; Open FDA API 0.7 documentation</title>
+    <title>Prospective Code &#8212; Open FDA API 0.7 documentation</title>
   
   
   
@@ -122,7 +122,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="queries-overview.html">Queries Overview</a></li>
@@ -134,6 +134,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api-syntax-rules.html">API Syntax Rules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-adv-ev-fields.html">Device Adverse Events Searchable Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sig-dev-adv-fields.html">Most Important Device Adverse Event Fields</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Prospective Code</a></li>
 </ul>
 
     </div>
@@ -270,7 +271,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Prospective Code</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -279,9 +280,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -292,8 +293,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>Search for device adverse events for Excimer Lasik code <code class="docutils literal notranslate"><span class="pre">LZS</span></code> or AC-powered keratome code <code class="docutils literal notranslate"><span class="pre">HNO</span></code></p>
+  <section id="prospective-code">
+<h1>Prospective Code<a class="headerlink" href="#prospective-code" title="Permalink to this heading">#</a></h1>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<p>Search for device adverse events for Excimer Lasik code <code class="docutils literal notranslate"><span class="pre">LZS</span></code> or AC-powered keratome code <code class="docutils literal notranslate"><span class="pre">HNO</span></code>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HNO%22+device.device_report_product_Code=%22LZS%22</span></code></p>
+<ul class="simple">
+<li><p>Add a date range</p></li>
+<li><p>Add soure of report</p></li>
+<li><p>Add text of report</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">generic_device</span></code> search</p></li>
+<li><p>etc</p></li>
+</ul>
+</section>
+</section>
 
 
                 </article>
@@ -333,9 +347,9 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
