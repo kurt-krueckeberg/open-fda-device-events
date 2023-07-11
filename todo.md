@@ -1,4 +1,10 @@
 - More Query examples are needed:
   - Add examples to syntax.md
   - Add new page of example?
-- Has aspects of advanced syntax been omitted?
+
+Have aspects of advanced syntax been omitted? Yes, likely they have like:
+
+- dates in bracker \[\]
+- date ranges
+- clarification of when to use `.exact`
+- how `count` works

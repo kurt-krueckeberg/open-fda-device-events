@@ -1,5 +1,10 @@
 # Queries Overview
 
+## Testing Queries at `api.fda.gov`
+
+Queries can be executed online at `https://ap.fda.gov` using their respective endpoints like `https://api.fda.gov/device/event.json?` for the
+Device Adverse Event endpoint.
+
 ## JSON Results Object
  
 Query results are returned in a JSON object which has two properties:
