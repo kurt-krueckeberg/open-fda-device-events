@@ -8,6 +8,9 @@ As explained on the previous page, fields denoted `.exact` can be searched for a
 :widths: 19 3 60 18
 :delim: "|"
 
+'adverse_event_flag`|Y|"Whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient:
+- Y means yes it did
+- N means no it did not.|`Y`
 `device.device_report_product_code`|Y|Three-letter FDA Product Classification|See list of codes in table below.
 `source_type`|Y|"The manufacturer-reported source of the adverse event report. This is an `.exact` field. It has been indexed both as its exact string content and also tokenized. Value is one of:
 
