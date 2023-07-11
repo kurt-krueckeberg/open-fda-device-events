@@ -288,22 +288,31 @@ document.write(`
 <table class="table" id="id1">
 <caption><span class="caption-text">Significant Device Adverse Event Fields!</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
 <colgroup>
-<col style="width: 20.0%" />
+<col style="width: 19.0%" />
+<col style="width: 3.0%" />
 <col style="width: 60.0%" />
-<col style="width: 20.0%" />
+<col style="width: 18.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Is .exact?</p></th>
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Significant Value</p></th>
 </tr>
 <tr class="row-even"><th class="head"></th>
 <th class="head"></th>
 <th class="head"></th>
+<th class="head"></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Three-letter FDA Product Classification</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">LZO</span></code> ??</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code></p></td>
+<td><p>Y</p></td>
 <td><p>The manufacturer-reported source of the adverse event report. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content and also tokenized. Value is one of:</p>
 <ul class="simple">
 <li><p>Other = Other</p></li>
@@ -320,23 +329,28 @@ document.write(`
 </td>
 <td><p><code class="docutils literal notranslate"><span class="pre">source_type:consumer</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
+<td><p>Y</p></td>
 <td><p>a string that acts like a primary and foreign key for joining four file together</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
+<td><p>N</p></td>
 <td><p>Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>Y</p></td>
 <td><p>The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name:LASIK</span></code> or <code class="docutils literal notranslate"><span class="pre">device.generaic_name:&quot;refractive</span> <span class="pre">surgery</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
+<td><p>Y</p></td>
 <td><p>Narrative text or problem description. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span> <span class="pre">field</span></code>.</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
+<td><p>Y</p></td>
 <td><p>A string that describes the type of report. This is an .exact field. Value is one of the following:</p>
 <ul class="simple">
 <li><p>Initial submission = Initial report of an event.</p></li>
@@ -347,17 +361,78 @@ document.write(`
 </td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
-<td><p>to be added later</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Where the event occurred.</p>
+<p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
+<p>Value is one of the following:</p>
+<ul class="simple">
+<li><p>Other = Other</p></li>
+<li><p>Hospital = Hospital</p></li>
+<li><p>Home = Home</p></li>
+<li><p>Nursing home = Nursing home</p></li>
+<li><p>Outpatient treatment facility = Outpatient treatment facility</p></li>
+<li><p>Outpatient diagnostic facility = Outpatient diagnostic facility</p></li>
+<li><p>Ambulatory surgical facility = Ambulatory surgical facility</p></li>
+<li><p>Catheterization suite = Catheterization suite</p></li>
+<li><p>Critical care unit = Critical care unit</p></li>
+<li><p>Dialysis unit = Dialysis unit</p></li>
+<li><p>Emergency room = Emergency room</p></li>
+<li><p>Examination room = Examination room</p></li>
+<li><p>Laboratory/pathology department = Laboratory/pathology department</p></li>
+<li><p>Maternity ward - nursery = Maternity ward - nursery</p></li>
+<li><p>Operating room = Operating room</p></li>
+<li><p>Outpatient clinic/surgery = Outpatient clinic/surgery</p></li>
+<li><p>Patients room or ward = Patients room or ward</p></li>
+<li><p>Radiology department = Radiology department</p></li>
+<li><p>Ambulatory health care facility = Ambulatory health care facility</p></li>
+<li><p>Ambulatory surgical center = Ambulatory surgical center</p></li>
+<li><p>Blood bank = Blood bank</p></li>
+<li><p>Bloodmobile = Bloodmobile</p></li>
+<li><p>Catheterization lab - free standing = Catheterization lab - free standing</p></li>
+<li><p>Chemotherapy center = Chemotherapy center</p></li>
+<li><p>Clinic - walk in, other = Clinic - walk in, other</p></li>
+<li><p>Dialysis center = Dialysis center</p></li>
+<li><p>Drug clinic = Drug clinic</p></li>
+<li><p>Imaging center - mobile = Imaging center - mobile</p></li>
+<li><p>Imaging center - stationary = Imaging center - stationary</p></li>
+<li><p>Laboratory = Laboratory</p></li>
+<li><p>Mobile health unit = Mobile health unit</p></li>
+<li><p>Mri centers = Mri centers</p></li>
+<li><p>Psychiatric center - walk in, other = Psychiatric center - walk in, other</p></li>
+<li><p>Tuberculosis clinic = Tuberculosis clinic</p></li>
+<li><p>Urgent care center = Urgent care center</p></li>
+<li><p>Long-term care facility = Long-term care facility</p></li>
+<li><p>Hospice = Hospice</p></li>
+<li><p>Psychiatric facility = Psychiatric facility</p></li>
+<li><p>Rehabilitation center = Rehabilitation center</p></li>
+<li><p>Retirement home = Retirement home</p></li>
+<li><p>Patients home = Patients home</p></li>
+<li><p>In transit to user/medical facility = In transit to user/medical facility</p></li>
+<li><p>Public venue = Public venue</p></li>
+<li><p>Outdoors = Outdoors</p></li>
+<li><p>Park = Park</p></li>
+<li><p>Playground = Playground</p></li>
+<li><p>Public building = Public building</p></li>
+<li><p>School = School</p></li>
+<li><p>Street = Street</p></li>
+<li><p>Unknown = Unknown</p></li>
+<li><p>Not applicable = Not applicable</p></li>
+<li><p>No information = No information</p></li>
+<li><p>Invalid data = Invalid data</p></li>
+</ul>
+</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
-<td><p>to be added later</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Narrative text or problem description</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><div class="docutils">
+<tr class="row-even"><td><div class="docutils">
 </div>
 </td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
