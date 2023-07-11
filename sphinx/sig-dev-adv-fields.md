@@ -101,7 +101,7 @@ Value is one of the following:
 
 | Device Product Codes | Device name |
 :--- | :-----------------
-**HQF** | Laser, Ophthalmic 
+**HQF** | Laser, Ophthalmic [^1] 
 **LZS** | Excimer Laser System 
 **OTL** | Femtosecond Laser System For Refractive Correction 
 **HMY** | Keratome, Battery-Powered 
@@ -109,4 +109,6 @@ Value is one of the following:
 **MYD** | Keratome, Water Jet 
 **NKY** | Blade, Keratome, Reprocessed 
 :::
+
+[^1]: This Laser Opthalmic device may not be a refractive surgery device.
 
