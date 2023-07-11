@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>API Syntax Rules &#8212; Open FDA API 0.7 documentation</title>
+    <title>Most Important Device Adverse Event Fields &#8212; Open FDA API 0.7 documentation</title>
   
   
   
@@ -41,11 +41,10 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api-syntax-rules';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sig-dev-adv-fields';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Device Adverse Events Searchable Fields" href="dev-adv-ev-fields.html" />
-    <link rel="prev" title="Examples Summary" href="api-examples.html" />
+    <link rel="prev" title="Device Adverse Events Searchable Fields" href="dev-adv-ev-fields.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -132,9 +131,9 @@
 <li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="endpoint-device.html">Device API Endpoint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-examples.html">Examples Summary</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">API Syntax Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-syntax-rules.html">API Syntax Rules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-adv-ev-fields.html">Device Adverse Events Searchable Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sig-dev-adv-fields.html">Most Important Device Adverse Event Fields</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Most Important Device Adverse Event Fields</a></li>
 </ul>
 
     </div>
@@ -189,7 +188,7 @@
       
       
       
-      <li><a href="_sources/api-syntax-rules.md" target="_blank"
+      <li><a href="_sources/sig-dev-adv-fields.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +268,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>API Syntax Rules</h1>
+    <h1>Most Important Device Adverse Event Fields</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -283,11 +282,87 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="api-syntax-rules">
-<h1>API Syntax Rules<a class="headerlink" href="#api-syntax-rules" title="Permalink to this heading">#</a></h1>
-<p>Unless otherwise specified, the API will return only <strong>one</strong> matching record for a search. You can specify the number of records to be returned by using
-the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter. The maximum limit allowed is 1000 for any single API call. If no limit is set, the API will return one matching record.</p>
-<p>RESUME <a class="reference external" href="https://open.fda.gov/apis/advanced-syntax/">HERE</a></p>
+  <section id="most-important-device-adverse-event-fields">
+<h1>Most Important Device Adverse Event Fields<a class="headerlink" href="#most-important-device-adverse-event-fields" title="Permalink to this heading">#</a></h1>
+<p>As explained on the previous page, fields denoted <code class="docutils literal notranslate"><span class="pre">.exact</span></code> can be searched for an exact phrase.</p>
+<table class="table" id="id1">
+<caption><span class="caption-text">Significant Device Adverse Event Fields!</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Significant Value</p></th>
+</tr>
+<tr class="row-even"><th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code></p></td>
+<td><p>The manufacturer-reported source of the adverse event report. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content and also tokenized. Value is one of:</p>
+<ul class="simple">
+<li><p>Other = Other</p></li>
+<li><p>Foreign = Foreign</p></li>
+<li><p>Study = Study</p></li>
+<li><p>Literature = Literature</p></li>
+<li><p>Consumer = Consumer</p></li>
+<li><p>Health Professional = Health Professional</p></li>
+<li><p>User facility = User facility</p></li>
+<li><p>Company representation = Company representation</p></li>
+<li><p>Distributor = Distributor</p></li>
+<li><p>Unknown = Unknown</p></li>
+</ul>
+</td>
+<td><p><code class="docutils literal notranslate"><span class="pre">source_type:consumer</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
+<td><p>a string that acts like a primary and foreign key for joining four file together</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
+<td><p>Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name:LASIK</span></code> or <code class="docutils literal notranslate"><span class="pre">device.generaic_name:&quot;refractive</span> <span class="pre">surgery</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
+<td><p>Narrative text or problem description. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span> <span class="pre">field</span></code>.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
+<td><p>A string that describes the type of report. This is an .exact field. Value is one of the following:</p>
+<ul class="simple">
+<li><p>Initial submission = Initial report of an event.</p></li>
+<li><p>Followup = Additional or corrected information.</p></li>
+<li><p>Extra copy received = Documentation forthcoming.</p></li>
+<li><p>Other information submitted = Documentation forthcoming.</p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
+<td><p>to be added later</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
+<td><p>to be added later</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><div class="docutils">
+</div>
+</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </section>
 
 
@@ -303,22 +378,13 @@ the <code class="docutils literal notranslate"><span class="pre">limit</span></c
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="api-examples.html"
+       href="dev-adv-ev-fields.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Examples Summary</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="dev-adv-ev-fields.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Device Adverse Events Searchable Fields</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
