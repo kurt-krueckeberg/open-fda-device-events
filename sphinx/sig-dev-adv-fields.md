@@ -98,7 +98,6 @@ Value is one of the following:
 
 | Device Product Codes | Device name |
 :--- | :-----------------
-**OCL** | Surgical Device, For Cutting, Coagulation, And/Or Ablation Of Tissue, Including Cardiac Tissue 
 **HQF** | Laser, Ophthalmic 
 **LZS** | Excimer Laser System 
 **OTL** | Femtosecond Laser System For Refractive Correction 
