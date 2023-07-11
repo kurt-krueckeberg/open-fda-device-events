@@ -2,7 +2,7 @@
 
 As explained on the previous page, fields denoted `.exact` can be searched for an exact phrase.
 
-```{csv-table} Significant Device Adverse Event Fields!
+```{csv-table} Significant Device Adverse Event Fields
 :header: >
 :    "Field", "Is .exact?", "Description","Significant Value" 
 :widths: 19 3 60 18
