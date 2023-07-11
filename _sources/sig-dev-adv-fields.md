@@ -103,7 +103,7 @@ Value is one of the following:
 **LZS** | Excimer Laser System 
 **OTL** | Femtosecond Laser System For Refractive Correction 
 **HMY** | Keratome, Battery-Powered 
-**HNO** | Keratome, Ac-Powered 
+**HNO** | Keratome, AC-Powered 
 **MYD** | Keratome, Water Jet 
 **NKY** | Blade, Keratome, Reprocessed 
 :::
