@@ -299,6 +299,8 @@ document.write(`
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
 <p>Search for device adverse events for Excimer Lasik code <code class="docutils literal notranslate"><span class="pre">LZS</span></code> or AC-powered keratome code <code class="docutils literal notranslate"><span class="pre">HNO</span></code>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HNO%22+device.device_report_product_Code=%22LZS%22</span></code></p>
+<p>Date range:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
 <ul class="simple">
 <li><p>Add a date range</p></li>
 <li><p>Add soure of report</p></li>
