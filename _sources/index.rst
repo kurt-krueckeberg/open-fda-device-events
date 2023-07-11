@@ -21,6 +21,7 @@ Welcome to Open FDA's documentation!
    api-syntax-rules.md
    dev-adv-ev-fields.md
    sig-dev-adv-fields.md
+   pros-code.md
 
 Indices and tables
 ==================
