@@ -283,8 +283,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-terms">Search Terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces">Spaces</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phrase-matches">Phrase matches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces-and-phrase-matches">Spaces and Phrase Matches</a></li>
 </ul>
             </nav>
         </div>
@@ -311,22 +310,28 @@ record where one of the reported patient reactions was fatigue:</p>
 <p>Add example’s result or make it iteractive.</p>
 </div>
 </section>
-<section id="spaces">
-<h2>Spaces<a class="headerlink" href="#spaces" title="Permalink to this heading">#</a></h2>
+<section id="spaces-and-phrase-matches">
+<h2>Spaces and Phrase Matches<a class="headerlink" href="#spaces-and-phrase-matches" title="Permalink to this heading">#</a></h2>
 <p>Queries use the plus sign <code class="docutils literal notranslate"><span class="pre">+</span></code> in place of the space character. Wherever you would use a space character, use a plus sign instead.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Add an example and its result or make it iteractive.</p>
-</div>
-</section>
-<section id="phrase-matches">
-<h2>Phrase matches<a class="headerlink" href="#phrase-matches" title="Permalink to this heading">#</a></h2>
-<p>For phrase matches, use double quotation marks “ “ around the words. For example,</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;multiple+myeloma&quot;</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;dry+eye+syndrome&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;periperhal+neuropathy&quot;</span></code></p></li>
-</ul>
+<p>For phrase matches, use double quotation marks “ “ around the words and a <code class="docutils literal notranslate"><span class="pre">+</span></code> instead of the space:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Search parameter</p></th>
+<th class="head text-left"><p>Phrase Searched for</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;multiple+myeloma&quot;</span></code></p></td>
+<td class="text-left"><p>“multiple myeloma”</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;dry+eye+syndrome&quot;</span></code></p></td>
+<td class="text-left"><p>“dry eye syndrome”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;periperhal+neuropathy&quot;</span></code></p></td>
+<td class="text-left"><p>“peripheral neuropathy”</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Add an example and its result or make it iteractive.</p>
@@ -383,8 +388,7 @@ record where one of the reported patient reactions was fatigue:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-terms">Search Terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces">Spaces</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phrase-matches">Phrase matches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces-and-phrase-matches">Spaces and Phrase Matches</a></li>
 </ul>
   </nav></div>
 
