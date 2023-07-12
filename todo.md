@@ -1,3 +1,5 @@
+The syntax page should incorporate the query parameters, whic currently is on another page.
+
 - More Query examples are needed:
   - Add examples to syntax.md
   - Add new page of example?
