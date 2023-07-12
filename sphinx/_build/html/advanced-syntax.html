@@ -309,8 +309,10 @@ document.write(`
 <h2>Grouping<a class="headerlink" href="#grouping" title="Permalink to this heading">#</a></h2>
 <section id="boolean-or">
 <h3>Boolean OR<a class="headerlink" href="#boolean-or" title="Permalink to this heading">#</a></h3>
-<p>To group several terms together, use parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>. For example,</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</span></code></p>
+<p>To group several terms together, use parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>. For example, this query searches for .. OR …</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;HQF&quot;+device.device_report_product_Code=&quot;LZS&quot;</span></code></p>
+<p>It can be rewritten more concisely with grouping:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(&quot;HQF&quot;+OR+&quot;LZS&quot;)</span></code></p>
 </section>
 <section id="boolean-and">
 <h3>Boolean AND<a class="headerlink" href="#boolean-and" title="Permalink to this heading">#</a></h3>

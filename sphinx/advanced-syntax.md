@@ -6,9 +6,13 @@
 
 ### Boolean OR
 
-To group several terms together, use parentheses `( )`. For example,
+To group several terms together, use parentheses `( )`. For example, this query searches for .. OR ...
 
-`https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2`
+`https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"`
+
+It can be rewritten more concisely with grouping:
+
+`https://api.fda.gov/device/event.json?search=device.device_report_product_Code=("HQF"+OR+"LZS")`
 
 ### Boolean AND
 
