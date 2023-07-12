@@ -1,17 +1,21 @@
 # Search Syntax
 
-## Search Terms
+## Basic Search
 
-Searches have a special syntax
+In the **openFDA** syntax to search a field
 
-`search=field:"term"`
+```XQuery
+search=field:"term"
+```
 
-where the search term immediately follows the field being search, separated by a colon. For example, this query looks in the **drug/event** endpoint for a
-record where one of the reported patient reactions was fatigue:
+the search term immediately follows the field to search, separated by a colon. The query below searches
+the **drug/event** endpoint for a record where one of the reported patient reactions was fatigue:
 
-`https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1`
+```Text
+https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
+```
 
-Here `patient.reaction.reactionmeddrapt` is the patient reaction to a prescribed medication. It is searched for **fatigue**.
+`patient.reaction.reactionmeddrapt` is the patient reaction to a prescribed medication. It is searched for **fatigue**:
 
 :::{note}
 Add example's result or make it iteractive.

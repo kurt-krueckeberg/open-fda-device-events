@@ -1,15 +1,13 @@
 # Queries Overview
 
-## Testing Queries at `api.fda.gov`
-
-Queries can be executed online at `https://ap.fda.gov` using their respective endpoints like `https://api.fda.gov/device/event.json?` for the
-Device Adverse Event endpoint.
-
 ## JSON Results Object
- 
-Query results are returned in a JSON object which has two properties:
 
-1. `meta` &mdash; metadata:
+Query results are returned as a JSON object with two properties:
+
+- `meta` certain data about the request.
+- the `results` array
+
+`meta` contains a `total` results count, and `offset` and `limit` values (useful for pagination):
 
    | Meta Field           | Details                                                                                                                                                                                                         |
    |:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -20,13 +18,9 @@ Query results are returned in a JSON object which has two properties:
    | `meta.results.limit` | **Number of records returned**, as defined by the *limit* query parameter. If the `limit` parameter was omitted, the API returns one result. |
    | `meta.results.total` | **Total number of records** matching the search criteria. |
 
+2.`results` &mdash; the arrray of matches (for non-counting querires).
 
-2. `results` &mdash; an arrray of matches (for non-counting querires).
-
-As an example, this query searches in the `drug/event` endpoint for a single record:
-
-`shttps://api.fda.gov/drug/event.json?limit=1`
-
+The query `https://api.fda.gov/drug/event.json?limit=1` searches the `drug/event` endpoint for a single record (`limit=1`).
 
 The `results` properties in the single record returned contains all kinds of information about the adverse event report,
 including the drugs that the patient was taking, the reactions that the patient experienced, and a good deal of other context:
@@ -96,13 +90,18 @@ including the drugs that the patient was taking, the reactions that the patient 
 }
 ```
 
+:::{hint} Test openFDA queries at `api.fda.gov`
+Queries can be executed online at `https://ap.fda.gov` using their respective endpoints like `https://api.fda.gov/device/event.json?` for the
+Device Adverse Event endpoint.
+:::
+
 ## Query Parameters
 
-The API supports five query parameters:
+The **openFDA** API supports these five query parameters:
 
 | Parameter type | How it is used                                                                                                              |
 |:---------|:---------------------------------------------------------------------------------------------------------------------------------|
-|`search`| What to search for, in which fields. If you don’t specify a field to search, the API will search in every field.|
+|`search`| What to search for and in which fields. If you don’t specify a field to search, the API will search in every field.|
 |`sort`| Sort the results of the search by the specified field in ascending or descending order by using the `:asc` or `:desc` modifier.|
 |`count`| Count the **number of unique values** of a certain field, for all the records that matched the search parameter. By default, the 1000 most frequent values are returned.|
 |`limit`| Return up to this number of records that match the search parameter. Currently, the largest allowed limit is 1000.|
@@ -112,29 +111,3 @@ The API supports five query parameters:
 `count` returns unique records. The `total` meta field returned in every query returns the total number of records.
 :::
 
-## Search Syntax
-
-### Search Terms
-
-Searches have a special syntax
-
-`search=field:"term"`
-
-where the search term immediately follows the field being search, separated by a colon. For example, this query looks in the **drug/event** endpoint for a
-record where one of the reported patient reactions was fatigue:
-
-`https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1`
-
-Here `patient.reaction.reactionmeddrapt` is the patient reaction to a prescribed medication. It is searched for **fatigue**.
-
-### Spaces
-
-Queries use the plus sign `+` in place of the space character. Wherever you would use a space character, use a plus sign instead.
-
-### Phrase matches
-
-For phrase matches, use double quotation marks " " around the words. For example,
-
-- `"multiple+myeloma"`.
-- `"dry+eye+syndrome"`
-- `"periperhal+neuropathy"`

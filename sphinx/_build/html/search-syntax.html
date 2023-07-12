@@ -282,7 +282,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-terms">Search Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-search">Basic Search</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces-and-phrase-matches">Spaces and Phrase Matches</a></li>
 </ul>
             </nav>
@@ -297,14 +297,18 @@ document.write(`
                   
   <section id="search-syntax">
 <h1>Search Syntax<a class="headerlink" href="#search-syntax" title="Permalink to this heading">#</a></h1>
-<section id="search-terms">
-<h2>Search Terms<a class="headerlink" href="#search-terms" title="Permalink to this heading">#</a></h2>
-<p>Searches have a special syntax</p>
-<p><code class="docutils literal notranslate"><span class="pre">search=field:&quot;term&quot;</span></code></p>
-<p>where the search term immediately follows the field being search, separated by a colon. For example, this query looks in the <strong>drug/event</strong> endpoint for a
-record where one of the reported patient reactions was fatigue:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1</span></code></p>
-<p>Here <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> is the patient reaction to a prescribed medication. It is searched for <strong>fatigue</strong>.</p>
+<section id="basic-search">
+<h2>Basic Search<a class="headerlink" href="#basic-search" title="Permalink to this heading">#</a></h2>
+<p>In the <strong>openFDA</strong> syntax to search a field</p>
+<div class="highlight-XQuery notranslate"><div class="highlight"><pre><span></span><span class="nt">search</span><span class="o">=</span><span class="nt">field</span><span class="p">:</span><span class="s2">&quot;term&quot;</span>
+</pre></div>
+</div>
+<p>the search term immediately follows the field to search, separated by a colon. The query below searches
+the <strong>drug/event</strong> endpoint for a record where one of the reported patient reactions was fatigue:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> is the patient reaction to a prescribed medication. It is searched for <strong>fatigue</strong>:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Add example’s result or make it iteractive.</p>
@@ -387,7 +391,7 @@ record where one of the reported patient reactions was fatigue:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-terms">Search Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-search">Basic Search</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spaces-and-phrase-matches">Spaces and Phrase Matches</a></li>
 </ul>
   </nav></div>
