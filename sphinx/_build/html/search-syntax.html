@@ -299,20 +299,18 @@ document.write(`
 <h1>Search Syntax<a class="headerlink" href="#search-syntax" title="Permalink to this heading">#</a></h1>
 <section id="basic-search">
 <h2>Basic Search<a class="headerlink" href="#basic-search" title="Permalink to this heading">#</a></h2>
-<p>In the <strong>openFDA</strong> syntax to search a field</p>
+<p>In the <strong>openFDA</strong> search syntax</p>
 <div class="highlight-XQuery notranslate"><div class="highlight"><pre><span></span><span class="nt">search</span><span class="o">=</span><span class="nt">field</span><span class="p">:</span><span class="s2">&quot;term&quot;</span>
 </pre></div>
 </div>
-<p>the search term immediately follows the field to search, separated by a colon. The query below searches
-the <strong>drug/event</strong> endpoint for a record where one of the reported patient reactions was fatigue:</p>
+<p>the search term follows the field to search, separated by a colon.</p>
+<p><strong>TODO:</strong> You can do <code class="docutils literal notranslate"><span class="pre">search=field=&quot;term&quot;</span></code>, too–right?</p>
+<p>If the term is only one word, the quotes are not needed; otherwise, they are.
+In the query below the <strong>drug/event</strong> endpoint is search for a record where one of the reported patient reactions was fatigue:</p>
 <div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> is the patient reaction to a prescribed medication. It is searched for <strong>fatigue</strong>:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Add example’s result or make it iteractive.</p>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> is the patient reaction to a prescribed medication.</p>
 </section>
 <section id="spaces-and-phrase-matches">
 <h2>Spaces and Phrase Matches<a class="headerlink" href="#spaces-and-phrase-matches" title="Permalink to this heading">#</a></h2>

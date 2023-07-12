@@ -333,6 +333,12 @@ document.write(`
 </tbody>
 </table>
 <p>2.<code class="docutils literal notranslate"><span class="pre">results</span></code> — the arrray of matches (for non-counting querires).</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Test openFDA queries at <code class="docutils literal notranslate"><span class="pre">api.fda.gov</span></code>
+Queries can be executed online at <code class="docutils literal notranslate"><span class="pre">https://ap.fda.gov</span></code> using their respective endpoints like <code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?</span></code> for the
+Device Adverse Event endpoint.</p>
+</div>
 <p>The query <code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?limit=1</span></code> searches the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for a single record (<code class="docutils literal notranslate"><span class="pre">limit=1</span></code>).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">results</span></code> properties in the single record returned contains all kinds of information about the adverse event report,
 including the drugs that the patient was taking, the reactions that the patient experienced, and a good deal of other context:</p>
@@ -399,12 +405,6 @@ including the drugs that the patient was taking, the reactions that the patient 
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Test openFDA queries at <code class="docutils literal notranslate"><span class="pre">api.fda.gov</span></code>
-Queries can be executed online at <code class="docutils literal notranslate"><span class="pre">https://ap.fda.gov</span></code> using their respective endpoints like <code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?</span></code> for the
-Device Adverse Event endpoint.</p>
 </div>
 </section>
 <section id="query-parameters">

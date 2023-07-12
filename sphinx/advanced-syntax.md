@@ -4,21 +4,23 @@
 
 ## Grouping
 
+### Boolean OR
+
 To group several terms together, use parentheses `( )`. For example,
 
-`patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)`
+`https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2`
+
+### Boolean AND
 
 To join terms as in a boolean AND, use the term +AND+: For example,
 
-`(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2`
+`https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2`
 
 requires that any of the drug names match and that the field `serious` also match.
 
-:::{note}
 **TODO:**
+
 - Are two groups of parentheses needed in the example above? What is `serious`? Is it a top-level term?
-- Add example
-:::
 
 ## Dates and ranges
 
@@ -40,22 +42,13 @@ You can search for empty fields or for fields that are not empty:
 
 * `_exists_`: search modifier that matches when a field has a value (is not empty).
 
-:::{note}
-**TODO:**
-- Add example
-:::
+**TODO:** Add example
 
 ## Timeseries
 
-:::{note}
-**TODO:**
-- Add example
-:::
+**TODO:** Add example
 
 ## Paging
 
-:::{note}
-**TODO:**
-- Add example
-:::
+**TODO:** Add example
 

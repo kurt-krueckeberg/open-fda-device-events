@@ -282,7 +282,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or">Boolean OR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and">Boolean AND</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-or-not-missing-values">Missing (or not missing) values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries">Timeseries</a></li>
@@ -303,19 +307,21 @@ document.write(`
 <p><strong>TODO:</strong> Include API examples of eachs item mentioned below.</p>
 <section id="grouping">
 <h2>Grouping<a class="headerlink" href="#grouping" title="Permalink to this heading">#</a></h2>
+<section id="boolean-or">
+<h3>Boolean OR<a class="headerlink" href="#boolean-or" title="Permalink to this heading">#</a></h3>
 <p>To group several terms together, use parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>. For example,</p>
-<p><code class="docutils literal notranslate"><span class="pre">patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</span></code></p>
+</section>
+<section id="boolean-and">
+<h3>Boolean AND<a class="headerlink" href="#boolean-and" title="Permalink to this heading">#</a></h3>
 <p>To join terms as in a boolean AND, use the term +AND+: For example,</p>
-<p><code class="docutils literal notranslate"><span class="pre">(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</span></code></p>
 <p>requires that any of the drug names match and that the field <code class="docutils literal notranslate"><span class="pre">serious</span></code> also match.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <p><strong>TODO:</strong></p>
 <ul class="simple">
 <li><p>Are two groups of parentheses needed in the example above? What is <code class="docutils literal notranslate"><span class="pre">serious</span></code>? Is it a top-level term?</p></li>
-<li><p>Add example</p></li>
 </ul>
-</div>
+</section>
 </section>
 <section id="dates-and-ranges">
 <h2>Dates and ranges<a class="headerlink" href="#dates-and-ranges" title="Permalink to this heading">#</a></h2>
@@ -338,33 +344,15 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">_missing_</span></code>: search modifier that matches when a field has no value (is empty).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">_exists_</span></code>: search modifier that matches when a field has a value (is not empty).</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>TODO:</strong></p>
-<ul class="simple">
-<li><p>Add example</p></li>
-</ul>
-</div>
+<p><strong>TODO:</strong> Add example</p>
 </section>
 <section id="timeseries">
 <h2>Timeseries<a class="headerlink" href="#timeseries" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>TODO:</strong></p>
-<ul class="simple">
-<li><p>Add example</p></li>
-</ul>
-</div>
+<p><strong>TODO:</strong> Add example</p>
 </section>
 <section id="paging">
 <h2>Paging<a class="headerlink" href="#paging" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>TODO:</strong></p>
-<ul class="simple">
-<li><p>Add example</p></li>
-</ul>
-</div>
+<p><strong>TODO:</strong> Add example</p>
 </section>
 </section>
 
@@ -416,7 +404,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or">Boolean OR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and">Boolean AND</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-or-not-missing-values">Missing (or not missing) values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries">Timeseries</a></li>

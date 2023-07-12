@@ -2,24 +2,24 @@
 
 ## Basic Search
 
-In the **openFDA** syntax to search a field
+In the **openFDA** search syntax
 
 ```XQuery
 search=field:"term"
 ```
 
-the search term immediately follows the field to search, separated by a colon. The query below searches
-the **drug/event** endpoint for a record where one of the reported patient reactions was fatigue:
+the search term follows the field to search, separated by a colon.
+
+**TODO:** You can do `search=field="term"`, too--right?
+
+ If the term is only one word, the quotes are not needed; otherwise, they are.
+In the query below the **drug/event** endpoint is search for a record where one of the reported patient reactions was fatigue:
 
 ```Text
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
 ```
 
-`patient.reaction.reactionmeddrapt` is the patient reaction to a prescribed medication. It is searched for **fatigue**:
-
-:::{note}
-Add example's result or make it iteractive.
-:::
+`patient.reaction.reactionmeddrapt` is the patient reaction to a prescribed medication.
 
 ## Spaces and Phrase Matches
 

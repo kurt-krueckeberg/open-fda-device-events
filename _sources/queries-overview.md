@@ -20,6 +20,11 @@ Query results are returned as a JSON object with two properties:
 
 2.`results` &mdash; the arrray of matches (for non-counting querires).
 
+:::{hint} Test openFDA queries at `api.fda.gov`
+Queries can be executed online at `https://ap.fda.gov` using their respective endpoints like `https://api.fda.gov/device/event.json?` for the
+Device Adverse Event endpoint.
+:::
+
 The query `https://api.fda.gov/drug/event.json?limit=1` searches the `drug/event` endpoint for a single record (`limit=1`).
 
 The `results` properties in the single record returned contains all kinds of information about the adverse event report,
@@ -89,11 +94,6 @@ including the drugs that the patient was taking, the reactions that the patient 
   ]
 }
 ```
-
-:::{hint} Test openFDA queries at `api.fda.gov`
-Queries can be executed online at `https://ap.fda.gov` using their respective endpoints like `https://api.fda.gov/device/event.json?` for the
-Device Adverse Event endpoint.
-:::
 
 ## Query Parameters
 
