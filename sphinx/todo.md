@@ -1,4 +1,5 @@
-The syntax page should incorporate the query parameters, whic currently is on another page.
+When do you -- must you or can you -- use `:` instead of -- or as an alternative to -- `=` for searching a field(s) for a term(s)?
+The doucmentation instroduces `:` but then shows lots of `field=term` examples.
 
 - More Query examples are needed:
   - Add examples to syntax.md
