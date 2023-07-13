@@ -125,6 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="queries-overview.html">Queries Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query-parameters.html">Query Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="search-syntax.html">Search Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
@@ -282,7 +283,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>The Search within a specific field for a term</p>
+  <p>The query parameters</p>
+<ul class="simple">
+<li><p>search</p></li>
+<li><p>sort</p></li>
+<li><p>count</p></li>
+<li><p>limit</p></li>
+<li><p>skip</p></li>
+</ul>
+<p>are separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.</p>
+<p>To do a boolean OR search for more than one field, use <code class="docutils literal notranslate"><span class="pre">+</span></code> to join the fields and the search terms. Below we search two fields</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:%22fatigue%22+occurcountry:%22ca%22&amp;amp;limit=1">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:”fatigue”+occurcountry:”ca”&amp;limit=1</a></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HQF%22+device.device_report_product_Code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=”HQF”+device.device_report_product_Code=”LZS”</a></p>
+<p>Q: Can you repeat the reserved word <code class="docutils literal notranslate"><span class="pre">search</span></code>?):</p>
 <section id="issues">
 <h1>Issues<a class="headerlink" href="#issues" title="Permalink to this heading">#</a></h1>
 <p>Example 1</p>
