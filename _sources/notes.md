@@ -1,22 +1,3 @@
-The query parameters
-
-- search
-- sort
-- count
-- limit
-- skip
-
-are separated by `&`. 
-
-To do a boolean OR search for more than one field, use `+` to join the fields and the search terms. Below we search two fields
-
-<https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1>
-
-
-<https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS">
-
-Q: Can you repeat the reserved word `search`?):
-
 ## Issues
 
 Example 1 
@@ -25,7 +6,7 @@ Example 1
 
 returns a total of 628612 meta.results.total.
 
-But using `=` instead of `:` 
+but using `=` instead of `:` 
  
 <https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea>
 
@@ -33,18 +14,7 @@ returns 687192 results.total. Why more?
 
 Example 2
 
-Both 
-
-<https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS">
-
-and 
-
-<https://api.fda.gov/device/event.json?search=device.device_report_product_Code=("HQF"+OR+"LZS")>
-
-return the same total. 
-
-
-<https://api.fda.gov/device/event.json?search=device.device_report_product_Code:"HQF">
+<https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF">
 
 returns results but 
 

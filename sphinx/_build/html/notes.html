@@ -283,34 +283,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>The query parameters</p>
-<ul class="simple">
-<li><p>search</p></li>
-<li><p>sort</p></li>
-<li><p>count</p></li>
-<li><p>limit</p></li>
-<li><p>skip</p></li>
-</ul>
-<p>are separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.</p>
-<p>To do a boolean OR search for more than one field, use <code class="docutils literal notranslate"><span class="pre">+</span></code> to join the fields and the search terms. Below we search two fields</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:%22fatigue%22+occurcountry:%22ca%22&amp;amp;limit=1">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:”fatigue”+occurcountry:”ca”&amp;limit=1</a></p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HQF%22+device.device_report_product_Code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=”HQF”+device.device_report_product_Code=”LZS”</a></p>
-<p>Q: Can you repeat the reserved word <code class="docutils literal notranslate"><span class="pre">search</span></code>?):</p>
-<section id="issues">
+  <section id="issues">
 <h1>Issues<a class="headerlink" href="#issues" title="Permalink to this heading">#</a></h1>
 <p>Example 1</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea</a></p>
 <p>returns a total of 628612 meta.results.total.</p>
-<p>But using <code class="docutils literal notranslate"><span class="pre">=</span></code> instead of <code class="docutils literal notranslate"><span class="pre">:</span></code></p>
+<p>but using <code class="docutils literal notranslate"><span class="pre">=</span></code> instead of <code class="docutils literal notranslate"><span class="pre">:</span></code></p>
 <p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea</a></p>
 <p>returns 687192 results.total. Why more?</p>
 <p>Example 2</p>
-<p>Both</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HQF%22+device.device_report_product_Code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=”HQF”+device.device_report_product_Code=”LZS”</a></p>
-<p>and</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(%22HQF%22+OR+%22LZS%22)">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(“HQF”+OR+”LZS”)</a></p>
-<p>return the same total.</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code:%22HQF%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code:”HQF”</a></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HQF%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=”HQF”</a></p>
 <p>returns results but</p>
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code:%22HQF%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code:”HQF”</a></p>
 <p>returns nothing.</p>
