@@ -342,32 +342,39 @@ document.write(`
 </td>
 <td><p><code class="docutils literal notranslate"><span class="pre">source_type:consumer</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<tr class="row-even"><td><p>`device.openfda.device_name’</p></td>
+<td><p>Y</p></td>
+<td><p>This is the proprietary name, or trade name, of the cleared device.</p>
+<p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name:LASIK</span></code> or <code class="docutils literal notranslate"><span class="pre">device.generaic_name:&quot;refractive</span> <span class="pre">surgery</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Narrative text or problem description. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span> <span class="pre">field</span></code>.</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Narrative text or problem description</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
 <td><p>N</p></td>
 <td><p>Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">report_source_code</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">report_source_code</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Source of the adverse event report–Manufact., Voluntary, User Fac., Distributor</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Voluntary</span> <span class="pre">report</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>A string that describes the type of report. This is an .exact field. Value is one of the following:</p>
 <ul class="simple">
@@ -379,7 +386,7 @@ document.write(`
 </td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>Where the event occurred.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
@@ -442,7 +449,7 @@ document.write(`
 </td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
 <td><p>Y</p></td>
 <td><p>a string that acts like a primary and foreign key for joining four file together</p></td>
 <td><p>nothing</p></td>

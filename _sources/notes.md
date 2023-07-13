@@ -1,3 +1,31 @@
+
+count: Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the 1000 most frequent values.
+
+Counting records where certain terms occur
+
+This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.
+
+    Search for all records
+
+    Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
+
+`https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
+
+
+Why does this 
+
+https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
+
+work, but this gives an error 
+
+https://api.fda.gov/device/event.json?count=device.openfda.device_name
+
+Is it  because the openfda fields are annotated?
+
+`https://api.fda.gov/device/event.json?searcount=device.manufacturer_name`
+
+`https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact`
+
 ## Issues
 
 Example 1 
@@ -22,7 +50,18 @@ returns results but
 
 returns nothing.
 
-`:` must have a specific meaning other than equals. To try to figure this out would probably require
-includinig a unique field like `mdr_report_key` in the search of both queries. Writing PHP code to execute the 
+I think `:` means contains while `=` means "matches exactly"?
+
+Both of these searches
+
+<https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer>
+
+<https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:"Excimer+Laser+System"">
+
+return the same totals of 13267.
+
+Note: `mdr_report_key`, which is unique, is returned in every `device/event` query.
+
+including it in the search of both queries, writing PHP code to execute the 
 queries and save the searched-for field and the unique field to a file. Then sorting the files based on the 
 `mdr_report_key` and doing the set difference.

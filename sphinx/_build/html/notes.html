@@ -283,7 +283,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="issues">
+  <p>count: Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the 1000 most frequent values.</p>
+<p>Counting records where certain terms occur</p>
+<p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Search for all records
+
+Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
+<p>Why does this</p>
+<p>https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</p>
+<p>work, but this gives an error</p>
+<p>https://api.fda.gov/device/event.json?count=device.openfda.device_name</p>
+<p>Is it  because the openfda fields are annotated?</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?searcount=device.manufacturer_name</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact</span></code></p>
+<section id="issues">
 <h1>Issues<a class="headerlink" href="#issues" title="Permalink to this heading">#</a></h1>
 <p>Example 1</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea</a></p>
@@ -296,8 +312,13 @@ document.write(`
 <p>returns results but</p>
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code:%22HQF%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code:”HQF”</a></p>
 <p>returns nothing.</p>
-<p><code class="docutils literal notranslate"><span class="pre">:</span></code> must have a specific meaning other than equals. To try to figure this out would probably require
-includinig a unique field like <code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code> in the search of both queries. Writing PHP code to execute the
+<p>I think <code class="docutils literal notranslate"><span class="pre">:</span></code> means contains while <code class="docutils literal notranslate"><span class="pre">=</span></code> means “matches exactly”?</p>
+<p>Both of these searches</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer">https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer</a></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:%22Excimer+Laser+System%22%22">https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:”Excimer+Laser+System””</a></p>
+<p>return the same totals of 13267.</p>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code>, which is unique, is returned in every <code class="docutils literal notranslate"><span class="pre">device/event</span></code> query.</p>
+<p>including it in the search of both queries, writing PHP code to execute the
 queries and save the searched-for field and the unique field to a file. Then sorting the files based on the
 <code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code> and doing the set difference.</p>
 </section>

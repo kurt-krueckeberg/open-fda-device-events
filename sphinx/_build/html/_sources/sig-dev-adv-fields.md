@@ -24,6 +24,9 @@ As explained on the previous page, fields denoted `.exact` can be searched for a
 - Company representation = Company representation
 - Distributor = Distributor
 - Unknown = Unknown"|`source_type:consumer`
+`device.openfda.device_name'|Y|"This is the proprietary name, or trade name, of the cleared device.
+
+This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."|
 `device.generic_name`|Y|The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an `.exact` field.|`device.generic_name:LASIK` or `device.generaic_name:"refractive surgery`
 `mdr_text.text`|Y|Narrative text or problem description. This is an `.exact field`.| 
 `mdr_text.txt`|Y|Narrative text or problem description|

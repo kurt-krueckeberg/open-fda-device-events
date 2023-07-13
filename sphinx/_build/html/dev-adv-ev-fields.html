@@ -293,15 +293,14 @@ document.write(`
 <li><p>Appending <code class="docutils literal notranslate"><span class="pre">.exact</span></code> to the field name forces exact phrase matches to be done.</p></li>
 </ol>
 <p>These type of searches are possible for <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields:</p>
-<p><strong>TODO:</strong> <code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code> is the proprietary or trade name of the cleared device. So “refractive+device” below is
-likely incorrect: it is not a proprietary name or trade name.</p>
+<p><strong>TODO:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code> is the proprietary or trade name of the cleared device. Both these querires</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer">https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer</a>
+<a class="reference external" href="https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:%22Excimer+Laser+System%22%22">https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:”Excimer+Laser+System””</a></p>
+<p>return the same total results since the exact device name is “Excimer Laser System”.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">search=device.openfda.device_name:&quot;refractive+surgery</span></code> <br />
-returns hits for “refractive” <strong>OR</strong> “device”.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">search=device.openfda.device_name.exact:&quot;refractive+device&quot;</span></code> <br />
-returns hits for the exact phrase “refractive surgery”.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">count=device.openfda.device_name</span></code> <br />
-counts the tokenized values of this field. Instances of FOO and BAR are counted separately.</p></li>
+counts the tokenized values of this field. Instances of ‘Excimer’ and ‘Laser’ and ‘System’ are counted separately. <strong>todo:</strong>  &lt;– check this.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">count=device.openfda.device_name.exact</span></code> <br />
 counts the total unique strings comprising exact values of this field  (whatever that means?). FOO BAR, BAR FOO, FOO, and BAR would all be counted separately, along with other combinations that contain these terms.</p></li>
 </ul>

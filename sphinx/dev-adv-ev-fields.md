@@ -7,17 +7,17 @@ Fields denoted `.exact` can be searched two ways:
 
 These type of searches are possible for `.exact` fields:
 
-**TODO:** `device.openfda.device_name` is the proprietary or trade name of the cleared device. So "refractive+device" below is
-likely incorrect: it is not a proprietary name or trade name. 
+**TODO:**
 
-- `search=device.openfda.device_name:"refractive+surgery` \
-  returns hits for "refractive" **OR** "device".
+`device.openfda.device_name` is the proprietary or trade name of the cleared device. Both these querires 
 
-- `search=device.openfda.device_name.exact:"refractive+device"` \
-  returns hits for the exact phrase "refractive surgery".
+<https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer>
+<https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:"Excimer+Laser+System"">
+
+return the same total results since the exact device name is "Excimer Laser System".
 
 - `count=device.openfda.device_name` \
-  counts the tokenized values of this field. Instances of FOO and BAR are counted separately.
+  counts the tokenized values of this field. Instances of 'Excimer' and 'Laser' and 'System' are counted separately. **todo:**  <-- check this.
 
 - `count=device.openfda.device_name.exact` \
   counts the total unique strings comprising exact values of this field  (whatever that means?). FOO BAR, BAR FOO, FOO, and BAR would all be counted separately, along with other combinations that contain these terms.
