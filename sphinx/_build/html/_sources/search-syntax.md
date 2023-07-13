@@ -40,9 +40,7 @@ is equivalent to `search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine
 
 **TODO:** You can do `search=field="term"`, too--right?
 
-## Spaces and Phrase Matches
-
-Queries use the plus sign `+` in place of the space character. Wherever you would use a space character, use a plus sign instead.
+## Searching for Phrases
 
 For phrase matches, use double quotation marks " " around the words and use a `+` in place of the space between the words:
 
