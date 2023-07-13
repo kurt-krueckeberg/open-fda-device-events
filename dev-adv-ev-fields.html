@@ -292,6 +292,8 @@ document.write(`
 <li><p>Appending <code class="docutils literal notranslate"><span class="pre">.exact</span></code> to the field name forces exact phrase matches to be done.</p></li>
 </ol>
 <p>These type of searches are possible for <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields:</p>
+<p><strong>TODO:</strong> <code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code> is the proprietary or trade name of the cleared device. So “refractive+device” below is
+likely incorrect: it is not a proprietary name or trade name.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">search=device.openfda.device_name:&quot;refractive+surgery</span></code> <br />
 returns hits for “refractive” <strong>OR</strong> “device”.</p></li>
@@ -312,6 +314,12 @@ counts the total unique strings comprising exact values of this field  (whatever
 </ul>
 </div>
 <p>List of Device Adverse searchable fields. See the openFDA <a class="reference external" href="https://open.fda.gov/apis/device/event/searchable-fields/">Device Adverse Event Searchable fields</a></p>
+<p>The fields categorized as “OpenFDA fields”, which begin <code class="docutils literal notranslate"><span class="pre">device.openfda</span></code>, are harmonized fields.  When you query an endpoint, you can search by:</p>
+<ul class="simple">
+<li><p>Fields native to records served by that endpoint.</p></li>
+<li><p>Harmonized openFDA fields, if they exist.</p></li>
+</ul>
+<p><strong>openFDA</strong> does not rewrite original records. These additional fields are annotations, in special openfda dictionary of values.</p>
 <table class="table" id="id1">
 <caption><span class="caption-text">Device Adverse Event Searchable Fields</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
 <colgroup>

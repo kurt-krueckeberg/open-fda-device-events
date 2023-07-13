@@ -7,6 +7,9 @@ Fields denoted `.exact` can be searched two ways:
 
 These type of searches are possible for `.exact` fields:
 
+**TODO:** `device.openfda.device_name` is the proprietary or trade name of the cleared device. So "refractive+device" below is
+likely incorrect: it is not a proprietary name or trade name. 
+
 - `search=device.openfda.device_name:"refractive+surgery` \
   returns hits for "refractive" **OR** "device".
 
@@ -29,6 +32,14 @@ These type of searches are possible for `.exact` fields:
 :::
 
 List of Device Adverse searchable fields. See the openFDA [Device Adverse Event Searchable fields](https://open.fda.gov/apis/device/event/searchable-fields/)
+
+The fields categorized as "OpenFDA fields", which begin `device.openfda`, are harmonized fields.  When you query an endpoint, you can search by:
+
+- Fields native to records served by that endpoint.
+
+- Harmonized openFDA fields, if they exist.
+
+**openFDA** does not rewrite original records. These additional fields are annotations, in special openfda dictionary of values. 
 
 ```{csv-table} Device Adverse Event Searchable Fields
 :header: >
