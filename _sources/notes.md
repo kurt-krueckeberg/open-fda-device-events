@@ -22,4 +22,7 @@ returns results but
 
 returns nothing.
 
-`:` must have a specific meaning other than equals.
+`:` must have a specific meaning other than equals. To try to figure this out would probably require
+includinig a unique field like `mdr_report_key` in the search of both queries. Writing PHP code to execute the 
+queries and save the searched-for field and the unique field to a file. Then sorting the files based on the 
+`mdr_report_key` and doing the set difference.

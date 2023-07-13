@@ -296,7 +296,10 @@ document.write(`
 <p>returns results but</p>
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code:%22HQF%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code:”HQF”</a></p>
 <p>returns nothing.</p>
-<p><code class="docutils literal notranslate"><span class="pre">:</span></code> must have a specific meaning other than equals.</p>
+<p><code class="docutils literal notranslate"><span class="pre">:</span></code> must have a specific meaning other than equals. To try to figure this out would probably require
+includinig a unique field like <code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code> in the search of both queries. Writing PHP code to execute the
+queries and save the searched-for field and the unique field to a file. Then sorting the files based on the
+<code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code> and doing the set difference.</p>
 </section>
 
 
