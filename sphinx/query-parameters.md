@@ -35,7 +35,7 @@ Thus the search
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:"Congestion+and+Pain"&limit=6>
 
-will find differing brand names like these, but all will contain the phrase "Congestion and Pain":
+will find differing brand names like those below, but all containing "Congestion and Pain":
 
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
