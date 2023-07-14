@@ -10,7 +10,7 @@ The **openFDA** API supports these five query parameters:
 |`limit`| Return up to this number of records that match the search parameter. Currently, the largest allowed limit is 1000.|
 |`skip`| Skip this number of records that match the search parameter, then return the matching records that follow. Use `skip` in combination with `limit` to paginate results. Currently, the largest allowed value for the skip parameter is 25000. |
 
-### Examples with Comments
+## Examples with Comments
 
 Query paramters must be separated by `&`. If the query below the `limit` parameter is used with the `sort` parameter to return the first ten adverse drug even records and sort them in descending order by received date:
 
