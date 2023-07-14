@@ -283,19 +283,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search"><code class="docutils literal notranslate"><span class="pre">search</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-on-exact-fiels"><code class="docutils literal notranslate"><span class="pre">search</span></code> on <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fiels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions"><code class="docutils literal notranslate"><span class="pre">search</span></code> Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches">Searches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-exact-fiels">Searching <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fiels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions">Search Questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-exact-fields"><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-count-parameter">the <code class="docutils literal notranslate"><span class="pre">count</span></code> parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-with-count">Counting with <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-fields"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists-searches"><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-searches">Boolean Searches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or">OR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and">AND</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
 </ul>
@@ -336,38 +339,37 @@ document.write(`
 </tr>
 </tbody>
 </table>
+<p>Query paramters must be separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>; for example, <code class="docutils literal notranslate"><span class="pre">limit</span></code> used along with <code class="docutils literal notranslate"><span class="pre">sort</span></code>:</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;amp;limit=10">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</a></p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Remember: query parameters must be separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p>
 </div>
-<p>Query paramters must be separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>; for example, if the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter is used along with the <code class="docutils literal notranslate"><span class="pre">sort</span></code> parameter to return the first ten adverse drug even records (sorted in descending order by received date)</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;amp;limit=10">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</a></p>
-<p>then the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter must be separated from the <code class="docutils literal notranslate"><span class="pre">sort</span></code> parameter (and its sort criteria) by an <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.</p>
-<section id="search">
-<h2><code class="docutils literal notranslate"><span class="pre">search</span></code><a class="headerlink" href="#search" title="Permalink to this heading">#</a></h2>
-<p>A search of the form <code class="docutils literal notranslate"><span class="pre">search:field:term</span></code> searches for the occurance of the term in the field.</p>
+<section id="searches">
+<h2>Searches<a class="headerlink" href="#searches" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">search:field:term</span></code> searches for any occurance of the term in the field. Here</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a></p>
-<p>searches the <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> field for any occurance of “Advil”. Thus, brand names like</p>
+<p>any occurance of “Advil” in <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> is found. Thus, brand names like</p>
 <ul class="simple">
 <li><p>“JUNIOR STRENGTH ADVIL”</p></li>
 <li><p>“ADVIL PM- diphenhydramin…buprofen tablet, coated”</p></li>
 <li><p>“Advil Sinus Congestion and Pain”</p></li>
 </ul>
-<p>will all be found. <code class="docutils literal notranslate"><span class="pre">search:field:term</span></code> searches for the occurance of the term in the field. If the term is a phrase, then any occurance of the phrase is search. For example, the query
-below</p>
+<p>will be found.</p>
+<p>If the term is a phrase like “Congestion and Pain”, the entire phrase “Congestion and Pain” must be in the brand name. Therefore</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:%22Congestion+and+Pain%22&amp;amp;limit=6">https://api.fda.gov/drug/ndc.json?search=brand_name:”Congestion+and+Pain”&amp;limit=6</a></p>
-<p>searches <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> for the phrase <code class="docutils literal notranslate"><span class="pre">Congestion</span> <span class="pre">and</span> <span class="pre">Pain</span></code>. Thus it will find brand names like these</p>
+<p>will find differing brand names like these</p>
 <ul class="simple">
 <li><p>“Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus”</p></li>
 <li><p>“Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus”</p></li>
 <li><p>“Mucinex-Sinus Max Severe Congestion and Pain Clear and Cool and Mucinex Nightshift Sinus Clear and Cool”</p></li>
 </ul>
-<p>To use another example, this query</p>
+<p>Another example of a phrase search is</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;amp;limit=10">https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;limit=10</a></p>
-<p>search the <code class="docutils literal notranslate"><span class="pre">pharm_class</span></code> any occurance of “Decrease”. Thus “Decreased Respiratory Secretion Viscosity [PE]”,  “Decreased Prostaglandin Production [PE]”, and
-“Decreased Platelet Aggregation [PE]” will all be found.</p>
-<section id="search-on-exact-fiels">
-<h3><code class="docutils literal notranslate"><span class="pre">search</span></code> on <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fiels<a class="headerlink" href="#search-on-exact-fiels" title="Permalink to this heading">#</a></h3>
+<p>Any occurance of “Decrease” in <code class="docutils literal notranslate"><span class="pre">pharm_class</span></code> will be found. Thus “Decreased Respiratory Secretion Viscosity [PE]”,  “Decreased Prostaglandin Production [PE]”,
+and “Decreased Platelet Aggregation [PE]” will all be found.</p>
+<section id="searching-exact-fiels">
+<h3>Searching <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fiels<a class="headerlink" href="#searching-exact-fiels" title="Permalink to this heading">#</a></h3>
 <p>Question: What is the default behavoir of</p>
 <p>“pharm_class”: [
 “Anti-Inflammatory Agents”,
@@ -378,7 +380,7 @@ below</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;amp;limit=10">https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;limit=10</a></p>
 </section>
 <section id="search-questions">
-<h3><code class="docutils literal notranslate"><span class="pre">search</span></code> Questions<a class="headerlink" href="#search-questions" title="Permalink to this heading">#</a></h3>
+<h3>Search Questions<a class="headerlink" href="#search-questions" title="Permalink to this heading">#</a></h3>
 <p>Question: What does <code class="docutils literal notranslate"><span class="pre">search=field=true</span></code> do or mean?  For example,</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=pharm_class=true">https://api.fda.gov/drug/ndc.json?search=pharm_class=true</a></p>
 <p>Question: What does <code class="docutils literal notranslate"><span class="pre">_exist_</span></code> do. For example,</p>
@@ -388,8 +390,8 @@ below</p>
 <h3><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields<a class="headerlink" href="#search-and-exact-fields" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
-<section id="the-count-parameter">
-<h2>the <code class="docutils literal notranslate"><span class="pre">count</span></code> parameter<a class="headerlink" href="#the-count-parameter" title="Permalink to this heading">#</a></h2>
+<section id="counting-with-count">
+<h2>Counting with <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#counting-with-count" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">count</span></code> counts <strong>unique values</strong> of a certain fields; for example, in the query</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
 <p>the number of unique phrases found in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code> is counted. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix tells the API
@@ -412,8 +414,10 @@ drugs that contain “Advil” within their brand name, such as “CHILDRENS ADV
 <h3><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches<a class="headerlink" href="#exists-searches" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
-<section id="boolean-or-searches">
-<h2>Boolean OR Searches<a class="headerlink" href="#boolean-or-searches" title="Permalink to this heading">#</a></h2>
+<section id="boolean-searches">
+<h2>Boolean Searches<a class="headerlink" href="#boolean-searches" title="Permalink to this heading">#</a></h2>
+<section id="or">
+<h3>OR<a class="headerlink" href="#or" title="Permalink to this heading">#</a></h3>
 <p>To search for records that match either of two search terms or two search two or more fields for combined results, use the <code class="docutils literal notranslate"><span class="pre">+</span></code> for logical OR:</p>
 <p>Below we search for two terms in the <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> field:</p>
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_code=%22HQF%22+device.device_report_product_code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_code=”HQF”+device.device_report_product_code=”LZS”</a></p>
@@ -421,9 +425,10 @@ drugs that contain “Advil” within their brand name, such as “CHILDRENS ADV
 <strong>drug/event</strong> endpoint for a record where either fatigue was a reported patient reaction or the country in which the event happened was Canada.</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:%22fatigue%22+occurcountry:%22ca%22&amp;amp;limit=1">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:”fatigue”+occurcountry:”ca”&amp;limit=1</a></p>
 </section>
-<section id="boolean-and-searches">
-<h2>Boolean AND Searches<a class="headerlink" href="#boolean-and-searches" title="Permalink to this heading">#</a></h2>
+<section id="and">
+<h3>AND<a class="headerlink" href="#and" title="Permalink to this heading">#</a></h3>
 <p>search=field:term+AND+field:term: Search for records that match both terms.</p>
+</section>
 </section>
 <section id="using-grouping">
 <h2>Using Grouping<a class="headerlink" href="#using-grouping" title="Permalink to this heading">#</a></h2>
@@ -482,19 +487,22 @@ drugs that contain “Advil” within their brand name, such as “CHILDRENS ADV
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search"><code class="docutils literal notranslate"><span class="pre">search</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-on-exact-fiels"><code class="docutils literal notranslate"><span class="pre">search</span></code> on <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fiels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions"><code class="docutils literal notranslate"><span class="pre">search</span></code> Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches">Searches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-exact-fiels">Searching <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fiels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions">Search Questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-exact-fields"><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-count-parameter">the <code class="docutils literal notranslate"><span class="pre">count</span></code> parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-with-count">Counting with <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-fields"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists-searches"><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-searches">Boolean Searches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or">OR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and">AND</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
 </ul>

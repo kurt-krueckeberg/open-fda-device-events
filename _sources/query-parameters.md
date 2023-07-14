@@ -10,46 +10,46 @@ The **openFDA** API supports these five query parameters:
 |`limit`| Return up to this number of records that match the search parameter. Currently, the largest allowed limit is 1000. |
 |`skip`| Skip this number of records that match the search parameter, then return the matching records that follow. Use `skip` in combination with `limit` to paginate results. Currently, the largest allowed value for the skip parameter is 25000. |
 
-:::{important}
-Remember: query parameters must be separated by `&`
-:::
-Query paramters must be separated by `&`; for example, if the `limit` parameter is used along with the `sort` parameter to return the first ten adverse drug even records (sorted in descending order by received date)
+Query paramters must be separated by `&`; for example, `limit` used along with `sort`:
 
 <https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10>
 
-then the `limit` parameter must be separated from the `sort` parameter (and its sort criteria) by an `&`.
+:::{important}
+Remember: query parameters must be separated by `&`
+:::
 
-## `search`
+## Searches
 
-A search of the form `search:field:term` searches for the occurance of the term in the field.
+`search:field:term` searches for any occurance of the term in the field. Here
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
 
-searches the `brand_name` field for any occurance of "Advil". Thus, brand names like
+any occurance of "Advil" in `brand_name` is found. Thus, brand names like
 
 - "JUNIOR STRENGTH ADVIL"
 - "ADVIL PM- diphenhydramin…buprofen tablet, coated"
 - "Advil Sinus Congestion and Pain"
 
-will all be found. `search:field:term` searches for the occurance of the term in the field. If the term is a phrase, then any occurance of the phrase is search. For example, the query 
-below
+will be found.
 
-<https://api.fda.gov/drug/ndc.json?search=brand_name:%22Congestion+and+Pain%22&limit=6>
+If the term is a phrase like "Congestion and Pain", the entire phrase "Congestion and Pain" must be in the brand name. Therefore
 
-searches `brand_name` for the phrase `Congestion and Pain`. Thus it will find brand names like these
+<https://api.fda.gov/drug/ndc.json?search=brand_name:"Congestion+and+Pain"&limit=6>
+
+will find differing brand names like these
 
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Mucinex-Sinus Max Severe Congestion and Pain Clear and Cool and Mucinex Nightshift Sinus Clear and Cool"
 
-To use another example, this query
+Another example of a phrase search is
 
 <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10>
 
-search the `pharm_class` any occurance of "Decrease". Thus "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]", and 
-"Decreased Platelet Aggregation [PE]" will all be found.
+Any occurance of "Decrease" in `pharm_class` will be found. Thus "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]",
+and "Decreased Platelet Aggregation [PE]" will all be found.
 
-### `search` on `.exact` fiels
+### Searching `.exact` fiels
 
 Question: What is the default behavoir of
 
@@ -63,7 +63,7 @@ Question: What is the default behavoir of
 <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10>
 
 
-### `search` Questions
+### Search Questions
 
 Question: What does `search=field=true` do or mean?  For example,
 
@@ -75,7 +75,7 @@ Question: What does `_exist_` do. For example,
 
 ### `search` and `.exact` fields
 
-## the `count` parameter
+## Counting with `count` 
 
 `count` counts **unique values** of a certain fields; for example, in the query
 
@@ -109,7 +109,9 @@ You will see fewer results, and each result will have its `brand_name`` exactly 
 
 ### `__exists__` searches
 
-## Boolean OR Searches
+## Boolean Searches
+
+### OR
 
 To search for records that match either of two search terms or two search two or more fields for combined results, use the `+` for logical OR:
 
@@ -122,7 +124,7 @@ You can also search two different fields and return the union of the results of 
 
 <https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1>
 
-## Boolean AND Searches
+### AND
 
 search=field:term+AND+field:term: Search for records that match both terms.
 
