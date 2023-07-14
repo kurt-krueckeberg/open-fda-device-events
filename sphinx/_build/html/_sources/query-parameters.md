@@ -24,7 +24,7 @@ Use `&` to separate query parameters.
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
 
-The search will return `brand_name`'s like
+It returns `brand_name`'s like
 
 - "JUNIOR STRENGTH ADVIL"
 - "ADVIL PM- diphenhydramin…buprofen tablet, coated"
