@@ -35,18 +35,15 @@ Thus the search
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:"Congestion+and+Pain"&limit=6>
 
-will find differing brand names like those below, but all containing "Congestion and Pain":
+will find differing brand names but all containing "Congestion and Pain":
 
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Mucinex-Sinus Max Severe Congestion and Pain Clear and Cool and Mucinex Nightshift Sinus Clear and Cool"
 
-The query
-
-<https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10>
-
-searches for any occurance of "Decrease" in `pharm_class`. Thus "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]",
-and "Decreased Platelet Aggregation [PE]" will all be found.
+and so on. The query <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10> searches for any occurance of "Decrease" in `pharm_class`.
+Thus "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]", and "Decreased Platelet Aggregation [PE]" will all be
+found.
 
 ### Searching fields using the  `.exact` suffix
 
@@ -54,17 +51,16 @@ and "Decreased Platelet Aggregation [PE]" will all be found.
 The information that follows was taken from <https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix>
 :::
 
-Fields that permit an `.exact` suffix have been indexed in two forms in the openFDA ElasticSearch database. A field without the `.exact` suffix has been tokenized to
-allow flexible partial searches. For example, consider the following query: <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>. This will return all
+Some fields (those so specified) can be search with an `.exact` suffix. A field without the `.exact` suffix can be search for partial searches. It has been
+tokenized to allow flexible partial searches. For example, consider the following query: <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>. This will return all
 drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
 
-Now try adding the suffix
+Now try add the `.exact` suffix
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000>
 
-You will see fewer results, and each result will have its `brand_name`` exactly that: Advil. Exact value match is now required.
-
-
+You will see fewer results, and each result will have (exactly--right?) its `brand_name` as "Advil" (nothing more and nothing less?). Exact value match is
+now required.
 
 ### Search Questions
 
