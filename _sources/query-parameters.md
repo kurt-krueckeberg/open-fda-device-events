@@ -75,8 +75,6 @@ Question: What does `_exist_` do. For example,
 
 <https://api.fda.gov/drug/ndc.json?search=_exists_:openfda.pharm_class_cs&count=pharm_class.exact>
 
-### `search` and `.exact` fields
-
 ## Counting with `count` 
 
 `count:` Count the number of unique values of a certain field, for all the records that matched the
