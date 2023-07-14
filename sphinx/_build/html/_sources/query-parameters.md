@@ -43,6 +43,7 @@ will find differing brand names but all containing "Congestion and Pain":
 
 and so on. The query <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10> searches for any occurance of "Decrease" in `pharm_class`.
 Results would include hits like "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]", and "Decreased Platelet Aggregation [PE]".
+
 ### Searching fields using the  `.exact` suffix
 
 :::{seealso}
