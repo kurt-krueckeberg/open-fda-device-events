@@ -15,7 +15,7 @@ Query paramters must be separated by `&`; for example, `limit` used along with `
 <https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10>
 
 :::{important}
-Query parameters must be separated by `&`
+Use `&` to separate query parameters.
 :::
 
 ## Searches
