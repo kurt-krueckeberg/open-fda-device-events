@@ -60,6 +60,10 @@ It has been tokenized to allow flexible partial searches. As shown previouly, a 
 You will now see fewer results. Each result will have (exactly--right?) "Advil" as its `brand_name` (nothing more and nothing less--right?). Exact match must
 match exactly. **todo:** double check.
 
+### `__exists__` searches
+
+todo:
+
 ### Search Questions
 
 Question: What does `search=field=true` do or mean?  For example,
@@ -90,32 +94,4 @@ correct?  The `.exact` suffix tells the API to count whole phrases (e.g. "DRUG I
 Question: Can only `.exact` fields be searched? For example, <https://api.fda.gov/drug/ndc.json?count=pharm_class.exact> return results, but without the `.exact` suffix no results are returned
 
 <https://api.fda.gov/drug/ndc.json?count=pharm_class>
-
-
-### `__exists__` searches
-
-## Boolean Searches
-
-### OR
-
-To search for records that match either of two search terms or two search two or more fields for combined results, use the `+` for logical OR:
-
-Below we search for two terms in the `device.device_report_product_code` field:
-
-<https://api.fda.gov/device/event.json?search=device.device_report_product_code="HQF"+device.device_report_product_code="LZS">
-
-You can also search two different fields and return the union of the results of each, i.e.,  a logical OR. Below we query the
-**drug/event** endpoint for a record where either fatigue was a reported patient reaction or the country in which the event happened was Canada.
-
-<https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1>
-
-### AND
-
-search=field:term+AND+field:term: Search for records that match both terms.
-
-## Using Grouping
-
-todo: complete text here.
-
-## Searches with `:` vs `=`
 

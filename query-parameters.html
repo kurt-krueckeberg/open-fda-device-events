@@ -285,21 +285,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches">Searches</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-fields-using-the-exact-suffix">Searching fields using the  <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists-searches"><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions">Search Questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-exact-fields"><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-with-count">Counting with <code class="docutils literal notranslate"><span class="pre">count</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists-searches"><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-searches">Boolean Searches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or">OR</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and">AND</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-with-count">Counting with <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -379,6 +370,10 @@ will return all drugs that contain “Advil” within their brand name, such as 
 <p>You will now see fewer results. Each result will have (exactly–right?) “Advil” as its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> (nothing more and nothing less–right?). Exact match must
 match exactly. <strong>todo:</strong> double check.</p>
 </section>
+<section id="exists-searches">
+<h3><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches<a class="headerlink" href="#exists-searches" title="Permalink to this heading">#</a></h3>
+<p>todo:</p>
+</section>
 <section id="search-questions">
 <h3>Search Questions<a class="headerlink" href="#search-questions" title="Permalink to this heading">#</a></h3>
 <p>Question: What does <code class="docutils literal notranslate"><span class="pre">search=field=true</span></code> do or mean?  For example,</p>
@@ -402,32 +397,6 @@ correct?  The <code class="docutils literal notranslate"><span class="pre">.exac
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;count=pharm_class.exact">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;count=pharm_class.exact</a></p>
 <p>Question: Can only <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields be searched? For example, <a class="reference external" href="https://api.fda.gov/drug/ndc.json?count=pharm_class.exact">https://api.fda.gov/drug/ndc.json?count=pharm_class.exact</a> return results, but without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix no results are returned</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?count=pharm_class">https://api.fda.gov/drug/ndc.json?count=pharm_class</a></p>
-<section id="exists-searches">
-<h3><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches<a class="headerlink" href="#exists-searches" title="Permalink to this heading">#</a></h3>
-</section>
-</section>
-<section id="boolean-searches">
-<h2>Boolean Searches<a class="headerlink" href="#boolean-searches" title="Permalink to this heading">#</a></h2>
-<section id="or">
-<h3>OR<a class="headerlink" href="#or" title="Permalink to this heading">#</a></h3>
-<p>To search for records that match either of two search terms or two search two or more fields for combined results, use the <code class="docutils literal notranslate"><span class="pre">+</span></code> for logical OR:</p>
-<p>Below we search for two terms in the <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> field:</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_code=%22HQF%22+device.device_report_product_code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_code=”HQF”+device.device_report_product_code=”LZS”</a></p>
-<p>You can also search two different fields and return the union of the results of each, i.e.,  a logical OR. Below we query the
-<strong>drug/event</strong> endpoint for a record where either fatigue was a reported patient reaction or the country in which the event happened was Canada.</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:%22fatigue%22+occurcountry:%22ca%22&amp;amp;limit=1">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:”fatigue”+occurcountry:”ca”&amp;limit=1</a></p>
-</section>
-<section id="and">
-<h3>AND<a class="headerlink" href="#and" title="Permalink to this heading">#</a></h3>
-<p>search=field:term+AND+field:term: Search for records that match both terms.</p>
-</section>
-</section>
-<section id="using-grouping">
-<h2>Using Grouping<a class="headerlink" href="#using-grouping" title="Permalink to this heading">#</a></h2>
-<p>todo: complete text here.</p>
-</section>
-<section id="searches-with-vs">
-<h2>Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code><a class="headerlink" href="#searches-with-vs" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -481,21 +450,12 @@ correct?  The <code class="docutils literal notranslate"><span class="pre">.exac
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches">Searches</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-fields-using-the-exact-suffix">Searching fields using the  <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists-searches"><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions">Search Questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-exact-fields"><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-with-count">Counting with <code class="docutils literal notranslate"><span class="pre">count</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists-searches"><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-searches">Boolean Searches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or">OR</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and">AND</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-with-count">Counting with <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 </ul>
   </nav></div>
 
