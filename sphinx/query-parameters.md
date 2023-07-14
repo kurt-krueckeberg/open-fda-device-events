@@ -41,11 +41,11 @@ will find differing brand names like those below, but all containing "Congestion
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Mucinex-Sinus Max Severe Congestion and Pain Clear and Cool and Mucinex Nightshift Sinus Clear and Cool"
 
-Another example is:
+The query
 
 <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10>
 
-Any occurance of "Decrease" in `pharm_class` is searched for. Thus "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]",
+searches for any occurance of "Decrease" in `pharm_class`. Thus "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]",
 and "Decreased Platelet Aggregation [PE]" will all be found.
 
 ### Searching fields with the  `.exact` suffix
