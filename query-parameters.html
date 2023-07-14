@@ -374,7 +374,7 @@ Results would include hits like “Decreased Respiratory Secretion Viscosity [PE
 <p>Some fields also have a second, <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version which can also be searched. As we have seen, a field (without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix) can be search for partial searches.
 It has been tokenized to allow flexible partial searches. As shown previouly, a query like <a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a>
 will return all drugs that contain “Advil” within their brand name, such as “CHILDRENS ADVIL”, “ADVIL MIGRAINE”, and so on.</p>
-<p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> also has a <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix version</p>
+<p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> also has a <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix version. It too can be search for “Advil”:</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</a></p>
 <p>You will now see fewer results, and each result will have (exactly–right?) its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> as “Advil” (nothing more and nothing less?). Exact value match is
 now required.</p>

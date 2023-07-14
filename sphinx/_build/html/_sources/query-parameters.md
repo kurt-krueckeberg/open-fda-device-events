@@ -53,7 +53,7 @@ Some fields also have a second, `.exact` version which can also be searched. As 
 It has been tokenized to allow flexible partial searches. As shown previouly, a query like <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
  will return all drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
 
-`brand_name` also has a `.exact`-suffix version
+`brand_name` also has a `.exact`-suffix version. It too can be search for "Advil":
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000>
 
