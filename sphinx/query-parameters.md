@@ -20,52 +20,39 @@ Use `&` to separate query parameters.
 
 ## Searches
 
-`search:field:term` searches for any occurance of the term in the field. Here
+`search=brand_name:Advil` searches for any occurance of the **Advil** in the field `brand_name`:
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
 
-any occurance of "Advil" in `brand_name` is found. Thus, brand names like
+The search will return `brand_name`'s like
 
 - "JUNIOR STRENGTH ADVIL"
 - "ADVIL PM- diphenhydramin…buprofen tablet, coated"
 - "Advil Sinus Congestion and Pain"
 
-will be found.
+and so on.
 
-If the term is a phrase like "Congestion and Pain", the entire phrase "Congestion and Pain" must be in the brand name. Therefore
+If the term is a phrase like "Congestion and Pain", the entire phrase "Congestion and Pain" must occur in `brand_name`. Thus the search
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:"Congestion+and+Pain"&limit=6>
 
-will find differing brand names like these
+will find differing brand names like these, but all will contain the phrase "Congestion and Pain":
 
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Mucinex-Sinus Max Severe Congestion and Pain Clear and Cool and Mucinex Nightshift Sinus Clear and Cool"
 
-Another example of a phrase search is
+Another example is:
 
 <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10>
 
-Any occurance of "Decrease" in `pharm_class` will be found. Thus "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]",
+Any occurance of "Decrease" in `pharm_class` is searched for. Thus "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]",
 and "Decreased Platelet Aggregation [PE]" will all be found.
 
 ### Searching `.exact` fiels
 
-Question: What is the default behavoir of
-
- "pharm_class": [
-        "Anti-Inflammatory Agents",
-        "Non-Steroidal [CS]",
-        "Cyclooxygenase Inhibitors [MoA]",
-        "Nonsteroidal Anti-inflammatory Drug [EPC]"
-      ]
-
-<https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10>
-
-### Searches with the `.exact` suffix
-
 :::{seealso}
-This information is taken from <https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix>
+The information that follows was taken from <https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix>
 :::
 
 Fields that permit an `.exact` suffix have been indexed in two forms in the openFDA ElasticSearch database. A field without the `.exact` suffix has been tokenized to

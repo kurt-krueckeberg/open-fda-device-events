@@ -285,7 +285,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches">Searches</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-exact-fiels">Searching <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fiels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-the-exact-suffix">Searches with the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions">Search Questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-exact-fields"><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a></li>
 </ul>
@@ -347,43 +346,32 @@ document.write(`
 </div>
 <section id="searches">
 <h2>Searches<a class="headerlink" href="#searches" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">search:field:term</span></code> searches for any occurance of the term in the field. Here</p>
+<p><code class="docutils literal notranslate"><span class="pre">search=brand_name:Advil</span></code> searches for any occurance of the <strong>Advil</strong> in the field <code class="docutils literal notranslate"><span class="pre">brand_name</span></code>:</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a></p>
-<p>any occurance of “Advil” in <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> is found. Thus, brand names like</p>
+<p>The search will return <code class="docutils literal notranslate"><span class="pre">brand_name</span></code>’s like</p>
 <ul class="simple">
 <li><p>“JUNIOR STRENGTH ADVIL”</p></li>
 <li><p>“ADVIL PM- diphenhydramin…buprofen tablet, coated”</p></li>
 <li><p>“Advil Sinus Congestion and Pain”</p></li>
 </ul>
-<p>will be found.</p>
-<p>If the term is a phrase like “Congestion and Pain”, the entire phrase “Congestion and Pain” must be in the brand name. Therefore</p>
+<p>and so on.</p>
+<p>If the term is a phrase like “Congestion and Pain”, the entire phrase “Congestion and Pain” must occur in <code class="docutils literal notranslate"><span class="pre">brand_name</span></code>. Thus the search</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:%22Congestion+and+Pain%22&amp;amp;limit=6">https://api.fda.gov/drug/ndc.json?search=brand_name:”Congestion+and+Pain”&amp;limit=6</a></p>
-<p>will find differing brand names like these</p>
+<p>will find differing brand names like these, but all will contain the phrase “Congestion and Pain”:</p>
 <ul class="simple">
 <li><p>“Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus”</p></li>
 <li><p>“Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus”</p></li>
 <li><p>“Mucinex-Sinus Max Severe Congestion and Pain Clear and Cool and Mucinex Nightshift Sinus Clear and Cool”</p></li>
 </ul>
-<p>Another example of a phrase search is</p>
+<p>Another example is:</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;amp;limit=10">https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;limit=10</a></p>
-<p>Any occurance of “Decrease” in <code class="docutils literal notranslate"><span class="pre">pharm_class</span></code> will be found. Thus “Decreased Respiratory Secretion Viscosity [PE]”,  “Decreased Prostaglandin Production [PE]”,
+<p>Any occurance of “Decrease” in <code class="docutils literal notranslate"><span class="pre">pharm_class</span></code> is searched for. Thus “Decreased Respiratory Secretion Viscosity [PE]”,  “Decreased Prostaglandin Production [PE]”,
 and “Decreased Platelet Aggregation [PE]” will all be found.</p>
 <section id="searching-exact-fiels">
 <h3>Searching <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fiels<a class="headerlink" href="#searching-exact-fiels" title="Permalink to this heading">#</a></h3>
-<p>Question: What is the default behavoir of</p>
-<p>“pharm_class”: [
-“Anti-Inflammatory Agents”,
-“Non-Steroidal [CS]”,
-“Cyclooxygenase Inhibitors [MoA]”,
-“Nonsteroidal Anti-inflammatory Drug [EPC]”
-]</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;amp;limit=10">https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;limit=10</a></p>
-</section>
-<section id="searches-with-the-exact-suffix">
-<h3>Searches with the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix<a class="headerlink" href="#searches-with-the-exact-suffix" title="Permalink to this heading">#</a></h3>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>This information is taken from <a class="reference external" href="https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix">https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix</a></p>
+<p>The information that follows was taken from <a class="reference external" href="https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix">https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix</a></p>
 </div>
 <p>Fields that permit an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix have been indexed in two forms in the openFDA ElasticSearch database. A field without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix has been tokenized to
 allow flexible partial searches. For example, consider the following query: <a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a>. This will return all
@@ -494,7 +482,6 @@ correct?  The <code class="docutils literal notranslate"><span class="pre">.exac
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches">Searches</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-exact-fiels">Searching <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fiels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-the-exact-suffix">Searches with the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions">Search Questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-exact-fields"><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a></li>
 </ul>
