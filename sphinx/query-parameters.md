@@ -10,22 +10,31 @@ The **openFDA** API supports these five query parameters:
 |`limit`| Return up to this number of records that match the search parameter. Currently, the largest allowed limit is 1000.|
 |`skip`| Skip this number of records that match the search parameter, then return the matching records that follow. Use `skip` in combination with `limit` to paginate results. Currently, the largest allowed value for the skip parameter is 25000. |
 
-## Examples with Comments
-
-Query paramters must be separated by `&`. If the query below the `limit` parameter is used with the `sort` parameter to return the first ten adverse drug even records and sort them in descending order by received date:
-
-<https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10>
-
 :::{important}
 Remember: query parameters must be separated by `&`
 :::
+Query paramters must be separated by `&`; for example, if the `limit` parameter is used along with the `sort` parameter to return the first ten adverse drug even records (sorted in descending order by received date)
 
-`count` is used to count **unique values** of a certain fields.For example, the query
+<https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10>
+
+then the `limit` parameter must be separated from the `sort` parameter (and its sort criteria) by an `&`.
+
+## Using Query Parameters
+
+### the `count` parameter
+
+`count` counts **unique values** of a certain fields; for example, in the query
 
 `https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
 
-counts the number of records matching the terms in `patient.reaction.reactionmeddrapt.exact`. The `.exact` suffix tells the API
-to count whole phrases (e.g. "DRUG INEFFECTIVE") instead of individual words (e.g. "DRUG" and "INEFFECTIVE" separately)
+the number of unique phrases found in `patient.reaction.reactionmeddrapt.exact` is counted. The `.exact` suffix tells the API
+to count whole phrases (e.g. "DRUG INEFFECTIVE") instead of individual words (e.g. "DRUG" and "INEFFECTIVE" separately).
+
+`count` is also often used along with `search`. TODO: Add example
+
+### `search` and `count` of `.exact` fields
+
+
 ## Boolean OR Searches
 
 To search for records that match either of two search terms or two search two or more fields for combined results, use the `+` for logical OR:

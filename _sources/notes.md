@@ -1,6 +1,6 @@
 Understaind `count` better. Documentation states:
 
-    `count:`` Count the number of unique values of a certain field, for all the records that matched the
+    `count:` Count the number of unique values of a certain field, for all the records that matched the
      search parameter. By default, the API returns the 1000 most frequent values.
 
 OpenVigil does allow entering your own search string and gives a default count example. See:
@@ -27,7 +27,7 @@ work, but this one gives an error
 
 https://api.fda.gov/device/event.json?count=device.openfda.device_name
 
-Is it  because the openfda fields are openfda, i.e.annotated, fields?
+I believe it is because the openfda fields are openfda, i.e.annotated, fields?
 
 `https://api.fda.gov/device/event.json?searcount=device.manufacturer_name`
 

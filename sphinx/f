@@ -1,0 +1,26 @@
+#!/usr/bin/php
+<?php
+if ($argc == 1) {
+
+   echo "Missing two parameters:\n";
+   echo "First parameter is file name (including * wildcard)\n";
+   echo "Second paramter is regex (with grep syntax)\n";
+   return;
+}
+
+$param1 = ($argc == 3) ? $argv[1] : "*";  // if only two arguments, use "*".
+
+if ($argc == 2) { 
+
+  //$str = 'find . -type f -name "*. . "$argv[1]"' . " -exec pcregrep -nH {$argv[2]} {} \;";
+
+  $str = "find -type f -name \"*\" -exec pcregrep -nH  \"{$argv[1]}\" {}  \;";
+
+} else {
+
+  $str = "find . -type f -name \"*.{$argv[1]}\" -exec pcregrep -nH {$argv[2]} {} \;";
+}
+
+echo $str . "\n\n";
+
+system($str);

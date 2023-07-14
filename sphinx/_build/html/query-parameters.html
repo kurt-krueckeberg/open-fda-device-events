@@ -283,7 +283,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-with-comments">Examples with Comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-query-parameters">Using Query Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-count-parameter">the <code class="docutils literal notranslate"><span class="pre">count</span></code> parameter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-count-of-exact-fields"><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">count</span></code> of <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
@@ -326,18 +330,26 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<section id="examples-with-comments">
-<h2>Examples with Comments<a class="headerlink" href="#examples-with-comments" title="Permalink to this heading">#</a></h2>
-<p>Query paramters must be separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. If the query below the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter is used with the <code class="docutils literal notranslate"><span class="pre">sort</span></code> parameter to return the first ten adverse drug even records and sort them in descending order by received date:</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;amp;limit=10">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</a></p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Remember: query parameters must be separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">count</span></code> is used to count <strong>unique values</strong> of a certain fields.For example, the query</p>
+<p>Query paramters must be separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>; for example, if the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter is used along with the <code class="docutils literal notranslate"><span class="pre">sort</span></code> parameter to return the first ten adverse drug even records (sorted in descending order by received date)</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;amp;limit=10">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</a></p>
+<p>then the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter must be separated from the <code class="docutils literal notranslate"><span class="pre">sort</span></code> parameter (and its sort criteria) by an <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.</p>
+<section id="using-query-parameters">
+<h2>Using Query Parameters<a class="headerlink" href="#using-query-parameters" title="Permalink to this heading">#</a></h2>
+<section id="the-count-parameter">
+<h3>the <code class="docutils literal notranslate"><span class="pre">count</span></code> parameter<a class="headerlink" href="#the-count-parameter" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">count</span></code> counts <strong>unique values</strong> of a certain fields; for example, in the query</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
-<p>counts the number of records matching the terms in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code>. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix tells the API
-to count whole phrases (e.g. “DRUG INEFFECTIVE”) instead of individual words (e.g. “DRUG” and “INEFFECTIVE” separately)</p>
+<p>the number of unique phrases found in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code> is counted. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix tells the API
+to count whole phrases (e.g. “DRUG INEFFECTIVE”) instead of individual words (e.g. “DRUG” and “INEFFECTIVE” separately).</p>
+<p><code class="docutils literal notranslate"><span class="pre">count</span></code> is also often used along with <code class="docutils literal notranslate"><span class="pre">search</span></code>. TODO: Add example</p>
+</section>
+<section id="search-and-count-of-exact-fields">
+<h3><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">count</span></code> of <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields<a class="headerlink" href="#search-and-count-of-exact-fields" title="Permalink to this heading">#</a></h3>
+</section>
 </section>
 <section id="boolean-or-searches">
 <h2>Boolean OR Searches<a class="headerlink" href="#boolean-or-searches" title="Permalink to this heading">#</a></h2>
@@ -409,7 +421,11 @@ to count whole phrases (e.g. “DRUG INEFFECTIVE”) instead of individual words
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-with-comments">Examples with Comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-query-parameters">Using Query Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-count-parameter">the <code class="docutils literal notranslate"><span class="pre">count</span></code> parameter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-count-of-exact-fields"><code class="docutils literal notranslate"><span class="pre">search</span></code> and <code class="docutils literal notranslate"><span class="pre">count</span></code> of <code class="docutils literal notranslate"><span class="pre">.exact</span></code> fields</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
