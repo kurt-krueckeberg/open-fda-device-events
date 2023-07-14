@@ -283,7 +283,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>count: Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the 1000 most frequent values.</p>
+  <p>Understaind <code class="docutils literal notranslate"><span class="pre">count</span></code> better. Documentation states:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`count:`` Count the number of unique values of a certain field, for all the records that matched the
+ search parameter. By default, the API returns the 1000 most frequent values.
+</pre></div>
+</div>
+<p>OpenVigil does allow entering your own search string and gives a default count example. See:
+<a class="reference external" href="https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php">https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php</a>. The example is:</p>
+<p>&lt;search=patient.drug.openfda.generic_name.exact:(%22DROSPIRENONE+AND+ETHINYL+ESTRADIOL%22)+AND+patient.reaction.reactionmeddrapt.exact:(%22PAIN%22)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0</p>
 <p>Counting records where certain terms occur</p>
 <p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Search for all records
@@ -292,11 +299,11 @@ Count the number of records matching the terms in patient.reaction.reactionmeddr
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
-<p>Why does this</p>
+<p>Why does this query</p>
 <p>https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</p>
-<p>work, but this gives an error</p>
+<p>work, but this one gives an error</p>
 <p>https://api.fda.gov/device/event.json?count=device.openfda.device_name</p>
-<p>Is it  because the openfda fields are annotated?</p>
+<p>Is it  because the openfda fields are openfda, i.e.annotated, fields?</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?searcount=device.manufacturer_name</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact</span></code></p>
 <section id="issues">

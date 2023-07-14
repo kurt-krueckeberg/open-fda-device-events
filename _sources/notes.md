@@ -1,5 +1,13 @@
+Understaind `count` better. Documentation states:
 
-count: Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the 1000 most frequent values.
+    `count:`` Count the number of unique values of a certain field, for all the records that matched the
+     search parameter. By default, the API returns the 1000 most frequent values.
+
+OpenVigil does allow entering your own search string and gives a default count example. See:
+<https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php>. The example is:
+
+<search=patient.drug.openfda.generic_name.exact:(%22DROSPIRENONE+AND+ETHINYL+ESTRADIOL%22)+AND+patient.reaction.reactionmeddrapt.exact:(%22PAIN%22)+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
+>
 
 Counting records where certain terms occur
 
@@ -11,16 +19,15 @@ This query looks in the drug/event endpoint for all records. It then returns a c
 
 `https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
 
-
-Why does this 
+Why does this query
 
 https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
 
-work, but this gives an error 
+work, but this one gives an error
 
 https://api.fda.gov/device/event.json?count=device.openfda.device_name
 
-Is it  because the openfda fields are annotated?
+Is it  because the openfda fields are openfda, i.e.annotated, fields?
 
 `https://api.fda.gov/device/event.json?searcount=device.manufacturer_name`
 
