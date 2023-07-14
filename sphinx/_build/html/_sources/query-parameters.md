@@ -30,7 +30,7 @@ It returns `brand_name`'s like
 - "ADVIL PM- diphenhydramin…buprofen tablet, coated"
 - "Advil Sinus Congestion and Pain"
 
-and so on. If the term is a phrase like "Congestion and Pain", the entire phrase "Congestion and Pain" must occur in `brand_name`.
+and so on. If the term is a phrase like "Congestion and Pain", the entire phrase must occur in `brand_name`.
 Thus the search
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:"Congestion+and+Pain"&limit=6>
