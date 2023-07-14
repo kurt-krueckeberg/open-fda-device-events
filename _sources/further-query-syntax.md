@@ -1,18 +1,5 @@
 # Further Query Syntax
 
-## Basic Search Syntax
-
-In the **openFDA** search syntax
-
-```XQuery
-search=field:term
-```
-the search term follows the field to search, separated by a colon.
-
-:::{note} 
-Parentheses are needed when searching for pharses. See ????
-:::
-
 ## Boolean OR Searches
 
 To search for records that match either of two search terms or two search two or more fields for combined results, use the `+` for logical OR:
@@ -39,13 +26,3 @@ is equivalent to `search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine
 ## Searches with `:` vs `=`
 
 **TODO:** You can do `search=field="term"`, too--right?
-
-## Searching for Phrases
-
-For phrase matches, use double quotation marks " " around the words and use a `+` in place of the space between the words:
-
-| Search parameter   |  Phrase Searched for |
-:------------------- | :-------------------------
-`"multiple+myeloma"` | "multiple myeloma"
-`"dry+eye+syndrome"` | "dry eye syndrome"
-`"periperhal+neuropathy"` | "peripheral neuropathy"

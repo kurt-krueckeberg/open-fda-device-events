@@ -283,12 +283,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-search-syntax">Basic Search Syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-phrases">Searching for Phrases</a></li>
 </ul>
             </nav>
         </div>
@@ -302,18 +300,6 @@ document.write(`
                   
   <section id="further-query-syntax">
 <h1>Further Query Syntax<a class="headerlink" href="#further-query-syntax" title="Permalink to this heading">#</a></h1>
-<section id="basic-search-syntax">
-<h2>Basic Search Syntax<a class="headerlink" href="#basic-search-syntax" title="Permalink to this heading">#</a></h2>
-<p>In the <strong>openFDA</strong> search syntax</p>
-<div class="highlight-XQuery notranslate"><div class="highlight"><pre><span></span><span class="nt">search</span><span class="o">=</span><span class="nt">field:term</span>
-</pre></div>
-</div>
-<p>the search term follows the field to search, separated by a colon.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Parentheses are needed when searching for pharses. See ????</p>
-</div>
-</section>
 <section id="boolean-or-searches">
 <h2>Boolean OR Searches<a class="headerlink" href="#boolean-or-searches" title="Permalink to this heading">#</a></h2>
 <p>To search for records that match either of two search terms or two search two or more fields for combined results, use the <code class="docutils literal notranslate"><span class="pre">+</span></code> for logical OR:</p>
@@ -336,28 +322,6 @@ is equivalent to <code class="docutils literal notranslate"><span class="pre">se
 <section id="searches-with-vs">
 <h2>Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code><a class="headerlink" href="#searches-with-vs" title="Permalink to this heading">#</a></h2>
 <p><strong>TODO:</strong> You can do <code class="docutils literal notranslate"><span class="pre">search=field=&quot;term&quot;</span></code>, too–right?</p>
-</section>
-<section id="searching-for-phrases">
-<h2>Searching for Phrases<a class="headerlink" href="#searching-for-phrases" title="Permalink to this heading">#</a></h2>
-<p>For phrase matches, use double quotation marks “ “ around the words and use a <code class="docutils literal notranslate"><span class="pre">+</span></code> in place of the space between the words:</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Search parameter</p></th>
-<th class="head text-left"><p>Phrase Searched for</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;multiple+myeloma&quot;</span></code></p></td>
-<td class="text-left"><p>“multiple myeloma”</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;dry+eye+syndrome&quot;</span></code></p></td>
-<td class="text-left"><p>“dry eye syndrome”</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;periperhal+neuropathy&quot;</span></code></p></td>
-<td class="text-left"><p>“peripheral neuropathy”</p></td>
-</tr>
-</tbody>
-</table>
 </section>
 </section>
 
@@ -409,12 +373,10 @@ is equivalent to <code class="docutils literal notranslate"><span class="pre">se
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-search-syntax">Basic Search Syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-phrases">Searching for Phrases</a></li>
 </ul>
   </nav></div>
 
