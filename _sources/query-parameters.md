@@ -49,7 +49,7 @@ Results would include hits like "Decreased Respiratory Secretion Viscosity [PE]"
 The information that follows was taken from <https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix>
 :::
 
-Some fields (those specified with `.exact` versions) can be search with an `.exact` suffix. A field without the `.exact` suffix can be search for partial searches. It has been
+Some fields (those specified as also having `.exact` versions) can be search with an `.exact` suffix. A field without the `.exact` suffix can be search for partial searches. It has been
 tokenized to allow flexible partial searches. For example, consider the following query: <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>. This will return all
 drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
 
