@@ -31,7 +31,7 @@ and it returns `brand_name`'s like
 - "Advil Sinus Congestion and Pain"
 
 and so on. If the search term is a phrase like "Congestion and Pain", the entire phrase must occur in `brand_name`.
-Thus the search
+Thus the search query
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:"Congestion+and+Pain"&limit=6>
 
