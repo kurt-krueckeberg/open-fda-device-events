@@ -35,13 +35,13 @@ Thus the search
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:"Congestion+and+Pain"&limit=6>
 
-will find differing brand names like those below, but all containing "Congestion and Pain":
+will find differing brand names but all containing "Congestion and Pain":
 
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Maximum Strength Mucinex Sinus-Max Severe Congestion and Pain and Mucinex Nightshift Sinus"
 - "Mucinex-Sinus Max Severe Congestion and Pain Clear and Cool and Mucinex Nightshift Sinus Clear and Cool"
 
-The query
+and so on. The query
 
 <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10>
 
