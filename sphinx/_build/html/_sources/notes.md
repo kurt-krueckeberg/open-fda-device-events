@@ -1,3 +1,5 @@
+# Notes
+
 Understaind `count` better. Documentation states:
 
     `count:` Count the number of unique values of a certain field, for all the records that matched the
