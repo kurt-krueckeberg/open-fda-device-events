@@ -63,8 +63,15 @@ Question: What is the default behavoir of
 <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10>
 
 
+### `search` Questions
 
+Question: What does `search=field=true` do or mean?  For example,
 
+<https://api.fda.gov/drug/ndc.json?search=pharm_class=true>
+
+Question: What does `_exist_` do. For example,
+
+<https://api.fda.gov/drug/ndc.json?search=_exists_:openfda.pharm_class_cs&count=pharm_class.exact>
 
 ### `search` and `.exact` fields
 
@@ -80,6 +87,10 @@ to count whole phrases (e.g. "DRUG INEFFECTIVE") instead of individual words (e.
 `count` is also often used along with `search`. Below the **drug/ncd** endpoint is searched for brand names that contain "Advil". The unique number of `pharm_class.exact` is returned.
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&count=pharm_class.exact>
+
+Question: Can only `.exact` fields be searched? For example, <https://api.fda.gov/drug/ndc.json?count=pharm_class.exact> return results, but without the `.exact` suffix no results are returned
+
+<https://api.fda.gov/drug/ndc.json?count=pharm_class>
 
 ##  `.exact` fields
 
