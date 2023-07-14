@@ -283,6 +283,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-with-comments">Examples with Comments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
@@ -325,16 +326,19 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">count</span></code> returns unique records. The <code class="docutils literal notranslate"><span class="pre">meta.results.total</span></code> field returned in every query returns the total number of records.</p>
+<section id="examples-with-comments">
+<h2>Examples with Comments<a class="headerlink" href="#examples-with-comments" title="Permalink to this heading">#</a></h2>
+<p>Query paramters must be separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. If the query below the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter is used with the <code class="docutils literal notranslate"><span class="pre">sort</span></code> parameter to return the first ten adverse drug even records and sort them in descending order by received date:</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;amp;limit=10">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</a></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Remember: query parameters must be separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p>
 </div>
-<p>The query parameters above are separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. In the query below, for example, the <code class="docutils literal notranslate"><span class="pre">search</span></code> parameter is spearated from the <code class="docutils literal notranslate"><span class="pre">limit</span></code> parameter
-by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>:</p>
-<ul class="simple">
-<li><p>Query in the drug/event endpoint for ten records and sorts them in descending order by received date:
-<a class="reference external" href="https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;amp;limit=10">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</a></p></li>
-</ul>
+<p><code class="docutils literal notranslate"><span class="pre">count</span></code> is used to count <strong>unique values</strong> of a certain fields.For example, the query</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
+<p>counts the number of records matching the terms in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code>. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix tells the API
+to count whole phrases (e.g. “DRUG INEFFECTIVE”) instead of individual words (e.g. “DRUG” and “INEFFECTIVE” separately)</p>
+</section>
 <section id="boolean-or-searches">
 <h2>Boolean OR Searches<a class="headerlink" href="#boolean-or-searches" title="Permalink to this heading">#</a></h2>
 <p>To search for records that match either of two search terms or two search two or more fields for combined results, use the <code class="docutils literal notranslate"><span class="pre">+</span></code> for logical OR:</p>
@@ -405,6 +409,7 @@ by <code class="docutils literal notranslate"><span class="pre">&amp;</span></co
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-with-comments">Examples with Comments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>

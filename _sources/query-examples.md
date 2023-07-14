@@ -21,7 +21,7 @@ This query looks in the **drug/event** endpoint for ten records and sorts them i
 `https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10`
 
 :::{hint}
-Instead of looking at individual records, you can use the count parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.
+Instead of looking at individual records, you can use the `count` parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.
 :::
 
 ## Count number of unique matching records

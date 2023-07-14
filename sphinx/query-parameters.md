@@ -10,16 +10,22 @@ The **openFDA** API supports these five query parameters:
 |`limit`| Return up to this number of records that match the search parameter. Currently, the largest allowed limit is 1000.|
 |`skip`| Skip this number of records that match the search parameter, then return the matching records that follow. Use `skip` in combination with `limit` to paginate results. Currently, the largest allowed value for the skip parameter is 25000. |
 
-:::{note}
-`count` returns unique records. The `meta.results.total` field returned in every query returns the total number of records.
+### Examples with Comments
+
+Query paramters must be separated by `&`. If the query below the `limit` parameter is used with the `sort` parameter to return the first ten adverse drug even records and sort them in descending order by received date:
+
+<https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10>
+
+:::{important}
+Remember: query parameters must be separated by `&`
 :::
 
-The query parameters above are separated by `&`. In the query below, for example, the `search` parameter is spearated from the `limit` parameter
-by `&`:
+`count` is used to count **unique values** of a certain fields.For example, the query
 
-- Query in the drug/event endpoint for ten records and sorts them in descending order by received date:
-  <https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10>
+`https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
 
+counts the number of records matching the terms in `patient.reaction.reactionmeddrapt.exact`. The `.exact` suffix tells the API
+to count whole phrases (e.g. "DRUG INEFFECTIVE") instead of individual words (e.g. "DRUG" and "INEFFECTIVE" separately)
 ## Boolean OR Searches
 
 To search for records that match either of two search terms or two search two or more fields for combined results, use the `+` for logical OR:
