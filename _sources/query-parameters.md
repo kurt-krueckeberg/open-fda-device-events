@@ -48,7 +48,7 @@ The query
 searches for any occurance of "Decrease" in `pharm_class`. Thus "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]",
 and "Decreased Platelet Aggregation [PE]" will all be found.
 
-### Searching fields with the  `.exact` suffix
+### Searching fields using the  `.exact` suffix
 
 :::{seealso}
 The information that follows was taken from <https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix>
