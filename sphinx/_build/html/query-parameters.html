@@ -376,8 +376,8 @@ It has been tokenized to allow flexible partial searches. As shown previouly, a 
 will return all drugs that contain “Advil” within their brand name, such as “CHILDRENS ADVIL”, “ADVIL MIGRAINE”, and so on.</p>
 <p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> also has a <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix version. It too can be search for “Advil”:</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</a></p>
-<p>You will now see fewer results, and each result will have (exactly–right?) its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> as “Advil” (nothing more and nothing less?). Exact value match is
-now required.</p>
+<p>You will now see fewer results. Each result will have (exactly–right?) “Advil” as its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> (nothing more and nothing less–right?). Exact match must
+match exactly. <strong>todo:</strong> double check.</p>
 </section>
 <section id="search-questions">
 <h3>Search Questions<a class="headerlink" href="#search-questions" title="Permalink to this heading">#</a></h3>

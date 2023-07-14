@@ -57,8 +57,8 @@ It has been tokenized to allow flexible partial searches. As shown previouly, a 
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000>
 
-You will now see fewer results, and each result will have (exactly--right?) its `brand_name` as "Advil" (nothing more and nothing less?). Exact value match is
-now required.
+You will now see fewer results. Each result will have (exactly--right?) "Advil" as its `brand_name` (nothing more and nothing less--right?). Exact match must
+match exactly. **todo:** double check.
 
 ### Search Questions
 
