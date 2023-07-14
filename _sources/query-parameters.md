@@ -20,7 +20,7 @@ Use `&` to separate query parameters.
 
 ## Searches
 
-`search=brand_name:Advil` searches for any occurance of the **Advil** in the field `brand_name`:
+`search=brand_name:Advil` searches for any occurance of **Advil** in `brand_name`:
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
 

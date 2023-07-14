@@ -6,7 +6,7 @@ Understaind `count` better. Documentation states:
 OpenVigil does allow entering your own search string and gives a default count example. See:
 <https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php>. The example is:
 
-<search=patient.drug.openfda.generic_name.exact:(%22DROSPIRENONE+AND+ETHINYL+ESTRADIOL%22)+AND+patient.reaction.reactionmeddrapt.exact:(%22PAIN%22)+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
+<search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
 >
 
 Counting records where certain terms occur

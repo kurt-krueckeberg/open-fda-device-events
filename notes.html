@@ -290,7 +290,7 @@ document.write(`
 </div>
 <p>OpenVigil does allow entering your own search string and gives a default count example. See:
 <a class="reference external" href="https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php">https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php</a>. The example is:</p>
-<p>&lt;search=patient.drug.openfda.generic_name.exact:(%22DROSPIRENONE+AND+ETHINYL+ESTRADIOL%22)+AND+patient.reaction.reactionmeddrapt.exact:(%22PAIN%22)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0</p>
+<p>&lt;search=patient.drug.openfda.generic_name.exact:(“DROSPIRENONE+AND+ETHINYL+ESTRADIOL”)+AND+patient.reaction.reactionmeddrapt.exact:(“PAIN”)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0</p>
 <p>Counting records where certain terms occur</p>
 <p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Search for all records
