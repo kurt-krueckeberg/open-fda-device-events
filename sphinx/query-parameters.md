@@ -54,17 +54,16 @@ and "Decreased Platelet Aggregation [PE]" will all be found.
 The information that follows was taken from <https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix>
 :::
 
-Fields that permit an `.exact` suffix have been indexed in two forms in the openFDA ElasticSearch database. A field without the `.exact` suffix has been tokenized to
-allow flexible partial searches. For example, consider the following query: <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>. This will return all
+Some fields (those so specified) can be search with an `.exact` suffix. A field without the `.exact` suffix can be search for partial searches. It has been
+tokenized to allow flexible partial searches. For example, consider the following query: <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>. This will return all
 drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
 
-Now try adding the suffix
+Now try add the `.exact` suffix
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000>
 
-You will see fewer results, and each result will have its `brand_name`` exactly that: Advil. Exact value match is now required.
-
-
+You will see fewer results, and each result will have (exactly--right?) its `brand_name` as "Advil" (nothing more and nothing less?). Exact value match is
+now required.
 
 ### Search Questions
 
