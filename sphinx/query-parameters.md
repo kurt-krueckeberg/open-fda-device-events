@@ -62,6 +62,23 @@ Question: What is the default behavoir of
 
 <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10>
 
+### Searches with the `.exact` suffix
+
+:::{seealso}
+This information is taken from <https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix>
+:::
+
+Fields that permit an `.exact` suffix have been indexed in two forms in the openFDA ElasticSearch database. A field without the `.exact` suffix has been tokenized to
+allow flexible partial searches. For example, consider the following query: <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>. This will return all
+drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
+
+Now try adding the suffix
+
+<https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000>
+
+You will see fewer results, and each result will have its `brand_name`` exactly that: Advil. Exact value match is now required.
+
+
 
 ### Search Questions
 
@@ -77,12 +94,14 @@ Question: What does `_exist_` do. For example,
 
 ## Counting with `count` 
 
-`count` counts **unique values** of a certain fields; for example, in the query
+`count:` Count the number of unique values of a certain field, for all the records that matched the
+ search parameter. By default, the API returns the 1000 most frequent values.
 
-`https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
+<https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact>
 
-the number of unique phrases found in `patient.reaction.reactionmeddrapt.exact` is counted. The `.exact` suffix tells the API
-to count whole phrases (e.g. "DRUG INEFFECTIVE") instead of individual words (e.g. "DRUG" and "INEFFECTIVE" separately).
+The number of unique phrases found in `patient.reaction.reactionmeddrapt.exact` is counted. todo: Is the prior statement
+correct?  The `.exact` suffix tells the API to count whole phrases (e.g. "DRUG INEFFECTIVE") instead of individual words
+(e.g. "DRUG" and "INEFFECTIVE" separately).
 
 `count` is also often used along with `search`. Below the **drug/ncd** endpoint is searched for brand names that contain "Advil". The unique number of `pharm_class.exact` is returned.
 
@@ -91,20 +110,6 @@ to count whole phrases (e.g. "DRUG INEFFECTIVE") instead of individual words (e.
 Question: Can only `.exact` fields be searched? For example, <https://api.fda.gov/drug/ndc.json?count=pharm_class.exact> return results, but without the `.exact` suffix no results are returned
 
 <https://api.fda.gov/drug/ndc.json?count=pharm_class>
-
-##  `.exact` fields
-
-This information is taken from <https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix>
-
-Fields that permit an `.exact` suffix have been indexed in two forms in the openFDA ElasticSearch database. A field without the `.exact` suffix has been tokenized to
-allow flexible partial searches. For example, consider the following query: <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>. This will return all
-drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
-
-Now try adding the suffix
-
-<https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000>
-
-You will see fewer results, and each result will have its `brand_name`` exactly that: Advil. Exact value match is now required.
 
 
 ### `__exists__` searches
