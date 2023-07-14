@@ -1,4 +1,4 @@
-# Search Syntax
+# Further Query Syntax
 
 ## Basic Search Syntax
 

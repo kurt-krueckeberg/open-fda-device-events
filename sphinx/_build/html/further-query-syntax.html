@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Introduction &#8212; Open FDA API 0.7 documentation</title>
+    <title>Further Query Syntax &#8212; Open FDA API 0.7 documentation</title>
   
   
   
@@ -41,11 +41,11 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'further-query-syntax';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Open FDA Authorization" href="authorization.html" />
-    <link rel="prev" title="Welcome to Open FDA’s documentation!" href="index.html" />
+    <link rel="next" title="Advanced Syntax" href="advanced-syntax.html" />
+    <link rel="prev" title="Query Parameters" href="query-parameters.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,11 +124,11 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="queries-overview.html">Queries Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-parameters.html">Query Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="further-query-syntax.html">Further Query Syntax</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Further Query Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="endpoint-device.html">Device API Endpoint</a></li>
@@ -191,7 +191,7 @@
       
       
       
-      <li><a href="_sources/introduction.md" target="_blank"
+      <li><a href="_sources/further-query-syntax.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +273,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>Further Query Syntax</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -283,8 +283,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-adverse-event-reports-are-organized">How Adverse Event Reports are Organized</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-adverse-event-reports-are-identified">How Adverse Event Reports are Identified</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-search-syntax">Basic Search Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-phrases">Searching for Phrases</a></li>
 </ul>
             </nav>
         </div>
@@ -296,35 +300,64 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
-<p>The <a class="reference external" href="https://open.fda.gov/apis">openFDA</a> <a class="reference external" href="https://aws.amazon.com/what-is/restful-api/">RESTful API</a> supports <a class="reference external" href="https://www.elastic.co/enterprise-search">Elasticsearch</a> queries
-of public FDA information about drugs, devices and foods. <a class="reference external" href="https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a>
-is an example that illustrates the numerous fields that can be searched.</p>
-<section id="how-adverse-event-reports-are-organized">
-<h2>How Adverse Event Reports are Organized<a class="headerlink" href="#how-adverse-event-reports-are-organized" title="Permalink to this heading">#</a></h2>
+  <section id="further-query-syntax">
+<h1>Further Query Syntax<a class="headerlink" href="#further-query-syntax" title="Permalink to this heading">#</a></h1>
+<section id="basic-search-syntax">
+<h2>Basic Search Syntax<a class="headerlink" href="#basic-search-syntax" title="Permalink to this heading">#</a></h2>
+<p>In the <strong>openFDA</strong> search syntax</p>
+<div class="highlight-XQuery notranslate"><div class="highlight"><pre><span></span><span class="nt">search</span><span class="o">=</span><span class="nt">field:term</span>
+</pre></div>
+</div>
+<p>the search term follows the field to search, separated by a colon.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The paragraphs below are from the <strong>About Maude</strong> section of the Device API Endpoints <a class="reference external" href="https://open.fda.gov/apis/device/event/">Adverse Events Overview</a>.</p>
+<p>Parentheses are needed when searching for pharses. See ????</p>
 </div>
-<p>Device adverse event reports vary significantly, depending on who initially reported the event, what kind of event was reported, and whether there were follow-up reports. Some reports
-come directly from user facilities (like hospitals) or device importers (distributors), while others come directly from manufacturers. Some involve adverse reactions in patients, while
-others are reports of defects that did not result in such adverse reactions.</p>
-<p>OpenFDA device adverse event results <strong>loosely reflect fields found in forms used by manufacturers and members of the public to report these events</strong>. Since reports
-may come from manufacturers, user facilities, distributors, and voluntary sources (such as patients and physicians) who are subject to different reporting
-requirements, the collected data in the adverse event system may not always capture every field and should not be interpreted as complete.</p>
 </section>
-<section id="how-adverse-event-reports-are-identified">
-<h2>How Adverse Event Reports are Identified<a class="headerlink" href="#how-adverse-event-reports-are-identified" title="Permalink to this heading">#</a></h2>
-<p>Adverse events are collected through a series of safety reports, each identified by a 8-digit string</p>
-<p><strong>6176304-1</strong></p>
-<p>where the first 7 digits (before the hyphen) identify the individual report, and the last digit (after the hyphen) indicates the order of the report. For eample, if three reports are submitted (for the same event),
-they would be saved as</p>
-<ul class="simple">
-<li><p><strong>6176304-1</strong></p></li>
-<li><p><strong>6176304-2</strong></p></li>
-<li><p><strong>6176304-3</strong></p></li>
-</ul>
+<section id="boolean-or-searches">
+<h2>Boolean OR Searches<a class="headerlink" href="#boolean-or-searches" title="Permalink to this heading">#</a></h2>
+<p>To search for records that match either of two search terms or two search two or more fields for combined results, use the <code class="docutils literal notranslate"><span class="pre">+</span></code> for logical OR:</p>
+<p>Below we search for two terms in the <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> field:</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_code=%22HQF%22+device.device_report_product_code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_code=”HQF”+device.device_report_product_code=”LZS”</a></p>
+<p>You can also search two different fields and return the union of the results of each, i.e.,  a logical OR. Below we query the
+<strong>drug/event</strong> endpoint for a record where either fatigue was a reported patient reaction or the country in which the event happened was Canada.</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:%22fatigue%22+occurcountry:%22ca%22&amp;amp;limit=1">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:”fatigue”+occurcountry:”ca”&amp;limit=1</a></p>
+</section>
+<section id="boolean-and-searches">
+<h2>Boolean AND Searches<a class="headerlink" href="#boolean-and-searches" title="Permalink to this heading">#</a></h2>
+<p>search=field:term+AND+field:term: Search for records that match both terms.</p>
+</section>
+<section id="using-grouping">
+<h2>Using Grouping<a class="headerlink" href="#using-grouping" title="Permalink to this heading">#</a></h2>
+<p>To group several terms together, use parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>. For example, this boolean OR search
+<code class="docutils literal notranslate"><span class="pre">search=patient.drug.medicinalproduct:cetirizine+patient.drug.medicinalproduct:loratadine+patient.drug.medicinalproduct:diphenhydramine</span></code>
+is equivalent to <code class="docutils literal notranslate"><span class="pre">search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)</span></code>.</p>
+</section>
+<section id="searches-with-vs">
+<h2>Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code><a class="headerlink" href="#searches-with-vs" title="Permalink to this heading">#</a></h2>
+<p><strong>TODO:</strong> You can do <code class="docutils literal notranslate"><span class="pre">search=field=&quot;term&quot;</span></code>, too–right?</p>
+</section>
+<section id="searching-for-phrases">
+<h2>Searching for Phrases<a class="headerlink" href="#searching-for-phrases" title="Permalink to this heading">#</a></h2>
+<p>For phrase matches, use double quotation marks “ “ around the words and use a <code class="docutils literal notranslate"><span class="pre">+</span></code> in place of the space between the words:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Search parameter</p></th>
+<th class="head text-left"><p>Phrase Searched for</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;multiple+myeloma&quot;</span></code></p></td>
+<td class="text-left"><p>“multiple myeloma”</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;dry+eye+syndrome&quot;</span></code></p></td>
+<td class="text-left"><p>“dry eye syndrome”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;periperhal+neuropathy&quot;</span></code></p></td>
+<td class="text-left"><p>“peripheral neuropathy”</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 
@@ -341,20 +374,20 @@ they would be saved as</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="query-parameters.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to Open FDA’s documentation!</p>
+        <p class="prev-next-title">Query Parameters</p>
       </div>
     </a>
     <a class="right-next"
-       href="authorization.html"
+       href="advanced-syntax.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Open FDA Authorization</p>
+        <p class="prev-next-title">Advanced Syntax</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -376,8 +409,12 @@ they would be saved as</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-adverse-event-reports-are-organized">How Adverse Event Reports are Organized</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-adverse-event-reports-are-identified">How Adverse Event Reports are Identified</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-search-syntax">Basic Search Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-phrases">Searching for Phrases</a></li>
 </ul>
   </nav></div>
 

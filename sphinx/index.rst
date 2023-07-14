@@ -14,7 +14,7 @@ Welcome to Open FDA's documentation!
    authorization.md
    queries-overview.md
    query-parameters.md
-   search-syntax.md
+   further-query-syntax.md
    advanced-syntax.md
    query-examples.md
    endpoint-device.md
