@@ -11,13 +11,19 @@ class OpenFdaApi {
 
    private $headers = array();
  
-   public function __construct(ConfigFile $c, ProviderID $id)
+   public function __construct(ConfigFile $c)
    {      
-       $params = $c->get_config($id);
+       $xml = simple_xml_load_file($c);
        
-       $this->client = new Client( ['base_uri' => $params['base_uri']]);
+       // todo: $node?
 
        $this->headers =  $params['headers'];
+
+       $settings = simplexml_load_file($fxml);
+   
+       $this->setConfigOptions($settings);
+
+       $this->client = new Client(['base_uri' => (string) $settings->baseurl]);
    }
 
    protected function request(string $method, string $route, array $options = array()) : string

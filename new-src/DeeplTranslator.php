@@ -3,7 +3,7 @@ declare(strict_types=1);
 namespace LanguageTools;
 
 // SeeDeepl-doc.md 
-class DeeplTranslator extends RestApi implements TranslateInterface {
+class DeeplTranslator extends OpenFdaApi implements TranslateInterface {
    
    static private string $method = "GET";    
    static private string $from_key = "source_lang"; 

@@ -25,7 +25,7 @@ See https://open.fda.gov/apis/paging/
 }
  */
 
-class OpenFda extends RestApi implements OpenFdaInterface {
+class DeviceEvent extends OpenFdaApi, implements IteratorAggregate {
 
    private string $route;      
    private string $method;     // GET, POST, etc 
@@ -40,24 +40,16 @@ class OpenFda extends RestApi implements OpenFdaInterface {
     * Instantiates the derived class specified in <implementation>...</implementation>
     */ 
 
-   /*
-   static public function createFromXML(string $fxml) : OpenFda
+   static public function createFromXML(string $fxml) : OpenFdaApi
    {
       $simp = simplexml_load_file($fxml);
    
-      $refl = new \ReflectionClass((string) $simp->implementation); 
-      
-      return $refl->newInstance($simp);
-    }
-   */
+      return new DeviceEvent(???); 
+   }
 
    public function __construct(\SimpleXMLElement $s) 
    {  
-       $settings = simplexml_load_file($fxml);
-   
-       $this->setConfigOptions($settings);
-
-       $this->client = new Client(['base_uri' => (string) $settings->baseurl]);
+       parent::__contruct($s);
    } 
 
    private function setConfigOptions(\SimpleXMLElement $settings)
@@ -98,4 +90,10 @@ class OpenFda extends RestApi implements OpenFdaInterface {
 
        $this->options['query'][$mkey] = $value;
    }
+
+   function getIterator() : Iterator
+   {
+
+   }
+    
 }
