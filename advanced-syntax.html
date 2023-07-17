@@ -309,11 +309,6 @@ document.write(`
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HQF%22+device.device_report_product_Code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=”HQF”+device.device_report_product_Code=”LZS”</a></p>
 <p>can be rewritten with <code class="docutils literal notranslate"><span class="pre">()</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code>:</p>
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(%22HQF%22+OR+%22LZS%22)">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(“HQF”+OR+”LZS”)</a></p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Searches can be simplified by group terms: <br />
-<code class="docutils literal notranslate"><span class="pre">search=device.device_report_product_Code=(&quot;HQF&quot;+OR+&quot;LZS&quot;)</span></code></p>
-</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Apparently a boolean-or search of phrases <strong>requires</strong> <code class="docutils literal notranslate"><span class="pre">()</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code> like this <br />

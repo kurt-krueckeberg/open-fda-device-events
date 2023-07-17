@@ -11,11 +11,6 @@ can be rewritten with `()` and `OR`:
 
 <https://api.fda.gov/device/event.json?search=device.device_report_product_Code=("HQF"+OR+"LZS")>
 
-:::{hint}
-Searches can be simplified by group terms: \
-`search=device.device_report_product_Code=("HQF"+OR+"LZS")`
-:::
-
 :::{important}
 Apparently a boolean-or search of phrases **requires** `()` and `OR` like this \
 `https://api.fda.gov/drug/enforcement.json?search=classification:("Class+I"+OR+"Class+II")` \
