@@ -301,27 +301,25 @@ document.write(`
                   
   <section id="advanced-syntax">
 <h1>Advanced Syntax<a class="headerlink" href="#advanced-syntax" title="Permalink to this heading">#</a></h1>
-<p>The openFDA API allows grouping of search criterai using <code class="docutils literal notranslate"><span class="pre">()</span></code> and doing boolean searches with <code class="docutils literal notranslate"><span class="pre">OR</span></code> and <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
+<p>You can group search criterai with <code class="docutils literal notranslate"><span class="pre">()</span></code> and do boolean <code class="docutils literal notranslate"><span class="pre">OR</span></code> and <code class="docutils literal notranslate"><span class="pre">AND</span></code> searches.</p>
 <section id="examples-of-grouping-and-boolean-searches">
 <h2>Examples of Grouping and Boolean Searches<a class="headerlink" href="#examples-of-grouping-and-boolean-searches" title="Permalink to this heading">#</a></h2>
-<p>Grouping several terms together using parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code> can simplify searches. For example, a long search expression like</p>
+<p>Grouping several terms inside <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code> can simplify searches. For example, a long search expression like</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;HQF&quot;+device.device_report_product_Code=&quot;LZS&quot;</span></code></p>
-<p>can be rewritten as</p>
+<p>can be rewritten with <code class="docutils literal notranslate"><span class="pre">()</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(&quot;HQF&quot;+OR+&quot;LZS&quot;)</span></code></p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>To search for one of several terms, you can do this: <br />
+<p>Searches can be simplified by group terms: <br />
 search=device.device_report_product_Code=(“HQF”+OR+”LZS”)`</p>
 </div>
-<p>You can also perform AND searches (to find all matching search terms). For example, to find hits where <code class="docutils literal notranslate"><span class="pre">patient.drug.medicinalproduct</span></code>
+<p>You can also perform AND searches (to find all matching search terms). As an example, say. your want to where <code class="docutils literal notranslate"><span class="pre">patient.drug.medicinalproduct</span></code>
 contains <code class="docutils literal notranslate"><span class="pre">cetirizine</span></code> and where <code class="docutils literal notranslate"><span class="pre">serious</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code>, you would do</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:cetirizine+AND+serious:2</span></code></p>
+<p>This example adds an <code class="docutils literal notranslate"><span class="pre">OR</span></code> to the <code class="docutils literal notranslate"><span class="pre">medicinalproduct</span></code> search:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)+AND+serious:2</span></code></p>
+<p>The example could also have been written (with a further set of <code class="docutils literal notranslate"><span class="pre">()</span></code>) as</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</span></code></p>
-<p>This example shows OR and AND logical being combined</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</span></code></p>
-<p><strong>TODO:</strong></p>
-<ul class="simple">
-<li><p>Are two groups of parentheses needed in the example above? What is <code class="docutils literal notranslate"><span class="pre">serious</span></code>? Is it a top-level term?</p></li>
-</ul>
 </section>
 <section id="dates-and-ranges">
 <h2>Dates and ranges<a class="headerlink" href="#dates-and-ranges" title="Permalink to this heading">#</a></h2>

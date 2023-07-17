@@ -1,33 +1,33 @@
 # Advanced Syntax
 
-The openFDA API allows grouping of search criterai using `()` and doing boolean searches with `OR` and `AND`.
+You can group search criterai with `()` and do boolean `OR` and `AND` searches.
 ## Examples of Grouping and Boolean Searches
 
-Grouping several terms together using parentheses `( )` can simplify searches. For example, a long search expression like
+Grouping several terms inside `( )` can simplify searches. For example, a long search expression like
 
 `https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"`
 
-can be rewritten as
+can be rewritten with `()` and `OR`:
 
 `https://api.fda.gov/device/event.json?search=device.device_report_product_Code=("HQF"+OR+"LZS")`
 
 :::{hint}
-To search for one of several terms, you can do this: \
+Searches can be simplified by group terms: \
 search=device.device_report_product_Code=("HQF"+OR+"LZS")`
 :::
 
-You can also perform AND searches (to find all matching search terms). For example, to find hits where `patient.drug.medicinalproduct`
+You can also perform AND searches (to find all matching search terms). As an example, say. your want to where `patient.drug.medicinalproduct`
 contains `cetirizine` and where `serious` is `2`, you would do
 
+`https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:cetirizine+AND+serious:2`
+
+This example adds an `OR` to the `medicinalproduct` search:
+
+`https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)+AND+serious:2`
+
+The example could also have been written (with a further set of `()`) as
+
 `https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2`
-
-This example shows OR and AND logical being combined
-
-`https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2`
-
-**TODO:**
-
-- Are two groups of parentheses needed in the example above? What is `serious`? Is it a top-level term?
 
 ## Dates and ranges
 
