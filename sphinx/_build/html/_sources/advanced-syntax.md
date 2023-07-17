@@ -13,7 +13,14 @@ can be rewritten with `()` and `OR`:
 
 :::{hint}
 Searches can be simplified by group terms: \
-search=device.device_report_product_Code=("HQF"+OR+"LZS")
+`search=device.device_report_product_Code=("HQF"+OR+"LZS")`
+:::
+
+:::{important}
+Apparently a boolean-or search of phrases **requires** `()` and `OR` like this \
+`https://api.fda.gov/drug/enforcement.json?search=classification:("Class+I"+OR+"Class+II")` \
+with the embedded spaced denoted by `+`. \
+See <https://opendata.stackexchange.com/questions/3443/openfda-api-can-i-perform-search-by-same-field-with-various-values/3444#3444>
 :::
 
 You can also perform AND searches (to find all matching search terms). As an example, say, you want to find where `patient.drug.medicinalproduct`

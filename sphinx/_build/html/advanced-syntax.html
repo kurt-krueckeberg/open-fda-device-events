@@ -312,7 +312,14 @@ document.write(`
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Searches can be simplified by group terms: <br />
-search=device.device_report_product_Code=(“HQF”+OR+”LZS”)</p>
+<code class="docutils literal notranslate"><span class="pre">search=device.device_report_product_Code=(&quot;HQF&quot;+OR+&quot;LZS&quot;)</span></code></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Apparently a boolean-or search of phrases <strong>requires</strong> <code class="docutils literal notranslate"><span class="pre">()</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code> like this <br />
+<code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/enforcement.json?search=classification:(&quot;Class+I&quot;+OR+&quot;Class+II&quot;)</span></code> <br />
+with the embedded spaced denoted by <code class="docutils literal notranslate"><span class="pre">+</span></code>. <br />
+See <a class="reference external" href="https://opendata.stackexchange.com/questions/3443/openfda-api-can-i-perform-search-by-same-field-with-various-values/3444#3444">https://opendata.stackexchange.com/questions/3443/openfda-api-can-i-perform-search-by-same-field-with-various-values/3444#3444</a></p>
 </div>
 <p>You can also perform AND searches (to find all matching search terms). As an example, say, you want to find where <code class="docutils literal notranslate"><span class="pre">patient.drug.medicinalproduct</span></code>
 contains <code class="docutils literal notranslate"><span class="pre">cetirizine</span></code> and where <code class="docutils literal notranslate"><span class="pre">serious</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code>, you can do</p>
