@@ -113,5 +113,5 @@ Value is one of the following:
 **NKY** | Blade, Keratome, Reprocessed 
 :::
 
-[^1]: This Laser Opthalmic device may not be a refractive surgery device.
+[^1]: This Laser Opthalmic device might not be a refractive surgery device. TODO: Find out if it is.
 
