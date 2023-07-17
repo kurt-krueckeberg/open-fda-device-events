@@ -285,6 +285,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-grouping-and-boolean-searches">Examples of Grouping and Boolean Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-examples">Further Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-or-not-missing-values">Missing (or not missing) values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries">Timeseries</a></li>
@@ -323,6 +324,14 @@ contains <code class="docutils literal notranslate"><span class="pre">cetirizine
 <p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)+AND+serious:2">https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)+AND+serious:2</a></p>
 <p>The example above could also have been written (with a further set of <code class="docutils literal notranslate"><span class="pre">()</span></code>) as</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</a></p>
+</section>
+<section id="further-examples">
+<h2>Further Examples<a class="headerlink" href="#further-examples" title="Permalink to this heading">#</a></h2>
+<p>Search for the adverse events where <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code=LZS</span></code>, Excimer Laser Systems, and where the reported text contains <code class="docutils literal notranslate"><span class="pre">dry</span></code></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=(device.device_report_product_code=LZS)+AND+(mdr_text.text:dry)">https://api.fda.gov/device/event.json?search=(device.device_report_product_code=LZS)+AND+(mdr_text.text:dry)</a></p>
+<p>you get 1596 total results. If you use the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix and change <code class="docutils literal notranslate"><span class="pre">:</span></code> to <code class="docutils literal notranslate"><span class="pre">=</span></code>:</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=(device.device_report_product_code=LZS)+AND+(mdr_text.text.exact=dry)">https://api.fda.gov/device/event.json?search=(device.device_report_product_code=LZS)+AND+(mdr_text.text.exact=dry)</a></p>
+<p>you get 1822 total results. <strong>todo:</strong> where do the results differ and why?</p>
 </section>
 <section id="dates-and-ranges">
 <h2>Dates and ranges<a class="headerlink" href="#dates-and-ranges" title="Permalink to this heading">#</a></h2>
@@ -406,6 +415,7 @@ contains <code class="docutils literal notranslate"><span class="pre">cetirizine
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-grouping-and-boolean-searches">Examples of Grouping and Boolean Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-examples">Further Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-or-not-missing-values">Missing (or not missing) values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries">Timeseries</a></li>

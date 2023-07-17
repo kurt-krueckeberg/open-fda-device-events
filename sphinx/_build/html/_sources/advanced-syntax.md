@@ -31,6 +31,18 @@ The example above could also have been written (with a further set of `()`) as
 
 <https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2>
 
+## Further Examples
+
+Search for the adverse events where `device.device_report_product_code=LZS`, Excimer Laser Systems, and where the reported text contains `dry`
+
+<https://api.fda.gov/device/event.json?search=(device.device_report_product_code=LZS)+AND+(mdr_text.text:dry)>
+
+you get 1596 total results. If you use the `.exact` suffix and change `:` to `=`:
+
+<https://api.fda.gov/device/event.json?search=(device.device_report_product_code=LZS)+AND+(mdr_text.text.exact=dry)>
+
+you get 1822 total results. **todo:** where do the results differ and why?
+
 ## Dates and ranges
 
 The openFDA API supports searching by range in date, numeric, or string fields.
