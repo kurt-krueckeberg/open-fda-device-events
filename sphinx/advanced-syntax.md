@@ -5,29 +5,29 @@ You can group search criterai with `()` and do boolean `OR` and `AND` searches.
 
 Grouping several terms inside `( )` can simplify searches. For example, a long search expression like
 
-`https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"`
+<https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS">
 
 can be rewritten with `()` and `OR`:
 
-`https://api.fda.gov/device/event.json?search=device.device_report_product_Code=("HQF"+OR+"LZS")`
+<https://api.fda.gov/device/event.json?search=device.device_report_product_Code=("HQF"+OR+"LZS")>
 
 :::{hint}
 Searches can be simplified by group terms: \
-search=device.device_report_product_Code=("HQF"+OR+"LZS")`
+search=device.device_report_product_Code=("HQF"+OR+"LZS")
 :::
 
-You can also perform AND searches (to find all matching search terms). As an example, say. your want to where `patient.drug.medicinalproduct`
-contains `cetirizine` and where `serious` is `2`, you would do
+You can also perform AND searches (to find all matching search terms). As an example, say, you want to find where `patient.drug.medicinalproduct`
+contains `cetirizine` and where `serious` is `2`, you can do
 
-`https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:cetirizine+AND+serious:2`
+<https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:cetirizine+AND+serious:2>
 
-This example adds an `OR` to the `medicinalproduct` search:
+You can add `OR` search criteria to search for one of several `medicinalproduct`:
 
-`https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)+AND+serious:2`
+<https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)+AND+serious:2>
 
-The example could also have been written (with a further set of `()`) as
+The example above could also have been written (with a further set of `()`) as
 
-`https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2`
+<https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2>
 
 ## Dates and ranges
 

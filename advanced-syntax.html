@@ -305,21 +305,21 @@ document.write(`
 <section id="examples-of-grouping-and-boolean-searches">
 <h2>Examples of Grouping and Boolean Searches<a class="headerlink" href="#examples-of-grouping-and-boolean-searches" title="Permalink to this heading">#</a></h2>
 <p>Grouping several terms inside <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code> can simplify searches. For example, a long search expression like</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;HQF&quot;+device.device_report_product_Code=&quot;LZS&quot;</span></code></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HQF%22+device.device_report_product_Code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=”HQF”+device.device_report_product_Code=”LZS”</a></p>
 <p>can be rewritten with <code class="docutils literal notranslate"><span class="pre">()</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(&quot;HQF&quot;+OR+&quot;LZS&quot;)</span></code></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(%22HQF%22+OR+%22LZS%22)">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(“HQF”+OR+”LZS”)</a></p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Searches can be simplified by group terms: <br />
-search=device.device_report_product_Code=(“HQF”+OR+”LZS”)`</p>
+search=device.device_report_product_Code=(“HQF”+OR+”LZS”)</p>
 </div>
-<p>You can also perform AND searches (to find all matching search terms). As an example, say. your want to where <code class="docutils literal notranslate"><span class="pre">patient.drug.medicinalproduct</span></code>
-contains <code class="docutils literal notranslate"><span class="pre">cetirizine</span></code> and where <code class="docutils literal notranslate"><span class="pre">serious</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code>, you would do</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:cetirizine+AND+serious:2</span></code></p>
-<p>This example adds an <code class="docutils literal notranslate"><span class="pre">OR</span></code> to the <code class="docutils literal notranslate"><span class="pre">medicinalproduct</span></code> search:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)+AND+serious:2</span></code></p>
-<p>The example could also have been written (with a further set of <code class="docutils literal notranslate"><span class="pre">()</span></code>) as</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</span></code></p>
+<p>You can also perform AND searches (to find all matching search terms). As an example, say, you want to find where <code class="docutils literal notranslate"><span class="pre">patient.drug.medicinalproduct</span></code>
+contains <code class="docutils literal notranslate"><span class="pre">cetirizine</span></code> and where <code class="docutils literal notranslate"><span class="pre">serious</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code>, you can do</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:cetirizine+AND+serious:2">https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:cetirizine+AND+serious:2</a></p>
+<p>You can add <code class="docutils literal notranslate"><span class="pre">OR</span></code> search criteria to search for one of several <code class="docutils literal notranslate"><span class="pre">medicinalproduct</span></code>:</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)+AND+serious:2">https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)+AND+serious:2</a></p>
+<p>The example above could also have been written (with a further set of <code class="docutils literal notranslate"><span class="pre">()</span></code>) as</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</a></p>
 </section>
 <section id="dates-and-ranges">
 <h2>Dates and ranges<a class="headerlink" href="#dates-and-ranges" title="Permalink to this heading">#</a></h2>
