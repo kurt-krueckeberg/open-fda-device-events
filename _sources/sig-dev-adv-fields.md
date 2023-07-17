@@ -8,7 +8,7 @@ As explained on the previous page, fields denoted `.exact` can be searched for a
 :widths: 19 3 60 18
 :delim: "|"
 
-'adverse_event_flag`|Y|"Whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient:
+`adverse_event_flag`|Y|"Whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient:
 - Y means yes it did
 - N means no it did not."|`Y`
 `device.device_report_product_code`|Y|Three-letter FDA Product Classification|See list of codes in table below.
@@ -24,7 +24,7 @@ As explained on the previous page, fields denoted `.exact` can be searched for a
 - Company representation = Company representation
 - Distributor = Distributor
 - Unknown = Unknown"|`source_type:consumer`
-`device.openfda.device_name'|Y|"This is the proprietary name, or trade name, of the cleared device.
+`device.openfda.device_name`|Y|"This is the proprietary name, or trade name, of the cleared device.
 
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."|
 `device.generic_name`|Y|The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an `.exact` field.|`device.generic_name:LASIK` or `device.generaic_name:"refractive surgery`
