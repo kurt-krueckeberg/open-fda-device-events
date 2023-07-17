@@ -1,26 +1,29 @@
 # Advanced Syntax
 
-**TODO:** Include API examples of eachs item mentioned below.
+The openFDA API allows grouping of search criterai using `()` and doing boolean searches with `OR` and `AND`.
+## Examples of Grouping and Boolean Searches
 
-## Grouping
-
-### Boolean OR
-
-To group several terms together, use parentheses `( )`. For example, this query searches for .. OR ...
+Grouping several terms together using parentheses `( )` can simplify searches. For example, a long search expression like
 
 `https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"`
 
-It can be rewritten more concisely with grouping:
+can be rewritten as
 
 `https://api.fda.gov/device/event.json?search=device.device_report_product_Code=("HQF"+OR+"LZS")`
 
-### Boolean AND
+:::{hint}
+To search for one of several terms, you can do this: \
+search=device.device_report_product_Code=("HQF"+OR+"LZS")`
+:::
 
-To join terms as in a boolean AND, use the term +AND+: For example,
+You can also perform AND searches (to find all matching search terms). For example, to find hits where `patient.drug.medicinalproduct`
+contains `cetirizine` and where `serious` is `2`, you would do
 
 `https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2`
 
-requires that any of the drug names match and that the field `serious` also match.
+This example shows OR and AND logical being combined
+
+`https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2`
 
 **TODO:**
 

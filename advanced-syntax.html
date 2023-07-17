@@ -283,11 +283,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or">Boolean OR</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and">Boolean AND</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-grouping-and-boolean-searches">Examples of Grouping and Boolean Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-or-not-missing-values">Missing (or not missing) values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries">Timeseries</a></li>
@@ -305,26 +301,27 @@ document.write(`
                   
   <section id="advanced-syntax">
 <h1>Advanced Syntax<a class="headerlink" href="#advanced-syntax" title="Permalink to this heading">#</a></h1>
-<p><strong>TODO:</strong> Include API examples of eachs item mentioned below.</p>
-<section id="grouping">
-<h2>Grouping<a class="headerlink" href="#grouping" title="Permalink to this heading">#</a></h2>
-<section id="boolean-or">
-<h3>Boolean OR<a class="headerlink" href="#boolean-or" title="Permalink to this heading">#</a></h3>
-<p>To group several terms together, use parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>. For example, this query searches for .. OR …</p>
+<p>The openFDA API allows grouping of search criterai using <code class="docutils literal notranslate"><span class="pre">()</span></code> and doing boolean searches with <code class="docutils literal notranslate"><span class="pre">OR</span></code> and <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
+<section id="examples-of-grouping-and-boolean-searches">
+<h2>Examples of Grouping and Boolean Searches<a class="headerlink" href="#examples-of-grouping-and-boolean-searches" title="Permalink to this heading">#</a></h2>
+<p>Grouping several terms together using parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code> can simplify searches. For example, a long search expression like</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;HQF&quot;+device.device_report_product_Code=&quot;LZS&quot;</span></code></p>
-<p>It can be rewritten more concisely with grouping:</p>
+<p>can be rewritten as</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=(&quot;HQF&quot;+OR+&quot;LZS&quot;)</span></code></p>
-</section>
-<section id="boolean-and">
-<h3>Boolean AND<a class="headerlink" href="#boolean-and" title="Permalink to this heading">#</a></h3>
-<p>To join terms as in a boolean AND, use the term +AND+: For example,</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>To search for one of several terms, you can do this: <br />
+search=device.device_report_product_Code=(“HQF”+OR+”LZS”)`</p>
+</div>
+<p>You can also perform AND searches (to find all matching search terms). For example, to find hits where <code class="docutils literal notranslate"><span class="pre">patient.drug.medicinalproduct</span></code>
+contains <code class="docutils literal notranslate"><span class="pre">cetirizine</span></code> and where <code class="docutils literal notranslate"><span class="pre">serious</span></code> is <code class="docutils literal notranslate"><span class="pre">2</span></code>, you would do</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</span></code></p>
-<p>requires that any of the drug names match and that the field <code class="docutils literal notranslate"><span class="pre">serious</span></code> also match.</p>
+<p>This example shows OR and AND logical being combined</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=(patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine))+AND+serious:2</span></code></p>
 <p><strong>TODO:</strong></p>
 <ul class="simple">
 <li><p>Are two groups of parentheses needed in the example above? What is <code class="docutils literal notranslate"><span class="pre">serious</span></code>? Is it a top-level term?</p></li>
 </ul>
-</section>
 </section>
 <section id="dates-and-ranges">
 <h2>Dates and ranges<a class="headerlink" href="#dates-and-ranges" title="Permalink to this heading">#</a></h2>
@@ -407,11 +404,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or">Boolean OR</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and">Boolean AND</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-grouping-and-boolean-searches">Examples of Grouping and Boolean Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-ranges">Dates and ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-or-not-missing-values">Missing (or not missing) values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries">Timeseries</a></li>
