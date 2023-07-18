@@ -83,7 +83,7 @@ A: Here are actual examples:
 
 Understaind `count` better. Documentation states:
 
->  `count:` Count the number of unique values of a certain field, for all the records that matched the
+> `count:` Count the number of unique values of a certain field, for all the records that matched the
 search parameter. By default, the API returns the 1000 most frequent values.
 
 OpenVigil does allow entering your own search string and gives a default count example. See:
@@ -109,20 +109,20 @@ These comments are from an openFDA team member...
 Some fields also have a second, `.exact` version which can also be searched. A field specified without the `.exact` suffix can be search for
 partial, "is contained in" searches. It has been tokenized to allow flexible partial searches, so a query like 
 
-<https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
+[https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000](https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000)
 
 will return all drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
 
 `brand_name` also has a `.exact`-suffix version. It too can be search for "Advil":
 
-<https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000>
+[https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000](https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000)
 
 You will now see fewer results. Each result will have (exactly--right?) "Advil" as its `brand_name` (nothing more and nothing less--right?). Exact match must
 match exactly. **todo:** double check.
 
 Here is another example taken from openfda.stackexchagne.com. It is a search looks for reports that may have been labeled with the incorrect product code:
 
-<https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0>
+[https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0](https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0)
 
 :::{note}
 `brand_name` field is exact, and requires the search terms to be in parentheses. 
