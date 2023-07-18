@@ -1,5 +1,37 @@
 # Notes
 
+## Device Event Fields Open Questions
+
+Q: What are/is the value(s) `device.generice_name` if the `deive.product_code` is "LZS"?
+
+A: Here are actual examples:
+
+| Field | Value |
+| :---  | ----- |
+`device.generic_name`               | "OPTHALMIC EXCIMER LASER SYSTEM"
+`device.brand_name`                 | "LADARVISION 4000"
+`device.device_report_product_code` | "LZS"
+`device.openfda.device_name`        | "Excimer Laser System"
+`device.openfda.device_class        | "3"
+
+| Field | Value |
+| :---  | ----- |
+`device.generic_name`               | "EXCIMER LASER"
+`device.brand_name`                 | "SUMMIT APEX PLUS"
+`device.device_report_product_code` | LZS
+`device.openfda.device_name`        | "Excimer Laser System"
+`device.openfda.device_class`       | 3
+
+| Field | Value |
+| :---  | ----- |
+`device.generic_name`               | "EXCIMER LASER SYSTEM"
+`device.brand_name`                 | "WAVEFRONT LASER"
+`device.device_report_product_code` | LZS
+`device.openfda.device_name`        | "Excimer Laser System"
+`device.openfda.device_class`       | 3
+
+## How Api Actually Works Open Questions
+
 Understaind `count` better. Documentation states:
 
     `count:` Count the number of unique values of a certain field, for all the records that matched the
@@ -8,8 +40,7 @@ Understaind `count` better. Documentation states:
 OpenVigil does allow entering your own search string and gives a default count example. See:
 <https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php>. The example is:
 
-<search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
->
+`search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0`
 
 Counting records where certain terms occur
 
@@ -21,19 +52,45 @@ This query looks in the drug/event endpoint for all records. It then returns a c
 
 `https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
 
-Why does this query
+## `.exact` questions
 
-https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
+Some fields also have a second, `.exact` version which can also be searched. A field specified without the `.exact` suffix can be search for
+partial, "is contained in" searches. It has been tokenized to allow flexible partial searches, so a query like 
+
+<https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
+
+will return all drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
+
+`brand_name` also has a `.exact`-suffix version. It too can be search for "Advil":
+
+<https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&limit=1000>
+
+You will now see fewer results. Each result will have (exactly--right?) "Advil" as its `brand_name` (nothing more and nothing less--right?). Exact match must
+match exactly. **todo:** double check.
+
+**todo:**
+
+- Run the queries above and understand what is being said and its accuracy and what exactly `.exact` does. 
+- Create `.exact`-suffix versions of the queries in ~/o/s/query-parameters.md and likewise note the differences.
+
+The two basic uses of search are:
+
+search=field:value+AND+field:value for records that match both values.
+search=field:value+field:value for records that match either of the values.
+
+Using what I have learned by doing the above research, explain why does this query
+
+<https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact>
 
 work, but this one gives an error
 
-https://api.fda.gov/device/event.json?count=device.openfda.device_name
+<https://api.fda.gov/device/event.json?count=device.openfda.device_name>
 
 I believe it is because the openfda fields are openfda, i.e.annotated, fields?
 
-`https://api.fda.gov/device/event.json?searcount=device.manufacturer_name`
+<https://api.fda.gov/device/event.json?searcount=device.manufacturer_name>
 
-`https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact`
+<https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact>
 
 ## Issues
 

@@ -20,39 +20,49 @@ Use `&` to separate query parameters.
 
 ## Searches
 
-`search=brand_name:Advil` searches for any occurance of **Advil** in `brand_name`:
+`search=field:term` searches for any occurance of "term" in the `field`. It does do `field=term` exact matching.
+
+The query `search=brand_name:Advil` searches for any occurance of **Advil** in `brand_name`:
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
 
-and it returns `brand_name`'s like
+It returns `brand_name`'s like
 
 - "JUNIOR STRENGTH **ADVIL**"
 - "**ADVIL** PM- diphenhydramin…buprofen tablet, coated"
 - "**Advil** Sinus Congestion and Pain"
 
-and so on. If the search term is a phrase like "Congestion and Pain", the entire phrase must occur in `brand_name`.
-Thus the search query
+and so on. If the search term is a phrase like "Congestion and Pain", the entire phrase must occur in `brand_name`. 
+The query
 
 <https://api.fda.gov/drug/ndc.json?search=brand_name:"Congestion+and+Pain"&limit=6>
 
-will find differing brand names but all containing "Congestion and Pain":
+will find differing brand names that contain the phrase "Congestion and Pain":
 
 - "Maximum Strength Mucinex Sinus-Max Severe **Congestion and Pain** and Mucinex Nightshift Sinus"
 - "Maximum Strength Mucinex Sinus-Max Severe **Congestion and Pain** and Mucinex Nightshift Sinus"
 - "Mucinex-Sinus Max Severe **Congestion and Pain** Clear and Cool and Mucinex Nightshift Sinus Clear and Cool"
 
-and so on. The query <https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10> searches for any occurance of "Decrease" in `pharm_class`.
-Results would include hits like "Decreased Respiratory Secretion Viscosity [PE]",  "Decreased Prostaglandin Production [PE]", and "Decreased Platelet Aggregation [PE]".
+and so on.
 
-### Searching fields using the  `.exact` suffix
+In this example, `pharm_class` is searched for "Decrease":
+
+<https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&limit=10> 
+
+Results include hits like:
+
+- "**Decreased** Respiratory Secretion Viscosity [PE]"
+- "**Decreased** Prostaglandin Production [PE]", and "Decreased Platelet Aggregation [PE]".
+
+### What the `.exact` suffix means
 
 :::{seealso}
 The information that follows was taken from <https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix>
 :::
 
 Some fields also have a second, `.exact` version which can also be searched. As we have seen, a field (without the `.exact` suffix) can be search for partial searches.
-It has been tokenized to allow flexible partial searches. As shown previouly, a query like <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
- will return all drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
+It has been tokenized to allow flexible partial searches, so a query like <https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&limit=1000>
+will return all drugs that contain "Advil" within their brand name, such as "CHILDRENS ADVIL", "ADVIL MIGRAINE", and so on.
 
 `brand_name` also has a `.exact`-suffix version. It too can be search for "Advil":
 
@@ -63,7 +73,7 @@ match exactly. **todo:** double check.
 
 ### `__exists__` searches
 
-todo:
+todo: Perform the searches mention above to better understand what is mean.
 
 ### Search Questions
 

@@ -285,7 +285,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches">Searches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-fields-using-the-exact-suffix">Searching fields using the  <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-exact-suffix-means">What the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix means</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists-searches"><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions">Search Questions</a></li>
 </ul>
@@ -337,33 +337,40 @@ document.write(`
 </div>
 <section id="searches">
 <h2>Searches<a class="headerlink" href="#searches" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">search=brand_name:Advil</span></code> searches for any occurance of <strong>Advil</strong> in <code class="docutils literal notranslate"><span class="pre">brand_name</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">search=field:term</span></code> searches for any occurance of “term” in the <code class="docutils literal notranslate"><span class="pre">field</span></code>. It does do <code class="docutils literal notranslate"><span class="pre">field=term</span></code> exact matching.</p>
+<p>The query <code class="docutils literal notranslate"><span class="pre">search=brand_name:Advil</span></code> searches for any occurance of <strong>Advil</strong> in <code class="docutils literal notranslate"><span class="pre">brand_name</span></code>:</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a></p>
-<p>and it returns <code class="docutils literal notranslate"><span class="pre">brand_name</span></code>’s like</p>
+<p>It returns <code class="docutils literal notranslate"><span class="pre">brand_name</span></code>’s like</p>
 <ul class="simple">
 <li><p>“JUNIOR STRENGTH <strong>ADVIL</strong>”</p></li>
 <li><p>“<strong>ADVIL</strong> PM- diphenhydramin…buprofen tablet, coated”</p></li>
 <li><p>“<strong>Advil</strong> Sinus Congestion and Pain”</p></li>
 </ul>
 <p>and so on. If the search term is a phrase like “Congestion and Pain”, the entire phrase must occur in <code class="docutils literal notranslate"><span class="pre">brand_name</span></code>.
-Thus the search query</p>
+The query</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:%22Congestion+and+Pain%22&amp;amp;limit=6">https://api.fda.gov/drug/ndc.json?search=brand_name:”Congestion+and+Pain”&amp;limit=6</a></p>
-<p>will find differing brand names but all containing “Congestion and Pain”:</p>
+<p>will find differing brand names that contain the phrase “Congestion and Pain”:</p>
 <ul class="simple">
 <li><p>“Maximum Strength Mucinex Sinus-Max Severe <strong>Congestion and Pain</strong> and Mucinex Nightshift Sinus”</p></li>
 <li><p>“Maximum Strength Mucinex Sinus-Max Severe <strong>Congestion and Pain</strong> and Mucinex Nightshift Sinus”</p></li>
 <li><p>“Mucinex-Sinus Max Severe <strong>Congestion and Pain</strong> Clear and Cool and Mucinex Nightshift Sinus Clear and Cool”</p></li>
 </ul>
-<p>and so on. The query <a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;amp;limit=10">https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;limit=10</a> searches for any occurance of “Decrease” in <code class="docutils literal notranslate"><span class="pre">pharm_class</span></code>.
-Results would include hits like “Decreased Respiratory Secretion Viscosity [PE]”,  “Decreased Prostaglandin Production [PE]”, and “Decreased Platelet Aggregation [PE]”.</p>
-<section id="searching-fields-using-the-exact-suffix">
-<h3>Searching fields using the  <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix<a class="headerlink" href="#searching-fields-using-the-exact-suffix" title="Permalink to this heading">#</a></h3>
+<p>and so on.</p>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">pharm_class</span></code> is searched for “Decrease”:</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;amp;limit=10">https://api.fda.gov/drug/ndc.json?search=pharm_class:Decreased&amp;limit=10</a></p>
+<p>Results include hits like:</p>
+<ul class="simple">
+<li><p>“<strong>Decreased</strong> Respiratory Secretion Viscosity [PE]”</p></li>
+<li><p>“<strong>Decreased</strong> Prostaglandin Production [PE]”, and “Decreased Platelet Aggregation [PE]”.</p></li>
+</ul>
+<section id="what-the-exact-suffix-means">
+<h3>What the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix means<a class="headerlink" href="#what-the-exact-suffix-means" title="Permalink to this heading">#</a></h3>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>The information that follows was taken from <a class="reference external" href="https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix">https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix</a></p>
 </div>
 <p>Some fields also have a second, <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version which can also be searched. As we have seen, a field (without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix) can be search for partial searches.
-It has been tokenized to allow flexible partial searches. As shown previouly, a query like <a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a>
+It has been tokenized to allow flexible partial searches, so a query like <a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a>
 will return all drugs that contain “Advil” within their brand name, such as “CHILDRENS ADVIL”, “ADVIL MIGRAINE”, and so on.</p>
 <p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> also has a <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix version. It too can be search for “Advil”:</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</a></p>
@@ -372,7 +379,7 @@ match exactly. <strong>todo:</strong> double check.</p>
 </section>
 <section id="exists-searches">
 <h3><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches<a class="headerlink" href="#exists-searches" title="Permalink to this heading">#</a></h3>
-<p>todo:</p>
+<p>todo: Perform the searches mention above to better understand what is mean.</p>
 </section>
 <section id="search-questions">
 <h3>Search Questions<a class="headerlink" href="#search-questions" title="Permalink to this heading">#</a></h3>
@@ -446,7 +453,7 @@ correct?  The <code class="docutils literal notranslate"><span class="pre">.exac
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches">Searches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-fields-using-the-exact-suffix">Searching fields using the  <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-exact-suffix-means">What the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix means</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exists-searches"><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-questions">Search Questions</a></li>
 </ul>

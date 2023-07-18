@@ -284,6 +284,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-event-fields-open-questions">Device Event Fields Open Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-api-actually-works-open-questions">How Api Actually Works Open Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues">Issues</a></li>
 </ul>
             </nav>
@@ -301,22 +302,79 @@ document.write(`
 <section id="device-event-fields-open-questions">
 <h2>Device Event Fields Open Questions<a class="headerlink" href="#device-event-fields-open-questions" title="Permalink to this heading">#</a></h2>
 <p>Q: What are/is the value(s) <code class="docutils literal notranslate"><span class="pre">device.generice_name</span></code> if the <code class="docutils literal notranslate"><span class="pre">deive.product_code</span></code> is “LZS”?</p>
-<p>A: Examples:</p>
-<p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code>               | “OPTHALMIC EXCIMER LASER SYSTEM”
-<code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code>                 | “LADARVISION 4000”
-<code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> | “LZS”
-<code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code>        | “Excimer Laser System”
-`device.openfda.device_class        | “3”</p>
-<p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code>               | “EXCIMER LASER”
-<code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code>                 | “SUMMIT APEX PLUS”
-<code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> | LZS
-<code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code>        | “Excimer Laser System”
-`device.openfda.device_class        | 3</p>
-<p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code>               | “EXCIMER LASER SYSTEM”
-<code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code>                 | “WAVEFRONT LASER”
-<code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> | LZS
-<code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code>        | “Excimer Laser System”
-`device.openfda.device_class        | 3</p>
+<p>A: Here are actual examples:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>“OPTHALMIC EXCIMER LASER SYSTEM”</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
+<td><p>“LADARVISION 4000”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
+<td><p>“LZS”</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
+<td><p>“Excimer Laser System”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>`device.openfda.device_class</p></td>
+<td><p>“3”</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>“EXCIMER LASER”</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
+<td><p>“SUMMIT APEX PLUS”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
+<td><p>LZS</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
+<td><p>“Excimer Laser System”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>“EXCIMER LASER SYSTEM”</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
+<td><p>“WAVEFRONT LASER”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
+<td><p>LZS</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
+<td><p>“Excimer Laser System”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="how-api-actually-works-open-questions">
 <h2>How Api Actually Works Open Questions<a class="headerlink" href="#how-api-actually-works-open-questions" title="Permalink to this heading">#</a></h2>
@@ -327,7 +385,7 @@ document.write(`
 </div>
 <p>OpenVigil does allow entering your own search string and gives a default count example. See:
 <a class="reference external" href="https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php">https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php</a>. The example is:</p>
-<p>&lt;search=patient.drug.openfda.generic_name.exact:(“DROSPIRENONE+AND+ETHINYL+ESTRADIOL”)+AND+patient.reaction.reactionmeddrapt.exact:(“PAIN”)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0</p>
+<p><code class="docutils literal notranslate"><span class="pre">search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0</span></code></p>
 <p>Counting records where certain terms occur</p>
 <p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Search for all records
@@ -336,13 +394,32 @@ Count the number of records matching the terms in patient.reaction.reactionmeddr
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
-<p>Why does this query</p>
-<p>https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</p>
+</section>
+<section id="exact-questions">
+<h2><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions<a class="headerlink" href="#exact-questions" title="Permalink to this heading">#</a></h2>
+<p>Some fields also have a second, <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version which can also be searched. A field specified without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix can be search for
+partial, “is contained in” searches. It has been tokenized to allow flexible partial searches, so a query like</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a></p>
+<p>will return all drugs that contain “Advil” within their brand name, such as “CHILDRENS ADVIL”, “ADVIL MIGRAINE”, and so on.</p>
+<p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> also has a <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix version. It too can be search for “Advil”:</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</a></p>
+<p>You will now see fewer results. Each result will have (exactly–right?) “Advil” as its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> (nothing more and nothing less–right?). Exact match must
+match exactly. <strong>todo:</strong> double check.</p>
+<p><strong>todo:</strong></p>
+<ul class="simple">
+<li><p>Run the queries above and understand what is being said and its accuracy and what exactly <code class="docutils literal notranslate"><span class="pre">.exact</span></code> does.</p></li>
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix versions of the queries in ~/o/s/query-parameters.md and likewise note the differences.</p></li>
+</ul>
+<p>The two basic uses of search are:</p>
+<p>search=field:value+AND+field:value for records that match both values.
+search=field:value+field:value for records that match either of the values.</p>
+<p>Using what I have learned by doing the above research, explain why does this query</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</a></p>
 <p>work, but this one gives an error</p>
-<p>https://api.fda.gov/device/event.json?count=device.openfda.device_name</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?count=device.openfda.device_name">https://api.fda.gov/device/event.json?count=device.openfda.device_name</a></p>
 <p>I believe it is because the openfda fields are openfda, i.e.annotated, fields?</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?searcount=device.manufacturer_name</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact</span></code></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?searcount=device.manufacturer_name">https://api.fda.gov/device/event.json?searcount=device.manufacturer_name</a></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact">https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact</a></p>
 </section>
 <section id="issues">
 <h2>Issues<a class="headerlink" href="#issues" title="Permalink to this heading">#</a></h2>
@@ -401,6 +478,7 @@ queries and save the searched-for field and the unique field to a file. Then sor
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-event-fields-open-questions">Device Event Fields Open Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-api-actually-works-open-questions">How Api Actually Works Open Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues">Issues</a></li>
 </ul>
   </nav></div>

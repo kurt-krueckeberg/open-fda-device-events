@@ -370,7 +370,7 @@ The query</p>
 <p>The information that follows was taken from <a class="reference external" href="https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix">https://opendata.stackexchange.com/questions/20112/the-difference-between-exact-with-suffix-and-without-suffix</a></p>
 </div>
 <p>Some fields also have a second, <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version which can also be searched. As we have seen, a field (without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix) can be search for partial searches.
-It has been tokenized to allow flexible partial searches. As shown previouly, a query like <a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a>
+It has been tokenized to allow flexible partial searches, so a query like <a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a>
 will return all drugs that contain “Advil” within their brand name, such as “CHILDRENS ADVIL”, “ADVIL MIGRAINE”, and so on.</p>
 <p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> also has a <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix version. It too can be search for “Advil”:</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</a></p>
@@ -379,7 +379,7 @@ match exactly. <strong>todo:</strong> double check.</p>
 </section>
 <section id="exists-searches">
 <h3><code class="docutils literal notranslate"><span class="pre">__exists__</span></code> searches<a class="headerlink" href="#exists-searches" title="Permalink to this heading">#</a></h3>
-<p>todo:</p>
+<p>todo: Perform the searches mention above to better understand what is mean.</p>
 </section>
 <section id="search-questions">
 <h3>Search Questions<a class="headerlink" href="#search-questions" title="Permalink to this heading">#</a></h3>
