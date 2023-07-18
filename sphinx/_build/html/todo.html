@@ -445,14 +445,14 @@ Count the number of records matching the terms in patient.reaction.reactionmeddr
 <p>These comments are from an openFDA team member…</p>
 <p>Some fields also have a second, <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version which can also be searched. A field specified without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix can be search for
 partial, “is contained in” searches. It has been tokenized to allow flexible partial searches, so a query like</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</span></code></p>
 <p>will return all drugs that contain “Advil” within their brand name, such as “CHILDRENS ADVIL”, “ADVIL MIGRAINE”, and so on.</p>
 <p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> also has a <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix version. It too can be search for “Advil”:</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</span></code></p>
 <p>You will now see fewer results. Each result will have (exactly–right?) “Advil” as its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> (nothing more and nothing less–right?). Exact match must
 match exactly. <strong>todo:</strong> double check.</p>
 <p>Here is another example taken from openfda.stackexchagne.com. It is a search looks for reports that may have been labeled with the incorrect product code:</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=date_received:%5B20130401+TO+20180430%5D+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(%22needle%22+AND+(%22transseptal%22+%22brockenbrough%22+%22brk%22)))&amp;amp;limit=100&amp;amp;skip=0">https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(“needle”+AND+(“transseptal”+”brockenbrough”+”brk”)))&amp;limit=100&amp;skip=0</a></p>
+<p>`https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(“needle”+AND+(“transseptal”+”brockenbrough”+”brk”)))&amp;limit=100&amp;skip=0”&gt;https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(“needle”+AND+(“transseptal”+”brockenbrough”+”brk”)))&amp;limit=100&amp;skip=0</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> field is exact, and requires the search terms to be in parentheses.</p>
