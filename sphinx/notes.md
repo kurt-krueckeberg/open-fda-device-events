@@ -14,7 +14,7 @@ A: Here are actual examples:
 `device.brand_name`                 | "LADARVISION 4000"
 `device.device_report_product_code` | "LZS"
 `device.openfda.device_name`        | "Excimer Laser System"
-`device.openfda.device_class        | "3"
+`device.openfda.device_class`       | "3"
 
 | Field | Value |
 | :---  | ----- |
