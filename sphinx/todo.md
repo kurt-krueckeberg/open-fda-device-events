@@ -1,8 +1,27 @@
 # Notes
 
+## Collect Examples
+
+todo: Get all examples and their exaplnations from:
+
+- <https://open.fda.gov/apis/drug/event/example-api-queries/>
+- <https://open.fda.gov/apis/device/510k/example-api-queries/>
+- <https://open.fda.gov/apis/device/classification/example-api-queries/>
+- <https://open.fda.gov/apis/device/enforcement/example-api-queries/>
+- <https://open.fda.gov/apis/device/recall/example-api-queries/>
+- <https://open.fda.gov/apis/food/event/example-api-queries/>
+
+todo: note those that use `.exact` and what it means.
+
+Put them in api-examples.md
+
+## Read stackexachange replies
+
 Read some of the openFDA replies at <https://opendata.stackexchange.com/questions/tagged/openfda>
 
-## Device Event Fields Open Questions
+## Thing to Understand
+
+### Device Event Fields Open Questions
 
 Q: What are/is the value(s) `device.generice_name` if the `deive.product_code` is "LZS"?
 
@@ -42,7 +61,7 @@ A: Here are actual examples:
 `device.openfda.device_name` | "Excimer Laser System"
 `device.openfda.device_class` | 3
 
-## How Api Actually Works Open Questions
+### How Api Actually Works Open Questions
 
 Understaind `count` better. Documentation states:
 
@@ -64,7 +83,7 @@ This query looks in the drug/event endpoint for all records. It then returns a c
 
 `https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
 
-## `.exact` questions
+### `.exact` questions
 
 Some fields also have a second, `.exact` version which can also be searched. A field specified without the `.exact` suffix can be search for
 partial, "is contained in" searches. It has been tokenized to allow flexible partial searches, so a query like 

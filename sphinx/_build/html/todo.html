@@ -1,0 +1,575 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Notes &#8212; Open FDA API 0.7 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'todo';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Open FDA API 0.7 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="queries-overview.html">Queries Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query-parameters.html">Query Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="further-query-syntax.html">Further Query Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Documentation Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="endpoint-device.html">Device API Endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-examples.html">Examples Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-syntax-rules.html">API Syntax Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-adv-ev-fields.html">Device Adverse Events Searchable Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sig-dev-adv-fields.html">Most Important Device Adverse Event Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Prospective Code</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/todo.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Notes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-examples">Collect Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-stackexachange-replies">Read stackexachange replies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thing-to-understand">Thing to Understand</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device-event-fields-open-questions">Device Event Fields Open Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-api-actually-works-open-questions">How Api Actually Works Open Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues">Issues</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="notes">
+<h1>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h1>
+<section id="collect-examples">
+<h2>Collect Examples<a class="headerlink" href="#collect-examples" title="Permalink to this heading">#</a></h2>
+<p>todo: Get all examples and their exaplnations from:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://open.fda.gov/apis/drug/event/example-api-queries/">https://open.fda.gov/apis/drug/event/example-api-queries/</a></p></li>
+<li><p><a class="reference external" href="https://open.fda.gov/apis/device/510k/example-api-queries/">https://open.fda.gov/apis/device/510k/example-api-queries/</a></p></li>
+<li><p><a class="reference external" href="https://open.fda.gov/apis/device/classification/example-api-queries/">https://open.fda.gov/apis/device/classification/example-api-queries/</a></p></li>
+<li><p><a class="reference external" href="https://open.fda.gov/apis/device/enforcement/example-api-queries/">https://open.fda.gov/apis/device/enforcement/example-api-queries/</a></p></li>
+<li><p><a class="reference external" href="https://open.fda.gov/apis/device/recall/example-api-queries/">https://open.fda.gov/apis/device/recall/example-api-queries/</a></p></li>
+<li><p><a class="reference external" href="https://open.fda.gov/apis/food/event/example-api-queries/">https://open.fda.gov/apis/food/event/example-api-queries/</a></p></li>
+</ul>
+<p>todo: note those that use <code class="docutils literal notranslate"><span class="pre">.exact</span></code> and what it means.</p>
+<p>Put them in api-examples.md</p>
+</section>
+<section id="read-stackexachange-replies">
+<h2>Read stackexachange replies<a class="headerlink" href="#read-stackexachange-replies" title="Permalink to this heading">#</a></h2>
+<p>Read some of the openFDA replies at <a class="reference external" href="https://opendata.stackexchange.com/questions/tagged/openfda">https://opendata.stackexchange.com/questions/tagged/openfda</a></p>
+</section>
+<section id="thing-to-understand">
+<h2>Thing to Understand<a class="headerlink" href="#thing-to-understand" title="Permalink to this heading">#</a></h2>
+<section id="device-event-fields-open-questions">
+<h3>Device Event Fields Open Questions<a class="headerlink" href="#device-event-fields-open-questions" title="Permalink to this heading">#</a></h3>
+<p>Q: What are/is the value(s) <code class="docutils literal notranslate"><span class="pre">device.generice_name</span></code> if the <code class="docutils literal notranslate"><span class="pre">deive.product_code</span></code> is “LZS”?</p>
+<p>A: Here are actual examples:</p>
+<table class="table table-left" id="id1">
+<caption><span class="caption-text">Example</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>“OPTHALMIC EXCIMER LASER SYSTEM”</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
+<td><p>“LADARVISION 4000”</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
+<td><p>“LZS”</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
+<td><p>“Excimer Laser System”</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></td>
+<td><p>“3”</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table table-left" id="id2">
+<caption><span class="caption-text">Example</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>“EXCIMER LASER”</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
+<td><p>“SUMMIT APEX PLUS”</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
+<td><p>LZS</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
+<td><p>“Excimer Laser System”</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Field</p></th>
+<th class="head text-left"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td class="text-left"><p>“EXCIMER LASER SYSTEM”</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
+<td class="text-left"><p>“WAVEFRONT LASER”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
+<td class="text-left"><p>LZS</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
+<td class="text-left"><p>“Excimer Laser System”</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></td>
+<td class="text-left"><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="how-api-actually-works-open-questions">
+<h3>How Api Actually Works Open Questions<a class="headerlink" href="#how-api-actually-works-open-questions" title="Permalink to this heading">#</a></h3>
+<p>Understaind <code class="docutils literal notranslate"><span class="pre">count</span></code> better. Documentation states:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`count:` Count the number of unique values of a certain field, for all the records that matched the
+ search parameter. By default, the API returns the 1000 most frequent values.
+</pre></div>
+</div>
+<p>OpenVigil does allow entering your own search string and gives a default count example. See:
+<a class="reference external" href="https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php">https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php</a>. The example is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0</span></code></p>
+<p>Counting records where certain terms occur</p>
+<p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Search for all records
+
+Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
+</section>
+<section id="exact-questions">
+<h3><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions<a class="headerlink" href="#exact-questions" title="Permalink to this heading">#</a></h3>
+<p>Some fields also have a second, <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version which can also be searched. A field specified without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix can be search for
+partial, “is contained in” searches. It has been tokenized to allow flexible partial searches, so a query like</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</a></p>
+<p>will return all drugs that contain “Advil” within their brand name, such as “CHILDRENS ADVIL”, “ADVIL MIGRAINE”, and so on.</p>
+<p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> also has a <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix version. It too can be search for “Advil”:</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</a></p>
+<p>You will now see fewer results. Each result will have (exactly–right?) “Advil” as its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> (nothing more and nothing less–right?). Exact match must
+match exactly. <strong>todo:</strong> double check.</p>
+<p>Here is another example taken from openfda.stackexchagne.com. It is a search looks for reports that may have been labeled with the incorrect product code:</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=date_received:%5B20130401+TO+20180430%5D+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(%22needle%22+AND+(%22transseptal%22+%22brockenbrough%22+%22brk%22)))&amp;amp;limit=100&amp;amp;skip=0">https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(“needle”+AND+(“transseptal”+”brockenbrough”+”brk”)))&amp;limit=100&amp;skip=0</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> field is exact, and requires the search terms to be in parentheses.</p>
+</div>
+<p><strong>todo:</strong></p>
+<ul class="simple">
+<li><p>Run the queries above and understand what is being said and its accuracy and what exactly <code class="docutils literal notranslate"><span class="pre">.exact</span></code> does.</p></li>
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix versions of the queries in ~/o/s/query-parameters.md and likewise note the differences.</p></li>
+</ul>
+<p>The two basic uses of search are:</p>
+<p>search=field:value+AND+field:value for records that match both values.
+search=field:value+field:value for records that match either of the values.</p>
+<p>Using what I have learned by doing the above research, explain why does this query</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</a></p>
+<p>work, but this one gives an error</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?count=device.openfda.device_name">https://api.fda.gov/device/event.json?count=device.openfda.device_name</a></p>
+<p>I believe it is because the openfda fields are openfda, i.e.annotated, fields?</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?searcount=device.manufacturer_name">https://api.fda.gov/device/event.json?searcount=device.manufacturer_name</a></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact">https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact</a></p>
+</section>
+</section>
+<section id="issues">
+<h2>Issues<a class="headerlink" href="#issues" title="Permalink to this heading">#</a></h2>
+<p>Example 1</p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea</a></p>
+<p>returns a total of 628612 meta.results.total.</p>
+<p>but using <code class="docutils literal notranslate"><span class="pre">=</span></code> instead of <code class="docutils literal notranslate"><span class="pre">:</span></code></p>
+<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea</a></p>
+<p>returns 687192 results.total. Why more?</p>
+<p>Example 2</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HQF%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=”HQF”</a></p>
+<p>returns results but</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code:%22HQF%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code:”HQF”</a></p>
+<p>returns nothing.</p>
+<p>I think <code class="docutils literal notranslate"><span class="pre">:</span></code> means contains while <code class="docutils literal notranslate"><span class="pre">=</span></code> means “matches exactly”?</p>
+<p>Both of these searches</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer">https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer</a></p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:%22Excimer+Laser+System%22%22">https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:”Excimer+Laser+System””</a></p>
+<p>return the same totals of 13267.</p>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code>, which is unique, is returned in every <code class="docutils literal notranslate"><span class="pre">device/event</span></code> query.</p>
+<p>including it in the search of both queries, writing PHP code to execute the
+queries and save the searched-for field and the unique field to a file. Then sorting the files based on the
+<code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code> and doing the set difference.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-examples">Collect Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-stackexachange-replies">Read stackexachange replies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thing-to-understand">Thing to Understand</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device-event-fields-open-questions">Device Event Fields Open Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-api-actually-works-open-questions">How Api Actually Works Open Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues">Issues</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kurt Krueckeberg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright MIT License.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

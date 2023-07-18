@@ -1,5 +1,16 @@
 # Examples Summary
 
+todo: Get all examples and their exaplnations from:
+
+- <https://open.fda.gov/apis/drug/event/example-api-queries/>
+- <https://open.fda.gov/apis/device/510k/example-api-queries/>
+- <https://open.fda.gov/apis/device/classification/example-api-queries/>
+- <https://open.fda.gov/apis/device/enforcement/example-api-queries/>
+- <https://open.fda.gov/apis/device/recall/example-api-queries/>
+- <https://open.fda.gov/apis/food/event/example-api-queries/>
+
+todo: note those that use `.exact` and what it means.
+
 ## Adverse Device Events
 
 One adverse event report
