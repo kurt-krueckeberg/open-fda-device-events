@@ -9,7 +9,7 @@ Q: What are/is the value(s) `device.generice_name` if the `deive.product_code` i
 A: Here are actual examples:
 
 | Field | Value |
-| :---  | ----- |
+:---  | :----- |
 `device.generic_name` | "OPTHALMIC EXCIMER LASER SYSTEM"
 `device.brand_name` | "LADARVISION 4000"
 `device.device_report_product_code` | "LZS"
@@ -17,7 +17,7 @@ A: Here are actual examples:
 `device.openfda.device_class` | "3"
 
 | Field | Value |
-| :---  | ----- |
+| :---  | :----- |
 `device.generic_name` | "EXCIMER LASER"
 `device.brand_name` | "SUMMIT APEX PLUS"
 `device.device_report_product_code` | LZS
@@ -25,7 +25,7 @@ A: Here are actual examples:
 `device.openfda.device_class` | 3
 
 | Field | Value |
-| :---  | ----- |
+| :---  | :----- |
 `device.generic_name` | "EXCIMER LASER SYSTEM"
 `device.brand_name` | "WAVEFRONT LASER"
 `device.device_report_product_code` | LZS
