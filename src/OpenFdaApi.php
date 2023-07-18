@@ -5,33 +5,26 @@ namespace LanguageTools;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 
-class OpenFdaApi {
+class OpenFdaApi extends RestApi {
 
-   protected Client $client;  
-
-   private $headers = array();
+   array $parms = ['count' => '', 'limit' => 1, 'skip' => '', 'search' => '', 'offset' => ''];
  
    public function __construct(ConfigFile $c)
    {      
-       $xml = simple_xml_load_file($c);
-       
-       // todo: $node?
-
-       $this->headers =  $params['headers'];
-
-       $settings = simplexml_load_file($fxml);
-   
-       $this->setConfigOptions($settings);
-
-       $this->client = new Client(['base_uri' => (string) $settings->baseurl]);
+      parent::__construct($cS); 
    }
 
-   protected function request(string $method, string $route, array $options = array()) : string
+   final public function query() : string 
    {
-       $options['headers'] = $this->headers;
- 
-       $response = $this->client->request($method, $route, $options);
+       static $trans = array('method' => "POST", 'route' => "translation/text/translate");
 
-       return $response->getBody()->getContents();
+       $query = build_query();
+       
+       $contents = $this->request(self::$http_method, $trans['route'], ['query' => $query]); 
+
+       $obj = json_decode($contents);
+
+       return urldecode($obj->outputs[0]->output);
    }
+
 }

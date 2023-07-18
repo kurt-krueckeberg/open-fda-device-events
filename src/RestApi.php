@@ -5,7 +5,7 @@ namespace LanguageTools;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 
-class OpenFdaApi {
+class RestApi {
 
    protected Client $client;  
 
@@ -20,7 +20,7 @@ class OpenFdaApi {
        $this->headers =  $params['headers'];
    }
 
-   protected function request(string $method, string $route, array $options = array()) : string
+   public function request(string $method, string $route, array $options = array()) : string
    {
        $options['headers'] = $this->headers;
  
