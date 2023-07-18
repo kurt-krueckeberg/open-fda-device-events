@@ -39,46 +39,44 @@ A: Here are actual examples:
 `device.openfda.device_class` | "3"
 :::
 
-:::{list-table} Example of LZS device product code
-:widths: auto
-:align: center
+```{list-table} Example of LZS device product code
+:header-rows: 1
+:name: example-2
 
 * - Field
-  - `device.brand_name`
-  - `device.generic_name`
-  - `device.openfda.device_name`
-  - `device.openfda.device_class`
-* - Value
-  - "LASIK MD VISION",
+  - Value
+* - `device.brand_name`
+  - "LASIK MD VISION"
+* - `device.generic_name`
   - "EXCIMER LASER SYSTEM"
+* - `device.openfda.device_name`
   - "EXCIMER LASER SYSTEM"
+* - `device.openfda.device_class`
   - 3
-:::
+```
 
-```{table} Example of LZS device product code
 | Field | Value |
 | :---  | :--------------- 
 `device.brand_name` | "WAVEFRONT LASER"
 `device.generic_name` | "EXCIMER LASER SYSTEM"
 `device.openfda.device_name` | "Excimer Laser System"
 `device.openfda.device_class` | 3
-```
 
-:::{list-table} Example of LZS device product code
-:widths: auto
-:align: center
+```{list-table} Example 4 of LZS device product code
+:header-rows: 1
+:name: example-4
 
 * - Field
-  - `device.brand_name`
-  - `device.generic_name`
-  - `device.openfda.device_name`
-  - `device.openfda.device_class`
-* - Value
-  - "VISX STAR S4 IR EXCIMER LASER",
-  - "EXCIMER LASER",
-  - "Excimer Laser System",
-  - "device_class": "3"
-:::
+  - Value
+* - `device.brand_name`
+  - "VISX STAR S4 IR EXCIMER LASER"
+* - `device.generic_name`
+  - "EXCIMER LASER"
+* - `device.openfda.device_name`
+  - "Excimer Laser System"
+* - `device.openfda.device_class`
+  - 3
+```
 
 ### How Api Actually Works Open Questions
 

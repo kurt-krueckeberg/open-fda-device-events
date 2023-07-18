@@ -27,6 +27,16 @@ Q: What are/is the value(s) `device.generice_name` if the `device.product_code` 
 
 A: Here are actual examples:
 
+```{list-table} This table title
+:header-rows: 1
+:name: example-table
+
+* - Training
+  - Validation
+* - 0
+  - 5
+```
+
 :::{table} Example of LZS device product code
 :widths: auto
 :align: left
@@ -41,17 +51,16 @@ A: Here are actual examples:
 
 ```{list-table} Example of LZS device product code
 :header-rows: 1
-:name: example-2
 
 * - Field
   - Value
 * - `device.brand_name`
-  - "LASIK MD VISION"
-* - `device.generic_name`
+  - `device.generic_name`
+  - `device.openfda.device_name`
+  - `device.openfda.device_class`
+* - "LASIK MD VISION"
   - "EXCIMER LASER SYSTEM"
-* - `device.openfda.device_name`
   - "EXCIMER LASER SYSTEM"
-* - `device.openfda.device_class`
   - 3
 ```
 
@@ -64,17 +73,17 @@ A: Here are actual examples:
 
 ```{list-table} Example 4 of LZS device product code
 :header-rows: 1
-:name: example-4
+:name: Example 4
 
 * - Field
-  - Value
-* - `device.brand_name`
-  - "VISX STAR S4 IR EXCIMER LASER"
-* - `device.generic_name`
-  - "EXCIMER LASER"
-* - `device.openfda.device_name`
-  - "Excimer Laser System"
-* - `device.openfda.device_class`
+  - `device.brand_name`
+  - `device.generic_name`
+  - `device.openfda.device_name`
+  - `device.openfda.device_class`
+* - Value
+  - `VISX STAR S4 IR EXCIMER LASER`
+  - `EXCIMER LASER`
+  - `Excimer Laser System`
   - 3
 ```
 
