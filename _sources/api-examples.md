@@ -15,8 +15,6 @@ See searchable fields for more about date\_received. Brackets [ ] are used to sp
 
 `https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1`
 
-Resume [here](https://open.fda.gov/apis/device/event/example-api-queries/)
-
 ## Examples of Match Options
 
 ### Match a single search term
