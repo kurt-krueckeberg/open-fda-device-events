@@ -4,12 +4,12 @@
 
 todo: Get all examples and their exaplnations from:
 
-- <https://open.fda.gov/apis/drug/event/example-api-queries/>
-- <https://open.fda.gov/apis/device/510k/example-api-queries/>
-- <https://open.fda.gov/apis/device/classification/example-api-queries/>
-- <https://open.fda.gov/apis/device/enforcement/example-api-queries/>
-- <https://open.fda.gov/apis/device/recall/example-api-queries/>
-- <https://open.fda.gov/apis/food/event/example-api-queries/>
+- [https://open.fda.gov/apis/drug/event/example-api-queries/](https://open.fda.gov/apis/drug/event/example-api-queries/)
+- [https://open.fda.gov/apis/device/510k/example-api-queries/](https://open.fda.gov/apis/device/510k/example-api-queries/)
+- [https://open.fda.gov/apis/device/classification/example-api-queries/](https://open.fda.gov/apis/device/classification/example-api-queries/)
+- [https://open.fda.gov/apis/device/enforcement/example-api-queries/](https://open.fda.gov/apis/device/enforcement/example-api-queries/)
+- [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
+- [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
 
 todo: note those that use `.exact` and what it means.
 
@@ -17,7 +17,7 @@ Put them in api-examples.md
 
 ## Read stackexachange replies
 
-Read some of the openFDA replies at <https://opendata.stackexchange.com/questions/tagged/openfda>
+Read some of the openFDA replies at [https://opendata.stackexchange.com/questions/tagged/openfda](https://opendata.stackexchange.com/questions/tagged/openfda)
 
 ## Thing to Understand
 
@@ -87,7 +87,7 @@ Understaind `count` better. Documentation states:
 search parameter. By default, the API returns the 1000 most frequent values.
 
 OpenVigil does allow entering your own search string and gives a default count example. See:
-<https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php>. The example is:
+[https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php). The example is:
 
 `search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")
 +AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])
@@ -100,7 +100,7 @@ This query looks in the drug/event endpoint for all records. It then returns a c
 > Search for all records
 Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
 
-<https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact>
+[https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact](https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact)
 
 ### `.exact` questions
 
@@ -140,39 +140,39 @@ search=field:value+field:value for records that match either of the values.
 
 Using what I have learned by doing the above research, explain why does this query
 
-<https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact>
+[https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact](https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact)
 
 work, but this one gives an error
 
-<https://api.fda.gov/device/event.json?count=device.openfda.device_name>
+[https://api.fda.gov/device/event.json?count=device.openfda.device_name](https://api.fda.gov/device/event.json?count=device.openfda.device_name)
 
 I believe it is because the openfda fields are openfda, i.e.annotated, fields?
 
-<https://api.fda.gov/device/event.json?searcount=device.manufacturer_name>
+[https://api.fda.gov/device/event.json?searcount=device.manufacturer_name](https://api.fda.gov/device/event.json?searcount=device.manufacturer_name)
 
-<https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact>
+[https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact](https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact)
 
 ## Issues
 
 Example 1 
 
-<https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea> 
+[https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea](https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea) 
 
 returns a total of 628612 meta.results.total.
 
 but using `=` instead of `:` 
  
-<https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea>
+[https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea](https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea)
 
 returns 687192 results.total. Why more?
 
 Example 2
 
-<https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF">
+[https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"](https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF")
 
 returns results but 
 
-<https://api.fda.gov/device/event.json?search=device.device_report_product_Code:"HQF">
+[https://api.fda.gov/device/event.json?search=device.device_report_product_Code:"HQF"](https://api.fda.gov/device/event.json?search=device.device_report_product_Code:"HQF")
 
 returns nothing.
 
@@ -180,9 +180,9 @@ I think `:` means contains while `=` means "matches exactly"?
 
 Both of these searches
 
-<https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer>
+[https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer](https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer)
 
-<https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:"Excimer+Laser+System"">
+[https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:"Excimer+Laser+System""](https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:"Excimer+Laser+System"")
 
 return the same totals of 13267.
 
