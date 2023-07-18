@@ -1,5 +1,7 @@
 # Notes
 
+Read some of the openFDA replies at <https://opendata.stackexchange.com/questions/tagged/openfda>
+
 ## Device Event Fields Open Questions
 
 Q: What are/is the value(s) `device.generice_name` if the `deive.product_code` is "LZS"?
