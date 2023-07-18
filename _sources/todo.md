@@ -28,7 +28,6 @@ Q: What are/is the value(s) `device.generice_name` if the `device.product_code` 
 A: Here are actual examples:
 
 :::{table} Example of LZS device product code
-:widths: auto
 :align: left
 
 | Field | Value |
@@ -103,6 +102,8 @@ This query looks in the drug/event endpoint for all records. It then returns a c
 `https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
 
 ### `.exact` questions
+
+These comments are from an openFDA team member...
 
 Some fields also have a second, `.exact` version which can also be searched. A field specified without the `.exact` suffix can be search for
 partial, "is contained in" searches. It has been tokenized to allow flexible partial searches, so a query like 
