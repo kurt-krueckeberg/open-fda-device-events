@@ -455,6 +455,25 @@ document.write(`
 <td><p>a string that acts like a primary and foreign key for joining four file together</p></td>
 <td><p>nothing</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">patient.patient_problems</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>Describes actual adverse effects on the patient that may be related to the device problem observed during the reported event.
+This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text_type_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>String that describes the type of narrative contained within the text field.</p>
+<p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
+<p>Value is one of the following:</p>
+<ul class="simple">
+<li><p>Description of Event or Problem = The problem (quality, performance, or safety concern) in sufficient detail so that the circumstances surrounding the defect or malfunction of the medical product can be understood. For patient adverse events, may include a description of the event in detail using the reporter’s own words, including a description of what happened and a summary of all relevant clinical information (medical status prior to the event; signs and/or symptoms; differential diagnosis for the event in question; clinical course; treatment; outcome, etc.). If available and if relevant, may include synopses of any office visit notes or the hospital discharge summary. This section may also contain information about surgical procedures and laboratory tests.</p></li>
+<li><p>Manufacturer Evaluation Summary = If available, the results of any evaluation of a malfunctioning device and, if known, any relevant maintenance/service information should be included in this section.</p></li>
+<li><p>Additional Manufacturer Narrative = Documentation forthcoming.</p></li>
+</ul>
+</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <table class="table" id="id4">
