@@ -65,6 +65,8 @@ A: Here are actual examples:
 ```{list-table} Example 4 of LZS device product code
 :header-rows: 1
 :name: example-4
+:align: left
+:widths: 1 2
 
 * - Field
   - Value
