@@ -23,48 +23,62 @@ Read some of the openFDA replies at <https://opendata.stackexchange.com/question
 
 ### Device Event Fields Open Questions
 
-Q: What are/is the value(s) `device.generice_name` if the `deive.product_code` is "LZS"?
+Q: What are/is the value(s) `device.generice_name` if the `device.product_code` is "LZS"?
 
 A: Here are actual examples:
 
-:::{table} Example
+:::{table} Example of LZS device product code
 :widths: auto
 :align: left
 
 | Field | Value |
 ---  | -------------
-`device.generic_name` | "OPTHALMIC EXCIMER LASER SYSTEM"
 `device.brand_name` | "LADARVISION 4000"
-`device.device_report_product_code` | "LZS"
+`device.generic_name` | "OPTHALMIC EXCIMER LASER SYSTEM"
 `device.openfda.device_name` | "Excimer Laser System"
 `device.openfda.device_class` | "3"
 :::
 
-:::{list-table} Example
+:::{list-table} Example of LZS device product code
 :widths: auto
 :align: center
 
 * - Field
-  - `device.generic_name`
   - `device.brand_name`
-  - `device.device_report_product_code`
+  - `device.generic_name`
   - `device.openfda.device_name`
   - `device.openfda.device_class`
 * - Value
-  - "EXCIMER LASER"
-  - "SUMMIT APEX PLUS"
-  - LZS
-  - "Excimer Laser System"
+  - "LASIK MD VISION",
+  - "EXCIMER LASER SYSTEM"
+  - "EXCIMER LASER SYSTEM"
   - 3
 :::
 
+```{table} Example of LZS device product code
 | Field | Value |
 | :---  | :--------------- 
-`device.generic_name` | "EXCIMER LASER SYSTEM"
 `device.brand_name` | "WAVEFRONT LASER"
-`device.device_report_product_code` | LZS
+`device.generic_name` | "EXCIMER LASER SYSTEM"
 `device.openfda.device_name` | "Excimer Laser System"
 `device.openfda.device_class` | 3
+```
+
+:::{list-table} Example of LZS device product code
+:widths: auto
+:align: center
+
+* - Field
+  - `device.brand_name`
+  - `device.generic_name`
+  - `device.openfda.device_name`
+  - `device.openfda.device_class`
+* - Value
+  - "VISX STAR S4 IR EXCIMER LASER",
+  - "EXCIMER LASER",
+  - "Excimer Laser System",
+  - "device_class": "3"
+:::
 
 ### How Api Actually Works Open Questions
 
