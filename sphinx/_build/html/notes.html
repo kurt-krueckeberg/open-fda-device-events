@@ -406,6 +406,12 @@ partial, “is contained in” searches. It has been tokenized to allow flexible
 <p><a class="reference external" href="https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;amp;limit=1000">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</a></p>
 <p>You will now see fewer results. Each result will have (exactly–right?) “Advil” as its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> (nothing more and nothing less–right?). Exact match must
 match exactly. <strong>todo:</strong> double check.</p>
+<p>Here is another example taken from openfda.stackexchagne.com. It is a search looks for reports that may have been labeled with the incorrect product code:</p>
+<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=date_received:%5B20130401+TO+20180430%5D+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(%22needle%22+AND+(%22transseptal%22+%22brockenbrough%22+%22brk%22)))&amp;amp;limit=100&amp;amp;skip=0">https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(“needle”+AND+(“transseptal”+”brockenbrough”+”brk”)))&amp;limit=100&amp;skip=0</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> field is exact, and requires the search terms to be in parentheses.</p>
+</div>
 <p><strong>todo:</strong></p>
 <ul class="simple">
 <li><p>Run the queries above and understand what is being said and its accuracy and what exactly <code class="docutils literal notranslate"><span class="pre">.exact</span></code> does.</p></li>
