@@ -10,33 +10,34 @@ class ConfigFile {
 
    private \SimpleXMLElement $xml;
 
-   static string $query_fmt =  "/providers/provider[@name='%s']"; 
+   private array $headers;
+   private string $base_uri;
+   private string $endpoint;
+
+   // static string $query_fmt =  "/providers/provider[@name='%s']"; 
 
    public function __construct(string $xml_name)
    {   
      $this->xml = simplexml_load_file($xml_name);
+   
+      $this->endpoint['base_uri'] = (string) $simplexml->endpoint;
+      
+      $this->headers['headers'] = array();
+
+      foreach($simplexml->headers->header as $header) {
+
+        $key = (string) $header['key'];
+
+        $this->headers['headers'][$key] = (string) $header;              
+      }
+
+    // return $r;
    }
-
-    public function get_config(ProviderID $id) : array
-    {
-        $simplexml = $this->get_xml_element($id->get_provider());
-
-        $r = array();
-
-        $r['base_uri'] = (string) $simplexml->endpoint;
-        
-        $r['headers'] = array();
-
-        foreach($simplexml->headers->header as $header) {
-
-          $key = (string) $header['key'];
-
-          $r['headers'][$key] = (string) $header;              
-        }
-
-      return $r;
-    }
- 
+   public function get_headers() : array
+   {
+      return $this->headers;
+   }
+   /* 
    private function get_xml_element(string $name) : \SimpleXMLElement
    {
       $query = sprintf(self::$query_fmt, $name); 
@@ -45,4 +46,5 @@ class ConfigFile {
     
       return $response[0];  
    }
+   */
 }

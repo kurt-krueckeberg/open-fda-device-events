@@ -9,7 +9,7 @@ These type of searches are possible for `.exact` fields:
 
 **TODO:**
 
-`device.openfda.device_name` is the proprietary or trade name of the cleared device. Both these querires 
+`device.openfda.device_name` is the proprietary name, or trade name, of the cleared device.
 
 <https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer>
 <https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:"Excimer+Laser+System"">

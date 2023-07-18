@@ -9,20 +9,18 @@ class RestApi {
 
    protected Client $client;  
 
-   private $headers = array();
+   private $header_options = array();
  
-   public function __construct(ConfigFile $c, ProviderID $id)
+   public function __construct(ConfigFile $c)
    {      
-       $params = $c->get_config($id);
+       $this->header_options = $c->get_config();
        
        $this->client = new Client( ['base_uri' => $params['base_uri']]);
-
-       $this->headers =  $params['headers'];
    }
 
    public function request(string $method, string $route, array $options = array()) : string
    {
-       $options['headers'] = $this->headers;
+       $options['headers'] = $this->header_options;
  
        $response = $this->client->request($method, $route, $options);
 
