@@ -41,7 +41,7 @@ A: Here are actual examples:
 :::
 
 :::{table} Example
-:widths: 15% 85%
+:widths: 15 85
 :align: left
 
 | Field | Value |
