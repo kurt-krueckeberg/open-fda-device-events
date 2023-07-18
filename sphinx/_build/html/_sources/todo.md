@@ -83,23 +83,24 @@ A: Here are actual examples:
 
 Understaind `count` better. Documentation states:
 
-    `count:` Count the number of unique values of a certain field, for all the records that matched the
-     search parameter. By default, the API returns the 1000 most frequent values.
+>  `count:` Count the number of unique values of a certain field, for all the records that matched the
+search parameter. By default, the API returns the 1000 most frequent values.
 
 OpenVigil does allow entering your own search string and gives a default count example. See:
 <https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php>. The example is:
 
-`search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0`
+`search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")
++AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])
+&count=receivedate&skip=0`
 
 Counting records where certain terms occur
 
 This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.
 
-    Search for all records
+> Search for all records
+Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
 
-    Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
-
-`https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
+<https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact>
 
 ### `.exact` questions
 
