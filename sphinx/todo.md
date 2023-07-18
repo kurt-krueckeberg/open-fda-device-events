@@ -28,7 +28,7 @@ Q: What are/is the value(s) `device.generice_name` if the `deive.product_code` i
 A: Here are actual examples:
 
 :::{table} Example
-:widths: 15% 85%
+:widths: 15 85
 :align: left
 
 | Field | Value |
