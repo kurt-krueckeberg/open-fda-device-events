@@ -1,8 +1,9 @@
 # Todo
 
-## Collect Examples
+## Collect All Examples
 
-todo: Get all examples and their exaplnations from:
+Copy and collect all these examples into "examples-apimd" along with their explanations and then create below each an executable link: `<a href="...">Execute it</a>`:
+Note the examples where `.exact` is used.
 
 - [https://open.fda.gov/apis/drug/event/example-api-queries/](https://open.fda.gov/apis/drug/event/example-api-queries/)
 - [https://open.fda.gov/apis/device/510k/example-api-queries/](https://open.fda.gov/apis/device/510k/example-api-queries/)
@@ -11,21 +12,17 @@ todo: Get all examples and their exaplnations from:
 - [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
 - [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
 
-todo: note those that use `.exact` and what it means.
-
-Put them in api-examples.md
-
 ## Read stackexachange replies
 
-Read some of the openFDA replies at [https://opendata.stackexchange.com/questions/tagged/openfda](https://opendata.stackexchange.com/questions/tagged/openfda)
+To learn more about the openFDA API read the replies at: [https://opendata.stackexchange.com/questions/tagged/openfda](https://opendata.stackexchange.com/questions/tagged/openfda)
 
-## Thing to Understand
+## Open Questions
 
-### Device Event Fields Open Questions
+### Questions about device/event endpoint fields
 
-Q: What are/is the value(s) `device.generice_name` if the `device.product_code` is "LZS"?
+1. What are/is the value(s) `device.generice_name` if the `device.product_code` is "LZS"?
 
-A: Here are actual examples:
+Here are actual examples:
 
 :::{table} Example of LZS device product code
 :align: left
@@ -85,7 +82,7 @@ A: Here are actual examples:
   - 3
 ```
 
-### How Api Actually Works Open Questions
+### How the Api Actually Works Open Questions
 
 Understaind `count` better. Documentation states:
 
