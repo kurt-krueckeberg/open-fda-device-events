@@ -1,4 +1,4 @@
-# Notes
+# Todo
 
 ## Collect Examples
 
@@ -54,12 +54,19 @@ A: Here are actual examples:
   - 3
 ```
 
+```{table} Example 3
+:name: example-3
+:align: left
+:width: 100%
+:widths: 30 70
+
 | Field | Value |
-| :---  | :--------------- 
+| ----  | ---------------- 
 `device.brand_name` | "WAVEFRONT LASER"
 `device.generic_name` | "EXCIMER LASER SYSTEM"
 `device.openfda.device_name` | "Excimer Laser System"
 `device.openfda.device_class` | 3
+```
 
 ```{list-table} Example 4 of LZS device product code
 :header-rows: 1
@@ -126,7 +133,7 @@ Here is another example taken from openfda.stackexchagne.com. It is a search loo
 https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0">https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0
 ```
 
-<a href='https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0'>https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0'>Execute link above</a>
+<a href='https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0'>Execute above query</a>
 
 :::{note}
 `brand_name` field is exact, and requires the search terms to be in parentheses. 
