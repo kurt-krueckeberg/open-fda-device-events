@@ -57,8 +57,6 @@ A: Here are actual examples:
 ```{table} Example 3
 :name: example-3
 :align: left
-:width: 100%
-:widths: 30 70
 
 | Field | Value |
 | ----  | ---------------- 
@@ -72,7 +70,8 @@ A: Here are actual examples:
 :header-rows: 1
 :name: example-4
 :align: left
-:widths: 1 2
+:width: 100%
+:widths: 30 70
 
 * - Field
   - Value
