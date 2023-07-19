@@ -133,7 +133,7 @@ Here is another example taken from openfda.stackexchagne.com. It is a search loo
 https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0">https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0
 ```
 
-<a href='https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0'>Execute above query</a>
+<a href='https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0'>Execute query above</a>
 
 :::{note}
 `brand_name` field is exact, and requires the search terms to be in parentheses. 
