@@ -1,7 +1,12 @@
 # Todo
 
+Javascript + ReactJS seems a more straight forward solution for implementing the openFDA API calls to query
+adverse device event data for those device I am interested in, as it client-side, browser-based solution.
+
+But I'm not sure is graphing libraries like D3.js are server side?
 ## Collect All Examples
 
+Learn Javascript and use it instead of PHP to implement the openFDA API collection of examples. 
 Copy and collect all these examples into "examples-apimd" along with their explanations and then create below each an executable link: `<a href="...">Execute it</a>`:
 Note the examples where `.exact` is used.
 
