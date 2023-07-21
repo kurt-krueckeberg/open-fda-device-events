@@ -4,6 +4,7 @@ Javascript + ReactJS seems a more straight forward solution for implementing the
 adverse device event data for those device I am interested in, as it client-side, browser-based solution.
 
 But I'm not sure is graphing libraries like D3.js are server side?
+
 ## Collect All Examples
 
 Learn Javascript and use it instead of PHP to implement the openFDA API collection of examples. 
@@ -27,22 +28,31 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
 
 1. What are/is the value(s) `device.generice_name` if the `device.product_code` is "LZS"?
 
-Here are actual examples:
+A: Actual results:
 
-:::{table} Example of LZS device product code
+```{list-table} Example 1 of LZS device product code
+:header-rows: 1 
+:width: 50%
 :align: left
+:widths: 1 1
 
-| Field | Value |
----  | -------------
-`device.brand_name` | "LADARVISION 4000"
-`device.generic_name` | "OPTHALMIC EXCIMER LASER SYSTEM"
-`device.openfda.device_name` | "Excimer Laser System"
-`device.openfda.device_class` | "3"
-:::
+*  - Field
+   - Value
+*  - `device.brand_name`
+   - "LADARVISION 4000"
+*  - `device.generic_name`
+   - "OPTHALMIC EXCIMER LASER SYSTEM"
+*  - `device.openfda.device_name`
+   - "Excimer Laser System"
+*  - `device.openfda.device_class`
+   - "3"
+```
 
-```{list-table} Example of LZS device product code
+```{list-table} Example 2 of LZS device product code
 :header-rows: 1
 :name: example-2
+:width: 50%
+:align: left
 
 * - Field
   - Value
@@ -58,6 +68,7 @@ Here are actual examples:
 
 ```{table} Example 3
 :name: example-3
+:width: 50%
 :align: left
 
 | Field | Value |
@@ -72,7 +83,7 @@ Here are actual examples:
 :header-rows: 1
 :name: example-4
 :align: left
-:width: 100%
+:width: 50%
 :widths: 30 70
 
 * - Field
