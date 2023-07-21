@@ -32,9 +32,8 @@ A: Actual results:
 
 ```{list-table} Example 1 of LZS device product code
 :header-rows: 1 
-:width: 50%
 :align: left
-:widths: 1 1
+:width: 70%
 
 *  - Field
    - Value
@@ -51,7 +50,7 @@ A: Actual results:
 ```{list-table} Example 2 of LZS device product code
 :header-rows: 1
 :name: example-2
-:width: 50%
+:width: 70%
 :align: left
 
 * - Field
@@ -68,7 +67,7 @@ A: Actual results:
 
 ```{table} Example 3
 :name: example-3
-:width: 50%
+:width: 70%
 :align: left
 
 | Field | Value |
@@ -82,9 +81,8 @@ A: Actual results:
 ```{list-table} Example 4 of LZS device product code
 :header-rows: 1
 :name: example-4
+:width: 70%
 :align: left
-:width: 50%
-:widths: 30 70
 
 * - Field
   - Value
