@@ -337,14 +337,14 @@ adverse device event data for those device I am interested in, as it client-side
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+AND+occurcountry:&quot;ca&quot;&amp;limit=1
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1'>Execute it</a></p>
+<p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1'>Execute call</a></p>
 <ol class="arabic simple" start="3">
 <li><p>Search for records where the field <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt``</span> <span class="pre">(patient</span> <span class="pre">reaction)</span> <span class="pre">contains</span> <span class="pre">&quot;fatigue&quot;</span> <span class="pre">or</span> </code>occurcountry`` (country where the event happened) was “ca” (the country code for Canada)</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+occurcountry:&quot;ca&quot;&amp;limit=1
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1'>Execute it</a></p>
+<p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1'>Execute call</a></p>
 <ol class="arabic simple" start="4">
 <li><p>https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</p></li>
 </ol>
@@ -352,7 +352,7 @@ adverse device event data for those device I am interested in, as it client-side
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10'>Execute it</a  ></p>
+<p><a href='https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10'>Execute call</a  ></p>
 <ol class="arabic simple" start="5">
 <li><p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p></li>
 </ol>

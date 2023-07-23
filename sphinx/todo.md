@@ -32,7 +32,7 @@ https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fa
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1
 ```
 
-<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1'>Execute it</a>
+<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1'>Execute call</a>
 
 3. Search for records where the field `patient.reaction.reactionmeddrapt`` (patient reaction) contains "fatigue" or `occurcountry`` (country where the event happened) was "ca" (the country code for Canada)
 
@@ -40,7 +40,7 @@ https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fa
 https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1
 ```
 
-<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1'>Execute it</a>
+<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1'>Execute call</a>
 
 4. https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 
@@ -50,7 +50,7 @@ This query looks in the `drug/event` endpoint for ten records and sorts them in 
 https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 ```
 
-<a href='https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10'>Execute it</a  >
+<a href='https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10'>Execute call</a  >
 
 
 5. This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.
