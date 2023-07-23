@@ -89,7 +89,7 @@ Search for all records with regulation_number equal to 872.6855
 https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1
 ```
 
-<a href'https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1'>Execute call</a>
+<a href='https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1'>Execute call</a>
 
 
 
