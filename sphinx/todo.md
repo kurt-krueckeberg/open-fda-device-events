@@ -7,17 +7,15 @@ But I'm not sure is graphing libraries like D3.js are server side?
 
 ## Collect All Examples
 
-Learn Javascript and use it instead of PHP to implement the openFDA API collection of examples. 
-Copy and collect all these examples into "examples-apimd" along with their explanations and then create below each an executable link: `<a href="...">Execute it</a>`:
-Note the examples where `.exact` is used.
+Collect these examples. Note how `.exact` and `count` are used.
 
-. [https://open.fda.gov/apis/device/510k/example-api-queries/](https://open.fda.gov/apis/device/510k/example-api-queries/)
-. [https://open.fda.gov/apis/device/classification/example-api-queries/](https://open.fda.gov/apis/device/classification/example-api-queries/)
-. [https://open.fda.gov/apis/device/enforcement/example-api-queries/](https://open.fda.gov/apis/device/enforcement/example-api-queries/)
-. [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
-. [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
+1. [https://open.fda.gov/apis/device/510k/example-api-queries/](https://open.fda.gov/apis/device/510k/example-api-queries/)
+2. [https://open.fda.gov/apis/device/classification/example-api-queries/](https://open.fda.gov/apis/device/classification/example-api-queries/)
+3. [https://open.fda.gov/apis/device/enforcement/example-api-queries/](https://open.fda.gov/apis/device/enforcement/example-api-queries/)
+4. [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
+5. [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
 
-Examples from [[https://open.fda.gov/apis/drug/event/example-api-queries/]](https://open.fda.gov/apis/drug/event/example-api-queries/)
+Examples from [drug/event endpoint](https://open.fda.gov/apis/drug/event/example-api-queries/)
 
 1. Search for all records with receivedate between Jan 01, 2004 and Dec 31, 2008. limit to 1 record.
 
