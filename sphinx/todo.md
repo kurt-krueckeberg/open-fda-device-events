@@ -59,7 +59,39 @@ https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
 ```
 
-<a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execut it</a>
+<a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execute it</a>
+
+Search for all records with product_code equals NOB.
+
+```
+https://api.fda.gov/device/classification.json?search=product_code:NOB&limit=1
+```
+
+<a href='https://api.fda.gov/device/classification.json?search=product_code:NOB&limit=1'>Execute call</a>
+
+This query is similar to the prior one, but returns a count of the FEI numbers.
+
+```
+https://api.fda.gov/device/classification.json?count=openfda.fei_number
+```
+
+<a href='https://api.fda.gov/device/classification.json?count=openfda.fei_number'>Execute call</a>
+
+## [DEvice 510(k) API queries](https://open.fda.gov/apis/device/510k/example-api-queries/)
+
+
+
+## [Device Classification Endpoint Examples](https://open.fda.gov/apis/device/classification/example-api-queries/)
+
+Search for all records with regulation_number equal to 872.6855
+
+```
+https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1
+```
+
+<a href'https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1'>Execute call</a>
+
+
 
 ## Read stackexchange replies
 
