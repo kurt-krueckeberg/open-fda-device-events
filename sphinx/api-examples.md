@@ -11,6 +11,8 @@ todo: Get all examples and their exaplnations from:
 
 todo: note those that use `.exact` and what it means.
 
+https://api.fda.gov/drug/event.json?search=receivedate:[20040101+TO+20081231]&limit=1
+
 ## Adverse Device Events
 
 One adverse event report

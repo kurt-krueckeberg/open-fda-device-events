@@ -11,12 +11,55 @@ Learn Javascript and use it instead of PHP to implement the openFDA API collecti
 Copy and collect all these examples into "examples-apimd" along with their explanations and then create below each an executable link: `<a href="...">Execute it</a>`:
 Note the examples where `.exact` is used.
 
-- [https://open.fda.gov/apis/drug/event/example-api-queries/](https://open.fda.gov/apis/drug/event/example-api-queries/)
-- [https://open.fda.gov/apis/device/510k/example-api-queries/](https://open.fda.gov/apis/device/510k/example-api-queries/)
-- [https://open.fda.gov/apis/device/classification/example-api-queries/](https://open.fda.gov/apis/device/classification/example-api-queries/)
-- [https://open.fda.gov/apis/device/enforcement/example-api-queries/](https://open.fda.gov/apis/device/enforcement/example-api-queries/)
-- [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
-- [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
+. [https://open.fda.gov/apis/device/510k/example-api-queries/](https://open.fda.gov/apis/device/510k/example-api-queries/)
+. [https://open.fda.gov/apis/device/classification/example-api-queries/](https://open.fda.gov/apis/device/classification/example-api-queries/)
+. [https://open.fda.gov/apis/device/enforcement/example-api-queries/](https://open.fda.gov/apis/device/enforcement/example-api-queries/)
+. [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
+. [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
+
+Examples from [[https://open.fda.gov/apis/drug/event/example-api-queries/]](https://open.fda.gov/apis/drug/event/example-api-queries/)
+
+1. Search for all records with receivedate between Jan 01, 2004 and Dec 31, 2008. limit to 1 record.
+
+```
+https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
+```
+<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1'>Execute call</a>
+
+2. Search for records where the field `patient.reaction.reactionmeddrapt` (patient reaction) contains "fatigue" and `occurcountry`` (country where the event happened) was "ca" (the country code for Canada)
+
+```
+https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1
+```
+
+<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1'>Execute it</a>
+
+3. Search for records where the field `patient.reaction.reactionmeddrapt`` (patient reaction) contains "fatigue" or `occurcountry`` (country where the event happened) was "ca" (the country code for Canada)
+
+```
+https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1
+```
+
+<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1'>Execute it</a>
+
+4. https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
+
+This query looks in the `drug/event` endpoint for ten records and sorts them in descending order by received date.
+
+```
+https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
+```
+
+<a href='https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10'>Execute it</a  >
+
+
+5. This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.
+
+```
+https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
+```
+
+<a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execut it</a>
 
 ## Read stackexachange replies
 
