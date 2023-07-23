@@ -77,7 +77,7 @@ https://api.fda.gov/device/classification.json?count=openfda.fei_number
 
 <a href='https://api.fda.gov/device/classification.json?count=openfda.fei_number'>Execute call</a>
 
-## [DEvice 510(k) API queries](https://open.fda.gov/apis/device/510k/example-api-queries/)
+## [Device 510(k) API queries](https://open.fda.gov/apis/device/510k/example-api-queries/)
 
 
 
