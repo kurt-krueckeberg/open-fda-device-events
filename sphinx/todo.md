@@ -43,7 +43,7 @@ https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fa
 
 4. https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 
-This query looks in the `drug/event` endpoint for ten records and sorts them in descending order by received date.
+This query looks in the `drug/event` endpoint for ten records and sorts them in descending order by received date `receivedate`.
 
 ```
 https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
