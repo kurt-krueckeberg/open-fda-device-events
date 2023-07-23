@@ -15,7 +15,9 @@ Collect these examples. Note how `.exact` and `count` are used.
 4. [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
 5. [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
 
-Examples from [drug/event endpoint](https://open.fda.gov/apis/drug/event/example-api-queries/)
+## Drug Adverse Event Examples
+
+All `drug/event`` endpoint [examples](https://open.fda.gov/apis/drug/event/example-api-queries/):
 
 1. Search for all records with receivedate between Jan 01, 2004 and Dec 31, 2008. limit to 1 record.
 
