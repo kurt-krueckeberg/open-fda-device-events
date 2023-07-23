@@ -61,7 +61,7 @@ https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exac
 
 <a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execut it</a>
 
-## Read stackexachange replies
+## Read stackexchange replies
 
 To learn more about the openFDA API read the replies at: [https://opendata.stackexchange.com/questions/tagged/openfda](https://opendata.stackexchange.com/questions/tagged/openfda)
 
