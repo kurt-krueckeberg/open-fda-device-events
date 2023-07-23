@@ -10,7 +10,6 @@ But I'm not sure is graphing libraries like D3.js are server side?
 Collect these examples. Note how `.exact` and `count` are used.
 
 1. [https://open.fda.gov/apis/device/510k/example-api-queries/](https://open.fda.gov/apis/device/510k/example-api-queries/)
-2. [https://open.fda.gov/apis/device/classification/example-api-queries/](https://open.fda.gov/apis/device/classification/example-api-queries/)
 3. [https://open.fda.gov/apis/device/enforcement/example-api-queries/](https://open.fda.gov/apis/device/enforcement/example-api-queries/)
 4. [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
 5. [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
