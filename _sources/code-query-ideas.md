@@ -5,10 +5,10 @@
 1. Search for device of Excimer Laser where `mdr_text` contains `dry`:
 
 ```
-https://api.fda.gov/device/event.json?search=(device.device_report_product_Code=%22LZS%22)+AND+(mdr_text.text:dry)
+https://api.fda.gov/device/event.json?search=(device.device_report_product_Code="LZS")+AND+(mdr_text.text:dry)
 ```
 
-<a href='https://api.fda.gov/device/event.json?search=(device.device_report_product_Code=%22LZS%22)+AND+(mdr_text.text:dry)'>Execute call</a>
+<a href='https://api.fda.gov/device/event.json?search=(device.device_report_product_Code="LZS")+AND+(mdr_text.text:dry)'>Execute call</a>
 
 2. Search for device adverse events for Excimer Lasik code `LZS` or AC-powered keratome code `HNO`:
 
