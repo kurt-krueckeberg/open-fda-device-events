@@ -1,70 +1,113 @@
-# Examples Summary
+# Examples
 
-todo: Get all examples and their exaplnations from:
+## Collect These Further Examples
 
-- <https://open.fda.gov/apis/drug/event/example-api-queries/>
-- <https://open.fda.gov/apis/device/510k/example-api-queries/>
-- <https://open.fda.gov/apis/device/classification/example-api-queries/>
-- <https://open.fda.gov/apis/device/enforcement/example-api-queries/>
-- <https://open.fda.gov/apis/device/recall/example-api-queries/>
-- <https://open.fda.gov/apis/food/event/example-api-queries/>
+Collect these examples. Note how `.exact` and `count` are used.
 
-todo: note those that use `.exact` and what it means.
+- [https://open.fda.gov/apis/device/enforcement/example-api-queries/](https://open.fda.gov/apis/device/enforcement/example-api-queries/)
+- [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
+- [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
 
-https://api.fda.gov/drug/event.json?search=receivedate:[20040101+TO+20081231]&limit=1
 
-## Adverse Device Events
+## Drug Adverse Event Examples
 
-One adverse event report
+All `drug/event` endpoint [examples](https://open.fda.gov/apis/drug/event/example-api-queries/):
 
-TODO: Incorprate somewhere in this documentation the "device searchable fields" info contained in searchable-fields-device-api.yaml, which I have annotated.
+1. Search for all records with receivedate between Jan 01, 2004 and Dec 31, 2008. limit to 1 record.
 
-Search for adverse events within a date range. A date range is specified using brackets `[ ]`; for example, to search for all records with date\_received between
-Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:
+```
+https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
+```
 
-`https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1`
+<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1'>Execute call</a>
 
-See searchable fields for more about date\_received. Brackets [ ] are used to specify a range for date, number, or string fields.
+2. Search for records where the field `patient.reaction.reactionmeddrapt` (patient reaction) contains "fatigue" and `occurcountry`` (country where the event happened) was "ca" (the country code for Canada)
 
-`https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1`
+```
+https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1
+```
 
-## Examples of Match Options
+<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1'>Execute call</a>
 
-### Match a single search term
- 
-This example API call queries the `drug/event` endpoint for records where one of the reported patient reactions was **fatigue**. `patient.reaction.reactionmeddrapt` (patient reaction) is searched for **fatigue**:
+3. Search for records where the field `patient.reaction.reactionmeddrapt`` (patient reaction) contains "fatigue" or `occurcountry`` (country where the event happened) was "ca" (the country code for Canada)
 
-`https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1`
+```
+https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1
+```
 
-### Match several terms (AND)
+<a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1'>Execute call</a>
 
-Search the  `drug/event` endpoint for **fatigue** as a reported patient reaction and **Canada** as the country in which the reported event occurred. **AND** is used
-to join two search terms. The country code for Canada is **ca**.
+4. https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
 
-`https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1`
+This query looks in the `drug/event` endpoint for ten records and sorts them in descending order by received date `receivedate`.
 
-### Matching any search terms (OR)
+```
+https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10
+```
 
-Search the `drug/event` endpoint where either **fatigue** was a reported patient reaction *or* the country in which the event happened was **Canada**.
+<a href='https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10'>Execute call</a  >
 
-`https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1`
 
-### Count unique records where certain terms occur
+5. This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.
 
-Search the `drug/event` endpoint for all records and count the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.
+```
+https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
+```
 
-- search all records
+<a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execute it</a>
 
-- Count the number of records matching the terms in `patient.reaction.reactionmeddrapt.exact`. The **`.exact`** suffix here tells the API to
-  count whole phrases ("**injection site reaction**") instead of individual words (**injection**, **site**, and **reaction** separately)
+Search for all records with product_code equals NOB.
 
-`https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact`
-## Sort Results
+```
+https://api.fda.gov/device/classification.json?search=product_code:NOB&limit=1
+```
 
-Search the `drug/event` endpoint for: 
+<a href='https://api.fda.gov/device/classification.json?search=product_code:NOB&limit=1'>Execute call</a>
 
-- ten records
+This query is similar to the prior one, but returns a count of the FEI numbers.
 
-- sorted in descending order by `receivedate`
+```
+https://api.fda.gov/device/classification.json?count=openfda.fei_number
+```
 
-`https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10`
+<a href='https://api.fda.gov/device/classification.json?count=openfda.fei_number'>Execute call</a>
+
+## [Device 510(k) API queries](https://open.fda.gov/apis/device/510k/example-api-queries/)
+
+1. Search for all records with `advisory_committee`` equal to cv.
+
+```
+https://api.fda.gov/device/510k.json?search=advisory_committee:cv&limit=1
+```
+
+<a href='https://api.fda.gov/device/510k.json?search=advisory_committee:cv&limit=1'>Execute call</a>
+
+Search for all records with openfda.regulation_number equals 868.5895 and return just 1.
+
+```
+https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&limit=1
+```
+
+<a href='https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&limit=1'>Execute call</a>
+
+2. Search in the 501K enepoint and count the country code(s):
+
+```
+https://api.fda.gov/device/510k.json?count=country_code
+```
+
+<a href='https://api.fda.gov/device/510k.json?count=country_code'>Execute call</a>
+
+## [Device Classification Endpoint Examples](https://open.fda.gov/apis/device/classification/example-api-queries/)
+
+Search for all records with regulation_number equal to 872.6855
+
+```
+https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1
+```
+
+<a href='https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1'>Execute call</a>
+
+
+
+

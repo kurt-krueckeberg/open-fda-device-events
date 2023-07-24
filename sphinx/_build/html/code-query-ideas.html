@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Further Query Syntax &#8212; Open FDA API 0.7 documentation</title>
+    <title>Code Ideas for the device/event Endpoint &#8212; Open FDA API 0.7 documentation</title>
   
   
   
@@ -41,11 +41,9 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'further-query-syntax';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'code-query-ideas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Advanced Syntax" href="advanced-syntax.html" />
-    <link rel="prev" title="Query Parameters" href="query-parameters.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,12 +121,12 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="queries-overview.html">Queries Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-parameters.html">Query Parameters</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Further Query Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="further-query-syntax.html">Further Query Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Documentation Issue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
@@ -192,7 +190,7 @@
       
       
       
-      <li><a href="_sources/further-query-syntax.md" target="_blank"
+      <li><a href="_sources/code-query-ideas.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -274,7 +272,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Further Query Syntax</h1>
+    <h1>Code Ideas for the device/event Endpoint</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -284,10 +282,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prospective-queries-for-lasik-related-deviced">Prospective Queries for LASIK-related Deviced</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-query-options-unrelated-to-a-speci">General Query Options Unrelated to a Speci</a></li>
 </ul>
             </nav>
         </div>
@@ -299,30 +295,46 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="further-query-syntax">
-<h1>Further Query Syntax<a class="headerlink" href="#further-query-syntax" title="Permalink to this heading">#</a></h1>
-<section id="boolean-or-searches">
-<h2>Boolean OR Searches<a class="headerlink" href="#boolean-or-searches" title="Permalink to this heading">#</a></h2>
-<p>To search for records that match either of two search terms or two search two or more fields for combined results, use the <code class="docutils literal notranslate"><span class="pre">+</span></code> for logical OR:</p>
-<p>Below we search for two terms in the <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> field:</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_code=%22HQF%22+device.device_report_product_code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_code=”HQF”+device.device_report_product_code=”LZS”</a></p>
-<p>You can also search two different fields and return the union of the results of each, i.e.,  a logical OR. Below we query the
-<strong>drug/event</strong> endpoint for a record where either fatigue was a reported patient reaction or the country in which the event happened was Canada.</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:%22fatigue%22+occurcountry:%22ca%22&amp;amp;limit=1">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:”fatigue”+occurcountry:”ca”&amp;limit=1</a></p>
+  <section id="code-ideas-for-the-device-event-endpoint">
+<h1>Code Ideas for the device/event Endpoint<a class="headerlink" href="#code-ideas-for-the-device-event-endpoint" title="Permalink to this heading">#</a></h1>
+<section id="prospective-queries-for-lasik-related-deviced">
+<h2>Prospective Queries for LASIK-related Deviced<a class="headerlink" href="#prospective-queries-for-lasik-related-deviced" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Search for device of Excimer Laser where <code class="docutils literal notranslate"><span class="pre">mdr_text</span></code> contains <code class="docutils literal notranslate"><span class="pre">dry</span></code>:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=(device.device_report_product_Code=%22LZS%22)+AND+(mdr_text.text:dry)
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/event.json?search=(device.device_report_product_Code=%22LZS%22)+AND+(mdr_text.text:dry)'>Execute call</a></p>
+<ol class="arabic simple" start="2">
+<li><p>Search for device adverse events for Excimer Lasik code <code class="docutils literal notranslate"><span class="pre">LZS</span></code> or AC-powered keratome code <code class="docutils literal notranslate"><span class="pre">HNO</span></code>:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;HNO&quot;+device.device_report_product_Code=&quot;LZS&quot;
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HNO"+device.device_report_product_Code="LZS"'>Execute call</a></p>
+<ol class="arabic simple" start="3">
+<li><p>Here we search for all the product codes: <code class="docutils literal notranslate"><span class="pre">HQF</span></code>, <code class="docutils literal notranslate"><span class="pre">LZS</span></code>, <code class="docutils literal notranslate"><span class="pre">OTL</span></code>, <code class="docutils literal notranslate"><span class="pre">HMY</span></code>, <code class="docutils literal notranslate"><span class="pre">HNO</span></code>, <code class="docutils literal notranslate"><span class="pre">MYD</span></code>, <code class="docutils literal notranslate"><span class="pre">NKY</span></code>.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;HQF&quot;+device.device_report_product_Code=&quot;LZS&quot;+device.device_report_product_Code=&quot;OTL&quot;+device.device_report_product_Code=&quot;HMY&quot;+device.device_report_product_Code=&quot;HNO&quot;+device.device_report_product_Code=&quot;MYD&quot;+device.device_report_product_Code=&quot;NKY&quot;
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"+device.device_report_product_Code="OTL"+device.device_report_product_Code="HMY"+device.device_report_product_Code="HNO"+device.device_report_product_Code="MYD"+device.device_report_product_Code="NKY"'>Execute call</a></p>
 </section>
-<section id="boolean-and-searches">
-<h2>Boolean AND Searches<a class="headerlink" href="#boolean-and-searches" title="Permalink to this heading">#</a></h2>
-<p>search=field:term+AND+field:term: Search for records that match both terms.</p>
-</section>
-<section id="using-grouping">
-<h2>Using Grouping<a class="headerlink" href="#using-grouping" title="Permalink to this heading">#</a></h2>
-<p>To group several terms together, use parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>. For example, this boolean OR search
-<code class="docutils literal notranslate"><span class="pre">search=patient.drug.medicinalproduct:cetirizine+patient.drug.medicinalproduct:loratadine+patient.drug.medicinalproduct:diphenhydramine</span></code>
-is equivalent to <code class="docutils literal notranslate"><span class="pre">search=patient.drug.medicinalproduct:(cetirizine+OR+loratadine+OR+diphenhydramine)</span></code>.</p>
-</section>
-<section id="searches-with-vs">
-<h2>Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code><a class="headerlink" href="#searches-with-vs" title="Permalink to this heading">#</a></h2>
-<p><strong>TODO:</strong> You can do <code class="docutils literal notranslate"><span class="pre">search=field=&quot;term&quot;</span></code>, too–right?</p>
+<section id="general-query-options-unrelated-to-a-speci">
+<h2>General Query Options Unrelated to a Speci<a class="headerlink" href="#general-query-options-unrelated-to-a-speci" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Searching for a specified date range:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1'>Execute call</a></p>
+<p>Search for adverse events within a date range. A date range is specified using brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>; for example, to search for all records with date_received between
+Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
+<p>See searchable fields for more about date_received. Brackets [ ] are used to specify a range for date, number, or string fields.</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
 </section>
 </section>
 
@@ -338,24 +350,6 @@ is equivalent to <code class="docutils literal notranslate"><span class="pre">se
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="query-parameters.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Query Parameters</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="advanced-syntax.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Advanced Syntax</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -374,10 +368,8 @@ is equivalent to <code class="docutils literal notranslate"><span class="pre">se
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prospective-queries-for-lasik-related-deviced">Prospective Queries for LASIK-related Deviced</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-query-options-unrelated-to-a-speci">General Query Options Unrelated to a Speci</a></li>
 </ul>
   </nav></div>
 
