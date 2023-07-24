@@ -16,7 +16,8 @@ class OpenFda extends RestApi {
       parent::__construct($cS); 
    }
 
-   final public function query() : string 
+   
+   final public function query(string $input) : \stdClass
    {
        static $trans = array('method' => "POST", 'route' => self::$device_event_route);
 
