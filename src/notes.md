@@ -2,9 +2,11 @@
 
 ## PHP `getopts()`
 
-See
+See:
 
-[`getopt()` C Library Function](https://www.man7.org/linux/man-pages/man3/getopt.3.html)
+- Good intro: [Parsing Argument Using Getopt in C/C++](https://leimao.github.io/blog/Argument-Parser-Getopt-C/)
+- Question about how to use it [answered](https://stackoverflow.com/questions/13251732/how-to-specify-an-optstring-in-the-getopt-function)
+- [`getopt()` C Library Function](https://www.man7.org/linux/man-pages/man3/getopt.3.html)
 
 ## Other OpenFda PHP Code to Investigate
 

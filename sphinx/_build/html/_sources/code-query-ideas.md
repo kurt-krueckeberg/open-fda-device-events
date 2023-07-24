@@ -11,7 +11,7 @@ https://api.fda.gov/device/event.json?search=(device.device_report_product_Code=
 <a href='https://api.fda.gov/device/event.json?search=(device.device_report_product_Code="LZS")+AND+(mdr_text.text:dry)'>Execute call</a>
 
 :::{note} This also works:
-`https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22LZS%22+AND+mdr_text.text:dry`
+`https://api.fda.gov/device/event.json?search=device.device_report_product_Code="LZS"+AND+mdr_text.text:dry`
 :::
 
 2. Search for device adverse events for Excimer Lasik code `LZS` or AC-powered keratome code `HNO`:
@@ -30,6 +30,15 @@ https://api.fda.gov/device/event.json?search=device.device_report_product_Code="
 
 <a href='https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"+device.device_report_product_Code="OTL"+device.device_report_product_Code="HMY"+device.device_report_product_Code="HNO"+device.device_report_product_Code="MYD"+device.device_report_product_Code="NKY"'>Execute call</a>
 
+4. Count `mdr_report_key` 's for "LZS" (Excimer Laser System) reports:
+
+```
+https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
+```
+
+<a href=hittps://api.fda.gov/device/event.json?search=device.device_report_product_Code="LZS"&count:device.mdr_report_key'>Execute call</a>
+
+:::{note{} `mdr_report_key` is unique, anyway, so the use of `count` is only a usage example (but of no practical use).
 ## General Query Options
 
 1. Searching for a specified date range:

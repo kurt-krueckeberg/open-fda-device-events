@@ -286,7 +286,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prospective-queries-for-lasik-related-deviced">Prospective Queries for LASIK-related Deviced</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-query-options">General Query Options</a></li>
 </ul>
             </nav>
         </div>
@@ -312,7 +311,7 @@ document.write(`
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This also works:
-<code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22LZS%22+AND+mdr_text.text:dry</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;LZS&quot;+AND+mdr_text.text:dry</span></code></p>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Search for device adverse events for Excimer Lasik code <code class="docutils literal notranslate"><span class="pre">LZS</span></code> or AC-powered keratome code <code class="docutils literal notranslate"><span class="pre">HNO</span></code>:</p></li>
@@ -328,26 +327,13 @@ document.write(`
 </pre></div>
 </div>
 <p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"+device.device_report_product_Code="OTL"+device.device_report_product_Code="HMY"+device.device_report_product_Code="HNO"+device.device_report_product_Code="MYD"+device.device_report_product_Code="NKY"'>Execute call</a></p>
-</section>
-<section id="general-query-options">
-<h2>General Query Options<a class="headerlink" href="#general-query-options" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Searching for a specified date range:</p></li>
+<ol class="arabic simple" start="4">
+<li><p>Count <code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code> ‘s for “LZS” (Excimer Laser System) reports:</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1'>Execute call</a></p>
-<ol class="arabic simple" start="2">
-<li><p>Search for adverse events within a date range. A date range is specified using brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>; for example, to search for all records with date_received between
-Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p></li>
-</ol>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
-<p>See searchable fields for more about <code class="docutils literal notranslate"><span class="pre">date_received</span></code>. Brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> are used to specify a range for date, number, or string fields.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1
-</pre></div>
-</div>
-<p><a href='https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1'>Execute call</a></p>
+<p>&lt;a href=hittps://api.fda.gov/device/event.json?search=device.device_report_product_Code=”LZS”&amp;count:device.mdr_report_key’&gt;Execute call</a></p>
 </section>
 </section>
 
@@ -400,7 +386,6 @@ Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prospective-queries-for-lasik-related-deviced">Prospective Queries for LASIK-related Deviced</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-query-options">General Query Options</a></li>
 </ul>
   </nav></div>
 
