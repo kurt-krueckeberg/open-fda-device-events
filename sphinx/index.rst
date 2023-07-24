@@ -23,7 +23,7 @@ Welcome to Open FDA's documentation!
    api-syntax-rules.md
    dev-adv-ev-fields.md
    sig-dev-adv-fields.md
-   code.md
+   code-query-ideas.md
    todo.md
 
 Indices and tables
