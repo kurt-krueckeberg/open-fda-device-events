@@ -78,7 +78,29 @@ https://api.fda.gov/device/classification.json?count=openfda.fei_number
 
 ## [Device 510(k) API queries](https://open.fda.gov/apis/device/510k/example-api-queries/)
 
+Ssearch for all records with advisory_committee equal to cv.
 
+```
+https://api.fda.gov/device/510k.json?search=advisory_committee:cv&limit=1
+```
+
+<a href='https://api.fda.gov/device/510k.json?search=advisory_committee:cv&limit=1'>Execute call</a>
+
+Search for all records with openfda.regulation_number equals 868.5895 and return just 1.
+
+```
+https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&limit=1
+```
+
+<a href='https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&limit=1'>Execute call</a>
+
+Search in the 501K enepoint and count the country code(s):
+
+```
+https://api.fda.gov/device/510k.json?count=country_code
+```
+
+<a href='https://api.fda.gov/device/510k.json?count=country_code'>Execute call</a>
 
 ## [Device Classification Endpoint Examples](https://open.fda.gov/apis/device/classification/example-api-queries/)
 
