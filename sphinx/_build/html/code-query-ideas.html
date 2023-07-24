@@ -286,7 +286,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prospective-queries-for-lasik-related-deviced">Prospective Queries for LASIK-related Deviced</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-query-options-unrelated-to-a-speci">General Query Options Unrelated to a Speci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-query-options">General Query Options</a></li>
 </ul>
             </nav>
         </div>
@@ -303,12 +303,17 @@ document.write(`
 <section id="prospective-queries-for-lasik-related-deviced">
 <h2>Prospective Queries for LASIK-related Deviced<a class="headerlink" href="#prospective-queries-for-lasik-related-deviced" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Search for device of Excimer Laser where <code class="docutils literal notranslate"><span class="pre">mdr_text</span></code> contains <code class="docutils literal notranslate"><span class="pre">dry</span></code>:</p></li>
+<li><p>Search for <code class="docutils literal notranslate"><span class="pre">device.device_report_product_Code=&quot;LZS&quot;</span></code> (for device of Excimer Laser) where <code class="docutils literal notranslate"><span class="pre">mdr_text</span></code> contains <code class="docutils literal notranslate"><span class="pre">dry</span></code>:</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=(device.device_report_product_Code=&quot;LZS&quot;)+AND+(mdr_text.text:dry)
 </pre></div>
 </div>
 <p><a href='https://api.fda.gov/device/event.json?search=(device.device_report_product_Code="LZS")+AND+(mdr_text.text:dry)'>Execute call</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This also works:
+<code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22LZS%22+AND+mdr_text.text:dry</span></code></p>
+</div>
 <ol class="arabic simple" start="2">
 <li><p>Search for device adverse events for Excimer Lasik code <code class="docutils literal notranslate"><span class="pre">LZS</span></code> or AC-powered keratome code <code class="docutils literal notranslate"><span class="pre">HNO</span></code>:</p></li>
 </ol>
@@ -317,15 +322,15 @@ document.write(`
 </div>
 <p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HNO"+device.device_report_product_Code="LZS"'>Execute call</a></p>
 <ol class="arabic simple" start="3">
-<li><p>Here we search for all the product codes: <code class="docutils literal notranslate"><span class="pre">HQF</span></code>, <code class="docutils literal notranslate"><span class="pre">LZS</span></code>, <code class="docutils literal notranslate"><span class="pre">OTL</span></code>, <code class="docutils literal notranslate"><span class="pre">HMY</span></code>, <code class="docutils literal notranslate"><span class="pre">HNO</span></code>, <code class="docutils literal notranslate"><span class="pre">MYD</span></code>, <code class="docutils literal notranslate"><span class="pre">NKY</span></code>.</p></li>
+<li><p>Here we search for all the product codes (using boolean OR operator <code class="docutils literal notranslate"><span class="pre">+</span></code>): <code class="docutils literal notranslate"><span class="pre">HQF</span></code>, <code class="docutils literal notranslate"><span class="pre">LZS</span></code>, <code class="docutils literal notranslate"><span class="pre">OTL</span></code>, <code class="docutils literal notranslate"><span class="pre">HMY</span></code>, <code class="docutils literal notranslate"><span class="pre">HNO</span></code>, <code class="docutils literal notranslate"><span class="pre">MYD</span></code>, <code class="docutils literal notranslate"><span class="pre">NKY</span></code>.</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;HQF&quot;+device.device_report_product_Code=&quot;LZS&quot;+device.device_report_product_Code=&quot;OTL&quot;+device.device_report_product_Code=&quot;HMY&quot;+device.device_report_product_Code=&quot;HNO&quot;+device.device_report_product_Code=&quot;MYD&quot;+device.device_report_product_Code=&quot;NKY&quot;
 </pre></div>
 </div>
 <p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"+device.device_report_product_Code="OTL"+device.device_report_product_Code="HMY"+device.device_report_product_Code="HNO"+device.device_report_product_Code="MYD"+device.device_report_product_Code="NKY"'>Execute call</a></p>
 </section>
-<section id="general-query-options-unrelated-to-a-speci">
-<h2>General Query Options Unrelated to a Speci<a class="headerlink" href="#general-query-options-unrelated-to-a-speci" title="Permalink to this heading">#</a></h2>
+<section id="general-query-options">
+<h2>General Query Options<a class="headerlink" href="#general-query-options" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Searching for a specified date range:</p></li>
 </ol>
@@ -333,11 +338,16 @@ document.write(`
 </pre></div>
 </div>
 <p><a href='https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1'>Execute call</a></p>
-<p>Search for adverse events within a date range. A date range is specified using brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>; for example, to search for all records with date_received between
-Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p>
+<ol class="arabic simple" start="2">
+<li><p>Search for adverse events within a date range. A date range is specified using brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>; for example, to search for all records with date_received between
+Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p></li>
+</ol>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
-<p>See searchable fields for more about date_received. Brackets [ ] are used to specify a range for date, number, or string fields.</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
+<p>See searchable fields for more about <code class="docutils literal notranslate"><span class="pre">date_received</span></code>. Brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> are used to specify a range for date, number, or string fields.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1'>Execute call</a></p>
 </section>
 </section>
 
@@ -390,7 +400,7 @@ Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prospective-queries-for-lasik-related-deviced">Prospective Queries for LASIK-related Deviced</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-query-options-unrelated-to-a-speci">General Query Options Unrelated to a Speci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-query-options">General Query Options</a></li>
 </ul>
   </nav></div>
 
