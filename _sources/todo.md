@@ -5,9 +5,15 @@ adverse device event data for those device I am interested in, as it client-side
 
 But I'm not sure is graphing libraries like D3.js are server side?
 
-## Read stackexchange replies
+## Read
+
+## stackexchange replies
 
 To learn more about the openFDA API read the replies at: [https://opendata.stackexchange.com/questions/tagged/openfda](https://opendata.stackexchange.com/questions/tagged/openfda)
+
+## ElasticSearch Query DSL (Domain Specific Language) 
+
+Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html).
 
 ## Test Queries 
 
