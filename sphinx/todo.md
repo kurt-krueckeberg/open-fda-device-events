@@ -112,7 +112,8 @@ The definition of the `count` term is:
 1000 most frequent values.
 
 :::{important}
-You can interactively see the `count` results of many 'device` event fields at [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/).
+[Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/) You can interactively see the `count`
+results of many 'device` event fields.
 :::
 
 **Example** `count=receivedate` 
