@@ -122,7 +122,7 @@ You can interactively get `count` results several `device` event fields at [Devi
   `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` \
 
 - Reaction to the above drug combination was (included?) pain
-  `patient.reaction.reactionmeddrapt.exact:("PAIN") ` \
+  `patient.reaction.reactionmeddrapt.exact:("PAIN") `
 
 ```
 https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
