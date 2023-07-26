@@ -108,7 +108,6 @@ https://open.fda.gov/device/event.json?search=device.device_report_product_code.
 The definition of the `count` term is:
 
 > Counts the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
-
 1000 most frequent values.
 
 :::{important}
