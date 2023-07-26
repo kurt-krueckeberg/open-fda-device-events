@@ -288,6 +288,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticsearch-query-dsl-domain-specific-language">ElasticSearch Query DSL (Domain Specific Language)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-queries">Test Queries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-count">Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-and-exact"><code class="docutils literal notranslate"><span class="pre">count</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>
@@ -455,6 +456,16 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0
 </pre></div>
 </div>
+</section>
+<section id="count-and-exact">
+<h3><code class="docutils literal notranslate"><span class="pre">count</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code><a class="headerlink" href="#count-and-exact" title="Permalink to this heading">#</a></h3>
+<p>According to the <a class="reference external" href="https://open.fda.gov/apis/query-syntax/">query syntax</a>, a <strong>count</strong> query with and <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field as in this example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execute call</a></p>
+<p>counts “the number of records matching the terms in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code>. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix here tells the API to <strong>count whole phrases</strong>
+(e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)</p>
 <p><a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a></p>
 <p><strong>Analysis:</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> counts the <em>unique</em> “report first received” dates where:</p>
@@ -992,6 +1003,7 @@ queries and save the searched-for field and the unique field to a file. Then sor
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticsearch-query-dsl-domain-specific-language">ElasticSearch Query DSL (Domain Specific Language)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-queries">Test Queries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-count">Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-and-exact"><code class="docutils literal notranslate"><span class="pre">count</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>

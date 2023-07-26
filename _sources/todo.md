@@ -130,6 +130,19 @@ Take this **search example** with `count=receivedate`:
 https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
 ```
 
+### `count` and `.exact`
+
+According to the [query syntax](https://open.fda.gov/apis/query-syntax/), a **count** query with and `.exact` field as in this example
+
+```
+https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
+```
+
+<a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execute call</a>
+
+counts "the number of records matching the terms in `patient.reaction.reactionmeddrapt.exact`. The `.exact` suffix here tells the API to **count whole phrases**
+(e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
+
 <a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a>
 
 **Analysis:**
