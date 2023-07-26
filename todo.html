@@ -901,13 +901,12 @@ match exactly. <strong>todo:</strong> double check.</p>
 <li><p>Create <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix versions of the queries in ~/o/s/query-parameters.md and likewise note the differences.</p></li>
 </ul>
 <p>The two basic uses of search are:</p>
-<p>search=field:value+AND+field:value for records that match both values.
-search=field:value+field:value for records that match either of the values.</p>
-<p>Using what I have learned by doing the above research, explain why does this query</p>
+<p><code class="docutils literal notranslate"><span class="pre">search=field:value+AND+field:value</span></code> for records that match both values and <code class="docutils literal notranslate"><span class="pre">search=field:value+field:value</span></code> for records that match either of the values.</p>
+<p>Using what I have learned by doing the above research, why does this query</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</a></p>
-<p>work, but this one gives an error</p>
+<p>work, but this one gives an error?</p>
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?count=device.openfda.device_name">https://api.fda.gov/device/event.json?count=device.openfda.device_name</a></p>
-<p>I believe it is because the openfda fields are openfda, i.e.annotated, fields?</p>
+<p>Is it because the openfda fields are annotated fields? Compare these two queries:</p>
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?searcount=device.manufacturer_name">https://api.fda.gov/device/event.json?searcount=device.manufacturer_name</a></p>
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact">https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact</a></p>
 </section>

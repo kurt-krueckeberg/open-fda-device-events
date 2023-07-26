@@ -600,18 +600,17 @@ https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430
 
 The two basic uses of search are:
 
-search=field:value+AND+field:value for records that match both values.
-search=field:value+field:value for records that match either of the values.
+`search=field:value+AND+field:value` for records that match both values and `search=field:value+field:value` for records that match either of the values.
 
-Using what I have learned by doing the above research, explain why does this query
+Using what I have learned by doing the above research, why does this query
 
 [https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact](https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact)
 
-work, but this one gives an error
+work, but this one gives an error?
 
 [https://api.fda.gov/device/event.json?count=device.openfda.device_name](https://api.fda.gov/device/event.json?count=device.openfda.device_name)
 
-I believe it is because the openfda fields are openfda, i.e.annotated, fields?
+Is it because the openfda fields are annotated fields? Compare these two queries:
 
 [https://api.fda.gov/device/event.json?searcount=device.manufacturer_name](https://api.fda.gov/device/event.json?searcount=device.manufacturer_name)
 
