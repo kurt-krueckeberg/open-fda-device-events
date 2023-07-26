@@ -139,7 +139,8 @@ https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exa
  - the range of dates (when the report was first received) is from June 29, 1989 to August 11, 2015 \
    `receivedate:([1989-06-29+TO+2015-08-11])`  
 
-The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is **16364554**, but the results of the query yield the count of the 
+The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is **16364554**, but
+the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.
 
 ```json
 {
@@ -165,7 +166,15 @@ The number of matching records for `patient.drug.openfda.generic_name.exact:("DR
     {
       "time": "20050614",
       "count": 1
-    }
+    },
+    {
+      "time": "I snipped many results...",
+      "count": "...in order to show a count result other than 1"
+    },
+    {
+      "time": "20100630",
+      "count": 3
+    },
 }
 ```
 

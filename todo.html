@@ -456,7 +456,8 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <li><p>the range of dates (when the report was first received) is from June 29, 1989 to August 11, 2015 <br />
 <code class="docutils literal notranslate"><span class="pre">receivedate:([1989-06-29+TO+2015-08-11])</span></code></p></li>
 </ul>
-<p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <strong>16364554</strong>, but the results of the query yield the count of the</p>
+<p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <strong>16364554</strong>, but
+the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;disclaimer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;</span><span class="p">,</span>
@@ -480,7 +481,15 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20050614&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;I snipped many results...&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...in order to show a count result other than 1&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20100630&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
 </div>
