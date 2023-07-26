@@ -93,15 +93,15 @@ The results total of two queries below prove this.
 :::
 
 ```
-https://open.fda.gov/device/event.json?search=device.product_code=LZS
+https://open.fda.gov/device/event.json?search=device.device_report_product_code=LZS
 ```
 
-<a href='https://open.fda.gov/device/event.json?search=device.product_code=LZS'>Execute query</a>
+<a href='https://open.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a>
 ```
-https://open.fda.gov/device/event.json?search=device.product_code.exact=LZS
+https://open.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
 ````
 
-<a href='https://open.fda.gov/device/event.json?search=device.product_code.exact=LZS'>Execute query</a>
+<a href='https://open.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a>
 
 ### Understanding `count`
 
