@@ -287,7 +287,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-stackexchange-replies">Read stackexchange replies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-questions">Open Questions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-device-event-endpoint-fields">Questions about device/event endpoint fields</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-api-actually-works-open-questions">How the Api Actually Works Open Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-count-work">How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>
@@ -423,15 +423,13 @@ adverse device event data for those device I am interested in, as it client-side
 </tbody>
 </table>
 </section>
-<section id="how-the-api-actually-works-open-questions">
-<h3>How the Api Actually Works Open Questions<a class="headerlink" href="#how-the-api-actually-works-open-questions" title="Permalink to this heading">#</a></h3>
-<p>Understaind <code class="docutils literal notranslate"><span class="pre">count</span></code> better. Documentation states:</p>
+<section id="how-does-count-work">
+<h3>How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work<a class="headerlink" href="#how-does-count-work" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">count:</span></code> Count the number of unique values of a certain field, for all the records that matched the
 search parameter. By default, the API returns the 1000 most frequent values.</p>
 </div></blockquote>
-<p>OpenVigil does allow entering your own search string and gives a default count example. See:
-<a class="reference external" href="https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php">https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php</a>. The example is:</p>
+<p>This <code class="docutils literal notranslate"><span class="pre">.count</span></code> example is taken from <a class="reference external" href="https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php">OpenVigil</a>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span> <span class="pre">+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])</span> <span class="pre">&amp;count=receivedate&amp;skip=0</span></code></p>
 <p>Counting records where certain terms occur</p>
 <p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
@@ -545,7 +543,7 @@ queries and save the searched-for field and the unique field to a file. Then sor
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-stackexchange-replies">Read stackexchange replies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-questions">Open Questions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-device-event-endpoint-fields">Questions about device/event endpoint fields</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-api-actually-works-open-questions">How the Api Actually Works Open Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-count-work">How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>

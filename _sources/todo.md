@@ -90,15 +90,12 @@ A: Actual results:
   - 3
 ```
 
-### How the Api Actually Works Open Questions
-
-Understaind `count` better. Documentation states:
+### How does `count` Work
 
 > `count:` Count the number of unique values of a certain field, for all the records that matched the
 search parameter. By default, the API returns the 1000 most frequent values.
 
-OpenVigil does allow entering your own search string and gives a default count example. See:
-[https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php). The example is:
+This `.count` example is taken from [OpenVigil](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php):
 
 `search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")
 +AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])
