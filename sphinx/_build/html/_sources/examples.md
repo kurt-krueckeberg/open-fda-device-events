@@ -90,7 +90,12 @@ https://api.fda.gov/device/classification.json?count=openfda.fei_number
 
 <a href='https://api.fda.gov/device/classification.json?count=openfda.fei_number'>Execute call</a>
 
-6. 
+6. This search is ambiguous. How does ElasticSearch interpret the search expression: `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")`?
+
+I believe it does "DROSPIRENONE and 'ETHINYL ESTRADIOL'" and not "DROSPIRENONE and ETHINYL or ESTRADIOL". In the latter case, you also need to know how
+precdence of AND and OR and whether the precedence is equaluated left-to-right or right-to-left. 
+
+In order to find out, test queries need to be created; however, if ETHINYL only occurs before ESTRADIOL, such queries could not be constructed.
 
 ``
 https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0

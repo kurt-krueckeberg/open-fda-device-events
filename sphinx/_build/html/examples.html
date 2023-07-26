@@ -379,8 +379,11 @@ phrases (e.g. injection site reaction) instead of individual words (e.g. injecti
 </div>
 <p><a href='https://api.fda.gov/device/classification.json?count=openfda.fei_number'>Execute call</a></p>
 <ol class="arabic simple" start="6">
-<li></li>
+<li><p>This search is ambiguous. How does ElasticSearch interpret the search expression: <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code>?</p></li>
 </ol>
+<p>I believe it does “DROSPIRENONE and ‘ETHINYL ESTRADIOL’” and not “DROSPIRENONE and ETHINYL or ESTRADIOL”. In the latter case, you also need to know how
+precdence of AND and OR and whether the precedence is equaluated left-to-right or right-to-left.</p>
+<p>In order to find out, test queries need to be created; however, if ETHINYL only occurs before ESTRADIOL, such queries could not be constructed.</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0</span></code></p>
 <p><a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a></p>
 <p><strong>Analysis:</strong></p>
