@@ -94,16 +94,16 @@ The results total of two queries below prove this.
 :::
 
 ```
-https://open.fda.gov/device/event.json?search=device.device_report_product_code=LZS
+https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS
 ```
 
-<a href='https://open.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a>
+<a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a>
 
 ```
-https://open.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
+https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
 ```
 
-<a href='https://open.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a>
+<a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a>
 
 ### Understanding `count`
 
@@ -113,7 +113,7 @@ The definition of the `count` term is:
 1000 most frequent values.
 
 :::{important}
-You can interactively get `count` results several `device` event fields at [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/).
+You can interactively get `count` results several `device` event fields at [Device adverse event reports over time](https://api.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/).
 :::
 
 **Example** `count=receivedate` 
@@ -127,10 +127,10 @@ You can interactively get `count` results several `device` event fields at [Devi
   `patient.reaction.reactionmeddrapt.exact:("PAIN") `
 
 ```
-https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
+https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
 ```
 
-<a href='https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute call</a>
+<a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute call</a>
 
 The number of matching records `16364554`.
 

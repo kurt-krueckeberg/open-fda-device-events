@@ -421,14 +421,14 @@ adverse device event data for those device I am interested in, as it client-side
 the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version is not useful because the device code currently is precisly a single three-letter-long alphabetic string.</p>
 <p>The results total of two queries below prove this.</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://open.fda.gov/device/event.json?search=device.device_report_product_code=LZS
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS
 </pre></div>
 </div>
-<p><a href='https://open.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://open.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
+<p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
 </pre></div>
 </div>
-<p><a href='https://open.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a></p>
+<p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a></p>
 <section id="understanding-count">
 <h3>Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#understanding-count" title="Permalink to this heading">#</a></h3>
 <p>The definition of the <code class="docutils literal notranslate"><span class="pre">count</span></code> term is:</p>
@@ -438,7 +438,7 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 </div></blockquote>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>You can interactively get <code class="docutils literal notranslate"><span class="pre">count</span></code> results several <code class="docutils literal notranslate"><span class="pre">device</span></code> event fields at <a class="reference external" href="https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a>.</p>
+<p>You can interactively get <code class="docutils literal notranslate"><span class="pre">count</span></code> results several <code class="docutils literal notranslate"><span class="pre">device</span></code> event fields at <a class="reference external" href="https://api.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a>.</p>
 </div>
 <p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> will count the <em>unique</em> “report first received” dates; for example, count the unique “first received” dates of adverse drug event where:</p>
@@ -448,10 +448,10 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <li><p>Reaction to the above drug combination was (included?) pain
 <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)</span> </code></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0
 </pre></div>
 </div>
-<p><a href='https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute call</a></p>
+<p><a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute call</a></p>
 <p>The number of matching records <code class="docutils literal notranslate"><span class="pre">16364554</span></code>.</p>
 <p><strong>Comments:</strong> The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> generic names of the drugs were used rather than their brand name</p>
 <div class="admonition important">
