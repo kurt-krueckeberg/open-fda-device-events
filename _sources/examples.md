@@ -97,9 +97,9 @@ precdence of AND and OR and whether the precedence is equaluated left-to-right o
 
 In order to find out, test queries need to be created; however, if ETHINYL only occurs before ESTRADIOL, such queries could not be constructed.
 
-``
+```
 https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
-``
+```
 
 <a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a>
 
@@ -119,7 +119,7 @@ https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exa
 The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is **16364554**, but
 the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.
 
-```son
+```json
 {
   "meta": {
     "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
@@ -153,11 +153,11 @@ the results show the count of of the date when the report was first received acc
       "count": 3
     },
 }
-``
+```
 
 If `count=..` is omitted the results (ony the first result is shown below) are:
 
-```son
+```json
 {
     "meta": {
       "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
@@ -524,7 +524,7 @@ If `count=..` is omitted the results (ony the first result is shown below) are:
     ]
   }
 }
-``
+```
 
 **Comments:** The `.exact` generic names of the drugs were used rather than their brand name
 
