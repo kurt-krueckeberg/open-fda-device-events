@@ -88,7 +88,7 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
 
 :::{hint}
 Although `device.device_report_product_code` is an **exact** field that has been indexed both as its **exact string content**,
-the `.exact` version is not useful because the device code is precisly a three-letter-long alphabetic string.
+the `.exact` version is not useful because the device code currently is precisly a three-letter-long alphabetic string.
 :::
 
 ### How does `count` Work
