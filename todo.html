@@ -285,7 +285,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-stackexchange-replies">Read stackexchange replies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-queries">Test Queries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-count-work">How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-count">Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>
@@ -420,16 +420,17 @@ adverse device event data for those device I am interested in, as it client-side
 <p>Although <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> is an <strong>exact</strong> field that has been indexed both as its <strong>exact string content</strong>,
 the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version is not useful because the device code currently is precisly a three-letter-long alphabetic string.</p>
 </div>
-<section id="how-does-count-work">
-<h3>How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work<a class="headerlink" href="#how-does-count-work" title="Permalink to this heading">#</a></h3>
+<section id="understanding-count">
+<h3>Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#understanding-count" title="Permalink to this heading">#</a></h3>
+<p>The definition of the <code class="docutils literal notranslate"><span class="pre">count</span></code> term is:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">count:</span></code> Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
+<div><p>Counts the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
 1000 most frequent values.</p>
 </div></blockquote>
-<p><strong>Example 1:</strong>  <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code></p>
-<p>Count <em>unique</em> “report first received” date of this drugs event:</p>
+<p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code></p>
+<p>Count <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> counts the <em>unique</em> “report first received” dates. In this example we count the unique “first received” dates of adverse drug event where:</p>
 <ul class="simple">
-<li><p>Where the generic name of the drugs taken were <strong>DROSPIRENONE</strong> and <strong>ETHINYL ESTRADIOL</strong>
+<li><p>the generic name of the drugs taken were <strong>DROSPIRENONE</strong> and <strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>
 <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> \</p></li>
 <li><p>Reaction to the above drug combination was (included?) pain
 <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)</span> </code> \</p></li>
@@ -440,6 +441,11 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <p><a href='https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute call</a></p>
 <p>The number of matching records <code class="docutils literal notranslate"><span class="pre">16364554</span></code>.</p>
 <p><strong>Comments:</strong> The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> generic names of the drugs were used rather than their brand name</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This needs to be understand <br />
+Is the boolean logic in the above query: <strong>DROSPIRENONE</strong> AND (<strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>)?</p>
+</div>
 <p><strong>Example 2:</strong> This query looks in the <code class="docutils literal notranslate"><span class="pre">drug/event.json</span></code> endpoint for the count of the top patient reactions. For each reaction, the number of records that matched is summed, providing
 a useful summary.</p>
 <blockquote>
@@ -551,7 +557,7 @@ queries and save the searched-for field and the unique field to a file. Then sor
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-stackexchange-replies">Read stackexchange replies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-queries">Test Queries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-count-work">How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-count">Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>

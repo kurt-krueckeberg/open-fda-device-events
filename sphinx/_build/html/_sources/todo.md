@@ -91,16 +91,18 @@ Although `device.device_report_product_code` is an **exact** field that has been
 the `.exact` version is not useful because the device code currently is precisly a three-letter-long alphabetic string.
 :::
 
-### How does `count` Work
+### Understanding `count`
 
-> `count:` Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
+The definition of the `count` term is:
+
+> Counts the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
 1000 most frequent values.
 
-**Example 1:**  `count=receivedate` 
+**Example** `count=receivedate` 
 
-Count *unique* "report first received" date of this drugs event:
+Count `count=receivedate` counts the *unique* "report first received" dates. In this example we count the unique "first received" dates of adverse drug event where:
 
--  Where the generic name of the drugs taken were **DROSPIRENONE** and **ETHINYL ESTRADIOL**
+-  the generic name of the drugs taken were **DROSPIRENONE** and **ETHINYL** or **ESTRADIOL**
   `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` \
 
 - Reaction to the above drug combination was (included?) pain
@@ -115,6 +117,10 @@ https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.ex
 The number of matching records `16364554`.
 
 **Comments:** The `.exact` generic names of the drugs were used rather than their brand name
+
+:::{Important} This needs to be understand \
+Is the boolean logic in the above query: **DROSPIRENONE** AND (**ETHINYL** or **ESTRADIOL**)?
+:::
 
 **Example 2:** This query looks in the `drug/event.json` endpoint for the count of the top patient reactions. For each reaction, the number of records that matched is summed, providing
 a useful summary.
