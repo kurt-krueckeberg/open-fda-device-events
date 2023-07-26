@@ -330,39 +330,55 @@ that matched is summed, providing a useful summary.</p>
 <p>Search for all records</p>
 <p>We <code class="docutils literal notranslate"><span class="pre">count</span></code> the number of records matching the terms in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code>. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix here tells the API to count whole
 phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately):</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
+</pre></div>
+</div>
 <p>All <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint <a class="reference external" href="https://open.fda.gov/apis/drug/event/example-api-queries/">examples</a>:</p>
 <ol class="arabic simple">
 <li><p>Search for all records with receivedate between Jan 01, 2004 and Dec 31, 2008. limit to 1 record.</p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1'>Execute call</a></p>
 <ol class="arabic simple" start="2">
 <li><p>Search for records where the field <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> (patient reaction) contains “fatigue” and <code class="docutils literal notranslate"><span class="pre">occurcountry</span></code> (country where the event happened) was “ca” (the country code for Canada)</p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+AND+occurcountry:&quot;ca&quot;&amp;limit=1</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+AND+occurcountry:&quot;ca&quot;&amp;limit=1
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1'>Execute call</a></p>
 <ol class="arabic simple" start="3">
 <li><p>Search for records where the field <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> (patient reaction) contains “fatigue” or <code class="docutils literal notranslate"><span class="pre">occurcountry</span></code> (country where the event happened) was “ca” (the country code for Canada)</p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+occurcountry:&quot;ca&quot;&amp;limit=1</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+occurcountry:&quot;ca&quot;&amp;limit=1
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1'>Execute call</a></p>
 <ol class="arabic simple" start="4">
 <li><p>https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</p></li>
 </ol>
 <p>This query looks in the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for ten records and sorts them in descending order by received date <code class="docutils literal notranslate"><span class="pre">receivedate</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10'>Execute call</a  ></p>
 <ol class="arabic simple" start="5">
 <li><p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execute it</a></p>
 <p>Search for all records with product_code equals NOB.</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/classification.json?search=product_code:NOB&amp;limit=1</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/classification.json?search=product_code:NOB&amp;limit=1
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/device/classification.json?search=product_code:NOB&limit=1'>Execute call</a></p>
 <p>This query is similar to the prior one, but returns a count of the FEI numbers.</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/classification.json?count=openfda.fei_number</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/classification.json?count=openfda.fei_number
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/device/classification.json?count=openfda.fei_number'>Execute call</a></p>
 </section>
 <section id="device-510-k-api-queries">
@@ -370,21 +386,29 @@ phrases (e.g. injection site reaction) instead of individual words (e.g. injecti
 <ol class="arabic simple">
 <li><p>Search for all records with <code class="docutils literal notranslate"><span class="pre">advisory_committee</span></code> equal to cv.</p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/510k.json?search=advisory_committee:cv&amp;limit=1</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/510k.json?search=advisory_committee:cv&amp;limit=1
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/device/510k.json?search=advisory_committee:cv&limit=1'>Execute call</a></p>
 <p>Search for all records with openfda.regulation_number equals 868.5895 and return just 1.</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&amp;limit=1</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&amp;limit=1
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&limit=1'>Execute call</a></p>
 <ol class="arabic simple" start="2">
 <li><p>Search in the 501K enepoint and count the country code(s):</p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/510k.json?count=country_code</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/510k.json?count=country_code
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/device/510k.json?count=country_code'>Execute call</a></p>
 </section>
 <section id="device-classification-endpoint-examples">
 <h2><a class="reference external" href="https://open.fda.gov/apis/device/classification/example-api-queries/">Device Classification Endpoint Examples</a><a class="headerlink" href="#device-classification-endpoint-examples" title="Permalink to this heading">#</a></h2>
 <p>Search for all records with regulation_number equal to 872.6855</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&amp;limit=1</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&amp;limit=1
+</pre></div>
+</div>
 <p><a href='https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1'>Execute call</a></p>
 </section>
 </section>
