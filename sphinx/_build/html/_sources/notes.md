@@ -13,8 +13,8 @@ To learn more about the openFDA API read these stackexchange.com replies: [https
 
 In this queryy
 
-``` 
+`` 
 https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
-```
+``
 
 is the boolean logic: **DROSPIRENONE** AND (**ETHINYL** or **ESTRADIOL**)?

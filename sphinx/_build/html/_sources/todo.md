@@ -19,7 +19,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
 
 `device.generice_name` results when `device.product_code=LZS`: 
 
-```{list-table} Example 1
+``{list-table} Example 1
 :header-rows: 1 
 :align: left
 :width: 70%
@@ -35,9 +35,9 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
    - "Excimer Laser System"
 *  - `device.openfda.device_class`
    - "3"
-```
+``
 
-```{list-table} Example 2
+``{list-table} Example 2
 :header-rows: 1
 :width: 70%
 :align: left
@@ -53,9 +53,9 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
   - "EXCIMER LASER SYSTEM"
 * - `device.openfda.device_class`
   - "3"
-```
+``
 
-```{list-table} Example 3
+``{list-table} Example 3
 :name: example-3
 :width: 70%
 :widths: 2 3
@@ -71,9 +71,9 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
   - "Excimer
 * - `device.openfda.device_class` 
   - 3
-```
+``
 
-```{list-table} Example 4
+``{list-table} Example 4
 :header-rows: 1
 :name: example-4
 :width: 70%
@@ -90,7 +90,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
   - "Excimer Laser System"
 * - `device.openfda.device_class`
   - 3
-```
+``
 
 :::{important}
 Although `device.device_report_product_code` is an **exact** field that has been indexed both as its **exact string content**,
@@ -99,15 +99,15 @@ the `.exact` version is not useful because the device code currently is precisly
 The results total of two queries below prove this.
 :::
 
-```
+``
 https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS
-```
+``
 
 <a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a>
 
-```
+``
 https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
-```
+``
 
 <a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a>
 
@@ -126,9 +126,9 @@ You can interactively get `count` results several `device` event fields at [Devi
 
 Take this **search example** with `count=receivedate`:
 
-```
+``
 https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
-```
+``
 
 <a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a>
 
@@ -148,7 +148,7 @@ https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exa
 The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is **16364554**, but
 the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.
 
-```json
+``json
 {
   "meta": {
     "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
@@ -182,11 +182,11 @@ the results show the count of of the date when the report was first received acc
       "count": 3
     },
 }
-```
+``
 
 If `count=..` is omitted the results (ony the first result is shown below) are:
 
-```json
+``json
 {
     "meta": {
       "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
@@ -553,7 +553,7 @@ If `count=..` is omitted the results (ony the first result is shown below) are:
     ]
   }
 }
-```
+``
 
 **Comments:** The `.exact` generic names of the drugs were used rather than their brand name
 
@@ -589,9 +589,9 @@ match exactly. **todo:** double check.
 
 Here is another example taken from openfda.stackexchagne.com. It is a search looks for reports that may have been labeled with the incorrect product code:
 
-```
+``
 https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0">https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0
-```
+``
 
 <a href='https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0'>Execute query above</a>
 

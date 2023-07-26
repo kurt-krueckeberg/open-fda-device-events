@@ -322,121 +322,148 @@ adverse device event data for those device I am interested in, as it client-side
 <section id="test-queries">
 <h2>Test Queries<a class="headerlink" href="#test-queries" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">device.generice_name</span></code> results when <code class="docutils literal notranslate"><span class="pre">device.product_code=LZS</span></code>:</p>
-<table class="table table-left" id="id1" style="width: 70%">
-<caption><span class="caption-text">Example 1</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 40.0%" />
-<col style="width: 60.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>Value</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
-<td><p>“LADARVISION 4000”</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
-<td><p>“OPTHALMIC EXCIMER LASER SYSTEM”</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
-<td><p>“Excimer Laser System”</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></td>
-<td><p>“3”</p></td>
-</tr>
-</tbody>
-</table>
-<table class="table table-left" id="id2" style="width: 70%">
-<caption><span class="caption-text">Example 2</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 40.0%" />
-<col style="width: 60.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>Value</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
-<td><p>“LASIK MD VISION”</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
-<td><p>“EXCIMER LASER SYSTEM”</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
-<td><p>“EXCIMER LASER SYSTEM”</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></td>
-<td><p>“3”</p></td>
-</tr>
-</tbody>
-</table>
-<table class="table table-left" id="example-3" style="width: 70%">
-<caption><span class="caption-text">Example 3</span><a class="headerlink" href="#example-3" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 40.0%" />
-<col style="width: 60.0%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Field</p></td>
-<td><p>Value</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
-<td><p>“WAVEFRONT</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
-<td><p>“EXCIMER</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
-<td><p>“Excimer</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></td>
-<td><p>3</p></td>
-</tr>
-</tbody>
-</table>
-<table class="table table-left" id="example-4" style="width: 70%">
-<caption><span class="caption-text">Example 4</span><a class="headerlink" href="#example-4" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 40.0%" />
-<col style="width: 60.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>Value</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></td>
-<td><p>“VISX STAR S4 IR EXCIMER LASER”</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
-<td><p>“EXCIMER LASER”</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
-<td><p>“Excimer Laser System”</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></td>
-<td><p>3</p></td>
-</tr>
-</tbody>
-</table>
+<p>``{list-table} Example 1
+:header-rows: 1
+:align: left
+:width: 70%
+:widths: 2 3</p>
+<ul class="simple">
+<li><ul>
+<li><p>Field</p></li>
+<li><p>Value</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></li>
+<li><p>“LADARVISION 4000”</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></li>
+<li><p>“OPTHALMIC EXCIMER LASER SYSTEM”</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></li>
+<li><p>“Excimer Laser System”</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></li>
+<li><p>“3”
+``</p></li>
+</ul>
+</li>
+</ul>
+<p>``{list-table} Example 2
+:header-rows: 1
+:width: 70%
+:align: left
+:widths: 2 3</p>
+<ul class="simple">
+<li><ul>
+<li><p>Field</p></li>
+<li><p>Value</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></li>
+<li><p>“LASIK MD VISION”</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></li>
+<li><p>“EXCIMER LASER SYSTEM”</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></li>
+<li><p>“EXCIMER LASER SYSTEM”</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></li>
+<li><p>“3”
+``</p></li>
+</ul>
+</li>
+</ul>
+<p>``{list-table} Example 3
+:name: example-3
+:width: 70%
+:widths: 2 3
+:align: left</p>
+<ul class="simple">
+<li><ul>
+<li><p>Field</p></li>
+<li><p>Value</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></li>
+<li><p>“WAVEFRONT</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></li>
+<li><p>“EXCIMER</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></li>
+<li><p>“Excimer</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></li>
+<li><p>3
+``</p></li>
+</ul>
+</li>
+</ul>
+<p>``{list-table} Example 4
+:header-rows: 1
+:name: example-4
+:width: 70%
+:widths: 2 3
+:align: left</p>
+<ul class="simple">
+<li><ul>
+<li><p>Field</p></li>
+<li><p>Value</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code></p></li>
+<li><p>“VISX STAR S4 IR EXCIMER LASER”</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></li>
+<li><p>“EXCIMER LASER”</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></li>
+<li><p>“Excimer Laser System”</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_class</span></code></p></li>
+<li><p>3
+``</p></li>
+</ul>
+</li>
+</ul>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Although <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> is an <strong>exact</strong> field that has been indexed both as its <strong>exact string content</strong>,
 the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version is not useful because the device code currently is precisly a single three-letter-long alphabetic string.</p>
 <p>The results total of two queries below prove this.</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS</span></code></p>
 <p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS</span></code></p>
 <p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a></p>
 <p><code class="docutils literal notranslate"><span class="pre">meta.results.total</span></code> is <strong>13303</strong> for both queries!</p>
 <section id="understanding-count">
@@ -451,9 +478,7 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <p>You can interactively get <code class="docutils literal notranslate"><span class="pre">count</span></code> results several <code class="docutils literal notranslate"><span class="pre">device</span></code> event fields at <a class="reference external" href="https://api.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a>.</p>
 </div>
 <p>Take this <strong>search example</strong> with <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0</span></code></p>
 <p><a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a></p>
 <p><strong>Analysis:</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> counts the <em>unique</em> “report first received” dates where:</p>
@@ -467,410 +492,9 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 </ul>
 <p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <strong>16364554</strong>, but
 the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;disclaimer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;terms&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/terms/&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/license/&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;last_updated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-04-27&quot;</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20040223&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20040928&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20050418&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20050614&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;I snipped many results...&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...in order to show a count result other than 1. There are man more results after the value below, too.&quot;</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20100630&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">json</span> <span class="pre">{</span>&#160;&#160; <span class="pre">&quot;meta&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;disclaimer&quot;:</span> <span class="pre">&quot;Do</span> <span class="pre">not</span> <span class="pre">rely</span> <span class="pre">on</span> <span class="pre">openFDA</span> <span class="pre">to</span> <span class="pre">make</span> <span class="pre">decisions</span> <span class="pre">regarding</span> <span class="pre">medical</span> <span class="pre">care.</span> <span class="pre">While</span> <span class="pre">we</span> <span class="pre">make</span> <span class="pre">every</span> <span class="pre">effort</span> <span class="pre">to</span> <span class="pre">ensure</span> <span class="pre">that</span> <span class="pre">data</span> <span class="pre">is</span> <span class="pre">accurate,</span> <span class="pre">you</span> <span class="pre">should</span> <span class="pre">assume</span> <span class="pre">all</span> <span class="pre">results</span> <span class="pre">are</span> <span class="pre">unvalidated.</span> <span class="pre">We</span> <span class="pre">may</span> <span class="pre">limit</span> <span class="pre">or</span> <span class="pre">otherwise</span> <span class="pre">restrict</span> <span class="pre">your</span> <span class="pre">access</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">API</span> <span class="pre">in</span> <span class="pre">line</span> <span class="pre">with</span> <span class="pre">our</span> <span class="pre">Terms</span> <span class="pre">of</span> <span class="pre">Service.&quot;,</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;terms&quot;:</span> <span class="pre">&quot;https://open.fda.gov/terms/&quot;,</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;license&quot;:</span> <span class="pre">&quot;https://open.fda.gov/license/&quot;,</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;last_updated&quot;:</span> <span class="pre">&quot;2023-04-27&quot;</span>&#160;&#160; <span class="pre">},</span>&#160;&#160; <span class="pre">&quot;results&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;20040223&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;count&quot;:</span> <span class="pre">1</span>&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;20040928&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;count&quot;:</span> <span class="pre">1</span>&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;20050418&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;count&quot;:</span> <span class="pre">1</span>&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;20050614&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;count&quot;:</span> <span class="pre">1</span>&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;I</span> <span class="pre">snipped</span> <span class="pre">many</span> <span class="pre">results...&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;count&quot;:</span> <span class="pre">&quot;...in</span> <span class="pre">order</span> <span class="pre">to</span> <span class="pre">show</span> <span class="pre">a</span> <span class="pre">count</span> <span class="pre">result</span> <span class="pre">other</span> <span class="pre">than</span> <span class="pre">1.</span> <span class="pre">There</span> <span class="pre">are</span> <span class="pre">man</span> <span class="pre">more</span> <span class="pre">results</span> <span class="pre">after</span> <span class="pre">the</span> <span class="pre">value</span> <span class="pre">below,</span> <span class="pre">too.&quot;</span>&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;20100630&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;count&quot;:</span> <span class="pre">3</span>&#160;&#160;&#160;&#160; <span class="pre">},</span> <span class="pre">}</span> </code></p>
 <p>If <code class="docutils literal notranslate"><span class="pre">count=..</span></code> is omitted the results (ony the first result is shown below) are:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;disclaimer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;terms&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/terms/&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/license/&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;last_updated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-04-27&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;skip&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12898</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;safetyreportversion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;safetyreportid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10003860&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;primarysourcecountry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;occurcountry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;transmissiondateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;transmissiondate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20150720&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;reporttype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;serious&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;seriousnesshospitalization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;receivedateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;receivedate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20140312&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;receiptdateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;receiptdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20150331&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;fulfillexpeditecriteria&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;companynumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US-BAYER-2014-035493&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;duplicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;reportduplicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;duplicatesource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BAYER&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;duplicatenumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US-BAYER-2014-035493&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;primarysource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;reportercountry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;qualification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;sendertype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;senderorganization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FDA-Public Use&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;receiver&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;receivertype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;receiverorganization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FDA&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;patientonsetage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;25&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;patientonsetageunit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;801&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;patientagegroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;patientweight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;49.89&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;patientsex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;reaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddraversionpt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18.0&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Injury&quot;</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddraversionpt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18.0&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;General physical health deterioration&quot;</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddraversionpt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18.0&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cerebrovascular arteriovenous malformation&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionoutcome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddraversionpt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18.0&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gastrooesophageal reflux disease&quot;</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddraversionpt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18.0&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Peripheral artery thrombosis&quot;</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddraversionpt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18.0&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pain&quot;</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddraversionpt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18.0&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Anxiety&quot;</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddraversionpt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18.0&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Abdominal pain&quot;</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddraversionpt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18.0&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;reactionmeddrapt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Emotional distress&quot;</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">          </span><span class="p">],</span>
-<span class="w">          </span><span class="nt">&quot;drug&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;drugcharacterization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;medicinalproduct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AMITRIPTYLINE&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstructuredosagenumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;25&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstructuredosageunit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;003&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugdosagetext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;25 MG, ONCE AT NIGHT&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugindication&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NECK PAIN&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;activesubstance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;activesubstancename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AMITRIPTYLINE&quot;</span>
-<span class="w">              </span><span class="p">}</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;drugcharacterization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;medicinalproduct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;YAZ&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugauthorizationnumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;021676&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugdosagetext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UNK&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugdosageform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FILM-COATED TABLET&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstartdateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;610&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstartdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200804&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugenddateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;610&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugenddate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200807&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;actiondrug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;activesubstance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;activesubstancename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROSPIRENONE\\ETHINYL ESTRADIOL&quot;</span>
-<span class="w">              </span><span class="p">},</span>
-<span class="w">              </span><span class="nt">&quot;openfda&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;application_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;NDA021676&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;YAZ&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;generic_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;DROSPIRENONE AND ETHINYL ESTRADIOL&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;Bayer HealthCare Pharmaceuticals Inc.&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;product_ndc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;50419-405&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;product_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;HUMAN PRESCRIPTION DRUG&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;rxcui&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;630734&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;748797&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;748798&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;748856&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;spl_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;bd3baa73-1d24-49e2-9120-fa7c82f3af90&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;spl_set_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;065f33e4-b587-4e66-b896-ca9ab7b7c876&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;package_ndc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;50419-405-03&quot;</span>
-<span class="w">                </span><span class="p">]</span>
-<span class="w">              </span><span class="p">}</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;drugcharacterization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;medicinalproduct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REOPRO&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;activesubstance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;activesubstancename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABCIXIMAB&quot;</span>
-<span class="w">              </span><span class="p">}</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;drugcharacterization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;medicinalproduct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACIPHEX&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstructuredosagenumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstructuredosageunit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;003&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugseparatedosagenumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugintervaldosageunitnumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugintervaldosagedefinition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;804&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugdosagetext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20 MG, BID&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugindication&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GASTROOESOPHAGEAL REFLUX DISEASE&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;activesubstance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;activesubstancename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RABEPRAZOLE SODIUM&quot;</span>
-<span class="w">              </span><span class="p">},</span>
-<span class="w">              </span><span class="nt">&quot;openfda&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;application_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;NDA020973&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;ACIPHEX&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;generic_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;RABEPRAZOLE SODIUM&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;Eisai Inc.&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Woodward Pharma Services LLC&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;product_ndc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;62856-243&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;69784-243&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;product_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;HUMAN PRESCRIPTION DRUG&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;route&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;ORAL&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;substance_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;RABEPRAZOLE SODIUM&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;rxcui&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;854868&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;854870&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;spl_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;e00fa711-01d4-48ba-9c3a-594fb6abff02&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;be3a78bc-4f9c-473f-bb62-bd1d6920b5ec&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;spl_set_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;5d103551-978f-472a-9c62-51e6e4dea068&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;42282e11-3179-420e-b979-e53dd5bd4b12&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;package_ndc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;62856-243-30&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;62856-243-90&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;62856-243-41&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;69784-243-30&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;unii&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;3L36P16U4R&quot;</span>
-<span class="w">                </span><span class="p">]</span>
-<span class="w">              </span><span class="p">}</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;drugcharacterization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;medicinalproduct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TOPAMAX&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstructuredosagenumb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstructuredosageunit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;003&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugdosagetext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400 MG,ONCE IN THE MORNING&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugindication&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SEIZURE&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;activesubstance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;activesubstancename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TOPIRAMATE&quot;</span>
-<span class="w">              </span><span class="p">},</span>
-<span class="w">              </span><span class="nt">&quot;openfda&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;application_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;NDA020505&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;NDA020844&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;TOPAMAX&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;generic_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;TOPIRAMATE&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;Janssen Pharmaceuticals, Inc.&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;product_ndc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;50458-639&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-640&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-641&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-642&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-647&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-645&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;product_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;HUMAN PRESCRIPTION DRUG&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;route&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;ORAL&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;substance_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;TOPIRAMATE&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;rxcui&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;151226&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;151227&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;151228&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;151229&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;152855&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;199888&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;199889&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;199890&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;205315&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;205316&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;845478&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;845479&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;spl_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;fb80f4b4-14e7-484c-e053-6294a90af892&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;spl_set_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;21628112-0c47-11df-95b3-498d55d89593&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;package_ndc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;50458-639-65&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-640-65&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-641-65&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-642-65&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-647-65&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;50458-645-65&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;nui&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;N0000008486&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;N0000185506&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;N0000182140&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;pharm_class_pe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;Decreased Central Nervous System Disorganized Electrical Activity [PE]&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;pharm_class_moa&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;Cytochrome P450 3A4 Inducers [MoA]&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Cytochrome P450 2C19 Inhibitors [MoA]&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;unii&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;0H73WJJ391&quot;</span>
-<span class="w">                </span><span class="p">]</span>
-<span class="w">              </span><span class="p">}</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;drugcharacterization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;medicinalproduct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;YASMIN&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugdosagetext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UNK&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugdosageform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FILM-COATED TABLET&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstartdateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;602&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugstartdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2005&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugenddateformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;602&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;drugenddate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2005&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nt">&quot;activesubstance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;activesubstancename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROSPIRENONE\\ETHINYL ESTRADIOL&quot;</span>
-<span class="w">              </span><span class="p">},</span>
-<span class="w">              </span><span class="nt">&quot;openfda&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;application_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;NDA021098&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;YASMIN&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;generic_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;DROSPIRENONE AND ETHINYL ESTRADIOL&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;Bayer HealthCare Pharmaceuticals Inc.&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;product_ndc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;50419-402&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;product_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;HUMAN PRESCRIPTION DRUG&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;rxcui&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;284207&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;748797&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;748800&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;748857&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;spl_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;0940c8a8-b5cd-4ba6-9fc8-ca4f55ae3973&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;spl_set_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;d7ea6a60-5a56-4f81-b206-9b27b7e58875&quot;</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;package_ndc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;50419-402-03&quot;</span>
-<span class="w">                </span><span class="p">]</span>
-<span class="w">              </span><span class="p">}</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">          </span><span class="p">],</span>
-<span class="w">          </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;narrativeincludeclinical&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CASE EVENT DATE: 200807&quot;</span>
-<span class="w">          </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">json</span> <span class="pre">{</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;meta&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;disclaimer&quot;:</span> <span class="pre">&quot;Do</span> <span class="pre">not</span> <span class="pre">rely</span> <span class="pre">on</span> <span class="pre">openFDA</span> <span class="pre">to</span> <span class="pre">make</span> <span class="pre">decisions</span> <span class="pre">regarding</span> <span class="pre">medical</span> <span class="pre">care.</span> <span class="pre">While</span> <span class="pre">we</span> <span class="pre">make</span> <span class="pre">every</span> <span class="pre">effort</span> <span class="pre">to</span> <span class="pre">ensure</span> <span class="pre">that</span> <span class="pre">data</span> <span class="pre">is</span> <span class="pre">accurate,</span> <span class="pre">you</span> <span class="pre">should</span> <span class="pre">assume</span> <span class="pre">all</span> <span class="pre">results</span> <span class="pre">are</span> <span class="pre">unvalidated.</span> <span class="pre">We</span> <span class="pre">may</span> <span class="pre">limit</span> <span class="pre">or</span> <span class="pre">otherwise</span> <span class="pre">restrict</span> <span class="pre">your</span> <span class="pre">access</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">API</span> <span class="pre">in</span> <span class="pre">line</span> <span class="pre">with</span> <span class="pre">our</span> <span class="pre">Terms</span> <span class="pre">of</span> <span class="pre">Service.&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;terms&quot;:</span> <span class="pre">&quot;https://open.fda.gov/terms/&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;license&quot;:</span> <span class="pre">&quot;https://open.fda.gov/license/&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;last_updated&quot;:</span> <span class="pre">&quot;2023-04-27&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;results&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;skip&quot;:</span> <span class="pre">0,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;limit&quot;:</span> <span class="pre">1,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;total&quot;:</span> <span class="pre">12898</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;results&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;safetyreportversion&quot;:</span> <span class="pre">&quot;3&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;safetyreportid&quot;:</span> <span class="pre">&quot;10003860&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;primarysourcecountry&quot;:</span> <span class="pre">&quot;US&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;occurcountry&quot;:</span> <span class="pre">&quot;US&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;transmissiondateformat&quot;:</span> <span class="pre">&quot;102&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;transmissiondate&quot;:</span> <span class="pre">&quot;20150720&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reporttype&quot;:</span> <span class="pre">&quot;1&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;serious&quot;:</span> <span class="pre">&quot;1&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;seriousnesshospitalization&quot;:</span> <span class="pre">&quot;1&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;receivedateformat&quot;:</span> <span class="pre">&quot;102&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;receivedate&quot;:</span> <span class="pre">&quot;20140312&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;receiptdateformat&quot;:</span> <span class="pre">&quot;102&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;receiptdate&quot;:</span> <span class="pre">&quot;20150331&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;fulfillexpeditecriteria&quot;:</span> <span class="pre">&quot;1&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;companynumb&quot;:</span> <span class="pre">&quot;US-BAYER-2014-035493&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;duplicate&quot;:</span> <span class="pre">&quot;1&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reportduplicate&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;duplicatesource&quot;:</span> <span class="pre">&quot;BAYER&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;duplicatenumb&quot;:</span> <span class="pre">&quot;US-BAYER-2014-035493&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;primarysource&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reportercountry&quot;:</span> <span class="pre">&quot;US&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;qualification&quot;:</span> <span class="pre">&quot;5&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;sender&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;sendertype&quot;:</span> <span class="pre">&quot;2&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;senderorganization&quot;:</span> <span class="pre">&quot;FDA-Public</span> <span class="pre">Use&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;receiver&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;receivertype&quot;:</span> <span class="pre">&quot;6&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;receiverorganization&quot;:</span> <span class="pre">&quot;FDA&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;patient&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;patientonsetage&quot;:</span> <span class="pre">&quot;25&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;patientonsetageunit&quot;:</span> <span class="pre">&quot;801&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;patientagegroup&quot;:</span> <span class="pre">&quot;5&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;patientweight&quot;:</span> <span class="pre">&quot;49.89&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;patientsex&quot;:</span> <span class="pre">&quot;2&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reaction&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddraversionpt&quot;:</span> <span class="pre">&quot;18.0&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddrapt&quot;:</span> <span class="pre">&quot;Injury&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddraversionpt&quot;:</span> <span class="pre">&quot;18.0&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddrapt&quot;:</span> <span class="pre">&quot;General</span> <span class="pre">physical</span> <span class="pre">health</span> <span class="pre">deterioration&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddraversionpt&quot;:</span> <span class="pre">&quot;18.0&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddrapt&quot;:</span> <span class="pre">&quot;Cerebrovascular</span> <span class="pre">arteriovenous</span> <span class="pre">malformation&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionoutcome&quot;:</span> <span class="pre">&quot;1&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddraversionpt&quot;:</span> <span class="pre">&quot;18.0&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddrapt&quot;:</span> <span class="pre">&quot;Gastrooesophageal</span> <span class="pre">reflux</span> <span class="pre">disease&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddraversionpt&quot;:</span> <span class="pre">&quot;18.0&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddrapt&quot;:</span> <span class="pre">&quot;Peripheral</span> <span class="pre">artery</span> <span class="pre">thrombosis&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddraversionpt&quot;:</span> <span class="pre">&quot;18.0&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddrapt&quot;:</span> <span class="pre">&quot;Pain&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddraversionpt&quot;:</span> <span class="pre">&quot;18.0&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddrapt&quot;:</span> <span class="pre">&quot;Anxiety&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddraversionpt&quot;:</span> <span class="pre">&quot;18.0&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddrapt&quot;:</span> <span class="pre">&quot;Abdominal</span> <span class="pre">pain&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddraversionpt&quot;:</span> <span class="pre">&quot;18.0&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;reactionmeddrapt&quot;:</span> <span class="pre">&quot;Emotional</span> <span class="pre">distress&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drug&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugcharacterization&quot;:</span> <span class="pre">&quot;2&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;medicinalproduct&quot;:</span> <span class="pre">&quot;AMITRIPTYLINE&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstructuredosagenumb&quot;:</span> <span class="pre">&quot;25&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstructuredosageunit&quot;:</span> <span class="pre">&quot;003&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugdosagetext&quot;:</span> <span class="pre">&quot;25</span> <span class="pre">MG,</span> <span class="pre">ONCE</span> <span class="pre">AT</span> <span class="pre">NIGHT&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugindication&quot;:</span> <span class="pre">&quot;NECK</span> <span class="pre">PAIN&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstance&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstancename&quot;:</span> <span class="pre">&quot;AMITRIPTYLINE&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugcharacterization&quot;:</span> <span class="pre">&quot;1&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;medicinalproduct&quot;:</span> <span class="pre">&quot;YAZ&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugauthorizationnumb&quot;:</span> <span class="pre">&quot;021676&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugdosagetext&quot;:</span> <span class="pre">&quot;UNK&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugdosageform&quot;:</span> <span class="pre">&quot;FILM-COATED</span> <span class="pre">TABLET&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstartdateformat&quot;:</span> <span class="pre">&quot;610&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstartdate&quot;:</span> <span class="pre">&quot;200804&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugenddateformat&quot;:</span> <span class="pre">&quot;610&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugenddate&quot;:</span> <span class="pre">&quot;200807&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;actiondrug&quot;:</span> <span class="pre">&quot;1&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstance&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstancename&quot;:</span> <span class="pre">&quot;DROSPIRENONE\\ETHINYL</span> <span class="pre">ESTRADIOL&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;openfda&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;application_number&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;NDA021676&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;brand_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;YAZ&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;generic_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;DROSPIRENONE</span> <span class="pre">AND</span> <span class="pre">ETHINYL</span> <span class="pre">ESTRADIOL&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;manufacturer_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;Bayer</span> <span class="pre">HealthCare</span> <span class="pre">Pharmaceuticals</span> <span class="pre">Inc.&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;product_ndc&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50419-405&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;product_type&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;HUMAN</span> <span class="pre">PRESCRIPTION</span> <span class="pre">DRUG&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;rxcui&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;630734&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;748797&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;748798&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;748856&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;spl_id&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;bd3baa73-1d24-49e2-9120-fa7c82f3af90&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;spl_set_id&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;065f33e4-b587-4e66-b896-ca9ab7b7c876&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;package_ndc&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50419-405-03&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">]</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugcharacterization&quot;:</span> <span class="pre">&quot;2&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;medicinalproduct&quot;:</span> <span class="pre">&quot;REOPRO&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstance&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstancename&quot;:</span> <span class="pre">&quot;ABCIXIMAB&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugcharacterization&quot;:</span> <span class="pre">&quot;2&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;medicinalproduct&quot;:</span> <span class="pre">&quot;ACIPHEX&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstructuredosagenumb&quot;:</span> <span class="pre">&quot;20&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstructuredosageunit&quot;:</span> <span class="pre">&quot;003&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugseparatedosagenumb&quot;:</span> <span class="pre">&quot;2&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugintervaldosageunitnumb&quot;:</span> <span class="pre">&quot;1&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugintervaldosagedefinition&quot;:</span> <span class="pre">&quot;804&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugdosagetext&quot;:</span> <span class="pre">&quot;20</span> <span class="pre">MG,</span> <span class="pre">BID&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugindication&quot;:</span> <span class="pre">&quot;GASTROOESOPHAGEAL</span> <span class="pre">REFLUX</span> <span class="pre">DISEASE&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstance&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstancename&quot;:</span> <span class="pre">&quot;RABEPRAZOLE</span> <span class="pre">SODIUM&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;openfda&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;application_number&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;NDA020973&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;brand_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;ACIPHEX&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;generic_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;RABEPRAZOLE</span> <span class="pre">SODIUM&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;manufacturer_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;Eisai</span> <span class="pre">Inc.&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;Woodward</span> <span class="pre">Pharma</span> <span class="pre">Services</span> <span class="pre">LLC&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;product_ndc&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;62856-243&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;69784-243&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;product_type&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;HUMAN</span> <span class="pre">PRESCRIPTION</span> <span class="pre">DRUG&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;route&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;ORAL&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;substance_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;RABEPRAZOLE</span> <span class="pre">SODIUM&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;rxcui&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;854868&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;854870&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;spl_id&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;e00fa711-01d4-48ba-9c3a-594fb6abff02&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;be3a78bc-4f9c-473f-bb62-bd1d6920b5ec&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;spl_set_id&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;5d103551-978f-472a-9c62-51e6e4dea068&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;42282e11-3179-420e-b979-e53dd5bd4b12&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;package_ndc&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;62856-243-30&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;62856-243-90&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;62856-243-41&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;69784-243-30&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;unii&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;3L36P16U4R&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">]</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugcharacterization&quot;:</span> <span class="pre">&quot;2&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;medicinalproduct&quot;:</span> <span class="pre">&quot;TOPAMAX&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstructuredosagenumb&quot;:</span> <span class="pre">&quot;400&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstructuredosageunit&quot;:</span> <span class="pre">&quot;003&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugdosagetext&quot;:</span> <span class="pre">&quot;400</span> <span class="pre">MG,ONCE</span> <span class="pre">IN</span> <span class="pre">THE</span> <span class="pre">MORNING&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugindication&quot;:</span> <span class="pre">&quot;SEIZURE&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstance&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstancename&quot;:</span> <span class="pre">&quot;TOPIRAMATE&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;openfda&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;application_number&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;NDA020505&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;NDA020844&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;brand_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;TOPAMAX&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;generic_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;TOPIRAMATE&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;manufacturer_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;Janssen</span> <span class="pre">Pharmaceuticals,</span> <span class="pre">Inc.&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;product_ndc&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-639&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-640&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-641&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-642&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-647&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-645&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;product_type&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;HUMAN</span> <span class="pre">PRESCRIPTION</span> <span class="pre">DRUG&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;route&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;ORAL&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;substance_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;TOPIRAMATE&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;rxcui&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;151226&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;151227&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;151228&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;151229&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;152855&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;199888&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;199889&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;199890&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;205315&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;205316&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;845478&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;845479&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;spl_id&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;fb80f4b4-14e7-484c-e053-6294a90af892&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;spl_set_id&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;21628112-0c47-11df-95b3-498d55d89593&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;package_ndc&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-639-65&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-640-65&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-641-65&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-642-65&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-647-65&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50458-645-65&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;nui&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;N0000008486&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;N0000185506&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;N0000182140&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;pharm_class_pe&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;Decreased</span> <span class="pre">Central</span> <span class="pre">Nervous</span> <span class="pre">System</span> <span class="pre">Disorganized</span> <span class="pre">Electrical</span> <span class="pre">Activity</span> <span class="pre">[PE]&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;pharm_class_moa&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;Cytochrome</span> <span class="pre">P450</span> <span class="pre">3A4</span> <span class="pre">Inducers</span> <span class="pre">[MoA]&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;Cytochrome</span> <span class="pre">P450</span> <span class="pre">2C19</span> <span class="pre">Inhibitors</span> <span class="pre">[MoA]&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;unii&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;0H73WJJ391&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">]</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugcharacterization&quot;:</span> <span class="pre">&quot;1&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;medicinalproduct&quot;:</span> <span class="pre">&quot;YASMIN&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugdosagetext&quot;:</span> <span class="pre">&quot;UNK&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugdosageform&quot;:</span> <span class="pre">&quot;FILM-COATED</span> <span class="pre">TABLET&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstartdateformat&quot;:</span> <span class="pre">&quot;602&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugstartdate&quot;:</span> <span class="pre">&quot;2005&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugenddateformat&quot;:</span> <span class="pre">&quot;602&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;drugenddate&quot;:</span> <span class="pre">&quot;2005&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstance&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;activesubstancename&quot;:</span> <span class="pre">&quot;DROSPIRENONE\\ETHINYL</span> <span class="pre">ESTRADIOL&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;openfda&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;application_number&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;NDA021098&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;brand_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;YASMIN&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;generic_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;DROSPIRENONE</span> <span class="pre">AND</span> <span class="pre">ETHINYL</span> <span class="pre">ESTRADIOL&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;manufacturer_name&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;Bayer</span> <span class="pre">HealthCare</span> <span class="pre">Pharmaceuticals</span> <span class="pre">Inc.&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;product_ndc&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50419-402&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;product_type&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;HUMAN</span> <span class="pre">PRESCRIPTION</span> <span class="pre">DRUG&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;rxcui&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;284207&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;748797&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;748800&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;748857&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;spl_id&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;0940c8a8-b5cd-4ba6-9fc8-ca4f55ae3973&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;spl_set_id&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;d7ea6a60-5a56-4f81-b206-9b27b7e58875&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;package_ndc&quot;:</span> <span class="pre">[</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;50419-402-03&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">]</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;summary&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;narrativeincludeclinical&quot;:</span> <span class="pre">&quot;CASE</span> <span class="pre">EVENT</span> <span class="pre">DATE:</span> <span class="pre">200807&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">}</span>&#160;&#160;&#160;&#160; <span class="pre">]</span>&#160;&#160; <span class="pre">}</span> <span class="pre">}</span> </code></p>
 <p><strong>Comments:</strong> The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> generic names of the drugs were used rather than their brand name</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -896,9 +520,7 @@ partial, “is contained in” searches. It has been tokenized to allow flexible
 <p>You will now see fewer results. Each result will have (exactly–right?) “Advil” as its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> (nothing more and nothing less–right?). Exact match must
 match exactly. <strong>todo:</strong> double check.</p>
 <p>Here is another example taken from openfda.stackexchagne.com. It is a search looks for reports that may have been labeled with the incorrect product code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(&quot;needle&quot;+AND+(&quot;transseptal&quot;+&quot;brockenbrough&quot;+&quot;brk&quot;)))&amp;limit=100&amp;skip=0&quot;&gt;https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(&quot;needle&quot;+AND+(&quot;transseptal&quot;+&quot;brockenbrough&quot;+&quot;brk&quot;)))&amp;limit=100&amp;skip=0
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(&quot;needle&quot;+AND+(&quot;transseptal&quot;+&quot;brockenbrough&quot;+&quot;brk&quot;)))&amp;limit=100&amp;skip=0&quot;&gt;https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(&quot;needle&quot;+AND+(&quot;transseptal&quot;+&quot;brockenbrough&quot;+&quot;brk&quot;)))&amp;limit=100&amp;skip=0</span></code></p>
 <p><a href='https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0'>Execute query above</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

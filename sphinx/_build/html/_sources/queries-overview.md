@@ -30,7 +30,7 @@ The query `https://api.fda.gov/drug/event.json?limit=1` searches the `drug/event
 The `results` properties in the single record returned contains all kinds of information about the adverse event report,
 including the drugs that the patient was taking, the reactions that the patient experienced, and a good deal of other context:
 
-```json
+``json
 {
   "meta": {
     "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
@@ -93,4 +93,4 @@ including the drugs that the patient was taking, the reactions that the patient 
     }
   ]
 }
-```
+``

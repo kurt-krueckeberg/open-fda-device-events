@@ -4,9 +4,9 @@
 
 1. Search for `device.device_report_product_Code="LZS"` (for device of Excimer Laser) where `mdr_text` contains `dry`:
 
-```
+``
 https://api.fda.gov/device/event.json?search=(device.device_report_product_Code="LZS")+AND+(mdr_text.text:dry)
-```
+``
 
 <a href='https://api.fda.gov/device/event.json?search=(device.device_report_product_Code="LZS")+AND+(mdr_text.text:dry)'>Execute call</a>
 
@@ -16,25 +16,25 @@ https://api.fda.gov/device/event.json?search=(device.device_report_product_Code=
 
 2. Search for device adverse events for Excimer Lasik code `LZS` or AC-powered keratome code `HNO`:
 
-```
+``
 https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HNO"+device.device_report_product_Code="LZS"
-```
+``
 
 <a href='https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HNO"+device.device_report_product_Code="LZS"'>Execute call</a>
 
 3. Here we search for all the product codes (using boolean OR operator `+`): `HQF`, `LZS`, `OTL`, `HMY`, `HNO`, `MYD`, `NKY`.
 
-```
+``
 https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"+device.device_report_product_Code="OTL"+device.device_report_product_Code="HMY"+device.device_report_product_Code="HNO"+device.device_report_product_Code="MYD"+device.device_report_product_Code="NKY"
-```
+``
 
 <a href='https://api.fda.gov/device/event.json?search=device.device_report_product_Code="HQF"+device.device_report_product_Code="LZS"+device.device_report_product_Code="OTL"+device.device_report_product_Code="HMY"+device.device_report_product_Code="HNO"+device.device_report_product_Code="MYD"+device.device_report_product_Code="NKY"'>Execute call</a>
 
 4. Count `mdr_report_key` 's for "LZS" (Excimer Laser System) reports:
 
-```
+``
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
-```
+``
 
 <a href=hittps://api.fda.gov/device/event.json?search=device.device_report_product_Code="LZS"&count:device.mdr_report_key'>Execute call</a>
 
@@ -43,9 +43,9 @@ https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231
 
 1. Searching for a specified date range:
 
-```
+``
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
-```
+``
 
 <a href='https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1'>Execute call</a>
 
@@ -56,8 +56,8 @@ https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231
 
 See searchable fields for more about `date_received`. Brackets `[ ]` are used to specify a range for date, number, or string fields.
 
-```
+``
 https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1
-```
+``
 
 <a href='https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1'>Execute call</a>
