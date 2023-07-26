@@ -9,7 +9,7 @@ But I'm not sure is graphing libraries like D3.js are server side?
 
 To learn more about the openFDA API read the replies at: [https://opendata.stackexchange.com/questions/tagged/openfda](https://opendata.stackexchange.com/questions/tagged/openfda)
 
-## Empirical Tests 
+## Test Queries 
 
 `device.generice_name` results when `device.product_code=LZS`: 
 
