@@ -88,7 +88,8 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
 
 :::{important}
 Although `device.device_report_product_code` is an **exact** field that has been indexed both as its **exact string content**,
-the `.exact` version is not useful because the device code currently is precisly a single three-letter-long alphabetic string. \
+the `.exact` version is not useful because the device code currently is precisly a single three-letter-long alphabetic string.
+
 The results total of two queries below prove this.
 :::
 
@@ -97,9 +98,10 @@ https://open.fda.gov/device/event.json?search=device.device_report_product_code=
 ```
 
 <a href='https://open.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a>
+
 ```
 https://open.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
-````
+```
 
 <a href='https://open.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a>
 
@@ -134,8 +136,8 @@ The number of matching records `16364554`.
 
 **Comments:** The `.exact` generic names of the drugs were used rather than their brand name
 
-:::{Important} This needs to be understand \
-Is the boolean logic in the above query: **DROSPIRENONE** AND (**ETHINYL** or **ESTRADIOL**)?
+:::{Important}
+Is the boolean logic in the above query: **DROSPIRENONE** AND (**ETHINYL** or **ESTRADIOL**)? This **MUST** be understood.
 :::
 
 **Example 2:** This query looks in the `drug/event.json` endpoint for the count of the top patient reactions. For each reaction, the number of records that matched is summed, providing

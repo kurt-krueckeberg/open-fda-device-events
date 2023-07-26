@@ -418,8 +418,8 @@ adverse device event data for those device I am interested in, as it client-side
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Although <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> is an <strong>exact</strong> field that has been indexed both as its <strong>exact string content</strong>,
-the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version is not useful because the device code currently is precisly a single three-letter-long alphabetic string. <br />
-The results total of two queries below prove this.</p>
+the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version is not useful because the device code currently is precisly a single three-letter-long alphabetic string.</p>
+<p>The results total of two queries below prove this.</p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://open.fda.gov/device/event.json?search=device.device_report_product_code=LZS
 </pre></div>
@@ -456,8 +456,7 @@ The results total of two queries below prove this.</p>
 <p><strong>Comments:</strong> The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> generic names of the drugs were used rather than their brand name</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>This needs to be understand <br />
-Is the boolean logic in the above query: <strong>DROSPIRENONE</strong> AND (<strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>)?</p>
+<p>Is the boolean logic in the above query: <strong>DROSPIRENONE</strong> AND (<strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>)? This <strong>MUST</strong> be understood.</p>
 </div>
 <p><strong>Example 2:</strong> This query looks in the <code class="docutils literal notranslate"><span class="pre">drug/event.json</span></code> endpoint for the count of the top patient reactions. For each reaction, the number of records that matched is summed, providing
 a useful summary.</p>
