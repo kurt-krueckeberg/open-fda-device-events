@@ -35,7 +35,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
    - "Excimer Laser System"
 *  - `device.openfda.device_class`
    - "3"
-``
+```
 
 ``{list-table} Example 2
 :header-rows: 1
@@ -53,7 +53,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
   - "EXCIMER LASER SYSTEM"
 * - `device.openfda.device_class`
   - "3"
-``
+```
 
 ``{list-table} Example 3
 :name: example-3
@@ -71,7 +71,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
   - "Excimer
 * - `device.openfda.device_class` 
   - 3
-``
+```
 
 ``{list-table} Example 4
 :header-rows: 1
@@ -90,7 +90,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
   - "Excimer Laser System"
 * - `device.openfda.device_class`
   - 3
-``
+```
 
 :::{important}
 Although `device.device_report_product_code` is an **exact** field that has been indexed both as its **exact string content**,
@@ -99,15 +99,15 @@ the `.exact` version is not useful because the device code currently is precisly
 The results total of two queries below prove this.
 :::
 
-``
+```
 https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS
-``
+```
 
 <a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a>
 
-``
+```
 https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
-``
+```
 
 <a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a>
 
@@ -126,9 +126,9 @@ You can interactively get `count` results several `device` event fields at [Devi
 
 Take this **search example** with `count=receivedate`:
 
-``
+```
 https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
-``
+```
 
 <a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a>
 
@@ -182,7 +182,7 @@ the results show the count of of the date when the report was first received acc
       "count": 3
     },
 }
-``
+```
 
 If `count=..` is omitted the results (ony the first result is shown below) are:
 
@@ -553,7 +553,7 @@ If `count=..` is omitted the results (ony the first result is shown below) are:
     ]
   }
 }
-``
+```
 
 **Comments:** The `.exact` generic names of the drugs were used rather than their brand name
 
@@ -589,9 +589,9 @@ match exactly. **todo:** double check.
 
 Here is another example taken from openfda.stackexchagne.com. It is a search looks for reports that may have been labeled with the incorrect product code:
 
-``
+```
 https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0">https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0
-``
+```
 
 <a href='https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0'>Execute query above</a>
 

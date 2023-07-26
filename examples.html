@@ -286,8 +286,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-these-further-examples">Collect These Further Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-adverse-event-examples">Drug Adverse Event Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-510-k-api-queries">Device 510(k) API queries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-classification-endpoint-examples">Device Classification Endpoint Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -380,36 +378,473 @@ phrases (e.g. injection site reaction) instead of individual words (e.g. injecti
 </pre></div>
 </div>
 <p><a href='https://api.fda.gov/device/classification.json?count=openfda.fei_number'>Execute call</a></p>
-</section>
-<section id="device-510-k-api-queries">
-<h2><a class="reference external" href="https://open.fda.gov/apis/device/510k/example-api-queries/">Device 510(k) API queries</a><a class="headerlink" href="#device-510-k-api-queries" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Search for all records with <code class="docutils literal notranslate"><span class="pre">advisory_committee</span></code> equal to cv.</p></li>
+<ol class="arabic simple" start="6">
+<li></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/510k.json?search=advisory_committee:cv&amp;limit=1
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0</span></code></p>
+<p><a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a></p>
+<p><strong>Analysis:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> counts the <em>unique</em> “report first received” dates where:</p>
+<ul class="simple">
+<li><p>the generic name of the drugs taken were <strong>DROSPIRENONE</strong> and <strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>: <br />
+<code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code></p></li>
+<li><p>the reaction to the above drug combination was (included?) pain: <br />
+<code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)</span></code></p></li>
+<li><p>the range of dates (when the report was first received) is from June 29, 1989 to August 11, 2015 <br />
+<code class="docutils literal notranslate"><span class="pre">receivedate:([1989-06-29+TO+2015-08-11])</span></code></p></li>
+</ul>
+<p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <strong>16364554</strong>, but
+the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.</p>
+<div class="highlight-son notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {
+    &quot;disclaimer&quot;: &quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;,
+    &quot;terms&quot;: &quot;https://open.fda.gov/terms/&quot;,
+    &quot;license&quot;: &quot;https://open.fda.gov/license/&quot;,
+    &quot;last_updated&quot;: &quot;2023-04-27&quot;
+  },
+  &quot;results&quot;: [
+    {
+      &quot;time&quot;: &quot;20040223&quot;,
+      &quot;count&quot;: 1
+    },
+    {
+      &quot;time&quot;: &quot;20040928&quot;,
+      &quot;count&quot;: 1
+    },
+    {
+      &quot;time&quot;: &quot;20050418&quot;,
+      &quot;count&quot;: 1
+    },
+    {
+      &quot;time&quot;: &quot;20050614&quot;,
+      &quot;count&quot;: 1
+    },
+    {
+      &quot;time&quot;: &quot;I snipped many results...&quot;,
+      &quot;count&quot;: &quot;...in order to show a count result other than 1. There are man more results after the value below, too.&quot;
+    },
+    {
+      &quot;time&quot;: &quot;20100630&quot;,
+      &quot;count&quot;: 3
+    },
+}
+``
+
+If `count=..` is omitted the results (ony the first result is shown below) are:
+
+```son
+{
+    &quot;meta&quot;: {
+      &quot;disclaimer&quot;: &quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;,
+      &quot;terms&quot;: &quot;https://open.fda.gov/terms/&quot;,
+      &quot;license&quot;: &quot;https://open.fda.gov/license/&quot;,
+      &quot;last_updated&quot;: &quot;2023-04-27&quot;,
+      &quot;results&quot;: {
+        &quot;skip&quot;: 0,
+        &quot;limit&quot;: 1,
+        &quot;total&quot;: 12898
+      }
+    },
+    &quot;results&quot;: [
+      {
+        &quot;safetyreportversion&quot;: &quot;3&quot;,
+        &quot;safetyreportid&quot;: &quot;10003860&quot;,
+        &quot;primarysourcecountry&quot;: &quot;US&quot;,
+        &quot;occurcountry&quot;: &quot;US&quot;,
+        &quot;transmissiondateformat&quot;: &quot;102&quot;,
+        &quot;transmissiondate&quot;: &quot;20150720&quot;,
+        &quot;reporttype&quot;: &quot;1&quot;,
+        &quot;serious&quot;: &quot;1&quot;,
+        &quot;seriousnesshospitalization&quot;: &quot;1&quot;,
+        &quot;receivedateformat&quot;: &quot;102&quot;,
+        &quot;receivedate&quot;: &quot;20140312&quot;,
+        &quot;receiptdateformat&quot;: &quot;102&quot;,
+        &quot;receiptdate&quot;: &quot;20150331&quot;,
+        &quot;fulfillexpeditecriteria&quot;: &quot;1&quot;,
+        &quot;companynumb&quot;: &quot;US-BAYER-2014-035493&quot;,
+        &quot;duplicate&quot;: &quot;1&quot;,
+        &quot;reportduplicate&quot;: {
+          &quot;duplicatesource&quot;: &quot;BAYER&quot;,
+          &quot;duplicatenumb&quot;: &quot;US-BAYER-2014-035493&quot;
+        },
+        &quot;primarysource&quot;: {
+          &quot;reportercountry&quot;: &quot;US&quot;,
+          &quot;qualification&quot;: &quot;5&quot;
+        },
+        &quot;sender&quot;: {
+          &quot;sendertype&quot;: &quot;2&quot;,
+          &quot;senderorganization&quot;: &quot;FDA-Public Use&quot;
+        },
+        &quot;receiver&quot;: {
+          &quot;receivertype&quot;: &quot;6&quot;,
+          &quot;receiverorganization&quot;: &quot;FDA&quot;
+        },
+        &quot;patient&quot;: {
+          &quot;patientonsetage&quot;: &quot;25&quot;,
+          &quot;patientonsetageunit&quot;: &quot;801&quot;,
+          &quot;patientagegroup&quot;: &quot;5&quot;,
+          &quot;patientweight&quot;: &quot;49.89&quot;,
+          &quot;patientsex&quot;: &quot;2&quot;,
+          &quot;reaction&quot;: [
+            {
+              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
+              &quot;reactionmeddrapt&quot;: &quot;Injury&quot;
+            },
+            {
+              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
+              &quot;reactionmeddrapt&quot;: &quot;General physical health deterioration&quot;
+            },
+            {
+              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
+              &quot;reactionmeddrapt&quot;: &quot;Cerebrovascular arteriovenous malformation&quot;,
+              &quot;reactionoutcome&quot;: &quot;1&quot;
+            },
+            {
+              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
+              &quot;reactionmeddrapt&quot;: &quot;Gastrooesophageal reflux disease&quot;
+            },
+            {
+              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
+              &quot;reactionmeddrapt&quot;: &quot;Peripheral artery thrombosis&quot;
+            },
+            {
+              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
+              &quot;reactionmeddrapt&quot;: &quot;Pain&quot;
+            },
+            {
+              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
+              &quot;reactionmeddrapt&quot;: &quot;Anxiety&quot;
+            },
+            {
+              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
+              &quot;reactionmeddrapt&quot;: &quot;Abdominal pain&quot;
+            },
+            {
+              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
+              &quot;reactionmeddrapt&quot;: &quot;Emotional distress&quot;
+            }
+          ],
+          &quot;drug&quot;: [
+            {
+              &quot;drugcharacterization&quot;: &quot;2&quot;,
+              &quot;medicinalproduct&quot;: &quot;AMITRIPTYLINE&quot;,
+              &quot;drugstructuredosagenumb&quot;: &quot;25&quot;,
+              &quot;drugstructuredosageunit&quot;: &quot;003&quot;,
+              &quot;drugdosagetext&quot;: &quot;25 MG, ONCE AT NIGHT&quot;,
+              &quot;drugindication&quot;: &quot;NECK PAIN&quot;,
+              &quot;activesubstance&quot;: {
+                &quot;activesubstancename&quot;: &quot;AMITRIPTYLINE&quot;
+              }
+            },
+            {
+              &quot;drugcharacterization&quot;: &quot;1&quot;,
+              &quot;medicinalproduct&quot;: &quot;YAZ&quot;,
+              &quot;drugauthorizationnumb&quot;: &quot;021676&quot;,
+              &quot;drugdosagetext&quot;: &quot;UNK&quot;,
+              &quot;drugdosageform&quot;: &quot;FILM-COATED TABLET&quot;,
+              &quot;drugstartdateformat&quot;: &quot;610&quot;,
+              &quot;drugstartdate&quot;: &quot;200804&quot;,
+              &quot;drugenddateformat&quot;: &quot;610&quot;,
+              &quot;drugenddate&quot;: &quot;200807&quot;,
+              &quot;actiondrug&quot;: &quot;1&quot;,
+              &quot;activesubstance&quot;: {
+                &quot;activesubstancename&quot;: &quot;DROSPIRENONE\\ETHINYL ESTRADIOL&quot;
+              },
+              &quot;openfda&quot;: {
+                &quot;application_number&quot;: [
+                  &quot;NDA021676&quot;
+                ],
+                &quot;brand_name&quot;: [
+                  &quot;YAZ&quot;
+                ],
+                &quot;generic_name&quot;: [
+                  &quot;DROSPIRENONE AND ETHINYL ESTRADIOL&quot;
+                ],
+                &quot;manufacturer_name&quot;: [
+                  &quot;Bayer HealthCare Pharmaceuticals Inc.&quot;
+                ],
+                &quot;product_ndc&quot;: [
+                  &quot;50419-405&quot;
+                ],
+                &quot;product_type&quot;: [
+                  &quot;HUMAN PRESCRIPTION DRUG&quot;
+                ],
+                &quot;rxcui&quot;: [
+                  &quot;630734&quot;,
+                  &quot;748797&quot;,
+                  &quot;748798&quot;,
+                  &quot;748856&quot;
+                ],
+                &quot;spl_id&quot;: [
+                  &quot;bd3baa73-1d24-49e2-9120-fa7c82f3af90&quot;
+                ],
+                &quot;spl_set_id&quot;: [
+                  &quot;065f33e4-b587-4e66-b896-ca9ab7b7c876&quot;
+                ],
+                &quot;package_ndc&quot;: [
+                  &quot;50419-405-03&quot;
+                ]
+              }
+            },
+            {
+              &quot;drugcharacterization&quot;: &quot;2&quot;,
+              &quot;medicinalproduct&quot;: &quot;REOPRO&quot;,
+              &quot;activesubstance&quot;: {
+                &quot;activesubstancename&quot;: &quot;ABCIXIMAB&quot;
+              }
+            },
+            {
+              &quot;drugcharacterization&quot;: &quot;2&quot;,
+              &quot;medicinalproduct&quot;: &quot;ACIPHEX&quot;,
+              &quot;drugstructuredosagenumb&quot;: &quot;20&quot;,
+              &quot;drugstructuredosageunit&quot;: &quot;003&quot;,
+              &quot;drugseparatedosagenumb&quot;: &quot;2&quot;,
+              &quot;drugintervaldosageunitnumb&quot;: &quot;1&quot;,
+              &quot;drugintervaldosagedefinition&quot;: &quot;804&quot;,
+              &quot;drugdosagetext&quot;: &quot;20 MG, BID&quot;,
+              &quot;drugindication&quot;: &quot;GASTROOESOPHAGEAL REFLUX DISEASE&quot;,
+              &quot;activesubstance&quot;: {
+                &quot;activesubstancename&quot;: &quot;RABEPRAZOLE SODIUM&quot;
+              },
+              &quot;openfda&quot;: {
+                &quot;application_number&quot;: [
+                  &quot;NDA020973&quot;
+                ],
+                &quot;brand_name&quot;: [
+                  &quot;ACIPHEX&quot;
+                ],
+                &quot;generic_name&quot;: [
+                  &quot;RABEPRAZOLE SODIUM&quot;
+                ],
+                &quot;manufacturer_name&quot;: [
+                  &quot;Eisai Inc.&quot;,
+                  &quot;Woodward Pharma Services LLC&quot;
+                ],
+                &quot;product_ndc&quot;: [
+                  &quot;62856-243&quot;,
+                  &quot;69784-243&quot;
+                ],
+                &quot;product_type&quot;: [
+                  &quot;HUMAN PRESCRIPTION DRUG&quot;
+                ],
+                &quot;route&quot;: [
+                  &quot;ORAL&quot;
+                ],
+                &quot;substance_name&quot;: [
+                  &quot;RABEPRAZOLE SODIUM&quot;
+                ],
+                &quot;rxcui&quot;: [
+                  &quot;854868&quot;,
+                  &quot;854870&quot;
+                ],
+                &quot;spl_id&quot;: [
+                  &quot;e00fa711-01d4-48ba-9c3a-594fb6abff02&quot;,
+                  &quot;be3a78bc-4f9c-473f-bb62-bd1d6920b5ec&quot;
+                ],
+                &quot;spl_set_id&quot;: [
+                  &quot;5d103551-978f-472a-9c62-51e6e4dea068&quot;,
+                  &quot;42282e11-3179-420e-b979-e53dd5bd4b12&quot;
+                ],
+                &quot;package_ndc&quot;: [
+                  &quot;62856-243-30&quot;,
+                  &quot;62856-243-90&quot;,
+                  &quot;62856-243-41&quot;,
+                  &quot;69784-243-30&quot;
+                ],
+                &quot;unii&quot;: [
+                  &quot;3L36P16U4R&quot;
+                ]
+              }
+            },
+            {
+              &quot;drugcharacterization&quot;: &quot;2&quot;,
+              &quot;medicinalproduct&quot;: &quot;TOPAMAX&quot;,
+              &quot;drugstructuredosagenumb&quot;: &quot;400&quot;,
+              &quot;drugstructuredosageunit&quot;: &quot;003&quot;,
+              &quot;drugdosagetext&quot;: &quot;400 MG,ONCE IN THE MORNING&quot;,
+              &quot;drugindication&quot;: &quot;SEIZURE&quot;,
+              &quot;activesubstance&quot;: {
+                &quot;activesubstancename&quot;: &quot;TOPIRAMATE&quot;
+              },
+              &quot;openfda&quot;: {
+                &quot;application_number&quot;: [
+                  &quot;NDA020505&quot;,
+                  &quot;NDA020844&quot;
+                ],
+                &quot;brand_name&quot;: [
+                  &quot;TOPAMAX&quot;
+                ],
+                &quot;generic_name&quot;: [
+                  &quot;TOPIRAMATE&quot;
+                ],
+                &quot;manufacturer_name&quot;: [
+                  &quot;Janssen Pharmaceuticals, Inc.&quot;
+                ],
+                &quot;product_ndc&quot;: [
+                  &quot;50458-639&quot;,
+                  &quot;50458-640&quot;,
+                  &quot;50458-641&quot;,
+                  &quot;50458-642&quot;,
+                  &quot;50458-647&quot;,
+                  &quot;50458-645&quot;
+                ],
+                &quot;product_type&quot;: [
+                  &quot;HUMAN PRESCRIPTION DRUG&quot;
+                ],
+                &quot;route&quot;: [
+                  &quot;ORAL&quot;
+                ],
+                &quot;substance_name&quot;: [
+                  &quot;TOPIRAMATE&quot;
+                ],
+                &quot;rxcui&quot;: [
+                  &quot;151226&quot;,
+                  &quot;151227&quot;,
+                  &quot;151228&quot;,
+                  &quot;151229&quot;,
+                  &quot;152855&quot;,
+                  &quot;199888&quot;,
+                  &quot;199889&quot;,
+                  &quot;199890&quot;,
+                  &quot;205315&quot;,
+                  &quot;205316&quot;,
+                  &quot;845478&quot;,
+                  &quot;845479&quot;
+                ],
+                &quot;spl_id&quot;: [
+                  &quot;fb80f4b4-14e7-484c-e053-6294a90af892&quot;
+                ],
+                &quot;spl_set_id&quot;: [
+                  &quot;21628112-0c47-11df-95b3-498d55d89593&quot;
+                ],
+                &quot;package_ndc&quot;: [
+                  &quot;50458-639-65&quot;,
+                  &quot;50458-640-65&quot;,
+                  &quot;50458-641-65&quot;,
+                  &quot;50458-642-65&quot;,
+                  &quot;50458-647-65&quot;,
+                  &quot;50458-645-65&quot;
+                ],
+                &quot;nui&quot;: [
+                  &quot;N0000008486&quot;,
+                  &quot;N0000185506&quot;,
+                  &quot;N0000182140&quot;
+                ],
+                &quot;pharm_class_pe&quot;: [
+                  &quot;Decreased Central Nervous System Disorganized Electrical Activity [PE]&quot;
+                ],
+                &quot;pharm_class_moa&quot;: [
+                  &quot;Cytochrome P450 3A4 Inducers [MoA]&quot;,
+                  &quot;Cytochrome P450 2C19 Inhibitors [MoA]&quot;
+                ],
+                &quot;unii&quot;: [
+                  &quot;0H73WJJ391&quot;
+                ]
+              }
+            },
+            {
+              &quot;drugcharacterization&quot;: &quot;1&quot;,
+              &quot;medicinalproduct&quot;: &quot;YASMIN&quot;,
+              &quot;drugdosagetext&quot;: &quot;UNK&quot;,
+              &quot;drugdosageform&quot;: &quot;FILM-COATED TABLET&quot;,
+              &quot;drugstartdateformat&quot;: &quot;602&quot;,
+              &quot;drugstartdate&quot;: &quot;2005&quot;,
+              &quot;drugenddateformat&quot;: &quot;602&quot;,
+              &quot;drugenddate&quot;: &quot;2005&quot;,
+              &quot;activesubstance&quot;: {
+                &quot;activesubstancename&quot;: &quot;DROSPIRENONE\\ETHINYL ESTRADIOL&quot;
+              },
+              &quot;openfda&quot;: {
+                &quot;application_number&quot;: [
+                  &quot;NDA021098&quot;
+                ],
+                &quot;brand_name&quot;: [
+                  &quot;YASMIN&quot;
+                ],
+                &quot;generic_name&quot;: [
+                  &quot;DROSPIRENONE AND ETHINYL ESTRADIOL&quot;
+                ],
+                &quot;manufacturer_name&quot;: [
+                  &quot;Bayer HealthCare Pharmaceuticals Inc.&quot;
+                ],
+                &quot;product_ndc&quot;: [
+                  &quot;50419-402&quot;
+                ],
+                &quot;product_type&quot;: [
+                  &quot;HUMAN PRESCRIPTION DRUG&quot;
+                ],
+                &quot;rxcui&quot;: [
+                  &quot;284207&quot;,
+                  &quot;748797&quot;,
+                  &quot;748800&quot;,
+                  &quot;748857&quot;
+                ],
+                &quot;spl_id&quot;: [
+                  &quot;0940c8a8-b5cd-4ba6-9fc8-ca4f55ae3973&quot;
+                ],
+                &quot;spl_set_id&quot;: [
+                  &quot;d7ea6a60-5a56-4f81-b206-9b27b7e58875&quot;
+                ],
+                &quot;package_ndc&quot;: [
+                  &quot;50419-402-03&quot;
+                ]
+              }
+            }
+          ],
+          &quot;summary&quot;: {
+            &quot;narrativeincludeclinical&quot;: &quot;CASE EVENT DATE: 200807&quot;
+          }
+        }
+      }
+    ]
+  }
+}
+``
+
+**Comments:** The `.exact` generic names of the drugs were used rather than their brand name
+
+:::{Important}
+Is the boolean logic in the above query: **DROSPIRENONE** AND (**ETHINYL** or **ESTRADIOL**)? This **MUST** be understood.
+:::
+
+
+## [Device 510(k) API queries](https://open.fda.gov/apis/device/510k/example-api-queries/)
+
+1. Search for all records with `advisory_committee` equal to cv.
+
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/device/510k.json?search=advisory_committee:cv&limit=1'>Execute call</a></p>
-<p>Search for all records with openfda.regulation_number equals 868.5895 and return just 1.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&amp;limit=1
+<p>https://api.fda.gov/device/510k.json?search=advisory_committee:cv&amp;limit=1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;https://api.fda.gov/device/510k.json?search=advisory_committee:cv&amp;limit=1&#39;</span><span class="o">&gt;</span><span class="n">Execute</span> <span class="n">call</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+
+<span class="n">Search</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">records</span> <span class="k">with</span> <span class="n">openfda</span><span class="o">.</span><span class="n">regulation_number</span> <span class="n">equals</span> <span class="mf">868.5895</span> <span class="ow">and</span> <span class="k">return</span> <span class="n">just</span> <span class="mf">1.</span>
+
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&limit=1'>Execute call</a></p>
-<ol class="arabic simple" start="2">
-<li><p>Search in the 501K enepoint and count the country code(s):</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/510k.json?count=country_code
+<p>https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&amp;limit=1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&amp;limit=1&#39;</span><span class="o">&gt;</span><span class="n">Execute</span> <span class="n">call</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+
+<span class="mf">2.</span> <span class="n">Search</span> <span class="ow">in</span> <span class="n">the</span> <span class="mi">501</span><span class="n">K</span> <span class="n">enepoint</span> <span class="ow">and</span> <span class="n">count</span> <span class="n">the</span> <span class="n">country</span> <span class="n">code</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/device/510k.json?count=country_code'>Execute call</a></p>
-</section>
-<section id="device-classification-endpoint-examples">
-<h2><a class="reference external" href="https://open.fda.gov/apis/device/classification/example-api-queries/">Device Classification Endpoint Examples</a><a class="headerlink" href="#device-classification-endpoint-examples" title="Permalink to this heading">#</a></h2>
-<p>Search for all records with regulation_number equal to 872.6855</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&amp;limit=1
+<p>https://api.fda.gov/device/510k.json?count=country_code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;https://api.fda.gov/device/510k.json?count=country_code&#39;</span><span class="o">&gt;</span><span class="n">Execute</span> <span class="n">call</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+
+<span class="c1">## [Device Classification Endpoint Examples](https://open.fda.gov/apis/device/classification/example-api-queries/)</span>
+
+<span class="n">Search</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">records</span> <span class="k">with</span> <span class="n">regulation_number</span> <span class="n">equal</span> <span class="n">to</span> <span class="mf">872.6855</span>
+
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1'>Execute call</a></p>
+<p>https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&amp;limit=1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&amp;limit=1&#39;</span><span class="o">&gt;</span><span class="n">Execute</span> <span class="n">call</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -463,8 +898,6 @@ phrases (e.g. injection site reaction) instead of individual words (e.g. injecti
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-these-further-examples">Collect These Further Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-adverse-event-examples">Drug Adverse Event Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-510-k-api-queries">Device 510(k) API queries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-classification-endpoint-examples">Device Classification Endpoint Examples</a></li>
 </ul>
   </nav></div>
 
