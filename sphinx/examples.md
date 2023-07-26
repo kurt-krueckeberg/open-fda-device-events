@@ -90,13 +90,15 @@ https://api.fda.gov/device/classification.json?count=openfda.fei_number
 
 <a href='https://api.fda.gov/device/classification.json?count=openfda.fei_number'>Execute call</a>
 
-6. This search is ambiguous.
+6. This complex search is ambiguous.
 
 ```
 https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
 ```
 
 How does ElasticSearch interpret the search expression: `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")`?
+
+Is there an explanation on openFDA for such a search?
 
 I believe it does "DROSPIRENONE and 'ETHINYL ESTRADIOL'" and not "DROSPIRENONE and ETHINYL or ESTRADIOL". In the latter case, you also need to know how
 precdence of AND and OR and whether the precedence is equaluated left-to-right or right-to-left. 
