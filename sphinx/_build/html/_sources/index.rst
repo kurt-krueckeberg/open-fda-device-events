@@ -17,7 +17,7 @@ Welcome to Open FDA's documentation!
    further-query-syntax.md
    advanced-syntax.md
    issues.md
-   query-examples.md
+   examples.md
    endpoint-device.md
    api-examples.md
    api-syntax-rules.md

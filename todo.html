@@ -130,7 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="further-query-syntax.html">Further Query Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Documentation Issue</a></li>
-<li class="toctree-l1"><a class="reference internal" href="query-examples.html">Query Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Query Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="endpoint-device.html">Device API Endpoint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-syntax-rules.html">API Syntax Rules</a></li>
@@ -426,14 +426,25 @@ adverse device event data for those device I am interested in, as it client-side
 <section id="how-does-count-work">
 <h3>How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work<a class="headerlink" href="#how-does-count-work" title="Permalink to this heading">#</a></h3>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">count:</span></code> Count the number of unique values of a certain field, for all the records that matched the
-search parameter. By default, the API returns the 1000 most frequent values.</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">count:</span></code> Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
+1000 most frequent values.</p>
 </div></blockquote>
-<p>This <code class="docutils literal notranslate"><span class="pre">.count</span></code> example is taken from <a class="reference external" href="https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php">OpenVigil</a>. Select “Custom build openAPI request:” and
-enter:</p>
-<p><code class="docutils literal notranslate"><span class="pre">search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span> <span class="pre">+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])</span> <span class="pre">&amp;count=receivedate&amp;skip=0</span></code></p>
-<p>Counting records where certain terms occur</p>
-<p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p>
+<p><strong>Example 1:</strong>  <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code></p>
+<p>Count <em>unique</em> “report first received” date of this drugs event:</p>
+<ul class="simple">
+<li><p>Where the generic name of the drugs taken were <strong>DROSPIRENONE</strong> and <strong>ETHINYL ESTRADIOL</strong>
+<code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> \</p></li>
+<li><p>Reaction to the above drug combination was (included?) pain
+<code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)</span> </code> \</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0
+</pre></div>
+</div>
+<p><a href='https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute call</a></p>
+<p>The number of matching records <code class="docutils literal notranslate"><span class="pre">16364554</span></code>.</p>
+<p><strong>Comments:</strong> The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> generic names of the drugs were used rather than their brand name</p>
+<p><strong>Example 2:</strong> This query looks in the <code class="docutils literal notranslate"><span class="pre">drug/event.json</span></code> endpoint for the count of the top patient reactions. For each reaction, the number of records that matched is summed, providing
+a useful summary.</p>
 <blockquote>
 <div><p>Search for all records
 Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)</p>

@@ -92,19 +92,31 @@ A: Actual results:
 
 ### How does `count` Work
 
-> `count:` Count the number of unique values of a certain field, for all the records that matched the
-search parameter. By default, the API returns the 1000 most frequent values.
+> `count:` Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
+1000 most frequent values.
 
-This `.count` example is taken from [OpenVigil](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php). Select "Custom build openAPI request:" and
-enter:
+**Example 1:**  `count=receivedate` 
 
-`search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")
-+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])
-&count=receivedate&skip=0`
+Count *unique* "report first received" date of this drugs event:
 
-Counting records where certain terms occur
+-  Where the generic name of the drugs taken were **DROSPIRENONE** and **ETHINYL ESTRADIOL**
+  `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` \
 
-This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.
+- Reaction to the above drug combination was (included?) pain
+  `patient.reaction.reactionmeddrapt.exact:("PAIN") ` \
+
+```
+https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
+```
+
+<a href='https://open.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute call</a>
+
+The number of matching records `16364554`.
+
+**Comments:** The `.exact` generic names of the drugs were used rather than their brand name
+
+**Example 2:** This query looks in the `drug/event.json` endpoint for the count of the top patient reactions. For each reaction, the number of records that matched is summed, providing
+a useful summary.
 
 > Search for all records
 Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
