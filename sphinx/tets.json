@@ -1,0 +1,365 @@
+{
+    "meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "terms": "https://open.fda.gov/terms/",
+        "license": "https://open.fda.gov/license/",
+        "last_updated": "2023-04-27",
+        "results": {
+            "skip": 0,
+            "limit": 1,
+            "total": 12898
+        }
+    },
+    "results": [
+        {
+            "safetyreportversion": "3",
+            "safetyreportid": "10003860",
+            "primarysourcecountry": "US",
+            "occurcountry": "US",
+            "transmissiondateformat": "102",
+            "transmissiondate": "20150720",
+            "reporttype": "1",
+            "serious": "1",
+            "seriousnesshospitalization": "1",
+            "receivedateformat": "102",
+            "receivedate": "20140312",
+            "receiptdateformat": "102",
+            "receiptdate": "20150331",
+            "fulfillexpeditecriteria": "1",
+            "companynumb": "US-BAYER-2014-035493",
+            "duplicate": "1",
+            "reportduplicate": {
+                "duplicatesource": "BAYER",
+                "duplicatenumb": "US-BAYER-2014-035493"
+            },
+            "primarysource": {
+                "reportercountry": "US",
+                "qualification": "5"
+            },
+            "sender": {
+                "sendertype": "2",
+                "senderorganization": "FDA-Public Use"
+            },
+            "receiver": {
+                "receivertype": "6",
+                "receiverorganization": "FDA"
+            },
+            "patient": {
+                "patientonsetage": "25",
+                "patientonsetageunit": "801",
+                "patientagegroup": "5",
+                "patientweight": "49.89",
+                "patientsex": "2",
+                "reaction": [
+                    {
+                        "reactionmeddraversionpt": "18.0",
+                        "reactionmeddrapt": "Injury"
+                    },
+                    {
+                        "reactionmeddraversionpt": "18.0",
+                        "reactionmeddrapt": "General physical health deterioration"
+                    },
+                    {
+                        "reactionmeddraversionpt": "18.0",
+                        "reactionmeddrapt": "Cerebrovascular arteriovenous malformation",
+                        "reactionoutcome": "1"
+                    },
+                    {
+                        "reactionmeddraversionpt": "18.0",
+                        "reactionmeddrapt": "Gastrooesophageal reflux disease"
+                    },
+                    {
+                        "reactionmeddraversionpt": "18.0",
+                        "reactionmeddrapt": "Peripheral artery thrombosis"
+                    },
+                    {
+                        "reactionmeddraversionpt": "18.0",
+                        "reactionmeddrapt": "Pain"
+                    },
+                    {
+                        "reactionmeddraversionpt": "18.0",
+                        "reactionmeddrapt": "Anxiety"
+                    },
+                    {
+                        "reactionmeddraversionpt": "18.0",
+                        "reactionmeddrapt": "Abdominal pain"
+                    },
+                    {
+                        "reactionmeddraversionpt": "18.0",
+                        "reactionmeddrapt": "Emotional distress"
+                    }
+                ],
+                "drug": [
+                    {
+                        "drugcharacterization": "2",
+                        "medicinalproduct": "AMITRIPTYLINE",
+                        "drugstructuredosagenumb": "25",
+                        "drugstructuredosageunit": "003",
+                        "drugdosagetext": "25 MG, ONCE AT NIGHT",
+                        "drugindication": "NECK PAIN",
+                        "activesubstance": {
+                            "activesubstancename": "AMITRIPTYLINE"
+                        }
+                    },
+                    {
+                        "drugcharacterization": "1",
+                        "medicinalproduct": "YAZ",
+                        "drugauthorizationnumb": "021676",
+                        "drugdosagetext": "UNK",
+                        "drugdosageform": "FILM-COATED TABLET",
+                        "drugstartdateformat": "610",
+                        "drugstartdate": "200804",
+                        "drugenddateformat": "610",
+                        "drugenddate": "200807",
+                        "actiondrug": "1",
+                        "activesubstance": {
+                            "activesubstancename": "DROSPIRENONE\\ETHINYL ESTRADIOL"
+                        },
+                        "openfda": {
+                            "application_number": [
+                                "NDA021676"
+                            ],
+                            "brand_name": [
+                                "YAZ"
+                            ],
+                            "generic_name": [
+                                "DROSPIRENONE AND ETHINYL ESTRADIOL"
+                            ],
+                            "manufacturer_name": [
+                                "Bayer HealthCare Pharmaceuticals Inc."
+                            ],
+                            "product_ndc": [
+                                "50419-405"
+                            ],
+                            "product_type": [
+                                "HUMAN PRESCRIPTION DRUG"
+                            ],
+                            "rxcui": [
+                                "630734",
+                                "748797",
+                                "748798",
+                                "748856"
+                            ],
+                            "spl_id": [
+                                "bd3baa73-1d24-49e2-9120-fa7c82f3af90"
+                            ],
+                            "spl_set_id": [
+                                "065f33e4-b587-4e66-b896-ca9ab7b7c876"
+                            ],
+                            "package_ndc": [
+                                "50419-405-03"
+                            ]
+                        }
+                    },
+                    {
+                        "drugcharacterization": "2",
+                        "medicinalproduct": "REOPRO",
+                        "activesubstance": {
+                            "activesubstancename": "ABCIXIMAB"
+                        }
+                    },
+                    {
+                        "drugcharacterization": "2",
+                        "medicinalproduct": "ACIPHEX",
+                        "drugstructuredosagenumb": "20",
+                        "drugstructuredosageunit": "003",
+                        "drugseparatedosagenumb": "2",
+                        "drugintervaldosageunitnumb": "1",
+                        "drugintervaldosagedefinition": "804",
+                        "drugdosagetext": "20 MG, BID",
+                        "drugindication": "GASTROOESOPHAGEAL REFLUX DISEASE",
+                        "activesubstance": {
+                            "activesubstancename": "RABEPRAZOLE SODIUM"
+                        },
+                        "openfda": {
+                            "application_number": [
+                                "NDA020973"
+                            ],
+                            "brand_name": [
+                                "ACIPHEX"
+                            ],
+                            "generic_name": [
+                                "RABEPRAZOLE SODIUM"
+                            ],
+                            "manufacturer_name": [
+                                "Eisai Inc.",
+                                "Woodward Pharma Services LLC"
+                            ],
+                            "product_ndc": [
+                                "62856-243",
+                                "69784-243"
+                            ],
+                            "product_type": [
+                                "HUMAN PRESCRIPTION DRUG"
+                            ],
+                            "route": [
+                                "ORAL"
+                            ],
+                            "substance_name": [
+                                "RABEPRAZOLE SODIUM"
+                            ],
+                            "rxcui": [
+                                "854868",
+                                "854870"
+                            ],
+                            "spl_id": [
+                                "e00fa711-01d4-48ba-9c3a-594fb6abff02",
+                                "be3a78bc-4f9c-473f-bb62-bd1d6920b5ec"
+                            ],
+                            "spl_set_id": [
+                                "5d103551-978f-472a-9c62-51e6e4dea068",
+                                "42282e11-3179-420e-b979-e53dd5bd4b12"
+                            ],
+                            "package_ndc": [
+                                "62856-243-30",
+                                "62856-243-90",
+                                "62856-243-41",
+                                "69784-243-30"
+                            ],
+                            "unii": [
+                                "3L36P16U4R"
+                            ]
+                        }
+                    },
+                    {
+                        "drugcharacterization": "2",
+                        "medicinalproduct": "TOPAMAX",
+                        "drugstructuredosagenumb": "400",
+                        "drugstructuredosageunit": "003",
+                        "drugdosagetext": "400 MG,ONCE IN THE MORNING",
+                        "drugindication": "SEIZURE",
+                        "activesubstance": {
+                            "activesubstancename": "TOPIRAMATE"
+                        },
+                        "openfda": {
+                            "application_number": [
+                                "NDA020505",
+                                "NDA020844"
+                            ],
+                            "brand_name": [
+                                "TOPAMAX"
+                            ],
+                            "generic_name": [
+                                "TOPIRAMATE"
+                            ],
+                            "manufacturer_name": [
+                                "Janssen Pharmaceuticals, Inc."
+                            ],
+                            "product_ndc": [
+                                "50458-639",
+                                "50458-640",
+                                "50458-641",
+                                "50458-642",
+                                "50458-647",
+                                "50458-645"
+                            ],
+                            "product_type": [
+                                "HUMAN PRESCRIPTION DRUG"
+                            ],
+                            "route": [
+                                "ORAL"
+                            ],
+                            "substance_name": [
+                                "TOPIRAMATE"
+                            ],
+                            "rxcui": [
+                                "151226",
+                                "151227",
+                                "151228",
+                                "151229",
+                                "152855",
+                                "199888",
+                                "199889",
+                                "199890",
+                                "205315",
+                                "205316",
+                                "845478",
+                                "845479"
+                            ],
+                            "spl_id": [
+                                "fb80f4b4-14e7-484c-e053-6294a90af892"
+                            ],
+                            "spl_set_id": [
+                                "21628112-0c47-11df-95b3-498d55d89593"
+                            ],
+                            "package_ndc": [
+                                "50458-639-65",
+                                "50458-640-65",
+                                "50458-641-65",
+                                "50458-642-65",
+                                "50458-647-65",
+                                "50458-645-65"
+                            ],
+                            "nui": [
+                                "N0000008486",
+                                "N0000185506",
+                                "N0000182140"
+                            ],
+                            "pharm_class_pe": [
+                                "Decreased Central Nervous System Disorganized Electrical Activity [PE]"
+                            ],
+                            "pharm_class_moa": [
+                                "Cytochrome P450 3A4 Inducers [MoA]",
+                                "Cytochrome P450 2C19 Inhibitors [MoA]"
+                            ],
+                            "unii": [
+                                "0H73WJJ391"
+                            ]
+                        }
+                    },
+                    {
+                        "drugcharacterization": "1",
+                        "medicinalproduct": "YASMIN",
+                        "drugdosagetext": "UNK",
+                        "drugdosageform": "FILM-COATED TABLET",
+                        "drugstartdateformat": "602",
+                        "drugstartdate": "2005",
+                        "drugenddateformat": "602",
+                        "drugenddate": "2005",
+                        "activesubstance": {
+                            "activesubstancename": "DROSPIRENONE\\ETHINYL ESTRADIOL"
+                        },
+                        "openfda": {
+                            "application_number": [
+                                "NDA021098"
+                            ],
+                            "brand_name": [
+                                "YASMIN"
+                            ],
+                            "generic_name": [
+                                "DROSPIRENONE AND ETHINYL ESTRADIOL"
+                            ],
+                            "manufacturer_name": [
+                                "Bayer HealthCare Pharmaceuticals Inc."
+                            ],
+                            "product_ndc": [
+                                "50419-402"
+                            ],
+                            "product_type": [
+                                "HUMAN PRESCRIPTION DRUG"
+                            ],
+                            "rxcui": [
+                                "284207",
+                                "748797",
+                                "748800",
+                                "748857"
+                            ],
+                            "spl_id": [
+                                "0940c8a8-b5cd-4ba6-9fc8-ca4f55ae3973"
+                            ],
+                            "spl_set_id": [
+                                "d7ea6a60-5a56-4f81-b206-9b27b7e58875"
+                            ],
+                            "package_ndc": [
+                                "50419-402-03"
+                            ]
+                        }
+                    }
+                ],
+                "summary": {
+                    "narrativeincludeclinical": "CASE EVENT DATE: 200807"
+                }
+            }
+        }
+    ]
+}
