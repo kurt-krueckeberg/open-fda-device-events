@@ -441,7 +441,7 @@ The results total of two queries below prove this.</p>
 <p>You can interactively get <code class="docutils literal notranslate"><span class="pre">count</span></code> results several <code class="docutils literal notranslate"><span class="pre">device</span></code> event fields at <a class="reference external" href="https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a>.</p>
 </div>
 <p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code></p>
-<p>Count <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> counts the <em>unique</em> “report first received” dates. In this example we count the unique “first received” dates of adverse drug event where:</p>
+<p><code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> will count the <em>unique</em> “report first received” dates; for example, count the unique “first received” dates of adverse drug event where:</p>
 <ul class="simple">
 <li><p>the generic name of the drugs taken were <strong>DROSPIRENONE</strong> and <strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>
 <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> \</p></li>

@@ -116,7 +116,7 @@ You can interactively get `count` results several `device` event fields at [Devi
 
 **Example** `count=receivedate` 
 
-Count `count=receivedate` counts the *unique* "report first received" dates. In this example we count the unique "first received" dates of adverse drug event where:
+`count=receivedate` will count the *unique* "report first received" dates; for example, count the unique "first received" dates of adverse drug event where:
 
 -  the generic name of the drugs taken were **DROSPIRENONE** and **ETHINYL** or **ESTRADIOL**
   `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` \
