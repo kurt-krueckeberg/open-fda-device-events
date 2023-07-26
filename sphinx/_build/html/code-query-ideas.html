@@ -334,6 +334,28 @@ document.write(`
 </pre></div>
 </div>
 <p>&lt;a href=hittps://api.fda.gov/device/event.json?search=device.device_report_product_Code=”LZS”&amp;count:device.mdr_report_key’&gt;Execute call</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code> is unique, anyway, so the use of <code class="docutils literal notranslate"><span class="pre">count</span></code> is only a usage example (but of no practical use).</p>
+<h2 class="rubric" id="general-query-options">General Query Options</h2>
+<ol class="arabic simple">
+<li><p>Searching for a specified date range:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1'>Execute call</a></p>
+<ol class="arabic simple" start="2">
+<li><p>Search for adverse events within a date range. A date range is specified using brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>; for example, to search for all records with date_received between
+Jan 01, 2013 and Dec 31, 2014, and to limit the results to one retuned value:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1</span></code></p>
+<p>See searchable fields for more about <code class="docutils literal notranslate"><span class="pre">date_received</span></code>. Brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> are used to specify a range for date, number, or string fields.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231]&limit=1'>Execute call</a></p>
+</div>
 </section>
 </section>
 

@@ -49,7 +49,7 @@ A: Actual results:
 * - `device.openfda.device_name`
   - "EXCIMER LASER SYSTEM"
 * - `device.openfda.device_class`
-  - 3
+  - "3"
 ```
 
 ```{table} Example 3

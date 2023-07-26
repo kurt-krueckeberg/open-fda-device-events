@@ -38,7 +38,7 @@ https://api.fda.gov/device/event.json?search=date_received:[20130101+TO+20141231
 
 <a href=hittps://api.fda.gov/device/event.json?search=device.device_report_product_Code="LZS"&count:device.mdr_report_key'>Execute call</a>
 
-:::{note{} `mdr_report_key` is unique, anyway, so the use of `count` is only a usage example (but of no practical use).
+:::{note} `mdr_report_key` is unique, anyway, so the use of `count` is only a usage example (but of no practical use).
 ## General Query Options
 
 1. Searching for a specified date range:
