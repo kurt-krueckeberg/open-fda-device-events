@@ -109,7 +109,7 @@ https://api.fda.gov/device/event.json?search=device.device_report_product_code.e
 
 ### Understanding `count`
 
-The definition of the `count` term is:
+The definition of the `count` query parameter is:
 
 > Counts the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
 1000 most frequent values.
@@ -118,23 +118,57 @@ The definition of the `count` term is:
 You can interactively get `count` results several `device` event fields at [Device adverse event reports over time](https://api.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/).
 :::
 
-**Example** `count=receivedate` 
-
-`count=receivedate` will count the *unique* "report first received" dates; for example, count the unique "first received" dates of adverse drug event where:
-
--  the generic name of the drugs taken were **DROSPIRENONE** and **ETHINYL** or **ESTRADIOL**
-  `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` \
-
-- Reaction to the above drug combination was (included?) pain
-  `patient.reaction.reactionmeddrapt.exact:("PAIN") `
+Take this **search example** with `count=receivedate`:
 
 ```
 https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
 ```
 
-<a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute call</a>
+<a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a>
 
-The number of matching records `16364554`.
+Analysis of the query:
+
+`count=receivedate` counts the *unique* "report first received" dates where:
+
+-  the generic name of the drugs taken were **DROSPIRENONE** and **ETHINYL** or **ESTRADIOL**: \
+  `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")`
+
+- the reaction to the above drug combination was (included?) pain: \
+  `patient.reaction.reactionmeddrapt.exact:("PAIN") `
+
+The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is `16364554`.
+
+```json
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2023-04-27"
+  },
+  "results": [
+    {
+      "time": "20040223",
+      "count": 1
+    },
+    {
+      "time": "20040928",
+      "count": 1
+    },
+    {
+      "time": "20050418",
+      "count": 1
+    },
+    {
+      "time": "20050614",
+      "count": 1
+    }
+}
+```
+
+:::{note}
+Only three results are shown above. There are man more.
+:::
 
 **Comments:** The `.exact` generic names of the drugs were used rather than their brand name
 

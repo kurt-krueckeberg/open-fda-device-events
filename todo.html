@@ -432,7 +432,7 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <p><code class="docutils literal notranslate"><span class="pre">meta.results.total</span></code> is 13303 for both queries!</p>
 <section id="understanding-count">
 <h3>Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#understanding-count" title="Permalink to this heading">#</a></h3>
-<p>The definition of the <code class="docutils literal notranslate"><span class="pre">count</span></code> term is:</p>
+<p>The definition of the <code class="docutils literal notranslate"><span class="pre">count</span></code> query parameter is:</p>
 <blockquote>
 <div><p>Counts the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
 1000 most frequent values.</p>
@@ -441,19 +441,51 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <p class="admonition-title">Important</p>
 <p>You can interactively get <code class="docutils literal notranslate"><span class="pre">count</span></code> results several <code class="docutils literal notranslate"><span class="pre">device</span></code> event fields at <a class="reference external" href="https://api.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a>.</p>
 </div>
-<p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> will count the <em>unique</em> “report first received” dates; for example, count the unique “first received” dates of adverse drug event where:</p>
-<ul class="simple">
-<li><p>the generic name of the drugs taken were <strong>DROSPIRENONE</strong> and <strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>
-<code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> \</p></li>
-<li><p>Reaction to the above drug combination was (included?) pain
-<code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)</span> </code></p></li>
-</ul>
+<p>Take this <strong>search example</strong> with <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute call</a></p>
-<p>The number of matching records <code class="docutils literal notranslate"><span class="pre">16364554</span></code>.</p>
+<p><a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a></p>
+<p>Analysis of the query:</p>
+<p><code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> counts the <em>unique</em> “report first received” dates where:</p>
+<ul class="simple">
+<li><p>the generic name of the drugs taken were <strong>DROSPIRENONE</strong> and <strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>: <br />
+<code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code></p></li>
+<li><p>the reaction to the above drug combination was (included?) pain: <br />
+<code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)</span> </code></p></li>
+</ul>
+<p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <code class="docutils literal notranslate"><span class="pre">16364554</span></code>.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;disclaimer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;terms&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/terms/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/license/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;last_updated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-04-27&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20040223&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20040928&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20050418&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20050614&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only three results are shown above. There are man more.</p>
+</div>
 <p><strong>Comments:</strong> The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> generic names of the drugs were used rather than their brand name</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
