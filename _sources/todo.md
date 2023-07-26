@@ -95,7 +95,8 @@ A: Actual results:
 > `count:` Count the number of unique values of a certain field, for all the records that matched the
 search parameter. By default, the API returns the 1000 most frequent values.
 
-This `.count` example is taken from [OpenVigil](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php):
+This `.count` example is taken from [OpenVigil](https://openvigil.pharmacology.uni-kiel.de/openvigilfda.php). Select "Custom build openAPI request:" and
+enter:
 
 `search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")
 +AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])
