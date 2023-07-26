@@ -97,13 +97,15 @@ The results total of two queries below prove this.
 https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS
 ```
 
-<a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a>
+<a href='>Execute query</a>
 
 ```
 https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
 ```
 
 <a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a>
+
+`meta.results.total` is 13303 for both queries!
 
 ### Understanding `count`
 
