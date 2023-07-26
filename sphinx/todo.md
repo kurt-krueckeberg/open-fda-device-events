@@ -13,7 +13,7 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
 
 `device.generice_name` results when `device.product_code=LZS`: 
 
-```{list-table} Example 1 of LZS device product code
+```{list-table} Example 1
 :header-rows: 1 
 :align: left
 :width: 70%
@@ -31,7 +31,7 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
    - "3"
 ```
 
-```{list-table} Example 2 of LZS device product code
+```{list-table} Example 2
 :header-rows: 1
 :width: 70%
 :align: left
@@ -49,7 +49,7 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
   - "3"
 ```
 
-```{list-table} Example 3 of LZS device product code
+```{list-table} Example 3
 :name: example-3
 :width: 70%
 :widths: 2 3
@@ -67,7 +67,7 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
   - 3
 ```
 
-```{list-table} Example 4 of LZS device product code
+```{list-table} Example 4
 :header-rows: 1
 :name: example-4
 :width: 70%
