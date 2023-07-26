@@ -284,8 +284,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-stackexchange-replies">Read stackexchange replies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-questions">Open Questions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-device-event-endpoint-fields">Questions about device/event endpoint fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirically-testing-to-answer-questions">Empirically testing to answer questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-count-work">How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues">Issues</a></li>
@@ -309,13 +310,9 @@ adverse device event data for those device I am interested in, as it client-side
 <h2>Read stackexchange replies<a class="headerlink" href="#read-stackexchange-replies" title="Permalink to this heading">#</a></h2>
 <p>To learn more about the openFDA API read the replies at: <a class="reference external" href="https://opendata.stackexchange.com/questions/tagged/openfda">https://opendata.stackexchange.com/questions/tagged/openfda</a></p>
 </section>
-<section id="open-questions">
-<h2>Open Questions<a class="headerlink" href="#open-questions" title="Permalink to this heading">#</a></h2>
-<section id="questions-about-device-event-endpoint-fields">
-<h3>Questions about device/event endpoint fields<a class="headerlink" href="#questions-about-device-event-endpoint-fields" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Example of <code class="docutils literal notranslate"><span class="pre">device.generice_name</span></code> when <code class="docutils literal notranslate"><span class="pre">device.product_code=LZS</span></code>:</p></li>
-</ol>
+<section id="empirically-testing-to-answer-questions">
+<h2>Empirically testing to answer questions<a class="headerlink" href="#empirically-testing-to-answer-questions" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">device.generice_name</span></code> results when <code class="docutils literal notranslate"><span class="pre">device.product_code=LZS</span></code>:</p>
 <table class="table table-left" id="id1" style="width: 70%">
 <caption><span class="caption-text">Example 1 of LZS device product code</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
 <colgroup>
@@ -422,7 +419,9 @@ adverse device event data for those device I am interested in, as it client-side
 <p class="admonition-title">Attention</p>
 <p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> is an <strong>exact</strong> field that has been indexed both as its <strong>exact string content</strong>,
 and also tokenized. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version is not useful because the device code is precisly a three-letter-long alphabetic string.</p>
-<h3 class="rubric" id="how-does-count-work">How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work</h3>
+</div>
+<section id="how-does-count-work">
+<h3>How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work<a class="headerlink" href="#how-does-count-work" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">count:</span></code> Count the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
 1000 most frequent values.</p>
@@ -448,7 +447,9 @@ a useful summary.</p>
 Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)</p>
 </div></blockquote>
 <p><a class="reference external" href="https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</a></p>
-<h3 class="rubric" id="exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</h3>
+</section>
+<section id="exact-questions">
+<h3><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions<a class="headerlink" href="#exact-questions" title="Permalink to this heading">#</a></h3>
 <p>These comments are from an openFDA team member…</p>
 <p>Some fields also have a second, <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version which can also be searched. A field specified without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix can be search for
 partial, “is contained in” searches. It has been tokenized to allow flexible partial searches, so a query like</p>
@@ -466,7 +467,6 @@ match exactly. <strong>todo:</strong> double check.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> field is exact, and requires the search terms to be in parentheses.</p>
-</div>
 </div>
 <p><strong>todo:</strong></p>
 <ul class="simple">
@@ -550,8 +550,9 @@ queries and save the searched-for field and the unique field to a file. Then sor
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-stackexchange-replies">Read stackexchange replies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-questions">Open Questions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-device-event-endpoint-fields">Questions about device/event endpoint fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirically-testing-to-answer-questions">Empirically testing to answer questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-count-work">How does <code class="docutils literal notranslate"><span class="pre">count</span></code> Work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues">Issues</a></li>

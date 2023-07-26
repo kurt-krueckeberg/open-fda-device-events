@@ -9,11 +9,9 @@ But I'm not sure is graphing libraries like D3.js are server side?
 
 To learn more about the openFDA API read the replies at: [https://opendata.stackexchange.com/questions/tagged/openfda](https://opendata.stackexchange.com/questions/tagged/openfda)
 
-## Open Questions
+## Empirically testing to answer questions
 
-### Questions about device/event endpoint fields
-
-1. Example of `device.generice_name` when `device.product_code=LZS`: 
+`device.generice_name` results when `device.product_code=LZS`: 
 
 ```{list-table} Example 1 of LZS device product code
 :header-rows: 1 
@@ -91,6 +89,7 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
 :::{attention}
 `device.device_report_product_code` is an **exact** field that has been indexed both as its **exact string content**,
 and also tokenized. The `.exact` version is not useful because the device code is precisly a three-letter-long alphabetic string.
+:::
 
 ### How does `count` Work
 
