@@ -415,11 +415,20 @@ adverse device event data for those device I am interested in, as it client-side
 </tr>
 </tbody>
 </table>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>Although <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> is an <strong>exact</strong> field that has been indexed both as its <strong>exact string content</strong>,
-the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version is not useful because the device code currently is precisly a single three-letter-long alphabetic string.</p>
+the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version is not useful because the device code currently is precisly a single three-letter-long alphabetic string. <br />
+The results total of two queries below prove this.</p>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://open.fda.gov/device/event.json?search=device.product_code=LZS
+</pre></div>
+</div>
+<p><a href='https://open.fda.gov/device/event.json?search=device.product_code=LZS'>Execute query</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://open.fda.gov/device/event.json?search=device.product_code.exact=LZS
+</pre></div>
+</div>
+<p><a href='https://open.fda.gov/device/event.json?search=device.product_code.exact=LZS'>Execute query</a></p>
 <section id="understanding-count">
 <h3>Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#understanding-count" title="Permalink to this heading">#</a></h3>
 <p>The definition of the <code class="docutils literal notranslate"><span class="pre">count</span></code> term is:</p>

@@ -86,10 +86,22 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
   - 3
 ```
 
-:::{hint}
+:::{important}
 Although `device.device_report_product_code` is an **exact** field that has been indexed both as its **exact string content**,
-the `.exact` version is not useful because the device code currently is precisly a single three-letter-long alphabetic string.
+the `.exact` version is not useful because the device code currently is precisly a single three-letter-long alphabetic string. \
+The results total of two queries below prove this.
 :::
+
+```
+https://open.fda.gov/device/event.json?search=device.product_code=LZS
+```
+
+<a href='https://open.fda.gov/device/event.json?search=device.product_code=LZS'>Execute query</a>
+```
+https://open.fda.gov/device/event.json?search=device.product_code.exact=LZS
+````
+
+<a href='https://open.fda.gov/device/event.json?search=device.product_code.exact=LZS'>Execute query</a>
 
 ### Understanding `count`
 
