@@ -110,6 +110,8 @@ The definition of the `count` term is:
 > Counts the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
 1000 most frequent values.
 
+You can interactively see the `count` results of many 'device` event fields at [Device adverse event reports over time](https://open.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/).
+
 **Example** `count=receivedate` 
 
 Count `count=receivedate` counts the *unique* "report first received" dates. In this example we count the unique "first received" dates of adverse drug event where:
