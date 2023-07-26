@@ -429,7 +429,7 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 </pre></div>
 </div>
 <p><a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">meta.results.total</span></code> is 13303 for both queries!</p>
+<p><code class="docutils literal notranslate"><span class="pre">meta.results.total</span></code> is <strong>13303</strong> for both queries!</p>
 <section id="understanding-count">
 <h3>Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#understanding-count" title="Permalink to this heading">#</a></h3>
 <p>The definition of the <code class="docutils literal notranslate"><span class="pre">count</span></code> query parameter is:</p>
@@ -446,15 +446,17 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 </pre></div>
 </div>
 <p><a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a></p>
-<p>Analysis of the query:</p>
+<p><strong>Analysis:</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> counts the <em>unique</em> “report first received” dates where:</p>
 <ul class="simple">
 <li><p>the generic name of the drugs taken were <strong>DROSPIRENONE</strong> and <strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>: <br />
 <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code></p></li>
 <li><p>the reaction to the above drug combination was (included?) pain: <br />
-<code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)</span> </code></p></li>
+<code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)</span></code></p></li>
+<li><p>the range of dates (when the report was first received) is from June 29, 1989 to August 11, 2015 <br />
+<code class="docutils literal notranslate"><span class="pre">receivedate:([1989-06-29+TO+2015-08-11])</span></code></p></li>
 </ul>
-<p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <code class="docutils literal notranslate"><span class="pre">16364554</span></code>.</p>
+<p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <strong>16364554</strong>, but the results of the query yield the count of the</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;disclaimer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;</span><span class="p">,</span>

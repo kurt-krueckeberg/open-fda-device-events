@@ -105,7 +105,7 @@ https://api.fda.gov/device/event.json?search=device.device_report_product_code.e
 
 <a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS'>Execute query</a>
 
-`meta.results.total` is 13303 for both queries!
+`meta.results.total` is **13303** for both queries!
 
 ### Understanding `count`
 
@@ -126,7 +126,7 @@ https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exa
 
 <a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a>
 
-Analysis of the query:
+**Analysis:**
 
 `count=receivedate` counts the *unique* "report first received" dates where:
 
@@ -134,9 +134,12 @@ Analysis of the query:
   `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")`
 
 - the reaction to the above drug combination was (included?) pain: \
-  `patient.reaction.reactionmeddrapt.exact:("PAIN") `
+  `patient.reaction.reactionmeddrapt.exact:("PAIN")`
 
-The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is `16364554`.
+ - the range of dates (when the report was first received) is from June 29, 1989 to August 11, 2015 \
+   `receivedate:([1989-06-29+TO+2015-08-11])`  
+
+The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is **16364554**, but the results of the query yield the count of the 
 
 ```json
 {
