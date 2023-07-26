@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Query Examples &#8212; Open FDA API 0.7 documentation</title>
+    <title>Examples &#8212; Open FDA API 0.7 documentation</title>
   
   
   
@@ -131,9 +131,8 @@
 <li class="toctree-l1"><a class="reference internal" href="further-query-syntax.html">Further Query Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Documentation Issue</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Query Examples</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="endpoint-device.html">Device API Endpoint</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api-examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-syntax-rules.html">API Syntax Rules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-adv-ev-fields.html">Device Adverse Events Searchable Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sig-dev-adv-fields.html">Most Important Device Adverse Event Fields</a></li>
@@ -275,7 +274,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Query Examples</h1>
+    <h1>Examples</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -285,10 +284,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-all-search-terms">Matching all search terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-any-search-terms">Matching any search terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-ten-results-in-descending-order">Sort ten results in descending order</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-number-of-unique-matching-records">Count number of unique matching records</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-these-further-examples">Collect These Further Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-adverse-event-examples">Drug Adverse Event Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-510-k-api-queries">Device 510(k) API queries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-classification-endpoint-examples">Device Classification Endpoint Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -300,31 +299,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="query-examples">
-<h1>Query Examples<a class="headerlink" href="#query-examples" title="Permalink to this heading">#</a></h1>
-<section id="matching-all-search-terms">
-<h2>Matching all search terms<a class="headerlink" href="#matching-all-search-terms" title="Permalink to this heading">#</a></h2>
-<p>Search terms can be combined with <strong>AND</strong> to match both search terms or with <strong>+</strong> to match either of two terms. The query below looks in the
-<strong>drug/event</strong> endpoint for a record where <strong>both</strong> fatigue was a reported patient reaction <strong>and</strong> the country in which the event happened
-was Canada:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+AND+occurcountry:&quot;ca&quot;&amp;limit=1</span></code></p>
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h1>
+<section id="collect-these-further-examples">
+<h2>Collect These Further Examples<a class="headerlink" href="#collect-these-further-examples" title="Permalink to this heading">#</a></h2>
+<p>Collect these examples. Note how <code class="docutils literal notranslate"><span class="pre">.exact</span></code> and <code class="docutils literal notranslate"><span class="pre">count</span></code> are used.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://open.fda.gov/apis/device/enforcement/example-api-queries/">https://open.fda.gov/apis/device/enforcement/example-api-queries/</a></p></li>
+<li><p><a class="reference external" href="https://open.fda.gov/apis/device/recall/example-api-queries/">https://open.fda.gov/apis/device/recall/example-api-queries/</a></p></li>
+<li><p><a class="reference external" href="https://open.fda.gov/apis/food/event/example-api-queries/">https://open.fda.gov/apis/food/event/example-api-queries/</a></p></li>
+</ul>
 </section>
-<section id="matching-any-search-terms">
-<h2>Matching any search terms<a class="headerlink" href="#matching-any-search-terms" title="Permalink to this heading">#</a></h2>
-<p>This query looks in the <strong>drug/event</strong> endpoint for a record where <strong>either</strong> fatigue was a reported patient reaction <strong>or</strong> the country in which the event happened was Canada:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+occurcountry:&quot;ca&quot;&amp;limit=1</span></code></p>
-</section>
-<section id="sort-ten-results-in-descending-order">
-<h2>Sort ten results in descending order<a class="headerlink" href="#sort-ten-results-in-descending-order" title="Permalink to this heading">#</a></h2>
-<p>This query looks in the <strong>drug/event</strong> endpoint for ten records and sorts them in descending order by received date:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</span></code></p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Instead of looking at individual records, you can use the <code class="docutils literal notranslate"><span class="pre">count</span></code> parameter to count how often certain terms (like drug names or patient reactions) appear in the matching set of records.</p>
-</div>
-</section>
-<section id="count-number-of-unique-matching-records">
-<h2>Count number of unique matching records<a class="headerlink" href="#count-number-of-unique-matching-records" title="Permalink to this heading">#</a></h2>
+<section id="drug-adverse-event-examples">
+<h2>Drug Adverse Event Examples<a class="headerlink" href="#drug-adverse-event-examples" title="Permalink to this heading">#</a></h2>
+<p>Count number of unique matching records</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p><code class="docutils literal notranslate"><span class="pre">count</span></code> syntax</p></th>
@@ -343,6 +331,83 @@ that matched is summed, providing a useful summary.</p>
 <p>We <code class="docutils literal notranslate"><span class="pre">count</span></code> the number of records matching the terms in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code>. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix here tells the API to count whole
 phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately):</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</span></code></p>
+<p>All <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint <a class="reference external" href="https://open.fda.gov/apis/drug/event/example-api-queries/">examples</a>:</p>
+<ol class="arabic simple">
+<li><p>Search for all records with receivedate between Jan 01, 2004 and Dec 31, 2008. limit to 1 record.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1'>Execute call</a></p>
+<ol class="arabic simple" start="2">
+<li><p>Search for records where the field <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt</span></code> (patient reaction) contains “fatigue” and `occurcountry`` (country where the event happened) was “ca” (the country code for Canada)</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+AND+occurcountry:&quot;ca&quot;&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+AND+occurcountry:"ca"&limit=1'>Execute call</a></p>
+<ol class="arabic simple" start="3">
+<li><p>Search for records where the field <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt``</span> <span class="pre">(patient</span> <span class="pre">reaction)</span> <span class="pre">contains</span> <span class="pre">&quot;fatigue&quot;</span> <span class="pre">or</span> </code>occurcountry`` (country where the event happened) was “ca” (the country code for Canada)</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:&quot;fatigue&quot;+occurcountry:&quot;ca&quot;&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"+occurcountry:"ca"&limit=1'>Execute call</a></p>
+<ol class="arabic simple" start="4">
+<li><p>https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10</p></li>
+</ol>
+<p>This query looks in the <code class="docutils literal notranslate"><span class="pre">drug/event</span></code> endpoint for ten records and sorts them in descending order by received date <code class="docutils literal notranslate"><span class="pre">receivedate</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?sort=receivedate:desc&amp;limit=10
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/drug/event.json?sort=receivedate:desc&limit=10'>Execute call</a  ></p>
+<ol class="arabic simple" start="5">
+<li><p>This query looks in the drug/event endpoint for all records. It then returns a count of the top patient reactions. For each reaction, the number of records that matched is summed, providing a useful summary.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execute it</a></p>
+<p>Search for all records with product_code equals NOB.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/classification.json?search=product_code:NOB&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/classification.json?search=product_code:NOB&limit=1'>Execute call</a></p>
+<p>This query is similar to the prior one, but returns a count of the FEI numbers.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/classification.json?count=openfda.fei_number
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/classification.json?count=openfda.fei_number'>Execute call</a></p>
+</section>
+<section id="device-510-k-api-queries">
+<h2><a class="reference external" href="https://open.fda.gov/apis/device/510k/example-api-queries/">Device 510(k) API queries</a><a class="headerlink" href="#device-510-k-api-queries" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Search for all records with `advisory_committee`` equal to cv.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/510k.json?search=advisory_committee:cv&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/510k.json?search=advisory_committee:cv&limit=1'>Execute call</a></p>
+<p>Search for all records with openfda.regulation_number equals 868.5895 and return just 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/510k.json?search=openfda.regulation_number:868.5895&limit=1'>Execute call</a></p>
+<ol class="arabic simple" start="2">
+<li><p>Search in the 501K enepoint and count the country code(s):</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/510k.json?count=country_code
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/510k.json?count=country_code'>Execute call</a></p>
+</section>
+<section id="device-classification-endpoint-examples">
+<h2><a class="reference external" href="https://open.fda.gov/apis/device/classification/example-api-queries/">Device Classification Endpoint Examples</a><a class="headerlink" href="#device-classification-endpoint-examples" title="Permalink to this heading">#</a></h2>
+<p>Search for all records with regulation_number equal to 872.6855</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&amp;limit=1
+</pre></div>
+</div>
+<p><a href='https://api.fda.gov/device/classification.json?search=regulation_number:872.6855&limit=1'>Execute call</a></p>
 </section>
 </section>
 
@@ -394,10 +459,10 @@ phrases (e.g. injection site reaction) instead of individual words (e.g. injecti
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-all-search-terms">Matching all search terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-any-search-terms">Matching any search terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-ten-results-in-descending-order">Sort ten results in descending order</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-number-of-unique-matching-records">Count number of unique matching records</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-these-further-examples">Collect These Further Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-adverse-event-examples">Drug Adverse Event Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-510-k-api-queries">Device 510(k) API queries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-classification-endpoint-examples">Device Classification Endpoint Examples</a></li>
 </ul>
   </nav></div>
 
