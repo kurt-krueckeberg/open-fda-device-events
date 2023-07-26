@@ -97,7 +97,7 @@ The results total of two queries below prove this.
 https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS
 ```
 
-<a href='>Execute query</a>
+<a href='https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS'>Execute query</a>
 
 ```
 https://api.fda.gov/device/event.json?search=device.device_report_product_code.exact=LZS
