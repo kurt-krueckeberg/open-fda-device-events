@@ -53,7 +53,7 @@ A: Actual results:
   - "3"
 ```
 
-```{list-table} Example 3
+```{list-table} Example 3 of LZS device product code
 :name: example-3
 :width: 70%
 :widths: 2 3
