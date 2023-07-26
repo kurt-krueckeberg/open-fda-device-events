@@ -21,6 +21,7 @@ A: Actual results:
 :header-rows: 1 
 :align: left
 :width: 70%
+:widths: 2 3
 
 *  - Field
    - Value
@@ -36,9 +37,9 @@ A: Actual results:
 
 ```{list-table} Example 2 of LZS device product code
 :header-rows: 1
-:name: example-2
 :width: 70%
 :align: left
+:widths: 2 3
 
 * - Field
   - Value
@@ -52,23 +53,29 @@ A: Actual results:
   - "3"
 ```
 
-```{table} Example 3
+```{list-table} Example 3
 :name: example-3
 :width: 70%
+:widths: 2 3
 :align: left
 
-| Field | Value |
-| ----  | ---------------- 
-`device.brand_name` | "WAVEFRONT LASER"
-`device.generic_name` | "EXCIMER LASER SYSTEM"
-`device.openfda.device_name` | "Excimer Laser System"
-`device.openfda.device_class` | 3
+* - Field
+  - Value
+* - `device.brand_name` 
+  - "WAVEFRONT
+* - `device.generic_name` 
+  - "EXCIMER
+* - `device.openfda.device_name` 
+  - "Excimer
+* - `device.openfda.device_class` 
+  - 3
 ```
 
 ```{list-table} Example 4 of LZS device product code
 :header-rows: 1
 :name: example-4
 :width: 70%
+:widths: 2 3
 :align: left
 
 * - Field
