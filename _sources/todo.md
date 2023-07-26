@@ -13,7 +13,7 @@ To learn more about the openFDA API read the replies at: [https://opendata.stack
 
 ### Questions about device/event endpoint fields
 
-1. What are the values of `device.generice_name` if the `device.product_code`= is **LZS**? Below are actual results:
+1. Example of `device.generice_name` when `device.product_code=LZS`: 
 
 ```{list-table} Example 1 of LZS device product code
 :header-rows: 1 
