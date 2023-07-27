@@ -178,6 +178,10 @@ then only the count results are returned. We can break the query down:
  - the range of dates (when the report was first received) is from June 29, 1989 to August 11, 2015 \
    `receivedate:([1989-06-29+TO+2015-08-11])`  
 
+:::{note}
+With `.exact` searches, AND probably doesn't mean anything if you are searching exact and entire strings. Boolean OR is probably more relevant.
+:::
+
 The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is **16364554**, but
 the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all:
 

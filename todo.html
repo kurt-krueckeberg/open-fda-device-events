@@ -485,6 +485,10 @@ operator. It is part of the string being searched for. In fact, searching for tw
 <li><p>the range of dates (when the report was first received) is from June 29, 1989 to August 11, 2015 <br />
 <code class="docutils literal notranslate"><span class="pre">receivedate:([1989-06-29+TO+2015-08-11])</span></code></p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">.exact</span></code> searches, AND probably doesn’t mean anything if you are searching exact and entire strings. Boolean OR is probably more relevant.</p>
+</div>
 <p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <strong>16364554</strong>, but
 the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
