@@ -289,17 +289,46 @@ document.write(`
   <section id="most-important-device-adverse-event-fields">
 <h1>Most Important Device Adverse Event Fields<a class="headerlink" href="#most-important-device-adverse-event-fields" title="Permalink to this heading">#</a></h1>
 <p>As explained on the previous page, fields denoted <code class="docutils literal notranslate"><span class="pre">.exact</span></code> can be searched for an exact phrase.</p>
-<p>``{csv-table} Significant Device Adverse Event Fields
-:header: &gt;
-:    “Field”, “.exact?”, “Description”,”Significant Value”
-:widths: 19 3 60 18
-:delim: “|”</p>
-<p><code class="docutils literal notranslate"><span class="pre">adverse_event_flag</span></code>|Y|”Whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient:</p>
+<table class="table" id="id3">
+<caption><span class="caption-text">Significant Device Adverse Event Fields</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 19.0%" />
+<col style="width: 3.0%" />
+<col style="width: 60.0%" />
+<col style="width: 18.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>.exact?</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Significant Value</p></th>
+</tr>
+<tr class="row-even"><th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">adverse_event_flag</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Whether the report is about an incident where the use of the device is suspected to have resulted in an adverse outcome in a patient:</p>
 <ul class="simple">
 <li><p>Y means yes it did</p></li>
-<li><p>N means no it did not.”|<code class="docutils literal notranslate"><span class="pre">Y</span></code>
-<code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code>|Y|Three-letter FDA Product Classification|See list of codes in table below.
-<code class="docutils literal notranslate"><span class="pre">source_type</span></code>|Y|”The manufacturer-reported source of the adverse event report. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content and also tokenized. Value is one of:</p></li>
+<li><p>N means no it did not.</p></li>
+</ul>
+</td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Y</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Three-letter FDA Product Classification</p></td>
+<td><p>See list of codes in table below.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>The manufacturer-reported source of the adverse event report. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content and also tokenized. Value is one of:</p>
+<ul class="simple">
 <li><p>Other = Other</p></li>
 <li><p>Foreign = Foreign</p></li>
 <li><p>Study = Study</p></li>
@@ -309,23 +338,58 @@ document.write(`
 <li><p>User facility = User facility</p></li>
 <li><p>Company representation = Company representation</p></li>
 <li><p>Distributor = Distributor</p></li>
-<li><p>Unknown = Unknown”|<code class="docutils literal notranslate"><span class="pre">source_type:consumer</span></code>
-<code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code>|Y|”This is the proprietary name, or trade name, of the cleared device.</p></li>
+<li><p>Unknown = Unknown</p></li>
 </ul>
-<p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.”|
-<code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code>|Y|The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.|<code class="docutils literal notranslate"><span class="pre">device.generic_name:LASIK</span></code> or <code class="docutils literal notranslate"><span class="pre">device.generaic_name:&quot;refractive</span> <span class="pre">surgery</span></code>
-<code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code>|Y|Narrative text or problem description. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span> <span class="pre">field</span></code>.|
-<code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code>|Y|Narrative text or problem description|
-<code class="docutils literal notranslate"><span class="pre">date_report</span></code>|N|Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.|
-<code class="docutils literal notranslate"><span class="pre">report_source_code</span></code>|Y|Source of the adverse event report–Manufact., Voluntary, User Fac., Distributor|<code class="docutils literal notranslate"><span class="pre">Voluntary</span> <span class="pre">report</span></code>
-<code class="docutils literal notranslate"><span class="pre">type_of_report</span></code>|Y|”A string that describes the type of report. This is an .exact field. Value is one of the following:</p>
+</td>
+<td><p><code class="docutils literal notranslate"><span class="pre">source_type:consumer</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device.openfda.device_name</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>This is the proprietary name, or trade name, of the cleared device.</p>
+<p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>The generic or common name of the suspect medical device or a generally descriptive name (e.g. urological catheter, heart pacemaker, patient restraint, etc.).This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device.generic_name:LASIK</span></code> or <code class="docutils literal notranslate"><span class="pre">device.generaic_name:&quot;refractive</span> <span class="pre">surgery</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Narrative text or problem description. This is an <code class="docutils literal notranslate"><span class="pre">.exact</span> <span class="pre">field</span></code>.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.txt</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Narrative text or problem description</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date_report</span></code></p></td>
+<td><p>N</p></td>
+<td><p>Date the initial reporter (whoever initially provided information to the user facility, manufacturer, or importer) provided the information about the event.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">report_source_code</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Source of the adverse event report–Manufact., Voluntary, User Fac., Distributor</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Voluntary</span> <span class="pre">report</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type_of_report</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>A string that describes the type of report. This is an .exact field. Value is one of the following:</p>
 <ul class="simple">
 <li><p>Initial submission = Initial report of an event.</p></li>
 <li><p>Followup = Additional or corrected information.</p></li>
 <li><p>Extra copy received = Documentation forthcoming.</p></li>
-<li><p>Other information submitted = Documentation forthcoming.”|
-<code class="docutils literal notranslate"><span class="pre">event_location</span></code>|Y|”Where the event occurred.</p></li>
+<li><p>Other information submitted = Documentation forthcoming.</p></li>
 </ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">event_location</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>Where the event occurred.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
 <p>Value is one of the following:</p>
 <ul class="simple">
@@ -381,22 +445,39 @@ document.write(`
 <li><p>Unknown = Unknown</p></li>
 <li><p>Not applicable = Not applicable</p></li>
 <li><p>No information = No information</p></li>
-<li><p>Invalid data = Invalid data”|
-<code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code>|Y|a string that acts like a primary and foreign key for joining four file together|nothing
-<code class="docutils literal notranslate"><span class="pre">patient.patient_problems</span></code>|array of strings|”Describes actual adverse effects on the patient that may be related to the device problem observed during the reported event.
-This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.”
-<code class="docutils literal notranslate"><span class="pre">mdr_text.text_type_code</span></code>|string|”String that describes the type of narrative contained within the text field.</p></li>
+<li><p>Invalid data = Invalid data</p></li>
 </ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code></p></td>
+<td><p>Y</p></td>
+<td><p>a string that acts like a primary and foreign key for joining four file together</p></td>
+<td><p>nothing</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">patient.patient_problems</span></code></p></td>
+<td><p>array of strings</p></td>
+<td><p>Describes actual adverse effects on the patient that may be related to the device problem observed during the reported event.
+This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdr_text.text_type_code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>String that describes the type of narrative contained within the text field.</p>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">.exact</span></code> field. It has been indexed both as its exact string content, and also tokenized.</p>
 <p>Value is one of the following:</p>
 <ul class="simple">
 <li><p>Description of Event or Problem = The problem (quality, performance, or safety concern) in sufficient detail so that the circumstances surrounding the defect or malfunction of the medical product can be understood. For patient adverse events, may include a description of the event in detail using the reporter’s own words, including a description of what happened and a summary of all relevant clinical information (medical status prior to the event; signs and/or symptoms; differential diagnosis for the event in question; clinical course; treatment; outcome, etc.). If available and if relevant, may include synopses of any office visit notes or the hospital discharge summary. This section may also contain information about surgical procedures and laboratory tests.</p></li>
 <li><p>Manufacturer Evaluation Summary = If available, the results of any evaluation of a malfunctioning device and, if known, any relevant maintenance/service information should be included in this section.</p></li>
-<li><p>Additional Manufacturer Narrative = Documentation forthcoming.”
-``</p></li>
+<li><p>Additional Manufacturer Narrative = Documentation forthcoming.</p></li>
 </ul>
-<table class="table" id="id3">
-<caption><span class="caption-text">Significant 3-letter codes found in <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="table" id="id4">
+<caption><span class="caption-text">Significant 3-letter codes found in <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code></span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Device Product Codes</p></th>
 <th class="head text-left"><p>Device name</p></th>

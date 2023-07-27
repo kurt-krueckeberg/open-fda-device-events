@@ -2,7 +2,7 @@
 
 As explained on the previous page, fields denoted `.exact` can be searched for an exact phrase.
 
-``{csv-table} Significant Device Adverse Event Fields
+```{csv-table} Significant Device Adverse Event Fields
 :header: >
 :    "Field", ".exact?", "Description","Significant Value" 
 :widths: 19 3 60 18
@@ -109,7 +109,7 @@ Value is one of the following:
 - Description of Event or Problem = The problem (quality, performance, or safety concern) in sufficient detail so that the circumstances surrounding the defect or malfunction of the medical product can be understood. For patient adverse events, may include a description of the event in detail using the reporter’s own words, including a description of what happened and a summary of all relevant clinical information (medical status prior to the event; signs and/or symptoms; differential diagnosis for the event in question; clinical course; treatment; outcome, etc.). If available and if relevant, may include synopses of any office visit notes or the hospital discharge summary. This section may also contain information about surgical procedures and laboratory tests.
 - Manufacturer Evaluation Summary = If available, the results of any evaluation of a malfunctioning device and, if known, any relevant maintenance/service information should be included in this section.
 - Additional Manufacturer Narrative = Documentation forthcoming."
-``
+```
 
 :::{table} Significant 3-letter codes found in `device.device_report_product_code`
 

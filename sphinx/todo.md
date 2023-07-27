@@ -19,7 +19,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
 
 `device.generice_name` results when `device.product_code=LZS`: 
 
-``{list-table} Example 1
+```{list-table} Example 1
 :header-rows: 1 
 :align: left
 :width: 70%
@@ -37,7 +37,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
    - "3"
 ```
 
-``{list-table} Example 2
+```{list-table} Example 2
 :header-rows: 1
 :width: 70%
 :align: left
@@ -55,7 +55,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
   - "3"
 ```
 
-``{list-table} Example 3
+```{list-table} Example 3
 :name: example-3
 :width: 70%
 :widths: 2 3
@@ -73,7 +73,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
   - 3
 ```
 
-``{list-table} Example 4
+```{list-table} Example 4
 :header-rows: 1
 :name: example-4
 :width: 70%
