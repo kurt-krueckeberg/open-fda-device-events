@@ -318,8 +318,8 @@ document.write(`
 <section id="test-queries">
 <h2>Test Queries<a class="headerlink" href="#test-queries" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">device.generic_name</span></code> results when <code class="docutils literal notranslate"><span class="pre">device.product_code=LZS</span></code>:</p>
-<table class="table table-left" id="id1" style="width: 70%">
-<caption><span class="caption-text">Example 1</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<table class="table table-left" id="example-1" style="width: 70%">
+<caption><span class="caption-text">Example 1</span><a class="headerlink" href="#example-1" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 40.0%" />
 <col style="width: 60.0%" />
@@ -344,8 +344,8 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<table class="table table-left" id="id2" style="width: 70%">
-<caption><span class="caption-text">Example 2</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<table class="table table-left" id="example-2" style="width: 70%">
+<caption><span class="caption-text">Example 2</span><a class="headerlink" href="#example-2" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 40.0%" />
 <col style="width: 60.0%" />
@@ -420,12 +420,6 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Although <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> is an <strong>exact</strong> field that has been indexed both as its <strong>exact string content</strong>,
-the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version is not useful because the device code currently is precisly a single three-letter-long alphabetic string.</p>
-<p>The results total of two queries below prove this.</p>
-</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS
 </pre></div>
 </div>
@@ -437,14 +431,14 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <p><code class="docutils literal notranslate"><span class="pre">meta.results.total</span></code> is <strong>13303</strong> for both queries!</p>
 <section id="understanding-count">
 <h3>Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#understanding-count" title="Permalink to this heading">#</a></h3>
-<p>The definition of the <code class="docutils literal notranslate"><span class="pre">count</span></code> query parameter is:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">count</span></code> query parameter:</p>
 <blockquote>
 <div><p>Counts the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
 1000 most frequent values.</p>
 </div></blockquote>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>You can interactively get <code class="docutils literal notranslate"><span class="pre">count</span></code> results several <code class="docutils literal notranslate"><span class="pre">device</span></code> event fields at <a class="reference external" href="https://api.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a>.</p>
+<p>You can interactively get <code class="docutils literal notranslate"><span class="pre">count</span></code> results for several different <code class="docutils literal notranslate"><span class="pre">device</span></code> event fields at <a class="reference external" href="https://api.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/">Device adverse event reports over time</a>.</p>
 </div>
 <p>Take this <strong>search example</strong> with <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0
@@ -459,12 +453,32 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 </div>
 <p><a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execute call</a></p>
 <p>counts “the number of records matching the terms in <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact</span></code>. The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix here tells the API to <strong>count whole phrases</strong>
-(e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)</p>
+(e.g. “injection site reaction”) instead of individual words (e.g. “injection”, “site”, and “reaction” separately)</p>
 <p><a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a></p>
-<p><strong>Analysis:</strong></p>
+<p>In general, a field with an addition <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix version has been indexed as entire phrases. For example, the <code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code> contains the trade or proprietary name of a medical
+device. If, say, the <code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code> is “VISX STAR S4 IR EXCIMER LASER”, but you want to search for any brand name containing “VISX”, you must search using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">search</span><span class="o">=</span><span class="n">device</span><span class="o">.</span><span class="n">brand_name</span><span class="p">:</span><span class="s2">&quot;VISX&quot;</span>
+</pre></div>
+</div>
+<p>This will return over 100 adverse event report results, such as: “VISX STAR4”, “VISX STAR S4 IR EXCIMER LASER” and so on. On the other hand, if you search the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version, you will find only 37
+adverse event reports, each with <code class="docutils literal notranslate"><span class="pre">device.brand_name</span></code> = “VISIX” (and no other strings).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">search</span><span class="o">=</span><span class="n">device</span><span class="o">.</span><span class="n">brand_name</span><span class="o">.</span><span class="n">exact</span><span class="p">:</span><span class="s2">&quot;VISX&quot;</span>
+</pre></div>
+</div>
+<p>Thus, this query</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0
+</pre></div>
+</div>
+<p>is <strong>not</strong> a boolean search of two different generic drug: “DROSPIRENONE” and “ETHINYL ESTRADIOL”. Instead <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact</span></code> is searched for the precise string “DROSPIRENONE AND ETHINYL ESTRADIOL”. <strong>AND</strong> is not a boolean
+operator. It is part of the string being searched for. In fact, searching for two different generic names would not make sense since there is only one.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> is added</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)+AND+patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)+AND+receivedate:([1989-06-29+TO+2015-08-11])&amp;count=receivedate&amp;skip=0
+</pre></div>
+</div>
+<p>then only the count results are returned. We can break the query down:</p>
 <p><code class="docutils literal notranslate"><span class="pre">count=receivedate</span></code> counts the <em>unique</em> “report first received” dates where:</p>
 <ul class="simple">
-<li><p>the generic name of the drugs taken were <strong>DROSPIRENONE</strong> and <strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>: <br />
+<li><p>the generic name of the drug is <strong>DROSPIRENONE and ETHINYL ESTRADIOL</strong>: <br />
 <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code></p></li>
 <li><p>the reaction to the above drug combination was (included?) pain: <br />
 <code class="docutils literal notranslate"><span class="pre">patient.reaction.reactionmeddrapt.exact:(&quot;PAIN&quot;)</span></code></p></li>
@@ -472,7 +486,7 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 <code class="docutils literal notranslate"><span class="pre">receivedate:([1989-06-29+TO+2015-08-11])</span></code></p></li>
 </ul>
 <p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <strong>16364554</strong>, but
-the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.</p>
+the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;disclaimer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;</span><span class="p">,</span>

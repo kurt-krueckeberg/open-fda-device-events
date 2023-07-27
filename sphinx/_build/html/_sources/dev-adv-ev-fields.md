@@ -1,12 +1,5 @@
 # Device Adverse Events Searchable Fields
 
-Fields denoted `.exact` can be searched two ways:
-
-1. Optionally using `AND` or `+` (meaning **OR**).
-2. Appending `.exact` to the field name forces exact phrase matches to be done.
-
-These type of searches are possible for `.exact` fields:
-
 **TODO:**
 
 `device.openfda.device_name` is the proprietary name, or trade name, of the cleared device.

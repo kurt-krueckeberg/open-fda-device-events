@@ -8,7 +8,6 @@ Collect these examples. Note how `.exact` and `count` are used.
 - [https://open.fda.gov/apis/device/recall/example-api-queries/](https://open.fda.gov/apis/device/recall/example-api-queries/)
 - [https://open.fda.gov/apis/food/event/example-api-queries/](https://open.fda.gov/apis/food/event/example-api-queries/)
 
-
 ## Drug Adverse Event Examples
 
 Count number of unique matching records

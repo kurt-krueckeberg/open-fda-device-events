@@ -16,6 +16,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
 
 ```{list-table} Example 1
 :header-rows: 1 
+:name: example-1
 :align: left
 :width: 70%
 :widths: 2 3
@@ -34,6 +35,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
 
 ```{list-table} Example 2
 :header-rows: 1
+:name: example-2
 :width: 70%
 :align: left
 :widths: 2 3
@@ -51,6 +53,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
 ```
 
 ```{list-table} Example 3
+:name: example-3
 :name: example-3
 :width: 70%
 :widths: 2 3
@@ -87,13 +90,6 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
   - 3
 ```
 
-:::{important}
-Although `device.device_report_product_code` is an **exact** field that has been indexed both as its **exact string content**,
-the `.exact` version is not useful because the device code currently is precisly a single three-letter-long alphabetic string.
-
-The results total of two queries below prove this.
-:::
-
 ```
 https://api.fda.gov/device/event.json?search=device.device_report_product_code=LZS
 ```
@@ -110,13 +106,13 @@ https://api.fda.gov/device/event.json?search=device.device_report_product_code.e
 
 ### Understanding `count`
 
-The definition of the `count` query parameter is:
+The `count` query parameter:
 
 > Counts the number of unique values of a certain field, for all the records that matched the search parameter. By default, the API returns the
 1000 most frequent values.
 
 :::{important}
-You can interactively get `count` results several `device` event fields at [Device adverse event reports over time](https://api.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/).
+You can interactively get `count` results for several different `device` event fields at [Device adverse event reports over time](https://api.fda.gov/apis/device/event/explore-the-api-with-an-interactive-chart/).
 :::
 
 Take this **search example** with `count=receivedate`:
@@ -136,15 +132,44 @@ https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exac
 <a href='https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact'>Execute call</a>
 
 counts "the number of records matching the terms in `patient.reaction.reactionmeddrapt.exact`. The `.exact` suffix here tells the API to **count whole phrases**
-(e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
+(e.g. "injection site reaction") instead of individual words (e.g. "injection", "site", and "reaction" separately)
 
 <a href='https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0'>Execute the call</a>
 
-**Analysis:**
+In general, a field with an addition `.exact` suffix version has been indexed as entire phrases. For example, the `device.brand_name` contains the trade or proprietary name of a medical
+device. If, say, the `device.brand_name` is "VISX STAR S4 IR EXCIMER LASER", but you want to search for any brand name containing "VISX", you must search using
+ 
+```
+search=device.brand_name:"VISX"
+```
+
+This will return over 100 adverse event report results, such as: "VISX STAR4", "VISX STAR S4 IR EXCIMER LASER" and so on. On the other hand, if you search the `.exact` version, you will find only 37 
+adverse event reports, each with `device.brand_name` = "VISIX" (and no other strings).
+
+```
+search=device.brand_name.exact:"VISX"
+```
+
+Thus, this query
+
+```
+https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
+```
+
+is **not** a boolean search of two different generic drug: "DROSPIRENONE" and "ETHINYL ESTRADIOL". Instead `patient.drug.openfda.generic_name.exact` is searched for the precise string "DROSPIRENONE AND ETHINYL ESTRADIOL". **AND** is not a boolean
+operator. It is part of the string being searched for. In fact, searching for two different generic names would not make sense since there is only one. 
+
+When `count=receivedate` is added
+
+```
+https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")+AND+patient.reaction.reactionmeddrapt.exact:("PAIN")+AND+receivedate:([1989-06-29+TO+2015-08-11])&count=receivedate&skip=0
+```
+
+then only the count results are returned. We can break the query down:
 
 `count=receivedate` counts the *unique* "report first received" dates where:
 
--  the generic name of the drugs taken were **DROSPIRENONE** and **ETHINYL** or **ESTRADIOL**: \
+-  the generic name of the drug is **DROSPIRENONE and ETHINYL ESTRADIOL**: \
   `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")`
 
 - the reaction to the above drug combination was (included?) pain: \
@@ -154,7 +179,7 @@ counts "the number of records matching the terms in `patient.reaction.reactionme
    `receivedate:([1989-06-29+TO+2015-08-11])`  
 
 The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is **16364554**, but
-the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.
+the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all:
 
 ```json
 {
