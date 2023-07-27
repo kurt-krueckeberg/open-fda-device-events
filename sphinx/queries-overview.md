@@ -20,9 +20,9 @@ Query results are returned as a JSON object with two properties:
 
 2.`results` &mdash; the arrray of matches (for non-counting querires).
 
-:::{hint} Test openFDA queries at `api.fda.gov`
-Queries can be executed online at `https://ap.fda.gov` using their respective endpoints like `https://api.fda.gov/device/event.json?` for the
-Device Adverse Event endpoint.
+:::{important} 
+Unless otherwise specified, the API will return only **one** matching record for a search. You can specify the number of records to be returned by using
+the `limit` parameter. The maximum limit allowed is 1000 for any single API call. If no limit is set, the API will return one matching record.
 :::
 
 The query `https://api.fda.gov/drug/event.json?limit=1` searches the `drug/event` endpoint for a single record (`limit=1`).
@@ -30,7 +30,7 @@ The query `https://api.fda.gov/drug/event.json?limit=1` searches the `drug/event
 The `results` properties in the single record returned contains all kinds of information about the adverse event report,
 including the drugs that the patient was taking, the reactions that the patient experienced, and a good deal of other context:
 
-``json
+```json
 {
   "meta": {
     "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
@@ -93,4 +93,4 @@ including the drugs that the patient was taking, the reactions that the patient 
     }
   ]
 }
-``
+```
