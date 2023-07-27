@@ -194,7 +194,7 @@ the results show the count of of the date when the report was first received acc
 
 If `count=..` is omitted the results (ony the first result is shown below) are:
 
-``json
+```json
 {
     "meta": {
       "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
