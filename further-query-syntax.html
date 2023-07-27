@@ -282,7 +282,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-searches">Boolean Searches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>
@@ -299,14 +302,17 @@ document.write(`
                   
   <section id="further-query-syntax">
 <h1>Further Query Syntax<a class="headerlink" href="#further-query-syntax" title="Permalink to this heading">#</a></h1>
+<section id="boolean-searches">
+<h2>Boolean Searches<a class="headerlink" href="#boolean-searches" title="Permalink to this heading">#</a></h2>
 <section id="boolean-or-searches">
-<h2>Boolean OR Searches<a class="headerlink" href="#boolean-or-searches" title="Permalink to this heading">#</a></h2>
+<h3>Boolean OR Searches<a class="headerlink" href="#boolean-or-searches" title="Permalink to this heading">#</a></h3>
 <p>To search for records that match either of two search terms or two search two or more fields for combined results, use the <code class="docutils literal notranslate"><span class="pre">+</span></code> for logical OR:</p>
 <p>Below we search for two terms in the <code class="docutils literal notranslate"><span class="pre">device.device_report_product_code</span></code> field:</p>
 <p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_code=%22HQF%22+device.device_report_product_code=%22LZS%22">https://api.fda.gov/device/event.json?search=device.device_report_product_code=”HQF”+device.device_report_product_code=”LZS”</a></p>
 <p>You can also search two different fields and return the union of the results of each, i.e.,  a logical OR. Below we query the
 <strong>drug/event</strong> endpoint for a record where either fatigue was a reported patient reaction or the country in which the event happened was Canada.</p>
 <p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:%22fatigue%22+occurcountry:%22ca%22&amp;amp;limit=1">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:”fatigue”+occurcountry:”ca”&amp;limit=1</a></p>
+</section>
 </section>
 <section id="boolean-and-searches">
 <h2>Boolean AND Searches<a class="headerlink" href="#boolean-and-searches" title="Permalink to this heading">#</a></h2>
@@ -372,7 +378,10 @@ is equivalent to <code class="docutils literal notranslate"><span class="pre">se
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-searches">Boolean Searches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or-searches">Boolean OR Searches</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and-searches">Boolean AND Searches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-grouping">Using Grouping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searches-with-vs">Searches with <code class="docutils literal notranslate"><span class="pre">:</span></code> vs <code class="docutils literal notranslate"><span class="pre">=</span></code></a></li>

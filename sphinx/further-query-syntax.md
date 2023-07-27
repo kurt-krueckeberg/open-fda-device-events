@@ -1,6 +1,8 @@
 # Further Query Syntax
 
-## Boolean OR Searches
+## Boolean Searches
+
+### Boolean OR Searches
 
 To search for records that match either of two search terms or two search two or more fields for combined results, use the `+` for logical OR:
 
