@@ -68,7 +68,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
 * - `device.generic_name` 
   - "EXCIMER
 * - `device.openfda.device_name` 
-  - "Excimer
+  - "ExciIMER LASER SYSTEM"
 * - `device.openfda.device_class` 
   - 3
 ```
