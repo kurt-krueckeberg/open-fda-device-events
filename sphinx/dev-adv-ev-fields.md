@@ -41,7 +41,7 @@ The fields categorized as "OpenFDA fields", which begin `device.openfda`, are ha
 
 **openFDA** does not rewrite original records. These additional fields are annotations, in special openfda dictionary of values. 
 
-``{csv-table} Device Adverse Event Searchable Fields
+```{csv-table} Device Adverse Event Searchable Fields
 :header: >
 :    "Section", "Field Name", "Type", "Description"
 :widths: 15, 15, 15, 55
@@ -679,5 +679,5 @@ OpenFDA fields|`device.openfda.medical_specialty_description`|string|"Regulation
 This is an `.exact` field. It has been indexed both as its exact string content, and also tokenized."
 OpenFDA fields|`device.openfda.registration_number`|array of strings|
 OpenFDA fields|`device.openfda.regulation_number`|array of strings|The classification regulation in the Code of Federal Regulations (CFR) under which the device is identified, described, and formally classified (Code of Federal regulations Title 21, 862.00 through 892.00). The classification regulation covers various aspects of design, clinical evaluation, manufacturing, packaging, labeling, and postmarket surveillance of the specific medical device.
-``
+```
 
