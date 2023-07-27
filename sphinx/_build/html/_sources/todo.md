@@ -17,7 +17,7 @@ Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch
 
 ## Test Queries 
 
-`device.generice_name` results when `device.product_code=LZS`: 
+`device.generic_name` results when `device.product_code=LZS`: 
 
 ```{list-table} Example 1
 :header-rows: 1 
