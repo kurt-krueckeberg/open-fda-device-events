@@ -51,9 +51,7 @@ The openFDA API supports searching by range in date, numeric, or string fields.
 
 - Dates are simple to search by via range. For instance, `[2004-01-01+TO+2005-01-01]` will search for records between **Jan 1, 2004** and **Jan 1, 2005**.
 
-:::{note}
-- Add example
-:::
+**TODO:** Add example
 
 ## Missing (or not missing) values
 
