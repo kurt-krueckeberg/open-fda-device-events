@@ -161,7 +161,7 @@ counts "the number of records matching the terms in `patient.reaction.reactionme
 The number of matching records for `patient.drug.openfda.generic_name.exact:("DROSPIRENONE+AND+ETHINYL+ESTRADIOL")` is **16364554**, but
 the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.
 
-``json
+```json
 {
   "meta": {
     "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",

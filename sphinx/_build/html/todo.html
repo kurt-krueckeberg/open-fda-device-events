@@ -287,10 +287,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-queries">Test Queries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-count">Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-and-exact"><code class="docutils literal notranslate"><span class="pre">count</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues">Issues</a></li>
 </ul>
             </nav>
         </div>
@@ -476,483 +474,519 @@ the <code class="docutils literal notranslate"><span class="pre">.exact</span></
 </ul>
 <p>The number of matching records for <code class="docutils literal notranslate"><span class="pre">patient.drug.openfda.generic_name.exact:(&quot;DROSPIRENONE+AND+ETHINYL+ESTRADIOL&quot;)</span></code> is <strong>16364554</strong>, but
 the results show the count of of the date when the report was first received accompanied by the date. Most count values equal 1 but not all.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;disclaimer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;terms&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/terms/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://open.fda.gov/license/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;last_updated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-04-27&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20040223&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20040928&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20050418&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20050614&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;I snipped many results...&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...in order to show a count result other than 1. There are man more results after the value below, too.&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20100630&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">count=..</span></code> is omitted the results (ony the first result is shown below) are:</p>
 <p>``json
 {
 “meta”: {
 “disclaimer”: “Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.”,
 “terms”: “https://open.fda.gov/terms/”,
 “license”: “https://open.fda.gov/license/”,
-“last_updated”: “2023-04-27”
+“last_updated”: “2023-04-27”,
+“results”: {
+“skip”: 0,
+“limit”: 1,
+“total”: 12898
+}
 },
 “results”: [
 {
-“time”: “20040223”,
-“count”: 1
+“safetyreportversion”: “3”,
+“safetyreportid”: “10003860”,
+“primarysourcecountry”: “US”,
+“occurcountry”: “US”,
+“transmissiondateformat”: “102”,
+“transmissiondate”: “20150720”,
+“reporttype”: “1”,
+“serious”: “1”,
+“seriousnesshospitalization”: “1”,
+“receivedateformat”: “102”,
+“receivedate”: “20140312”,
+“receiptdateformat”: “102”,
+“receiptdate”: “20150331”,
+“fulfillexpeditecriteria”: “1”,
+“companynumb”: “US-BAYER-2014-035493”,
+“duplicate”: “1”,
+“reportduplicate”: {
+“duplicatesource”: “BAYER”,
+“duplicatenumb”: “US-BAYER-2014-035493”
+},
+“primarysource”: {
+“reportercountry”: “US”,
+“qualification”: “5”
+},
+“sender”: {
+“sendertype”: “2”,
+“senderorganization”: “FDA-Public Use”
+},
+“receiver”: {
+“receivertype”: “6”,
+“receiverorganization”: “FDA”
+},
+“patient”: {
+“patientonsetage”: “25”,
+“patientonsetageunit”: “801”,
+“patientagegroup”: “5”,
+“patientweight”: “49.89”,
+“patientsex”: “2”,
+“reaction”: [
+{
+“reactionmeddraversionpt”: “18.0”,
+“reactionmeddrapt”: “Injury”
 },
 {
-“time”: “20040928”,
-“count”: 1
+“reactionmeddraversionpt”: “18.0”,
+“reactionmeddrapt”: “General physical health deterioration”
 },
 {
-“time”: “20050418”,
-“count”: 1
+“reactionmeddraversionpt”: “18.0”,
+“reactionmeddrapt”: “Cerebrovascular arteriovenous malformation”,
+“reactionoutcome”: “1”
 },
 {
-“time”: “20050614”,
-“count”: 1
+“reactionmeddraversionpt”: “18.0”,
+“reactionmeddrapt”: “Gastrooesophageal reflux disease”
 },
 {
-“time”: “I snipped many results…”,
-“count”: “…in order to show a count result other than 1. There are man more results after the value below, too.”
+“reactionmeddraversionpt”: “18.0”,
+“reactionmeddrapt”: “Peripheral artery thrombosis”
 },
 {
-“time”: “20100630”,
-“count”: 3
+“reactionmeddraversionpt”: “18.0”,
+“reactionmeddrapt”: “Pain”
 },
+{
+“reactionmeddraversionpt”: “18.0”,
+“reactionmeddrapt”: “Anxiety”
+},
+{
+“reactionmeddraversionpt”: “18.0”,
+“reactionmeddrapt”: “Abdominal pain”
+},
+{
+“reactionmeddraversionpt”: “18.0”,
+“reactionmeddrapt”: “Emotional distress”
+}
+],
+“drug”: [
+{
+“drugcharacterization”: “2”,
+“medicinalproduct”: “AMITRIPTYLINE”,
+“drugstructuredosagenumb”: “25”,
+“drugstructuredosageunit”: “003”,
+“drugdosagetext”: “25 MG, ONCE AT NIGHT”,
+“drugindication”: “NECK PAIN”,
+“activesubstance”: {
+“activesubstancename”: “AMITRIPTYLINE”
+}
+},
+{
+“drugcharacterization”: “1”,
+“medicinalproduct”: “YAZ”,
+“drugauthorizationnumb”: “021676”,
+“drugdosagetext”: “UNK”,
+“drugdosageform”: “FILM-COATED TABLET”,
+“drugstartdateformat”: “610”,
+“drugstartdate”: “200804”,
+“drugenddateformat”: “610”,
+“drugenddate”: “200807”,
+“actiondrug”: “1”,
+“activesubstance”: {
+“activesubstancename”: “DROSPIRENONE\ETHINYL ESTRADIOL”
+},
+“openfda”: {
+“application_number”: [
+“NDA021676”
+],
+“brand_name”: [
+“YAZ”
+],
+“generic_name”: [
+“DROSPIRENONE AND ETHINYL ESTRADIOL”
+],
+“manufacturer_name”: [
+“Bayer HealthCare Pharmaceuticals Inc.”
+],
+“product_ndc”: [
+“50419-405”
+],
+“product_type”: [
+“HUMAN PRESCRIPTION DRUG”
+],
+“rxcui”: [
+“630734”,
+“748797”,
+“748798”,
+“748856”
+],
+“spl_id”: [
+“bd3baa73-1d24-49e2-9120-fa7c82f3af90”
+],
+“spl_set_id”: [
+“065f33e4-b587-4e66-b896-ca9ab7b7c876”
+],
+“package_ndc”: [
+“50419-405-03”
+]
+}
+},
+{
+“drugcharacterization”: “2”,
+“medicinalproduct”: “REOPRO”,
+“activesubstance”: {
+“activesubstancename”: “ABCIXIMAB”
+}
+},
+{
+“drugcharacterization”: “2”,
+“medicinalproduct”: “ACIPHEX”,
+“drugstructuredosagenumb”: “20”,
+“drugstructuredosageunit”: “003”,
+“drugseparatedosagenumb”: “2”,
+“drugintervaldosageunitnumb”: “1”,
+“drugintervaldosagedefinition”: “804”,
+“drugdosagetext”: “20 MG, BID”,
+“drugindication”: “GASTROOESOPHAGEAL REFLUX DISEASE”,
+“activesubstance”: {
+“activesubstancename”: “RABEPRAZOLE SODIUM”
+},
+“openfda”: {
+“application_number”: [
+“NDA020973”
+],
+“brand_name”: [
+“ACIPHEX”
+],
+“generic_name”: [
+“RABEPRAZOLE SODIUM”
+],
+“manufacturer_name”: [
+“Eisai Inc.”,
+“Woodward Pharma Services LLC”
+],
+“product_ndc”: [
+“62856-243”,
+“69784-243”
+],
+“product_type”: [
+“HUMAN PRESCRIPTION DRUG”
+],
+“route”: [
+“ORAL”
+],
+“substance_name”: [
+“RABEPRAZOLE SODIUM”
+],
+“rxcui”: [
+“854868”,
+“854870”
+],
+“spl_id”: [
+“e00fa711-01d4-48ba-9c3a-594fb6abff02”,
+“be3a78bc-4f9c-473f-bb62-bd1d6920b5ec”
+],
+“spl_set_id”: [
+“5d103551-978f-472a-9c62-51e6e4dea068”,
+“42282e11-3179-420e-b979-e53dd5bd4b12”
+],
+“package_ndc”: [
+“62856-243-30”,
+“62856-243-90”,
+“62856-243-41”,
+“69784-243-30”
+],
+“unii”: [
+“3L36P16U4R”
+]
+}
+},
+{
+“drugcharacterization”: “2”,
+“medicinalproduct”: “TOPAMAX”,
+“drugstructuredosagenumb”: “400”,
+“drugstructuredosageunit”: “003”,
+“drugdosagetext”: “400 MG,ONCE IN THE MORNING”,
+“drugindication”: “SEIZURE”,
+“activesubstance”: {
+“activesubstancename”: “TOPIRAMATE”
+},
+“openfda”: {
+“application_number”: [
+“NDA020505”,
+“NDA020844”
+],
+“brand_name”: [
+“TOPAMAX”
+],
+“generic_name”: [
+“TOPIRAMATE”
+],
+“manufacturer_name”: [
+“Janssen Pharmaceuticals, Inc.”
+],
+“product_ndc”: [
+“50458-639”,
+“50458-640”,
+“50458-641”,
+“50458-642”,
+“50458-647”,
+“50458-645”
+],
+“product_type”: [
+“HUMAN PRESCRIPTION DRUG”
+],
+“route”: [
+“ORAL”
+],
+“substance_name”: [
+“TOPIRAMATE”
+],
+“rxcui”: [
+“151226”,
+“151227”,
+“151228”,
+“151229”,
+“152855”,
+“199888”,
+“199889”,
+“199890”,
+“205315”,
+“205316”,
+“845478”,
+“845479”
+],
+“spl_id”: [
+“fb80f4b4-14e7-484c-e053-6294a90af892”
+],
+“spl_set_id”: [
+“21628112-0c47-11df-95b3-498d55d89593”
+],
+“package_ndc”: [
+“50458-639-65”,
+“50458-640-65”,
+“50458-641-65”,
+“50458-642-65”,
+“50458-647-65”,
+“50458-645-65”
+],
+“nui”: [
+“N0000008486”,
+“N0000185506”,
+“N0000182140”
+],
+“pharm_class_pe”: [
+“Decreased Central Nervous System Disorganized Electrical Activity [PE]”
+],
+“pharm_class_moa”: [
+“Cytochrome P450 3A4 Inducers [MoA]”,
+“Cytochrome P450 2C19 Inhibitors [MoA]”
+],
+“unii”: [
+“0H73WJJ391”
+]
+}
+},
+{
+“drugcharacterization”: “1”,
+“medicinalproduct”: “YASMIN”,
+“drugdosagetext”: “UNK”,
+“drugdosageform”: “FILM-COATED TABLET”,
+“drugstartdateformat”: “602”,
+“drugstartdate”: “2005”,
+“drugenddateformat”: “602”,
+“drugenddate”: “2005”,
+“activesubstance”: {
+“activesubstancename”: “DROSPIRENONE\ETHINYL ESTRADIOL”
+},
+“openfda”: {
+“application_number”: [
+“NDA021098”
+],
+“brand_name”: [
+“YASMIN”
+],
+“generic_name”: [
+“DROSPIRENONE AND ETHINYL ESTRADIOL”
+],
+“manufacturer_name”: [
+“Bayer HealthCare Pharmaceuticals Inc.”
+],
+“product_ndc”: [
+“50419-402”
+],
+“product_type”: [
+“HUMAN PRESCRIPTION DRUG”
+],
+“rxcui”: [
+“284207”,
+“748797”,
+“748800”,
+“748857”
+],
+“spl_id”: [
+“0940c8a8-b5cd-4ba6-9fc8-ca4f55ae3973”
+],
+“spl_set_id”: [
+“d7ea6a60-5a56-4f81-b206-9b27b7e58875”
+],
+“package_ndc”: [
+“50419-402-03”
+]
+}
+}
+],
+“summary”: {
+“narrativeincludeclinical”: “CASE EVENT DATE: 200807”
+}
+}
+}
+]
+}
 }</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-If `count=..` is omitted the results (ony the first result is shown below) are:
+**Comments:** The `.exact` generic names of the drugs were used rather than their brand name
 
-``json
-{
-    &quot;meta&quot;: {
-      &quot;disclaimer&quot;: &quot;Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.&quot;,
-      &quot;terms&quot;: &quot;https://open.fda.gov/terms/&quot;,
-      &quot;license&quot;: &quot;https://open.fda.gov/license/&quot;,
-      &quot;last_updated&quot;: &quot;2023-04-27&quot;,
-      &quot;results&quot;: {
-        &quot;skip&quot;: 0,
-        &quot;limit&quot;: 1,
-        &quot;total&quot;: 12898
-      }
-    },
-    &quot;results&quot;: [
-      {
-        &quot;safetyreportversion&quot;: &quot;3&quot;,
-        &quot;safetyreportid&quot;: &quot;10003860&quot;,
-        &quot;primarysourcecountry&quot;: &quot;US&quot;,
-        &quot;occurcountry&quot;: &quot;US&quot;,
-        &quot;transmissiondateformat&quot;: &quot;102&quot;,
-        &quot;transmissiondate&quot;: &quot;20150720&quot;,
-        &quot;reporttype&quot;: &quot;1&quot;,
-        &quot;serious&quot;: &quot;1&quot;,
-        &quot;seriousnesshospitalization&quot;: &quot;1&quot;,
-        &quot;receivedateformat&quot;: &quot;102&quot;,
-        &quot;receivedate&quot;: &quot;20140312&quot;,
-        &quot;receiptdateformat&quot;: &quot;102&quot;,
-        &quot;receiptdate&quot;: &quot;20150331&quot;,
-        &quot;fulfillexpeditecriteria&quot;: &quot;1&quot;,
-        &quot;companynumb&quot;: &quot;US-BAYER-2014-035493&quot;,
-        &quot;duplicate&quot;: &quot;1&quot;,
-        &quot;reportduplicate&quot;: {
-          &quot;duplicatesource&quot;: &quot;BAYER&quot;,
-          &quot;duplicatenumb&quot;: &quot;US-BAYER-2014-035493&quot;
-        },
-        &quot;primarysource&quot;: {
-          &quot;reportercountry&quot;: &quot;US&quot;,
-          &quot;qualification&quot;: &quot;5&quot;
-        },
-        &quot;sender&quot;: {
-          &quot;sendertype&quot;: &quot;2&quot;,
-          &quot;senderorganization&quot;: &quot;FDA-Public Use&quot;
-        },
-        &quot;receiver&quot;: {
-          &quot;receivertype&quot;: &quot;6&quot;,
-          &quot;receiverorganization&quot;: &quot;FDA&quot;
-        },
-        &quot;patient&quot;: {
-          &quot;patientonsetage&quot;: &quot;25&quot;,
-          &quot;patientonsetageunit&quot;: &quot;801&quot;,
-          &quot;patientagegroup&quot;: &quot;5&quot;,
-          &quot;patientweight&quot;: &quot;49.89&quot;,
-          &quot;patientsex&quot;: &quot;2&quot;,
-          &quot;reaction&quot;: [
-            {
-              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
-              &quot;reactionmeddrapt&quot;: &quot;Injury&quot;
-            },
-            {
-              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
-              &quot;reactionmeddrapt&quot;: &quot;General physical health deterioration&quot;
-            },
-            {
-              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
-              &quot;reactionmeddrapt&quot;: &quot;Cerebrovascular arteriovenous malformation&quot;,
-              &quot;reactionoutcome&quot;: &quot;1&quot;
-            },
-            {
-              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
-              &quot;reactionmeddrapt&quot;: &quot;Gastrooesophageal reflux disease&quot;
-            },
-            {
-              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
-              &quot;reactionmeddrapt&quot;: &quot;Peripheral artery thrombosis&quot;
-            },
-            {
-              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
-              &quot;reactionmeddrapt&quot;: &quot;Pain&quot;
-            },
-            {
-              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
-              &quot;reactionmeddrapt&quot;: &quot;Anxiety&quot;
-            },
-            {
-              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
-              &quot;reactionmeddrapt&quot;: &quot;Abdominal pain&quot;
-            },
-            {
-              &quot;reactionmeddraversionpt&quot;: &quot;18.0&quot;,
-              &quot;reactionmeddrapt&quot;: &quot;Emotional distress&quot;
-            }
-          ],
-          &quot;drug&quot;: [
-            {
-              &quot;drugcharacterization&quot;: &quot;2&quot;,
-              &quot;medicinalproduct&quot;: &quot;AMITRIPTYLINE&quot;,
-              &quot;drugstructuredosagenumb&quot;: &quot;25&quot;,
-              &quot;drugstructuredosageunit&quot;: &quot;003&quot;,
-              &quot;drugdosagetext&quot;: &quot;25 MG, ONCE AT NIGHT&quot;,
-              &quot;drugindication&quot;: &quot;NECK PAIN&quot;,
-              &quot;activesubstance&quot;: {
-                &quot;activesubstancename&quot;: &quot;AMITRIPTYLINE&quot;
-              }
-            },
-            {
-              &quot;drugcharacterization&quot;: &quot;1&quot;,
-              &quot;medicinalproduct&quot;: &quot;YAZ&quot;,
-              &quot;drugauthorizationnumb&quot;: &quot;021676&quot;,
-              &quot;drugdosagetext&quot;: &quot;UNK&quot;,
-              &quot;drugdosageform&quot;: &quot;FILM-COATED TABLET&quot;,
-              &quot;drugstartdateformat&quot;: &quot;610&quot;,
-              &quot;drugstartdate&quot;: &quot;200804&quot;,
-              &quot;drugenddateformat&quot;: &quot;610&quot;,
-              &quot;drugenddate&quot;: &quot;200807&quot;,
-              &quot;actiondrug&quot;: &quot;1&quot;,
-              &quot;activesubstance&quot;: {
-                &quot;activesubstancename&quot;: &quot;DROSPIRENONE\\ETHINYL ESTRADIOL&quot;
-              },
-              &quot;openfda&quot;: {
-                &quot;application_number&quot;: [
-                  &quot;NDA021676&quot;
-                ],
-                &quot;brand_name&quot;: [
-                  &quot;YAZ&quot;
-                ],
-                &quot;generic_name&quot;: [
-                  &quot;DROSPIRENONE AND ETHINYL ESTRADIOL&quot;
-                ],
-                &quot;manufacturer_name&quot;: [
-                  &quot;Bayer HealthCare Pharmaceuticals Inc.&quot;
-                ],
-                &quot;product_ndc&quot;: [
-                  &quot;50419-405&quot;
-                ],
-                &quot;product_type&quot;: [
-                  &quot;HUMAN PRESCRIPTION DRUG&quot;
-                ],
-                &quot;rxcui&quot;: [
-                  &quot;630734&quot;,
-                  &quot;748797&quot;,
-                  &quot;748798&quot;,
-                  &quot;748856&quot;
-                ],
-                &quot;spl_id&quot;: [
-                  &quot;bd3baa73-1d24-49e2-9120-fa7c82f3af90&quot;
-                ],
-                &quot;spl_set_id&quot;: [
-                  &quot;065f33e4-b587-4e66-b896-ca9ab7b7c876&quot;
-                ],
-                &quot;package_ndc&quot;: [
-                  &quot;50419-405-03&quot;
-                ]
-              }
-            },
-            {
-              &quot;drugcharacterization&quot;: &quot;2&quot;,
-              &quot;medicinalproduct&quot;: &quot;REOPRO&quot;,
-              &quot;activesubstance&quot;: {
-                &quot;activesubstancename&quot;: &quot;ABCIXIMAB&quot;
-              }
-            },
-            {
-              &quot;drugcharacterization&quot;: &quot;2&quot;,
-              &quot;medicinalproduct&quot;: &quot;ACIPHEX&quot;,
-              &quot;drugstructuredosagenumb&quot;: &quot;20&quot;,
-              &quot;drugstructuredosageunit&quot;: &quot;003&quot;,
-              &quot;drugseparatedosagenumb&quot;: &quot;2&quot;,
-              &quot;drugintervaldosageunitnumb&quot;: &quot;1&quot;,
-              &quot;drugintervaldosagedefinition&quot;: &quot;804&quot;,
-              &quot;drugdosagetext&quot;: &quot;20 MG, BID&quot;,
-              &quot;drugindication&quot;: &quot;GASTROOESOPHAGEAL REFLUX DISEASE&quot;,
-              &quot;activesubstance&quot;: {
-                &quot;activesubstancename&quot;: &quot;RABEPRAZOLE SODIUM&quot;
-              },
-              &quot;openfda&quot;: {
-                &quot;application_number&quot;: [
-                  &quot;NDA020973&quot;
-                ],
-                &quot;brand_name&quot;: [
-                  &quot;ACIPHEX&quot;
-                ],
-                &quot;generic_name&quot;: [
-                  &quot;RABEPRAZOLE SODIUM&quot;
-                ],
-                &quot;manufacturer_name&quot;: [
-                  &quot;Eisai Inc.&quot;,
-                  &quot;Woodward Pharma Services LLC&quot;
-                ],
-                &quot;product_ndc&quot;: [
-                  &quot;62856-243&quot;,
-                  &quot;69784-243&quot;
-                ],
-                &quot;product_type&quot;: [
-                  &quot;HUMAN PRESCRIPTION DRUG&quot;
-                ],
-                &quot;route&quot;: [
-                  &quot;ORAL&quot;
-                ],
-                &quot;substance_name&quot;: [
-                  &quot;RABEPRAZOLE SODIUM&quot;
-                ],
-                &quot;rxcui&quot;: [
-                  &quot;854868&quot;,
-                  &quot;854870&quot;
-                ],
-                &quot;spl_id&quot;: [
-                  &quot;e00fa711-01d4-48ba-9c3a-594fb6abff02&quot;,
-                  &quot;be3a78bc-4f9c-473f-bb62-bd1d6920b5ec&quot;
-                ],
-                &quot;spl_set_id&quot;: [
-                  &quot;5d103551-978f-472a-9c62-51e6e4dea068&quot;,
-                  &quot;42282e11-3179-420e-b979-e53dd5bd4b12&quot;
-                ],
-                &quot;package_ndc&quot;: [
-                  &quot;62856-243-30&quot;,
-                  &quot;62856-243-90&quot;,
-                  &quot;62856-243-41&quot;,
-                  &quot;69784-243-30&quot;
-                ],
-                &quot;unii&quot;: [
-                  &quot;3L36P16U4R&quot;
-                ]
-              }
-            },
-            {
-              &quot;drugcharacterization&quot;: &quot;2&quot;,
-              &quot;medicinalproduct&quot;: &quot;TOPAMAX&quot;,
-              &quot;drugstructuredosagenumb&quot;: &quot;400&quot;,
-              &quot;drugstructuredosageunit&quot;: &quot;003&quot;,
-              &quot;drugdosagetext&quot;: &quot;400 MG,ONCE IN THE MORNING&quot;,
-              &quot;drugindication&quot;: &quot;SEIZURE&quot;,
-              &quot;activesubstance&quot;: {
-                &quot;activesubstancename&quot;: &quot;TOPIRAMATE&quot;
-              },
-              &quot;openfda&quot;: {
-                &quot;application_number&quot;: [
-                  &quot;NDA020505&quot;,
-                  &quot;NDA020844&quot;
-                ],
-                &quot;brand_name&quot;: [
-                  &quot;TOPAMAX&quot;
-                ],
-                &quot;generic_name&quot;: [
-                  &quot;TOPIRAMATE&quot;
-                ],
-                &quot;manufacturer_name&quot;: [
-                  &quot;Janssen Pharmaceuticals, Inc.&quot;
-                ],
-                &quot;product_ndc&quot;: [
-                  &quot;50458-639&quot;,
-                  &quot;50458-640&quot;,
-                  &quot;50458-641&quot;,
-                  &quot;50458-642&quot;,
-                  &quot;50458-647&quot;,
-                  &quot;50458-645&quot;
-                ],
-                &quot;product_type&quot;: [
-                  &quot;HUMAN PRESCRIPTION DRUG&quot;
-                ],
-                &quot;route&quot;: [
-                  &quot;ORAL&quot;
-                ],
-                &quot;substance_name&quot;: [
-                  &quot;TOPIRAMATE&quot;
-                ],
-                &quot;rxcui&quot;: [
-                  &quot;151226&quot;,
-                  &quot;151227&quot;,
-                  &quot;151228&quot;,
-                  &quot;151229&quot;,
-                  &quot;152855&quot;,
-                  &quot;199888&quot;,
-                  &quot;199889&quot;,
-                  &quot;199890&quot;,
-                  &quot;205315&quot;,
-                  &quot;205316&quot;,
-                  &quot;845478&quot;,
-                  &quot;845479&quot;
-                ],
-                &quot;spl_id&quot;: [
-                  &quot;fb80f4b4-14e7-484c-e053-6294a90af892&quot;
-                ],
-                &quot;spl_set_id&quot;: [
-                  &quot;21628112-0c47-11df-95b3-498d55d89593&quot;
-                ],
-                &quot;package_ndc&quot;: [
-                  &quot;50458-639-65&quot;,
-                  &quot;50458-640-65&quot;,
-                  &quot;50458-641-65&quot;,
-                  &quot;50458-642-65&quot;,
-                  &quot;50458-647-65&quot;,
-                  &quot;50458-645-65&quot;
-                ],
-                &quot;nui&quot;: [
-                  &quot;N0000008486&quot;,
-                  &quot;N0000185506&quot;,
-                  &quot;N0000182140&quot;
-                ],
-                &quot;pharm_class_pe&quot;: [
-                  &quot;Decreased Central Nervous System Disorganized Electrical Activity [PE]&quot;
-                ],
-                &quot;pharm_class_moa&quot;: [
-                  &quot;Cytochrome P450 3A4 Inducers [MoA]&quot;,
-                  &quot;Cytochrome P450 2C19 Inhibitors [MoA]&quot;
-                ],
-                &quot;unii&quot;: [
-                  &quot;0H73WJJ391&quot;
-                ]
-              }
-            },
-            {
-              &quot;drugcharacterization&quot;: &quot;1&quot;,
-              &quot;medicinalproduct&quot;: &quot;YASMIN&quot;,
-              &quot;drugdosagetext&quot;: &quot;UNK&quot;,
-              &quot;drugdosageform&quot;: &quot;FILM-COATED TABLET&quot;,
-              &quot;drugstartdateformat&quot;: &quot;602&quot;,
-              &quot;drugstartdate&quot;: &quot;2005&quot;,
-              &quot;drugenddateformat&quot;: &quot;602&quot;,
-              &quot;drugenddate&quot;: &quot;2005&quot;,
-              &quot;activesubstance&quot;: {
-                &quot;activesubstancename&quot;: &quot;DROSPIRENONE\\ETHINYL ESTRADIOL&quot;
-              },
-              &quot;openfda&quot;: {
-                &quot;application_number&quot;: [
-                  &quot;NDA021098&quot;
-                ],
-                &quot;brand_name&quot;: [
-                  &quot;YASMIN&quot;
-                ],
-                &quot;generic_name&quot;: [
-                  &quot;DROSPIRENONE AND ETHINYL ESTRADIOL&quot;
-                ],
-                &quot;manufacturer_name&quot;: [
-                  &quot;Bayer HealthCare Pharmaceuticals Inc.&quot;
-                ],
-                &quot;product_ndc&quot;: [
-                  &quot;50419-402&quot;
-                ],
-                &quot;product_type&quot;: [
-                  &quot;HUMAN PRESCRIPTION DRUG&quot;
-                ],
-                &quot;rxcui&quot;: [
-                  &quot;284207&quot;,
-                  &quot;748797&quot;,
-                  &quot;748800&quot;,
-                  &quot;748857&quot;
-                ],
-                &quot;spl_id&quot;: [
-                  &quot;0940c8a8-b5cd-4ba6-9fc8-ca4f55ae3973&quot;
-                ],
-                &quot;spl_set_id&quot;: [
-                  &quot;d7ea6a60-5a56-4f81-b206-9b27b7e58875&quot;
-                ],
-                &quot;package_ndc&quot;: [
-                  &quot;50419-402-03&quot;
-                ]
-              }
-            }
-          ],
-          &quot;summary&quot;: {
-            &quot;narrativeincludeclinical&quot;: &quot;CASE EVENT DATE: 200807&quot;
-          }
-        }
-      }
-    ]
-  }
-}
+:::{Important}
+Is the boolean logic in the above query: **DROSPIRENONE** AND (**ETHINYL** or **ESTRADIOL**)? This **MUST** be understood.
+:::
+
+**Example 2:** This query looks in the `drug/event.json` endpoint for the count of the top patient reactions. For each reaction, the number of records that matched is summed, providing
+a useful summary.
+
+&gt; Search for all records
+Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)
+
+[https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact](https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact)
+
+### `.exact` questions
+
+These comments are from an openFDA team member...
+
+Some fields also have a second, `.exact` version which can also be searched. A field specified without the `.exact` suffix can be search for
+partial, &quot;is contained in&quot; searches. It has been tokenized to allow flexible partial searches, so a query like 
+
+`https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000`
+
+will return all drugs that contain &quot;Advil&quot; within their brand name, such as &quot;CHILDRENS ADVIL&quot;, &quot;ADVIL MIGRAINE&quot;, and so on.
+
+`brand_name` also has a `.exact`-suffix version. It too can be search for &quot;Advil&quot;:
+
+`https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000`
+
+You will now see fewer results. Each result will have (exactly--right?) &quot;Advil&quot; as its `brand_name` (nothing more and nothing less--right?). Exact match must
+match exactly. **todo:** double check.
+
+Here is another example taken from openfda.stackexchagne.com. It is a search looks for reports that may have been labeled with the incorrect product code:
+
 </pre></div>
 </div>
-<p><strong>Comments:</strong> The <code class="docutils literal notranslate"><span class="pre">.exact</span></code> generic names of the drugs were used rather than their brand name</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Is the boolean logic in the above query: <strong>DROSPIRENONE</strong> AND (<strong>ETHINYL</strong> or <strong>ESTRADIOL</strong>)? This <strong>MUST</strong> be understood.</p>
-</div>
-<p><strong>Example 2:</strong> This query looks in the <code class="docutils literal notranslate"><span class="pre">drug/event.json</span></code> endpoint for the count of the top patient reactions. For each reaction, the number of records that matched is summed, providing
-a useful summary.</p>
-<blockquote>
-<div><p>Search for all records
-Count the number of records matching the terms in patient.reaction.reactionmeddrapt.exact. The .exact suffix here tells the API to count whole phrases (e.g. injection site reaction) instead of individual words (e.g. injection, site, and reaction separately)</p>
-</div></blockquote>
-<p><a class="reference external" href="https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</a></p>
-</section>
-<section id="exact-questions">
-<h3><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions<a class="headerlink" href="#exact-questions" title="Permalink to this heading">#</a></h3>
-<p>These comments are from an openFDA team member…</p>
-<p>Some fields also have a second, <code class="docutils literal notranslate"><span class="pre">.exact</span></code> version which can also be searched. A field specified without the <code class="docutils literal notranslate"><span class="pre">.exact</span></code> suffix can be search for
-partial, “is contained in” searches. It has been tokenized to allow flexible partial searches, so a query like</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/ndc.json?search=brand_name:Advil&amp;limit=1000</span></code></p>
-<p>will return all drugs that contain “Advil” within their brand name, such as “CHILDRENS ADVIL”, “ADVIL MIGRAINE”, and so on.</p>
-<p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> also has a <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix version. It too can be search for “Advil”:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://api.fda.gov/drug/ndc.json?search=brand_name.exact:Advil&amp;limit=1000</span></code></p>
-<p>You will now see fewer results. Each result will have (exactly–right?) “Advil” as its <code class="docutils literal notranslate"><span class="pre">brand_name</span></code> (nothing more and nothing less–right?). Exact match must
-match exactly. <strong>todo:</strong> double check.</p>
-<p>Here is another example taken from openfda.stackexchagne.com. It is a search looks for reports that may have been labeled with the incorrect product code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(&quot;needle&quot;+AND+(&quot;transseptal&quot;+&quot;brockenbrough&quot;+&quot;brk&quot;)))&amp;limit=100&amp;skip=0&quot;&gt;https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(&quot;needle&quot;+AND+(&quot;transseptal&quot;+&quot;brockenbrough&quot;+&quot;brk&quot;)))&amp;limit=100&amp;skip=0
+<p>https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(“needle”+AND+(“transseptal”+”brockenbrough”+”brk”)))&amp;limit=100&amp;skip=0”&gt;https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(“needle”+AND+(“transseptal”+”brockenbrough”+”brk”)))&amp;limit=100&amp;skip=0</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+&lt;a href=&#39;https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:(&quot;needle&quot;+AND+(&quot;transseptal&quot;+&quot;brockenbrough&quot;+&quot;brk&quot;)))&amp;limit=100&amp;skip=0&#39;&gt;Execute query above&lt;/a&gt;
+
+:::{note}
+`brand_name` field is exact, and requires the search terms to be in parentheses. 
+:::
+
+**todo:**
+
+- Run the queries above and understand what is being said and its accuracy and what exactly `.exact` does. 
+- Create `.exact`-suffix versions of the queries in ~/o/s/query-parameters.md and likewise note the differences.
+
+The two basic uses of search are:
+
+`search=field:value+AND+field:value` for records that match both values and `search=field:value+field:value` for records that match either of the values.
+
+Using what I have learned by doing the above research, why does this query
+
+[https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact](https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact)
+
+work, but this one gives an error?
+
+[https://api.fda.gov/device/event.json?count=device.openfda.device_name](https://api.fda.gov/device/event.json?count=device.openfda.device_name)
+
+Is it because the openfda fields are annotated fields? Compare these two queries:
+
+[https://api.fda.gov/device/event.json?searcount=device.manufacturer_name](https://api.fda.gov/device/event.json?searcount=device.manufacturer_name)
+
+[https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact](https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact)
+
+## Issues
+
+Example 1 
+
+[https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea](https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea) 
+
+returns a total of 628612 meta.results.total.
+
+but using `=` instead of `:` 
+ 
+[https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea](https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea)
+
+returns 687192 results.total. Why more?
+
+Example 2
+
+[https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;HQF&quot;](https://api.fda.gov/device/event.json?search=device.device_report_product_Code=&quot;HQF&quot;)
+
+returns results but 
+
+[https://api.fda.gov/device/event.json?search=device.device_report_product_Code:&quot;HQF&quot;](https://api.fda.gov/device/event.json?search=device.device_report_product_Code:&quot;HQF&quot;)
+
+returns nothing.
+
+I think `:` means contains while `=` means &quot;matches exactly&quot;?
+
+Both of these searches
+
+[https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer](https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer)
+
+[https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:&quot;Excimer+Laser+System&quot;&quot;](https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:&quot;Excimer+Laser+System&quot;&quot;)
+
+return the same totals of 13267.
+
+Note: `mdr_report_key`, which is unique, is returned in every `device/event` query.
+
+including it in the search of both queries, writing PHP code to execute the 
+queries and save the searched-for field and the unique field to a file. Then sorting the files based on the 
+`mdr_report_key` and doing the set difference.
 </pre></div>
 </div>
-<p><a href='https://api.fda.gov/device/event.json?search=date_received:[20130401+TO+20180430]+AND+device.manufacturer_d_name:(Jude+Medtronic)+AND+(device.device_report_product_code:DRC+device.brand_name:("needle"+AND+("transseptal"+"brockenbrough"+"brk")))&limit=100&skip=0'>Execute query above</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">brand_name</span></code> field is exact, and requires the search terms to be in parentheses.</p>
-</div>
-<p><strong>todo:</strong></p>
-<ul class="simple">
-<li><p>Run the queries above and understand what is being said and its accuracy and what exactly <code class="docutils literal notranslate"><span class="pre">.exact</span></code> does.</p></li>
-<li><p>Create <code class="docutils literal notranslate"><span class="pre">.exact</span></code>-suffix versions of the queries in ~/o/s/query-parameters.md and likewise note the differences.</p></li>
-</ul>
-<p>The two basic uses of search are:</p>
-<p><code class="docutils literal notranslate"><span class="pre">search=field:value+AND+field:value</span></code> for records that match both values and <code class="docutils literal notranslate"><span class="pre">search=field:value+field:value</span></code> for records that match either of the values.</p>
-<p>Using what I have learned by doing the above research, why does this query</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact">https://api.fda.gov/drug/event.json?count=patient.reaction.reactionmeddrapt.exact</a></p>
-<p>work, but this one gives an error?</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?count=device.openfda.device_name">https://api.fda.gov/device/event.json?count=device.openfda.device_name</a></p>
-<p>Is it because the openfda fields are annotated fields? Compare these two queries:</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?searcount=device.manufacturer_name">https://api.fda.gov/device/event.json?searcount=device.manufacturer_name</a></p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact">https://api.fda.gov/device/event.json?count=device.manufacturer_name.exact</a></p>
 </section>
-</section>
-<section id="issues">
-<h2>Issues<a class="headerlink" href="#issues" title="Permalink to this heading">#</a></h2>
-<p>Example 1</p>
-<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:nausea</a></p>
-<p>returns a total of 628612 meta.results.total.</p>
-<p>but using <code class="docutils literal notranslate"><span class="pre">=</span></code> instead of <code class="docutils literal notranslate"><span class="pre">:</span></code></p>
-<p><a class="reference external" href="https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea">https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt=nausea</a></p>
-<p>returns 687192 results.total. Why more?</p>
-<p>Example 2</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code=%22HQF%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code=”HQF”</a></p>
-<p>returns results but</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.device_report_product_Code:%22HQF%22">https://api.fda.gov/device/event.json?search=device.device_report_product_Code:”HQF”</a></p>
-<p>returns nothing.</p>
-<p>I think <code class="docutils literal notranslate"><span class="pre">:</span></code> means contains while <code class="docutils literal notranslate"><span class="pre">=</span></code> means “matches exactly”?</p>
-<p>Both of these searches</p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer">https://api.fda.gov/device/event.json?search=device.openfda.device_name:Excimer</a></p>
-<p><a class="reference external" href="https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:%22Excimer+Laser+System%22%22">https://api.fda.gov/device/event.json?search=device.openfda.device_name.exact:”Excimer+Laser+System””</a></p>
-<p>return the same totals of 13267.</p>
-<p>Note: <code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code>, which is unique, is returned in every <code class="docutils literal notranslate"><span class="pre">device/event</span></code> query.</p>
-<p>including it in the search of both queries, writing PHP code to execute the
-queries and save the searched-for field and the unique field to a file. Then sorting the files based on the
-<code class="docutils literal notranslate"><span class="pre">mdr_report_key</span></code> and doing the set difference.</p>
 </section>
 </section>
 
@@ -1001,10 +1035,8 @@ queries and save the searched-for field and the unique field to a file. Then sor
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-queries">Test Queries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-count">Understanding <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-and-exact"><code class="docutils literal notranslate"><span class="pre">count</span></code> and <code class="docutils literal notranslate"><span class="pre">.exact</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-questions"><code class="docutils literal notranslate"><span class="pre">.exact</span></code> questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues">Issues</a></li>
 </ul>
   </nav></div>
 
