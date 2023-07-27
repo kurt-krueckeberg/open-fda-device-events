@@ -16,7 +16,6 @@ Welcome to Open FDA's documentation!
    query-parameters.md
    further-query-syntax.md
    advanced-syntax.md
-   issues.md
    examples.md
    api-syntax-rules.md
    dev-adv-ev-fields.md
