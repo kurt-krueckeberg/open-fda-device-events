@@ -4,3 +4,4 @@ config.xml
 x*
 .*x*
 *.swp
+/datasets/nbproject/private/
