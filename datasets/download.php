@@ -11,7 +11,7 @@ function download(string $file) {
 
     $cmd = "curl -O " . $file; // download with same filename.
 
-    system ($cmd);
+    exec($cmd);
 }
 
 foreach($json->results->device->event->partitions as $partition) {
