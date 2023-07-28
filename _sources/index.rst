@@ -21,6 +21,7 @@ Welcome to Open FDA's documentation!
    dev-adv-ev-fields.md
    sig-dev-adv-fields.md
    code-query-ideas.md
+   json-file-downloads.md
    todo.md
 
 Indices and tables

@@ -7,8 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Open FDA API 0.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>JSON Dataset Downloads &#8212; Open FDA API 0.7 documentation</title>
   
   
   
@@ -40,9 +41,11 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="index" title="Index" href="#" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'json-file-downloads';</script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Todo" href="todo.html" />
+    <link rel="prev" title="Code Ideas for the device/event Endpoint" href="code-query-ideas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -120,7 +123,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authorization.html">Open FDA Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="queries-overview.html">Queries Overview</a></li>
@@ -132,7 +135,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dev-adv-ev-fields.html">Device Adverse Events Searchable Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sig-dev-adv-fields.html">Most Important Device Adverse Event Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-query-ideas.html">Code Ideas for the device/event Endpoint</a></li>
-<li class="toctree-l1"><a class="reference internal" href="json-file-downloads.html">JSON Dataset Downloads</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">JSON Dataset Downloads</a></li>
 <li class="toctree-l1"><a class="reference internal" href="todo.html">Todo</a></li>
 </ul>
 
@@ -178,6 +181,54 @@
 
 
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/json-file-downloads.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
@@ -220,7 +271,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>JSON Dataset Downloads</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -234,12 +285,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
-</div>
+  <section id="json-dataset-downloads">
+<h1>JSON Dataset Downloads<a class="headerlink" href="#json-dataset-downloads" title="Permalink to this heading">#</a></h1>
+<p>As the openFDA <a class="reference external" href="https://open.fda.gov/apis/downloads/">downloads page</a> explains:</p>
+<p>A JSON file containing links to all the openFDA downloadable JSON datasets is <a class="reference external" href="https://api.fda.gov/download.json">available</a> to allow you to
+write code to automate the download. The data files are hosted at <a class="reference external" href="https://download.open.fda.gov/">https://download.open.fda.gov/</a>.</p>
+<p>As the <a class="reference external" href="https://open.fda.gov/apis/downloads/">downloads page</a> also explains:</p>
+<blockquote>
+<div><p>To keep your downloaded data up to date, you need to re-download the data every time it is updated. Every time an endpoint is updated
+(which happens on a regular basis), it is possible that every record has changed, due to corrections or enhancements. That means that you
+cannot simply download “new” files to keep your downloaded version up to date. You need to download all available data files for the endpoint
+of interest.</p>
+</div></blockquote>
+</section>
 
 
                 </article>
@@ -253,6 +311,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="code-query-ideas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Code Ideas for the device/event Endpoint</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="todo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Todo</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
