@@ -9,7 +9,8 @@ The data files are hosted at <https://download.open.fda.gov/>.
 
 
 :::{important}
-As the [downloads page](https://open.fda.gov/apis/downloads/) also explains:
+The [downloads page](https://open.fda.gov/apis/downloads/) explains you must download all availabe data file every time
+new data is added:
 
 > To keep your downloaded data up to date, you need to **re-download the data every time it is updated**. Every time an endpoint is updated
 (which happens on a regular basis), it is possible that every record has changed, due to corrections or enhancements. That means that you
