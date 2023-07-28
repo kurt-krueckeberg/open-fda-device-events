@@ -2,11 +2,8 @@
 
 This information is found on the openFDA [downloads page](https://open.fda.gov/apis/downloads/).
 
-You can write code to automate the download of the openFDA JSON datasets. A JSON file containing links to all the downloadable JSON datasets
-is available [here](https://api.fda.gov/download.json).
- 
-The data files are hosted at <https://download.open.fda.gov/>.
-
+You can automate the download of the JSON datasets with this [JSON file](https://api.fda.gov/download.json) that lists all the downloadable JSON datasets
+are hosted at <https://download.open.fda.gov/>.
 
 :::{important}
 The [downloads page](https://open.fda.gov/apis/downloads/) explains you must re-download all availabe data file every time
