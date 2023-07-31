@@ -7,7 +7,7 @@ include 'vendor/autoload.php';
 
 if ($argc == 1) {
 
-  echo ""
+  echo "";
   return;
 
 } else if (getopts($argv))  {
