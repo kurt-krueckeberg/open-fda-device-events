@@ -1,3 +1,5 @@
+datasets/nbproject
+datasets/.vscode
 /vendor
 /nbproject
 config.xml
