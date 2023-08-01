@@ -34,6 +34,8 @@ See:
 
 ## New PHP 8.2 Features
 
+Currently there is no a lunar PPA for PHP 8.2.
+
 [8.2 Features](https://kinsta.com/blog/php-8-2/)
 
 ## Existing PHP OpenFda PHP Github Code
