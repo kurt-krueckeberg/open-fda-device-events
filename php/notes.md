@@ -14,7 +14,36 @@
 - xml
 - zip
 
-### Installing Swoole with Composer
+### Installing Swoole with Pecl
+
+See [prequisties](https://openswoole.com/docs/get-started/prerequisites):
+
+These apt packages:
+
+- openssl
+- libssl-dev
+- curl
+- libcurl4-openssl-dev
+- libpcre3-dev
+- build-essential
+
+
+**Note:** Using g++ 13 will results in compile errors. Version 12 does work.
+
+Per <https://openswoole.com/docs/get-started/installation>:
+
+
+```bash
+sudo pecl install -D 'enable-sockets="no" enable-openssl="yes" enable-http2="yes" enable-mysqlnd="yes" enable-hook-curl="yes" enable-cares="yes" with-postgres="no"' openswoole
+```
+
+**Note:** You must have done:
+
+```bash
+sudo apt-get install libcurl4-openssl-dev
+```
+
+Next do?:
 
 ```bash
 composer require openswoole/core:22.1.2
@@ -23,6 +52,10 @@ composer require openswoole/core:22.1.2
 ### Curl Calls
 
 [Enabling coroutine support for the CURL library (libcurl)](https://openswoole.com/docs/runtime-hooks/swoole-hook-native-curl)
+
+### USe with MySQL
+
+<https://openswoole.com/docs/modules/swoole-coroutine-mysql>
 
 ## Using PHP `getopts()` to Process Command Line Arguments
 
