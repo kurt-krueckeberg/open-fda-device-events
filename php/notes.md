@@ -32,7 +32,7 @@ These apt packages:
 Per <https://openswoole.com/docs/get-started/installation>:
 
 ```bash
-sudo pecl install -D 'enable-sockets="no" enable-openssl="yes" enable-http2="yes" enable-mysqlnd="yes" enable-hook-curl="yes" enable-cares="yes" with-postgres="no"' openswoole
+sudo pecl install -D 'enable-sockets="no" enable-openssl="yes" enable-http2="yes" enable-mysqlnd="no" enable-hook-curl="yes" enable-cares="yes" with-postgres="no"' openswoole
 ```
 
 This build the `swoole.so` and concluded with:
@@ -51,11 +51,11 @@ Next, you must manually add "extension=openswoole.so" to php.ini. I did this:
 
 The curl extension must load before swoole, so I did this:
 
-1. Created `swoole.ini` in `/etc/php/8.1/mods-available/swoole.ini` with this content
+1. Created `openswoole.ini` in `/etc/php/8.1/mods-available/openswoole.ini` with this content
 
 ```ini
 ; priority=25
-extension=swoole.so
+extension=openswoole.so
 ```
 
 2. Create symbolic links in `/etc/php/8.1/cli/conf.d` and `/etc/php/8.1/fpm/conf.d` each called `25-swoole.ini` that refers to
@@ -64,11 +64,11 @@ extension=swoole.so
 ```bash
 cd /etc/php/8.1/cli/conf.d
 
-sudo ln -s /etc/php/8.1/mods-available/swoole.ini 25-swoole.ini
+sudo ln -s /etc/php/8.1/mods-available/openswoole.ini 25-openswoole.ini
 
 cd /etc/php/8.1/fpm/conf.d
 
-sudo ln -s /etc/php/8.1/mods-available/swoole.ini 25-swoole.ini
+sudo ln -s /etc/php/8.1/mods-available/openswoole.ini 25-openswoole.ini
 ```
 
 Then did:
