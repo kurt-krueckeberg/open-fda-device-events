@@ -35,7 +35,7 @@ Per <https://openswoole.com/docs/get-started/installation>:
 sudo pecl install -D 'enable-sockets="no" enable-openssl="yes" enable-http2="yes" enable-mysqlnd="no" enable-hook-curl="yes" enable-cares="yes" with-postgres="no"' openswoole
 ```
 
-This build the `swoole.so` and concluded with:
+The build of `openswoole.so` and concluded with:
 
 ```
 Build process completed successfully
@@ -90,7 +90,11 @@ composer require openswoole/core:22.1.2
 
 ### Curl Calls
 
-[Enabling coroutine support for the CURL library (libcurl)](https://openswoole.com/docs/runtime-hooks/swoole-hook-native-curl)
+See [Enabling coroutine support for the CURL library (libcurl)](https://openswoole.com/docs/runtime-hooks/swoole-hook-native-curl)
+
+### Documentation
+
+<https://openswoole.com/docs/swoole-get-started#server>
 
 ### USe with MySQL
 
