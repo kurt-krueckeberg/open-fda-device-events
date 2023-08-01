@@ -2,6 +2,10 @@
 
 ## Swoole
 
+Documentation at [swoole-docs](https://github.com/swoole/swoole-docs). It does seem more succinct.
+
+## Open Swoole
+
 ### Installation
 
 ### Suggested PHP extensions:
