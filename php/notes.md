@@ -14,15 +14,13 @@ Suggested PHP extensions:
 - xml
 - zip
 
-Install Swoole:
+Installing Swoole:
 
 ```bash
 composer require openswoole/core:22.1.2
 ```
 
-Curl Requests Article
-
-<https://openswoole.com/docs/runtime-hooks/swoole-hook-native-curl>
+[Enabling coroutine support for the CURL library (libcurl)](https://openswoole.com/docs/runtime-hooks/swoole-hook-native-curl)
 
 ## PHP `getopts()`
 
