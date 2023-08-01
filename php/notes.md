@@ -19,6 +19,7 @@
 ```bash
 composer require openswoole/core:22.1.2
 ```
+
 ### Curl Calls
 
 [Enabling coroutine support for the CURL library (libcurl)](https://openswoole.com/docs/runtime-hooks/swoole-hook-native-curl)
@@ -30,6 +31,10 @@ See:
 - Good intro: [Parsing Argument Using Getopt in C/C++](https://leimao.github.io/blog/Argument-Parser-Getopt-C/)
 - Question about how to use it [answered](https://stackoverflow.com/questions/13251732/how-to-specify-an-optstring-in-the-getopt-function)
 - [`getopt()` C Library Function](https://www.man7.org/linux/man-pages/man3/getopt.3.html)
+
+## New PHP 8.2 Features
+
+[8.2 Features](https://kinsta.com/blog/php-8-2/)
 
 ## Existing PHP OpenFda PHP Github Code
 
