@@ -14,9 +14,9 @@
 - xml
 - zip
 
-### Installing Swoole with Pecl
+### Installing Open Swoole with Pecl
 
-See [prequisties](https://openswoole.com/docs/get-started/prerequisites):
+Open Swoole [prequisties](https://openswoole.com/docs/get-started/prerequisites):
 
 These apt packages:
 
@@ -27,20 +27,61 @@ These apt packages:
 - libpcre3-dev
 - build-essential
 
-
 **Note:** Using g++ 13 will results in compile errors. Version 12 does work.
 
 Per <https://openswoole.com/docs/get-started/installation>:
-
 
 ```bash
 sudo pecl install -D 'enable-sockets="no" enable-openssl="yes" enable-http2="yes" enable-mysqlnd="yes" enable-hook-curl="yes" enable-cares="yes" with-postgres="no"' openswoole
 ```
 
-**Note:** You must have done:
+This build the `swoole.so` and concluded with:
+
+```
+Build process completed successfully
+Installing '/usr/lib/php/20210902/openswoole.so'
+Installing '/usr/include/php/20210902/ext/openswoole/config.h'
+Installing '/usr/include/php/20210902/ext/openswoole/php_openswoole.h'
+install ok: channel://pecl.php.net/openswoole-22.0.0
+configuration option "php_ini" is not set to php.ini location
+You should add "extension=openswoole.so" to php.ini
+```
+
+Next, you must manually add "extension=openswoole.so" to php.ini. I did this:
+
+The curl extension must load before swoole, so I did this:
+
+1. Created `swoole.ini` in `/etc/php/8.1/mods-available/swoole.ini` with this content
+
+```ini
+; priority=25
+extension=swoole.so
+```
+
+2. Create symbolic links in `/etc/php/8.1/cli/conf.d` and `/etc/php/8.1/fpm/conf.d` each called `25-swoole.ini` that refers to
+`/etc/php/8.1/mods-available/swoole.ini`:
 
 ```bash
-sudo apt-get install libcurl4-openssl-dev
+cd /etc/php/8.1/cli/conf.d
+
+sudo ln -s /etc/php/8.1/mods-available/swoole.ini 25-swoole.ini
+
+cd /etc/php/8.1/fpm/conf.d
+
+sudo ln -s /etc/php/8.1/mods-available/swoole.ini 25-swoole.ini
+```
+
+Then did:
+
+```bash
+sudo systemctl restart php8.1-fpm
+```
+
+But I still got this:
+
+```
+kurt@kurt-Airtop3:/etc/php/8.1/fpm/conf.d$ php -m | grep swoole
+PHP Warning:  PHP Startup: Unable to load dynamic library 'swoole.so' (tried: /usr/lib/php/20210902/swoole.so (/usr/lib/php/20210902/swoole.so: cannot open shared object file: No such file or directory), /usr/lib/php/20210902/swoole.so.so (/usr/lib/php/20210902/swoole.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
 ```
 
 Next do?:
