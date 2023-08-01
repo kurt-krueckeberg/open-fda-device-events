@@ -1,5 +1,25 @@
 # Notes
 
+## Swoole
+
+### Installation
+
+Suggested PHP extensions:
+
+- curl
+- json
+- bcmath
+- mbstring
+- opcache
+- xml
+- zip
+
+Install Swoole:
+
+```bash
+composer require openswoole/core:22.1.2
+```
+
 ## PHP `getopts()`
 
 See:
@@ -8,9 +28,9 @@ See:
 - Question about how to use it [answered](https://stackoverflow.com/questions/13251732/how-to-specify-an-optstring-in-the-getopt-function)
 - [`getopt()` C Library Function](https://www.man7.org/linux/man-pages/man3/getopt.3.html)
 
-## Other OpenFda PHP Code to Investigate
+## Existing PHP OpenFda PHP Github Code
 
-[laravel-openfda](https://github.com/MeisamMulla/laravel-openfda) has a fundametnalclass that encapsulates the functionality of query API call 
+[laravel-openfda](https://github.com/MeisamMulla/laravel-openfda) has a fundametnal class that encapsulates the functionality of query API call 
 and its five openFDA query parameters. So this encapsulates succintly what the openFDA API does. Its Endpoints class or interface can probably be 
 re-worked using an Enum, maybe an interface backed Enum?
 
@@ -18,16 +38,11 @@ re-worked using an Enum, maybe an interface backed Enum?
 $query->search($srch)->limit($l)->?skip($s)->?count();
 ```
 
-## Code Notes
+## Tyepsense
 
-### Todoes
+PHP Typesense [tutorial-like example](https://aviyel.com/post/1325/getting-started-with-php-api-clients-on-typesense)
 
-To answer the questions below it might help to search [Open Data](https://opendata.stackexchange.com/) for answers, like searching ".exact" or 
-".exact" and "find", "contains", or ... "Elasticsearch" and "JSON" and "data", and so on.
-
-1. Define exactly which devie/event fields I need to understand better before I can define an interface for OpenFda.
-2. Determine which fields require `=` and which require `:`.
-3. Determine what usefulness, if any, there is for the fields of interest that have `.exact` versions.
+## Parser
 
 Maybe a generic pasers, maybe in PHP, will be useful in the implementation? Or a parse I can generate, maybe some sort of CLI parameters parser?
 
