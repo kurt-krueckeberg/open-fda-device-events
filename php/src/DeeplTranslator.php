@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace LanguageTools;
+namespace OpenFda
 
 // SeeDeepl-doc.md 
 class DeeplTranslator extends OpenFdaApi implements TranslateInterface {

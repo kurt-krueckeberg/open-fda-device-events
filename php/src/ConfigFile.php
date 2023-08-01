@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace LanguageTools;
+namespace OpenFda
 
 //use LanguageTools\XmlConfigFile;
 /*

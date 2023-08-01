@@ -1,16 +1,16 @@
 {
     "name": "kurt-krueckeberg/openfda",
-    "description": "xml driven REST Translator classes for Azure Translator, DEEPL Translator and IBM Watson Translation services",
+    "description": "openfda REST API related PHP code",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Fda\\": "src"
+            "OpenFda\\": "src"
         }
     },
     "require": {
-        "php": ">=8.0", 
-        "guzzlehttp/guzzle": "^7.4",
-        "ext-simplexml": "*"
+        "php": ">=8.1", 
+        "ext-simplexml": "*",
+        "openswoole/core": "22.1.2"
     },
     "license": "MIT",
     "authors": [

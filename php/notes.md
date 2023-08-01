@@ -75,16 +75,14 @@ Then did:
 
 ```bash
 sudo systemctl restart php8.1-fpm
+systemctl status php8.1-fpm
 ```
 
-But I still got this:
+And then checked that `openswoole` was installed:
 
 ```
-kurt@kurt-Airtop3:/etc/php/8.1/fpm/conf.d$ php -m | grep swoole
-PHP Warning:  PHP Startup: Unable to load dynamic library 'swoole.so' (tried: /usr/lib/php/20210902/swoole.so (/usr/lib/php/20210902/swoole.so: cannot open shared object file: No such file or directory), /usr/lib/php/20210902/swoole.so.so (/usr/lib/php/20210902/swoole.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+$ php -m | grep openswoole
 ```
-
-Next do?:
 
 ```bash
 composer require openswoole/core:22.1.2

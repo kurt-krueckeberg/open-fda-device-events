@@ -6,6 +6,15 @@
 
 To learn more about the openFDA API read the replies at: [https://opendata.stackexchange.com/questions/tagged/openfda](https://opendata.stackexchange.com/questions/tagged/openfda)
 
+My question [Why does device.device_report_product_code require = rather than :?](https://opendata.stackexchange.com/questions/21134/why-does-device-device-report-product-code-require-rather-than/21164#21164) 
+did get answered:
+
+ > This is a very strange bug - the API should be erroring with the use of an equal sign there. We'll open a bug report and investigate.
+In the meantime, the ':' version does return results and should be what is used.
+Regards,
+Violet Wren
+openFDA Tech Lead
+
 ## ElasticSearch Query DSL (Domain Specific Language) 
 
 Elasticsearch [query string query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html).
