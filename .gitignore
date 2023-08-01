@@ -1,6 +1,6 @@
 datasets/nbproject
 datasets/.vscode
-/vendor
+php/vendor
 /nbproject
 config.xml
 x*
