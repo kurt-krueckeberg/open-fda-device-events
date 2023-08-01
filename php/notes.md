@@ -4,7 +4,7 @@
 
 ### Installation
 
-Suggested PHP extensions:
+### Suggested PHP extensions:
 
 - curl
 - json
@@ -14,15 +14,16 @@ Suggested PHP extensions:
 - xml
 - zip
 
-Installing Swoole:
+### Installing Swoole with Composer
 
 ```bash
 composer require openswoole/core:22.1.2
 ```
+### Curl Calls
 
 [Enabling coroutine support for the CURL library (libcurl)](https://openswoole.com/docs/runtime-hooks/swoole-hook-native-curl)
 
-## PHP `getopts()`
+## Using PHP `getopts()` to Process Command Line Arguments
 
 See:
 
