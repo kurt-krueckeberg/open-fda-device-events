@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-source ~/python-venv/bin/activate
-make clean && make html
-deactivate
