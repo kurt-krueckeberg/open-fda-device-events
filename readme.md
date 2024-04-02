@@ -1,4 +1,18 @@
-# openFDA API Overview
+# First Step
+
+To set up python virtual environment (wmhicmh mhaxs already been done): 
+
+```bash
+python3 -m venv ~/cool_python_directory
+cd cool_python_directory
+source bin/activate
+...
+... use it all day long
+...z
+deactivate
+```
+
+## openFDA API Overview
 
 - [Authorization and Authentication](docs/authorization.md)
 
